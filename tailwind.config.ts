@@ -5,7 +5,13 @@ export default {
   content: ['./src/**/*.{html,js,svelte,ts}'],
 
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        primary: '#141D50',
+        mountain: '#FCFAFA',
+        background: '#EAE9E8',
+      },
+    },
   },
 
   plugins: [forms],
