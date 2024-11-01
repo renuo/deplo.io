@@ -7,10 +7,13 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: '#141D50',
+        deploio: '#141D50',
         mountain: '#FCFAFA',
         background: '#EAE9E8',
       },
+    },
+    fontFamily: {
+      sans: ['Montserrat', 'sans-serif'],
     },
   },
 
