@@ -4,10 +4,6 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
-body {
-  @apply bg-background;
-}
-
 .container {
   @apply mx-auto max-w-7xl p-6;
 }
