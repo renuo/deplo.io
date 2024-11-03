@@ -16,7 +16,7 @@
     <img class="h-6 md:h-7" src={deploioName} alt="deploio" />
   </div>
 
-  <nav class="flex items-center gap-8">
+  <nav class="flex items-center gap-8 max-md:self-stretch">
     <LanguageSwitcher class="max-md:hidden" />
 
     <Link href="/pricing">{m.navigation_pricing()}</Link>

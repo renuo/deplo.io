@@ -1,12 +1,14 @@
 <script lang="ts">
-  import node from '$lib/assets/language_node.png';
-  import django from '$lib/assets/language_django.png';
-  import go from '$lib/assets/language_go.png';
-  import php from '$lib/assets/language_php.png';
-  import python from '$lib/assets/language_python.png';
-  import ruby from '$lib/assets/language_ruby.png';
+  import type { Snippet } from 'svelte';
+  import type { HTMLAttributes } from 'svelte/elements';
+  import { twMerge } from 'tailwind-merge';
 
-  const PIXELS_PER_SECOND = 0.01;
+  interface CarouselProps extends HTMLAttributes<HTMLDivElement> {
+    speed?: number;
+    children: Snippet;
+  }
+
+  let { speed = 0.01, children, class: className, ...rest }: CarouselProps = $props();
 
   let scrolling = $state(false);
   let scrollable: HTMLDivElement | null = $state(null);
@@ -20,7 +22,7 @@
     const deltaTime = time - lastTime;
     lastTime = time;
 
-    const distance = PIXELS_PER_SECOND * deltaTime;
+    const distance = speed * deltaTime;
     const hasReachedEnd = scrollable!.scrollLeft + distance >= scrollable!.scrollWidth - scrollable!.clientWidth;
     const hasReachedStart = scrollable!.scrollLeft - distance <= 0;
 
@@ -29,12 +31,8 @@
       scrollable!.scrollLeft = scrollLeft;
     }
 
-    if (direction === 1 && hasReachedEnd) {
-      direction = -1;
-    }
-
-    if (direction === -1 && hasReachedStart) {
-      direction = 1;
+    if ((direction === 1 && hasReachedEnd) || (direction === -1 && hasReachedStart)) {
+      direction = -direction;
     }
 
     animationFrame = requestAnimationFrame(animate);
@@ -55,15 +53,14 @@
   });
 </script>
 
-<div bind:this={scrollable} class="container no-scrollbar h-32 overflow-x-scroll" {onscroll} {onscrollend}>
-  <div class="pointer-events-none flex w-max select-none items-center gap-[10vw] lg:justify-between lg:gap-32">
-    <img src={node} alt="Node.js" />
-    <img src={django} alt="Django" />
-    <img src={go} alt="Go" />
-    <img src={php} alt="PHP" />
-    <img src={python} alt="Python" />
-    <img src={ruby} alt="Ruby" />
-  </div>
+<div
+  {...rest}
+  bind:this={scrollable}
+  class={twMerge('no-scrollbar overflow-x-scroll', className)}
+  {onscroll}
+  {onscrollend}
+>
+  {@render children()}
 </div>
 
 <style>

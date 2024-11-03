@@ -1,14 +1,11 @@
 <script lang="ts">
   import HeroSection from '$lib/components/HeroSection.svelte';
-  import SupportedFrameworks from '$lib/components/SupportedFrameworks.svelte';
+  import FeaturesSection from '$lib/components/FeaturesSection.svelte';
 </script>
 
 <main>
   <HeroSection />
-
-  <section title="features">
-    <SupportedFrameworks />
-  </section>
+  <FeaturesSection />
 
   <section title="notes" class="container">mountain</section>
   <section title="comparison" class="container">table</section>
