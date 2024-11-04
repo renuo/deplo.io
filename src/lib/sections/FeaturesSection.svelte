@@ -17,7 +17,7 @@
     class="absolute left-0 right-0 top-0 z-0 w-full -rotate-6 scale-[3] opacity-5 sm:scale-[2] md:scale-[1.25]"
   />
 
-  <Carousel class="container relative z-10 mb-8 h-32">
+  <Carousel class="container relative z-10 mb-8">
     <div
       class="pointer-events-none flex w-max select-none items-center gap-[10vw] lg:w-full lg:justify-between lg:gap-16"
     >
