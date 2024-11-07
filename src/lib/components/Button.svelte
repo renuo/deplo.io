@@ -11,9 +11,9 @@
   let { variant, children, class: className, ...rest }: ButtonProps = $props();
 
   const variants = {
-    primary: 'bg-white text-deploio',
-    secondary: 'bg-deploio text-white',
-    outline: 'bg-transparent border-2 border-white text-white',
+    primary: 'bg-white border-2 border-white text-deploio',
+    secondary: 'bg-deploio border-2 border-deploio text-white',
+    outline: 'border-2 border-white bg-transparent text-white',
   };
 </script>
 
@@ -21,7 +21,7 @@
   {...rest}
   class={twMerge(
     variants[variant],
-    'truncate p-1.5 px-4 uppercase transition-opacity hover:opacity-70 max-md:text-sm',
+    'truncate p-1.5 px-4 text-[15px] font-medium uppercase transition-opacity hover:opacity-70 max-md:text-sm',
     className,
   )}
 >
