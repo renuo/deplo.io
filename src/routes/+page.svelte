@@ -5,6 +5,10 @@
   import ComparisonSection from '$lib/sections/ComparisonSection.svelte';
 </script>
 
+<svelte:head>
+  <title>Deploio - Schweizer PaaS</title>
+</svelte:head>
+
 <main>
   <HeroSection />
   <FeaturesSection />
