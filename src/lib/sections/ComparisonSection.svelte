@@ -1,10 +1,11 @@
 <script lang="ts">
   import ComparisonTable from '$lib/components/ComparisonTable.svelte';
   import * as m from '$lib/paraglide/messages';
-  import deploioLogo from '$lib/assets/logos/deploio_logo.png';
-  import herokuLogo from '$lib/assets/logos/heroku_logo.png';
-  import divioLogo from '$lib/assets/logos/divio_logo.png';
-  import renderLogo from '$lib/assets/logos/render_logo.png';
+
+  import deploioLogo from '$lib/assets/logos/deploio_logo.svg';
+  import herokuLogo from '$lib/assets/logos/heroku_logo.svg';
+  import divioLogo from '$lib/assets/logos/divio_logo.svg';
+  import renderLogo from '$lib/assets/logos/render_logo.svg';
 </script>
 
 <section class="bg-background py-16">

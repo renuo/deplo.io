@@ -72,7 +72,7 @@
       <tr>
         <th></th>
         {#each images as image, i}
-          {@render logo(image, alts[0], i === 0)}
+          {@render logo(image, alts[i], i === 0)}
         {/each}
       </tr>
     </thead>
