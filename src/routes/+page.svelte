@@ -3,6 +3,7 @@
   import FeaturesSection from '$lib/sections/FeaturesSection.svelte';
   import NotesSection from '$lib/sections/NotesSection.svelte';
   import ComparisonSection from '$lib/sections/ComparisonSection.svelte';
+  import RegisterSection from '$lib/sections/RegisterSection.svelte';
 </script>
 
 <svelte:head>
@@ -14,6 +15,5 @@
   <FeaturesSection />
   <NotesSection />
   <ComparisonSection />
-
-  <section title="register" class="container">register</section>
+  <RegisterSection />
 </main>
