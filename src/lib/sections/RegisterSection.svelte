@@ -27,7 +27,7 @@
     <p class="mx-auto max-w-[600px]">{m.register_description()}</p>
 
     <form
-      class="relative space-y-2"
+      class="relative space-y-2 h-20"
       method="POST"
       action="https://script.google.com/macros/s/AKfycbwT1lwiqSW1clYKkuHFrjcXYyjpZD-mreglv8ZvKqP7e-HrTPE3YPPno6zEOtuKAysKbw/exec"
       use:enhance={submit}
