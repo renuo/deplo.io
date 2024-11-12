@@ -1,13 +1,14 @@
 <script lang="ts">
-  import HeroSection from '$lib/components/HeroSection.svelte';
-  import FeaturesSection from '$lib/components/FeaturesSection.svelte';
+  import HeroSection from '$lib/sections/HeroSection.svelte';
+  import FeaturesSection from '$lib/sections/FeaturesSection.svelte';
+  import NotesSection from '$lib/sections/NotesSection.svelte';
 </script>
 
 <main>
   <HeroSection />
   <FeaturesSection />
+  <NotesSection />
 
-  <section title="notes" class="container">mountain</section>
   <section title="comparison" class="container">table</section>
   <section title="register" class="container">register</section>
 </main>
