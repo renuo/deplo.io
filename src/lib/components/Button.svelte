@@ -1,13 +1,16 @@
 <script lang="ts">
   import type { Snippet } from 'svelte';
-  import type { HTMLButtonAttributes } from 'svelte/elements';
+  import type { HTMLButtonAttributes, HTMLAnchorAttributes } from 'svelte/elements';
   import { twMerge } from 'tailwind-merge';
 
-  interface ButtonProps extends HTMLButtonAttributes {
+  type ButtonAttributes = HTMLButtonAttributes & { href?: never };
+  type AnchorAttributes = HTMLAnchorAttributes & { href: string };
+
+  type ButtonProps = (ButtonAttributes | AnchorAttributes) & {
     href?: string;
     variant: 'primary' | 'secondary' | 'outline';
     children: Snippet;
-  }
+  };
 
   let { href, variant, children, class: className, ...rest }: ButtonProps = $props();
 
@@ -26,12 +29,6 @@
   );
 </script>
 
-{#if href}
-  <a {href} class={mergedClasses}>
-    {@render children()}
-  </a>
-{:else}
-  <button {...rest} class={mergedClasses}>
-    {@render children()}
-  </button>
-{/if}
+<svelte:element this={href ? 'a' : 'button'} {href} {...rest} class={mergedClasses}>
+  {@render children()}
+</svelte:element>

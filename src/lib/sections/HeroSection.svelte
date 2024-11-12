@@ -1,5 +1,4 @@
 <script lang="ts">
-  import { goto } from '$app/navigation';
   import Button from '$lib/components/Button.svelte';
   import Link from '$lib/components/Link.svelte';
   import * as m from '$lib/paraglide/messages';
@@ -12,14 +11,14 @@
     <source src={deploioVideo} type="video/mp4" />
   </video>
 
-  <div class="absolute flex h-full w-full flex-col justify-end bg-gradient-to-t from-deploio text-white">
+  <div class="relative flex h-full w-full flex-col justify-end bg-gradient-to-t from-deploio text-white">
     <div class="container mb-16 space-y-6">
       <h1 class="max-w-[500px] text-5xl text-[46px] font-medium leading-[50px]">{m.hero_title()}</h1>
       <p class="max-w-[500px] text-lg">{m.hero_description()}</p>
 
       <div class="flex flex-wrap gap-2">
         <Button variant="primary" href="#register">{m.hero_start_now()}</Button>
-        <Button variant="outline">{m.hero_learn_more()}</Button>
+        <Button variant="outline" href="https://docs.nine.ch/docs/category/deploio-paas/">{m.hero_learn_more()}</Button>
       </div>
       <div class="flex items-center gap-2 text-xs opacity-70">
         <svg width="8" height="10" viewBox="0 0 8 10" fill="none" xmlns="http://www.w3.org/2000/svg">
