@@ -21,13 +21,13 @@
 
 <img class="-mb-px w-full -scale-x-100 bg-background" src={mountainVector} alt="mountain vector background" />
 
-<section id="register" class="text-deploio bg-mountain text-center">
+<section id="register" class="bg-mountain text-center text-deploio">
   <div class="container relative space-y-8">
     <h2 class="mx-auto max-w-[800px] text-3xl uppercase">{m.register_title()}</h2>
     <p class="mx-auto max-w-[600px]">{m.register_description()}</p>
 
     <form
-      class="relative space-y-2 h-20"
+      class="relative h-20 space-y-2"
       method="POST"
       action="https://script.google.com/macros/s/AKfycbwT1lwiqSW1clYKkuHFrjcXYyjpZD-mreglv8ZvKqP7e-HrTPE3YPPno6zEOtuKAysKbw/exec"
       use:enhance={submit}
