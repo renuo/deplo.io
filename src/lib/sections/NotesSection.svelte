@@ -1,7 +1,7 @@
 <script lang="ts">
   import deploioSticker from '$lib/assets/deploio_sticker.png';
-  import mountainVector from '$lib/assets/mountain_vector.svg';
-  import mountainOne from '$lib/assets/mountain_1.jpg';
+  import mountainVector from '$lib/assets/backgrounds/mountain_vector.svg';
+  import mountainOne from '$lib/assets/backgrounds/mountain_1.jpg';
   import swissMadeSoftware from '$lib/assets/swiss_made_software.svg';
   import Button from '$lib/components/Button.svelte';
   import Carousel from '$lib/components/Carousel.svelte';

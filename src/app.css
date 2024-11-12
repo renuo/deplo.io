@@ -4,6 +4,11 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
+html,
+body {
+  @apply min-w-[320px] bg-deploio;
+}
+
 .container {
   @apply mx-auto max-w-7xl p-6 md:p-16;
 }
