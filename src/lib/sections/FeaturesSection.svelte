@@ -14,7 +14,7 @@
   <img
     src={deploioWave}
     alt="abstract waves background"
-    class="absolute left-0 right-0 top-0 z-0 w-full -rotate-6 scale-[3] opacity-5 sm:scale-[2] md:scale-[1.25]"
+    class="pointer-events-none absolute left-0 right-0 top-0 z-0 w-full -rotate-6 scale-[3] opacity-5 sm:scale-[2] md:scale-[1.25]"
   />
 
   <Carousel class="container relative z-10 mb-8">
