@@ -40,7 +40,7 @@
 
   function onscroll() {
     scrolling = true;
-    scrollLeft = scrollable!.scrollLeft;
+    scrollLeft = scrollable?.scrollLeft ?? 0;
   }
 
   function onscrollend() {
