@@ -41,6 +41,8 @@
   "register_button": "REGISTER NOW",
   "register_thanks": "THANK YOU!",
   "register_message": "You will receive a notification with access details from our team soon.",
+  "pricing_title": "Price Calculator",
+  "pricing_description": "Calculate the costs for your app and choose the right package for your needs.",
   "footer_support": "SUPPORT",
   "footer_status": "Status",
   "footer_documentation": "Documentation",
