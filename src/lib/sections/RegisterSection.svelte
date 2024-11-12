@@ -1,10 +1,10 @@
 <script lang="ts">
+  import type { SubmitFunction } from '@sveltejs/kit';
   import * as m from '$lib/paraglide/messages';
   import Button from '$lib/components/Button.svelte';
   import mountainVector from '$lib/assets/backgrounds/mountain_vector.svg';
   import { enhance } from '$app/forms';
   import { fly } from 'svelte/transition';
-  import type { SubmitFunction } from '@sveltejs/kit';
 
   let state: 'idle' | 'submitting' | 'success' = $state('idle');
 
@@ -33,7 +33,7 @@
       use:enhance={submit}
     >
       <input
-        class="h-10 w-full border-2 border-background text-[15px] max-md:text-sm sm:w-72"
+        class="h-10 w-full border-2 border-background text-[15px] transition-colors focus:border-deploio focus:ring-0 max-md:text-sm sm:w-72"
         class:opacity-50={state === 'submitting'}
         name="email"
         type="email"
