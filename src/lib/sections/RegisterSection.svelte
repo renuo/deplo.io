@@ -21,7 +21,7 @@
 
 <img class="-mb-px w-full -scale-x-100 bg-background" src={mountainVector} alt="mountain vector background" />
 
-<section id="register" class="bg-mountain text-center">
+<section id="register" class="bg-mountain text-center text-deploio">
   <div class="container relative space-y-8">
     <h2 class="mx-auto max-w-[800px] text-3xl uppercase">{m.register_title()}</h2>
     <p class="mx-auto max-w-[600px]">{m.register_description()}</p>
@@ -52,8 +52,8 @@
 
       {#if state === 'success'}
         <div class="absolute bottom-0 left-0 right-0 top-0 !m-0 bg-mountain text-deploio" transition:fly={{ y: 16 }}>
-          <h3 class="text-2xl font-medium uppercase">{m.register_thanks()}</h3>
-          <p class="mx-auto max-w-lg">{m.register_message()}</p>
+          <h3 class="text-xl font-medium uppercase">{m.register_thanks()}</h3>
+          <p class="mx-auto max-w-sm">{m.register_message()}</p>
         </div>
       {/if}
     </form>

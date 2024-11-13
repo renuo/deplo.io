@@ -7,6 +7,7 @@
   type AnchorAttributes = HTMLAnchorAttributes & { href: string };
 
   type ButtonProps = (ButtonAttributes | AnchorAttributes) & {
+    href?: string;
     variant: 'primary' | 'secondary' | 'outline';
     children: Snippet;
   };
@@ -16,7 +17,7 @@
   const variants = {
     primary: 'bg-white border-2 border-white text-deploio',
     secondary: 'bg-deploio border-2 border-deploio text-white',
-    outline: 'bg-transparent border-2 border-white text-white',
+    outline: 'border-2 border-white bg-transparent text-white',
   };
 
   const mergedClasses = $derived(
