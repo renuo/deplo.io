@@ -40,7 +40,7 @@
   />
   <div class="container relative space-y-8">
     <h2 class="mx-auto max-w-[800px] text-3xl uppercase" use:appear={{ delay: 0 }}>{m.register_title()}</h2>
-    <p class="mx-auto max-w-[600px]" use:appear={{ delay: 100 }}>{m.register_description()}</p>
+    <p class="mx-auto max-w-[620px]" use:appear={{ delay: 100 }}>{m.register_description()}</p>
 
     <form
       class="relative h-20 space-y-2"
@@ -74,5 +74,7 @@
         </div>
       {/if}
     </form>
+
+    <p class="mx-auto !mt-0 max-w-[500px] text-sm" use:appear={{ delay: 100 }}>{m.register_promo()}</p>
   </div>
 </section>
