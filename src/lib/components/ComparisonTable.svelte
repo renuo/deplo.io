@@ -51,11 +51,11 @@
 
 {#snippet row(title: string, cells: boolean[])}
   <tr class="border-t-[1px] border-deploio/10">
-    <th class="sticky left-0 max-w-0 text-nowrap p-4 pb-12 text-left font-semibold text-deploio lg:max-w-none lg:pb-4">
-      {title}
+    <th class="sticky left-0 max-w-0 text-nowrap pb-12 text-left font-semibold text-deploio lg:max-w-none lg:p-4">
+      <div class="pl-4 pt-1 lg:p-0">{title}</div>
     </th>
     {#each cells as cell, j}
-      <td class={twMerge('pt-12 text-center lg:pt-0', j === 0 && 'bg-deploio/5')}>
+      <td class={twMerge('pb-3 pt-10 text-center lg:pb-0 lg:pt-0', j === 0 && 'bg-deploio/5')}>
         {#if cell}
           {@render check(j === 0)}
         {:else}

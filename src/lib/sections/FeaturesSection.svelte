@@ -1,4 +1,9 @@
 <script lang="ts">
+  import Carousel from '$lib/components/Carousel.svelte';
+  import CodeBox from '$lib/components/CodeBox.svelte';
+  import * as m from '$lib/paraglide/messages';
+  import { appear } from '$lib';
+
   import deploioWave from '$lib/assets/deploio_wave.svg';
   import node from '$lib/assets/language_node.png';
   import django from '$lib/assets/language_django.png';
@@ -6,8 +11,6 @@
   import php from '$lib/assets/language_php.png';
   import python from '$lib/assets/language_python.png';
   import ruby from '$lib/assets/language_ruby.png';
-  import Carousel from '$lib/components/Carousel.svelte';
-  import * as m from '$lib/paraglide/messages';
 </script>
 
 <section class="relative overflow-x-clip bg-deploio pb-16 pt-20">
@@ -20,6 +23,7 @@
   <Carousel class="container relative z-10 mb-8">
     <div
       class="pointer-events-none flex w-max select-none items-center gap-[10vw] lg:w-full lg:justify-between lg:gap-16"
+      use:appear={{ delay: 0 }}
     >
       <img class="h-10" src={node} alt="Node.js" />
       <img class="h-10" src={django} alt="Django" />
@@ -30,15 +34,42 @@
     </div>
   </Carousel>
 
-  <div class="container relative z-10 mb-32 flex flex-col gap-16 md:flex-row">
-    <div class="space-y-6 font-medium text-white">
-      <h2 class="text-3xl uppercase">{m.feature_1_title()}</h2>
-      <p>{m.feature_1_description()}</p>
+  <div class="container relative z-10 mb-32 grid grid-cols-1 items-center gap-16 gap-y-32 md:grid-cols-2">
+    <div class="order-1 font-medium text-white">
+      <h2 class="mb-4 text-3xl uppercase" use:appear={{ delay: 0 }}>{m.feature_1_title()}</h2>
+      <p use:appear={{ delay: 100 }}>{m.feature_1_description()}</p>
+    </div>
+    <CodeBox
+      class="order-2 w-full self-end"
+      commands={[
+        { command: 'git push origin main', result: '🪄' },
+        { command: 'curl -I https://deine-plattform.ch/up', result: 'HTTP/2 200' },
+      ]}
+    />
+
+    <div class="order-3 space-y-6 font-medium text-white md:order-4">
+      <h2 class="text-3xl uppercase" use:appear={{ delay: 50 }}>{m.feature_2_title()}</h2>
+      <p use:appear={{ delay: 150 }}>{m.feature_2_description()}</p>
     </div>
 
-    <div class="space-y-6 font-medium text-white">
-      <h2 class="text-3xl uppercase">{m.feature_2_title()}</h2>
-      <p>{m.feature_2_description()}</p>
+    <CodeBox
+      class="order-4 w-full self-end md:order-3"
+      commands={[{ command: 'curl -s https://ipinfo.io/178.209.32.0 | jq .country', result: '"CH"' }]}
+    />
+
+    <div class="order-5 space-y-6 font-medium text-white">
+      <h2 class="text-3xl uppercase" use:appear={{ delay: 50 }}>{m.feature_2_title()}</h2>
+      <p use:appear={{ delay: 150 }}>{m.feature_2_description()}</p>
     </div>
+
+    <CodeBox
+      class="order-6 w-full self-end"
+      commands={[
+        {
+          command: 'whois deploio.ch',
+          result: 'Nine Internet Solutions AG\nowned by Tom, Tim, …\nAS29691\nRechenzentrum in A und B',
+        },
+      ]}
+    />
   </div>
 </section>

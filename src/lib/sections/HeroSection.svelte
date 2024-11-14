@@ -2,6 +2,7 @@
   import Button from '$lib/components/Button.svelte';
   import Link from '$lib/components/Link.svelte';
   import * as m from '$lib/paraglide/messages';
+  import { appear } from '$lib';
 
   import deploioVideo from '$lib/assets/backgrounds/deploio_video.mp4';
 </script>
@@ -13,14 +14,17 @@
 
   <div class="relative flex h-full w-full flex-col justify-end bg-gradient-to-t from-deploio text-white">
     <div class="container mb-16 space-y-6">
-      <h1 class="max-w-[500px] text-5xl text-[46px] font-medium leading-[50px]">{m.hero_title()}</h1>
-      <p class="max-w-[500px] text-lg">{m.hero_description()}</p>
+      <h1 class="max-w-[500px] text-5xl text-[46px] font-medium leading-[50px]" use:appear={{ delay: 0 }}>
+        {m.hero_title()}
+      </h1>
+      <p class="max-w-[500px] text-lg" use:appear={{ delay: 100 }}>{m.hero_description()}</p>
 
-      <div class="flex flex-wrap gap-2">
+      <div class="flex flex-wrap gap-2" use:appear={{ delay: 200 }}>
         <Button variant="primary" href="#register">{m.hero_start_now()}</Button>
         <Button variant="outline" href="https://docs.nine.ch/docs/category/deploio-paas/">{m.hero_learn_more()}</Button>
       </div>
-      <div class="flex items-center gap-2 text-xs opacity-70">
+
+      <div class="flex items-center gap-2 text-xs opacity-70" use:appear={{ delay: 300 }}>
         <svg width="8" height="10" viewBox="0 0 8 10" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path
             d="M0.416748 9.01688V0L7.73071 4.50844L0.416748 9.01688ZM1.50008 7.12042L5.76612 4.50844L1.50008 1.89646V7.12042Z"

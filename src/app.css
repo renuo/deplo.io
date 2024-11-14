@@ -12,3 +12,33 @@ body {
 .container {
   @apply mx-auto max-w-7xl p-6 md:p-16;
 }
+
+.appear-from {
+  @apply translate-y-10 opacity-0 transition duration-500 motion-reduce:transition-none;
+}
+
+.appear-to {
+  @apply translate-y-0 opacity-100;
+}
+
+@keyframes typing {
+  from {
+    transform: translateY(10%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes echo {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}

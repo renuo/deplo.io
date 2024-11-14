@@ -1,6 +1,7 @@
 <script lang="ts">
   import ComparisonTable from '$lib/components/ComparisonTable.svelte';
   import * as m from '$lib/paraglide/messages';
+  import { appear } from '$lib';
 
   import deploioLogo from '$lib/assets/logos/deploio_logo.svg';
   import herokuLogo from '$lib/assets/logos/heroku_logo.svg';
@@ -10,11 +11,11 @@
 
 <section class="bg-background py-16">
   <div class="container space-y-8 !pb-4 text-deploio">
-    <h2 class="text-3xl font-medium uppercase">{m.comparison_title()}</h2>
-    <p class="max-w-xl">{m.comparison_description()}</p>
+    <h2 class="text-3xl font-medium uppercase" use:appear={{ delay: 0 }}>{m.comparison_title()}</h2>
+    <p class="max-w-xl" use:appear={{ delay: 100 }}>{m.comparison_description()}</p>
   </div>
 
-  <div class="container">
+  <div class="container" use:appear={{ delay: 200 }}>
     <ComparisonTable
       images={[deploioLogo, herokuLogo, divioLogo, renderLogo]}
       alts={['deploio logo', 'heroku logo', 'divio logo', 'render logo']}
