@@ -2,11 +2,69 @@
 <html lang="%paraglide.lang%" dir="%paraglide.textDirection%">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" href="%sveltekit.assets%/favicon.png" />
+
+    <!-- Mobile Specific Metas -->
+    <meta content="Nine Internet Solutions AG" name="author" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Meta Tags -->
+    <meta name="description" content="Lightweight, Scalable, and Effortless App Deployment &amp; Management" />
+    <meta property="og:title" content="Seamless App Deployment with Scalability and Reliability" />
+    <meta property="og:image" content="https://deplo.io/meta/deploio-preview.png" name="image" />
+    <meta
+      property="og:description"
+      name="description"
+      content="deplo.io simplifies app deployment and management, providing a flexible and user-friendly platform to harness the full potential of advanced technology. Set up your apps with ease, like a tipi - lightweight and scalable - ensuring a perfect home for your app."
+    />
+
+    <!-- Twitter meta -->
+    <meta name="twitter:site" content="@nine_ch" />
+    <meta name="twitter:creator" content="@nine_ch" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Seamless App Deployment with Scalability and Reliability" />
+    <meta name="twitter:image" content="https://deplo.io/meta/deploio-preview.png" />
+    <meta name="twitter:url" content="https://deplo.io/" />
+    <meta name="twitter:description" content="Lightweight, Scalable, and Effortless App Deployment &amp; Management" />
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/meta/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/meta/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/meta/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <!-- css, fonts & js-->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous" />
+
+    <!-- Google Tag Manager -->
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != 'dataLayer' ? '&l=' + l : '';
+        j.async = true;
+        j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, 'script', 'dataLayer', 'GTM-MHQPVQD4');
+    </script>
+    <!-- End Google Tag Manager -->
+
     %sveltekit.head%
   </head>
   <body data-sveltekit-preload-data="hover">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+      <iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-MHQPVQD4"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+      ></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
     <div style="display: contents">%sveltekit.body%</div>
   </body>
 </html>

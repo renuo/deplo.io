@@ -3,7 +3,6 @@
   import Carousel from '$lib/components/Carousel.svelte';
   import Note from '$lib/components/Note.svelte';
   import * as m from '$lib/paraglide/messages';
-  import { goto } from '$app/navigation';
   import { appear } from '$lib';
 
   import deploioSticker from '$lib/assets/deploio_sticker.png';
@@ -25,7 +24,11 @@
     <h2 class="mb-4 mt-8 text-3xl font-medium uppercase md:mt-0" use:appear={{ delay: 50 }}>{m.feature_why_title()}</h2>
     <p class="mb-4" use:appear={{ delay: 100 }}>{m.feature_why_description()}</p>
     <div use:appear={{ delay: 150 }}>
-      <Button variant="secondary" href="https://docs.nine.ch/docs/deplo-io/getting-started-with-deploio/" target="_blank">
+      <Button
+        variant="secondary"
+        href="https://docs.nine.ch/docs/deplo-io/getting-started-with-deploio/"
+        target="_blank"
+      >
         {m.feature_why_button()}
       </Button>
     </div>
@@ -54,7 +57,9 @@
       <h3 class="text-center text-3xl font-medium uppercase text-white" use:appear={{ delay: 100 }}>
         {m.swiss_title()}
       </h3>
-      <p class="max-w-xl text-center text-white whitespace-pre-line" use:appear={{ delay: 200 }}>{m.swiss_description()}</p>
+      <p class="max-w-xl whitespace-pre-line text-center text-white" use:appear={{ delay: 200 }}>
+        {m.swiss_description()}
+      </p>
     </div>
   </div>
 </section>

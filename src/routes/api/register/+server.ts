@@ -21,15 +21,17 @@ export const POST: RequestHandler = async (event) => {
   //   body: `secret=${import.meta.env.VITE_RECAPTCHA_SECRET}&response=${token}`,
   // })
 
-  const response = await fetch('https://script.google.com/macros/s/AKfycbwT1lwiqSW1clYKkuHFrjcXYyjpZD-mreglv8ZvKqP7e-HrTPE3YPPno6zEOtuKAysKbw/exec', {
-    method: 'POST',
-    body: form,
-  });
+  const response = await fetch(
+    'https://script.google.com/macros/s/AKfycbwT1lwiqSW1clYKkuHFrjcXYyjpZD-mreglv8ZvKqP7e-HrTPE3YPPno6zEOtuKAysKbw/exec',
+    {
+      method: 'POST',
+      body: form,
+    },
+  );
 
   if (!response.ok) {
     return json({ success: false, message: 'Failed to register' }, { status: 500 });
   }
 
   return json({ success: true });
-}
-
+};
