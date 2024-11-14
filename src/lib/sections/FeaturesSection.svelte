@@ -34,36 +34,34 @@
     </div>
   </Carousel>
 
-  <div class="container relative z-10 mb-32 grid grid-cols-1 items-center gap-16 gap-y-32 md:grid-cols-2">
+  <div class="container relative z-10 mb-32 grid grid-cols-1 gap-16 gap-y-24 md:grid-cols-2">
     <div class="order-1 font-medium text-white">
       <h2 class="mb-4 text-3xl uppercase" use:appear={{ delay: 0 }}>{m.feature_1_title()}</h2>
       <p use:appear={{ delay: 100 }}>{m.feature_1_description()}</p>
     </div>
     <CodeBox
-      class="order-2 w-full self-end"
+      class="order-2 w-full"
       commands={[
         { command: 'git push origin main', result: '🪄' },
         { command: 'curl -I https://deine-plattform.ch/up', result: 'HTTP/2 200' },
       ]}
     />
 
-    <div class="order-3 space-y-6 font-medium text-white md:order-4">
+    <div class="order-3 space-y-6 font-medium text-white">
       <h2 class="text-3xl uppercase" use:appear={{ delay: 50 }}>{m.feature_2_title()}</h2>
       <p use:appear={{ delay: 150 }}>{m.feature_2_description()}</p>
     </div>
-
     <CodeBox
-      class="order-4 w-full self-end md:order-3"
+      class="order-4 w-full"
       commands={[{ command: 'curl -s https://ipinfo.io/178.209.32.0 | jq .country', result: '"CH"' }]}
     />
 
     <div class="order-5 space-y-6 font-medium text-white">
-      <h2 class="text-3xl uppercase" use:appear={{ delay: 50 }}>{m.feature_2_title()}</h2>
-      <p use:appear={{ delay: 150 }}>{m.feature_2_description()}</p>
+      <h2 class="text-3xl uppercase" use:appear={{ delay: 50 }}>{m.feature_3_title()}</h2>
+      <p use:appear={{ delay: 150 }}>{m.feature_3_description()}</p>
     </div>
-
     <CodeBox
-      class="order-6 w-full self-end"
+      class="order-6 w-full"
       commands={[
         {
           command: 'whois deploio.ch',

@@ -5,6 +5,7 @@
   import mountainVector from '$lib/assets/backgrounds/mountain_vector.svg';
   import { enhance } from '$app/forms';
   import { fly } from 'svelte/transition';
+  import { appear } from '$lib';
 
   let state: 'idle' | 'submitting' | 'success' = $state('idle');
 
@@ -23,14 +24,15 @@
 
 <section id="register" class="bg-mountain text-center text-deploio">
   <div class="container relative space-y-8">
-    <h2 class="mx-auto max-w-[800px] text-3xl uppercase">{m.register_title()}</h2>
-    <p class="mx-auto max-w-[600px]">{m.register_description()}</p>
+    <h2 class="mx-auto max-w-[800px] text-3xl uppercase" use:appear={{ delay: 0 }}>{m.register_title()}</h2>
+    <p class="mx-auto max-w-[600px]" use:appear={{ delay: 100 }}>{m.register_description()}</p>
 
     <form
       class="relative h-20 space-y-2"
       method="POST"
       action="https://script.google.com/macros/s/AKfycbwT1lwiqSW1clYKkuHFrjcXYyjpZD-mreglv8ZvKqP7e-HrTPE3YPPno6zEOtuKAysKbw/exec"
       use:enhance={submit}
+      use:appear={{ delay: 200 }}
     >
       <input
         class="h-10 w-full border-2 border-background text-[15px] transition-colors focus:border-deploio focus:ring-0 max-md:text-sm sm:w-72"

@@ -9,7 +9,7 @@
   import deploioSticker from '$lib/assets/deploio_sticker.png';
   import mountainVector from '$lib/assets/backgrounds/mountain_vector.svg';
   import mountainOne from '$lib/assets/backgrounds/mountain_1.jpg';
-  import swissMadeSoftware from '$lib/assets/swiss_made_software.svg';
+  import swissMadeSoftware from '$lib/assets/swiss_made_software_and_hosting.png';
 </script>
 
 <img src={mountainVector} alt="mountain vector background" class="pointer-events-none -my-px w-full bg-deploio" />
@@ -22,10 +22,12 @@
       alt="hosted on deploio sticker"
       class="pointer-events-none absolute -bottom-8 right-8 size-48 -rotate-12 opacity-5 transition-transform group-hover:rotate-12 md:bottom-auto md:right-auto md:-ml-44 md:-mt-8"
     />
-    <h2 class="mb-4 mt-8 text-3xl font-medium uppercase md:mt-0" use:appear={{ delay: 50 }}>{m.feature_3_title()}</h2>
-    <p class="mb-4" use:appear={{ delay: 100 }}>{m.feature_3_description()}</p>
+    <h2 class="mb-4 mt-8 text-3xl font-medium uppercase md:mt-0" use:appear={{ delay: 50 }}>{m.feature_why_title()}</h2>
+    <p class="mb-4" use:appear={{ delay: 100 }}>{m.feature_why_description()}</p>
     <div use:appear={{ delay: 150 }}>
-      <Button variant="secondary" onclick={() => goto('/pricing')}>{m.feature_3_button()}</Button>
+      <Button variant="secondary" href="https://docs.nine.ch/docs/deplo-io/getting-started-with-deploio/" target="_blank">
+        {m.feature_why_button()}
+      </Button>
     </div>
   </div>
 
@@ -48,11 +50,11 @@
     <div
       class="relative flex h-full w-full flex-col items-center justify-end gap-8 bg-gradient-to-t from-black/70 from-35% via-transparent via-60% to-mountain to-95% px-8 pb-[16%]"
     >
-      <img src={swissMadeSoftware} alt="swiss made software badge" class="h-10" use:appear={{ delay: 0 }} />
+      <img src={swissMadeSoftware} alt="swiss made software badge" class="h-16" use:appear={{ delay: 0 }} />
       <h3 class="text-center text-3xl font-medium uppercase text-white" use:appear={{ delay: 100 }}>
         {m.swiss_title()}
       </h3>
-      <p class="max-w-xl text-center text-white" use:appear={{ delay: 200 }}>{m.swiss_description()}</p>
+      <p class="max-w-xl text-center text-white whitespace-pre-line" use:appear={{ delay: 200 }}>{m.swiss_description()}</p>
     </div>
   </div>
 </section>
