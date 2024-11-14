@@ -7,22 +7,37 @@
   import { fly } from 'svelte/transition';
   import { appear } from '$lib';
 
+  const KEY_ID = '6LeflMYpAAAAANQb_AFEGGWCNCfcvt1WW3MtRFVx';
+
   let state: 'idle' | 'submitting' | 'success' = $state('idle');
 
-  const submit: SubmitFunction = () => {
+  const submit: SubmitFunction = async ({ formData }) => {
     state = 'submitting';
-    // TODO: gtag('event', 'conversion', {'send_to': 'AW-11323234654/N7bxCIDA2u8YEN6yq5cq'})
+
+    await new Promise((resolve) => window.grecaptcha.ready(() => resolve(undefined)));
+
+    const token = await window.grecaptcha.execute(KEY_ID, { action: 'submit' });
+
+    formData.set('token', token);
 
     return async ({ update }) => {
       await update();
       state = 'success';
+      window.gtag('event', 'conversion', { send_to: 'AW-11323234654/N7bxCIDA2u8YEN6yq5cq' });
     };
   };
 </script>
 
-<img class="-mb-px w-full -scale-x-100 bg-background" src={mountainVector} alt="mountain vector background" />
+<svelte:head>
+  <script src="https://www.google.com/recaptcha/api.js?render={KEY_ID}"></script>
+</svelte:head>
 
 <section id="register" class="bg-mountain text-center text-deploio">
+  <img
+    class="pointer-events-none -mb-px w-full -scale-x-100 select-none bg-background pt-8"
+    src={mountainVector}
+    alt="mountain vector background"
+  />
   <div class="container relative space-y-8">
     <h2 class="mx-auto max-w-[800px] text-3xl uppercase" use:appear={{ delay: 0 }}>{m.register_title()}</h2>
     <p class="mx-auto max-w-[600px]" use:appear={{ delay: 100 }}>{m.register_description()}</p>
@@ -30,7 +45,7 @@
     <form
       class="relative h-20 space-y-2"
       method="POST"
-      action="https://script.google.com/macros/s/AKfycbwT1lwiqSW1clYKkuHFrjcXYyjpZD-mreglv8ZvKqP7e-HrTPE3YPPno6zEOtuKAysKbw/exec"
+      action="/api/register"
       use:enhance={submit}
       use:appear={{ delay: 200 }}
     >
@@ -44,9 +59,9 @@
         disabled={state === 'submitting'}
       />
       <Button
+        class="h-10 w-full sm:w-auto"
         type="submit"
         variant={state === 'idle' ? 'secondary' : 'primary'}
-        class="h-10 w-full sm:w-auto"
         disabled={state === 'submitting'}
       >
         {m.register_button()}

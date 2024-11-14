@@ -49,7 +49,7 @@
   {/each}
 </nav>
 
-<nav class="container flex flex-wrap gap-8 !pt-0 text-sm font-medium opacity-20 transition-opacity hover:opacity-100">
+<nav class="container flex flex-wrap gap-8 !pt-0 text-sm font-medium">
   <p class="flex-grow">{m.footer_copyright({ year: new Date().getFullYear() })}</p>
   <Link href="https://docs.nine.ch/de/docs/legal-documents/general-terms-and-conditions">{m.footer_terms()}</Link>
   <Link href="https://www.nine.ch/de/privacy-policy">{m.footer_privacy()}</Link>
