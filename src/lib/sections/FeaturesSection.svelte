@@ -65,7 +65,7 @@
       commands={[
         {
           command: 'whois deploio.ch',
-          result: 'Nine Internet Solutions AG\nowned by Tom, Tim, …\nAS29691\nRechenzentrum in A und B',
+          result: 'Nine Internet Solutions AG\nowned by Tom, Tim and 9 more employees\nAS29691\nRechenzentren colozueri, e-shelter (Zürich)',
         },
       ]}
     />
