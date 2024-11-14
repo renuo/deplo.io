@@ -29,7 +29,7 @@
           />
         </svg>
 
-        <Link href="https://www.youtube.com/watch?v=3iOWZ4ou49Y">{m.hero_see_video()}</Link>
+        <Link href="https://www.youtube.com/watch?v=3iOWZ4ou49Y" target="_blank">{m.hero_see_video()}</Link>
       </div>
     </div>
   </div>

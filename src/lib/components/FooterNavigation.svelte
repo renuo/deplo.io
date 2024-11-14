@@ -6,7 +6,7 @@
 
   interface NavigationColumn {
     title: string;
-    links: { href: string; text: string }[];
+    links: { href?: string; text: string }[];
   }
 
   const columns: NavigationColumn[] = [
@@ -38,7 +38,7 @@
     {
       title: m.footer_contact(),
       links: [
-        { href: 'https://g.co/kgs/ArwtnDv', text: m.footer_address() },
+        { text: m.footer_address() },
         { href: `mailto:${m.footer_email()}`, text: m.footer_email() },
         { href: `tel:${m.footer_phone().replace(/\s/g, '')}`, text: m.footer_phone() },
       ],
@@ -52,7 +52,11 @@
       <h3 class="text-base font-medium uppercase">{title}</h3>
 
       {#each links as link}
-        <Link class="max-w-fit whitespace-pre" href={link.href}>{link.text}</Link>
+        {#if link.href}
+          <Link class="max-w-fit" href={link.href} target="_blank">{link.text}</Link>
+        {:else}
+          <p class="max-w-fit whitespace-pre">{link.text}</p>
+        {/if}
       {/each}
     </nav>
   {/each}
@@ -60,10 +64,10 @@
   <nav class="flex flex-col gap-4 text-sm md:ml-auto">
     <h3 class="text-base font-medium uppercase">{m.footer_service()}</h3>
     <div class="flex flex-wrap gap-8">
-      <a href="https://www.nine.ch">
+      <a href="https://www.nine.ch" target="_blank">
         <img class="h-12" src={nineLogo} alt="nine logo" />
       </a>
-      <a href="https://www.renuo.ch">
+      <a href="https://www.renuo.ch" target="_blank">
         <img class="h-12" src={renuoLogo} alt="renuo logo" />
       </a>
     </div>

@@ -43,7 +43,7 @@
   </a>
 
   {#each socials as social}
-    <a href={social.href}>
+    <a href={social.href} target="_blank">
       <img class="size-5" src={social.icon} alt={social.alt} />
     </a>
   {/each}

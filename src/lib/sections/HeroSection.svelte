@@ -21,7 +21,7 @@
 
       <div class="flex flex-wrap gap-2" use:appear={{ delay: 200 }}>
         <Button variant="primary" href="#register">{m.hero_start_now()}</Button>
-        <Button variant="outline" href="https://docs.nine.ch/docs/category/deploio-paas/">{m.hero_learn_more()}</Button>
+        <Button variant="outline" href="https://docs.nine.ch/docs/category/deploio-paas/" target="_blank">{m.hero_learn_more()}</Button>
       </div>
 
       <div class="flex items-center gap-2 text-xs opacity-70" use:appear={{ delay: 300 }}>
@@ -32,7 +32,7 @@
           />
         </svg>
 
-        <Link href="https://www.youtube.com/watch?v=3iOWZ4ou49Y">{m.hero_see_video()}</Link>
+        <Link href="https://www.youtube.com/watch?v=3iOWZ4ou49Y" target="_blank">{m.hero_see_video()}</Link>
       </div>
     </div>
   </div>
