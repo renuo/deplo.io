@@ -24,11 +24,18 @@
 </script>
 
 <div class={twMerge('relative', className)}>
-  <div class={twMerge('absolute h-full w-full', backgroundClass)}>
+  <div class={twMerge('pointer-events-none absolute h-full w-full select-none', backgroundClass)}>
     {#if image}
       <img aria-hidden="true" class="absolute h-full min-w-full object-cover object-top" src={image} alt="" />
     {:else if video}
-      <video aria-hidden="true" class="absolute h-full min-w-full object-cover object-top" autoplay muted loop>
+      <video
+        aria-hidden="true"
+        class="pointer-events-none absolute h-full min-w-full object-cover object-top"
+        autoplay
+        muted
+        loop
+        playsinline
+      >
         <source src={video} type="video/mp4" />
       </video>
     {/if}
