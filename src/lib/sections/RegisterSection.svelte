@@ -1,6 +1,6 @@
 <script lang="ts">
   import type { SubmitFunction } from '@sveltejs/kit';
-  import { PUBLIC_RECAPTCHA_KEY_ID } from '$env/static/public';
+  import { env } from '$env/dynamic/public';
   import * as m from '$lib/paraglide/messages';
   import Button from '$lib/components/Button.svelte';
   import mountainVector from '$lib/assets/backgrounds/mountain_vector.svg';
@@ -15,7 +15,7 @@
 
     await new Promise((resolve) => window.grecaptcha.ready(() => resolve(undefined)));
 
-    const token = await window.grecaptcha.execute(PUBLIC_RECAPTCHA_KEY_ID, { action: 'submit' });
+    const token = await window.grecaptcha.execute(env.PUBLIC_RECAPTCHA_KEY_ID, { action: 'submit' });
 
     formData.set('token', token);
 
@@ -28,7 +28,7 @@
 </script>
 
 <svelte:head>
-  <script src="https://www.google.com/recaptcha/api.js?render={PUBLIC_RECAPTCHA_KEY_ID}"></script>
+  <script src="https://www.google.com/recaptcha/api.js?render={env.PUBLIC_RECAPTCHA_KEY_ID}"></script>
 </svelte:head>
 
 <section id="register" class="bg-mountain text-center text-deploio">

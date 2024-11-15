@@ -1,6 +1,6 @@
 <script>
   import Link from '$lib/components/Link.svelte';
-  import * as m from '$lib/paraglide/messages.js';
+  import * as m from '$lib/paraglide/messages';
   import swissMadeSoftwareAndHosting from '$lib/assets/swiss_made_software_and_hosting.png';
   import facebookIcon from '$lib/assets/icons/facebook.svg';
   import instagramIcon from '$lib/assets/icons/instagram.svg';

@@ -1,6 +1,5 @@
 <script lang="ts">
   import Carousel from '$lib/components/Carousel.svelte';
-  import CodeBox from '$lib/components/CodeBox.svelte';
   import * as m from '$lib/paraglide/messages';
   import { appear } from '$lib';
 
@@ -35,7 +34,7 @@
     </div>
   </Carousel>
 
-  <div class="container relative z-10 mb-32 space-y-16">
+  <div class="container relative z-10 mb-32 space-y-20">
     <Feature
       title={m.feature_1_title()}
       description={m.feature_1_description()}

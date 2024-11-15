@@ -1,5 +1,5 @@
 import type { RequestHandler } from './$types';
-import { RECAPTCHA_SECRET_KEY } from '$env/static/private';
+import { env } from '$env/dynamic/private';
 import { json } from '@sveltejs/kit';
 
 const RECAPTCHA_SCORE_THRESHOLD = 0.5;
@@ -18,7 +18,7 @@ export const POST: RequestHandler = async (event) => {
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded',
     },
-    body: `secret=${RECAPTCHA_SECRET_KEY}&response=${captchaToken}`,
+    body: `secret=${env.RECAPTCHA_SECRET_KEY}&response=${captchaToken}`,
   });
   const captchaJson = await captchaResponse.json();
 
