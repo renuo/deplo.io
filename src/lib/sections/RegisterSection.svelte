@@ -38,43 +38,44 @@
     src={mountainVector}
     alt="mountain vector background"
   />
-  <div class="container relative space-y-8">
+
+  <div class="container relative z-10 space-y-8 !pt-16 md:!pt-0">
     <h2 class="mx-auto max-w-[800px] text-3xl uppercase" use:appear={{ delay: 0 }}>{m.register_title()}</h2>
     <p class="mx-auto max-w-[620px]" use:appear={{ delay: 100 }}>{m.register_description()}</p>
 
     <form
-      class="relative h-20 space-y-2"
+      class="relative space-y-2 md:h-32"
       method="POST"
       action="/api/register"
       use:enhance={submit}
       use:appear={{ delay: 200 }}
     >
-      <input
-        class="h-10 w-full border-2 border-background text-[15px] transition-colors focus:border-deploio focus:ring-0 max-md:text-sm sm:w-72"
-        class:opacity-50={state === 'submitting'}
-        name="email"
-        type="email"
-        placeholder={m.register_placeholder()}
-        required
-        disabled={state === 'submitting'}
-      />
-      <Button
-        class="h-10 w-full sm:w-auto"
-        type="submit"
-        variant={state === 'idle' ? 'secondary' : 'primary'}
-        disabled={state === 'submitting'}
-      >
-        {m.register_button()}
-      </Button>
-
       {#if state === 'success'}
-        <div class="absolute bottom-0 left-0 right-0 top-0 !m-0 bg-mountain text-deploio" transition:fly={{ y: 16 }}>
+        <div class="absolute bottom-0 left-0 right-0 top-0 !m-0 text-deploio" transition:fly={{ y: 16 }}>
           <h3 class="text-xl font-medium uppercase">{m.register_thanks()}</h3>
           <p class="mx-auto max-w-sm">{m.register_message()}</p>
         </div>
+      {:else}
+        <input
+          class="h-10 w-full border-2 border-background text-[15px] transition-colors focus:border-deploio focus:ring-0 max-md:text-sm sm:w-72"
+          class:opacity-50={state === 'submitting'}
+          name="email"
+          type="email"
+          placeholder={m.register_placeholder()}
+          required
+          disabled={state === 'submitting'}
+        />
+        <Button
+          class="h-10 w-full sm:w-auto"
+          type="submit"
+          variant={state === 'idle' ? 'secondary' : 'primary'}
+          disabled={state === 'submitting'}
+        >
+          {m.register_button()}
+        </Button>
+
+        <p class="mx-auto max-w-[500px] text-sm" use:appear={{ delay: 100 }}>{m.register_promo()}</p>
       {/if}
     </form>
-
-    <p class="mx-auto !mt-0 max-w-[500px] text-sm" use:appear={{ delay: 100 }}>{m.register_promo()}</p>
   </div>
 </section>

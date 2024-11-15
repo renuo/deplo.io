@@ -43,7 +43,7 @@
     </div>
   </Carousel>
 
-  <div class="relative -z-0 -mt-[30%] h-[600px] md:h-[1000px] lg:h-[1400px]">
+  <div class="relative -z-0 -mt-[30%] h-[1000px] md:h-[1000px] lg:h-[1400px] 2xl:-mt-[600px]">
     <img
       src={mountainOne}
       alt="mountain from the swiss alps"
@@ -51,7 +51,7 @@
     />
 
     <div
-      class="relative flex h-full w-full flex-col items-center justify-end gap-8 bg-gradient-to-t from-black/70 from-35% via-transparent via-60% to-mountain to-95% px-8 pb-[16%]"
+      class="relative flex h-full w-full flex-col items-center justify-end gap-8 bg-gradient-to-t from-black/70 from-20% via-transparent via-60% to-mountain px-8 pb-[16%] 2xl:pb-40"
     >
       <img src={swissMadeSoftware} alt="swiss made software badge" class="h-16" use:appear={{ delay: 0 }} />
       <h3 class="text-center text-3xl font-medium uppercase text-white" use:appear={{ delay: 100 }}>

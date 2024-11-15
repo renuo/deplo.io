@@ -10,7 +10,7 @@
   <title>Deploio - Schweizer PaaS</title>
 </svelte:head>
 
-<main>
+<main class="relative">
   <HeroSection />
   <FeaturesSection />
   <NotesSection />
