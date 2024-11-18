@@ -23,6 +23,7 @@ export const POST: RequestHandler = async (event) => {
   const captchaJson = await captchaResponse.json();
 
   if (!captchaResponse.ok || !captchaJson.success || captchaJson.score < RECAPTCHA_SCORE_THRESHOLD) {
+    console.error('FAILED TO VERIFY CAPTCHA: ', captchaJson);
     return json({ success: false, message: 'Failed to verify reCAPTCHA' }, { status: 500 });
   }
 
@@ -37,6 +38,7 @@ export const POST: RequestHandler = async (event) => {
   );
 
   if (!sheetResponse.ok) {
+    console.error('FAILED TO REGISTER TO SHEET: ', sheetResponse);
     return json({ success: false, message: 'Failed to register' }, { status: 500 });
   }
 
