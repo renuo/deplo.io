@@ -23,7 +23,7 @@ export const POST: RequestHandler = async (event) => {
   const captchaJson = await captchaResponse.json();
 
   if (!captchaResponse.ok || !captchaJson.success || captchaJson.score < RECAPTCHA_SCORE_THRESHOLD) {
-    console.error('FAILED TO VERIFY CAPTCHA: ', captchaJson);
+    console.error('FAILED TO VERIFY CAPTCHA: ', captchaJson, captchaToken, env.RECAPTCHA_SECRET_KEY.slice(-5));
     return json({ success: false, message: 'Failed to verify reCAPTCHA' }, { status: 500 });
   }
 
