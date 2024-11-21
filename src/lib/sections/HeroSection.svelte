@@ -11,34 +11,34 @@
 <Background
   video={deploioVideo}
   class="h-[800px]"
-  gradient-class="bg-gradient-to-t from-deploio via-80% to-transparent"
+  gradient-class="bg-gradient-to-t from-deploio to-hero/40"
   wrapper-class="h-full"
 >
-  <section class="container relative flex h-full flex-col justify-end space-y-6 pb-16 text-deploio">
+  <section class="container relative flex h-full flex-col justify-end pb-16 text-deploio">
     <div class="relative flex h-full w-full flex-col justify-end text-white">
-      <div class="mb-16 space-y-6">
-        <h1 class="max-w-[500px] text-5xl text-[46px] font-medium leading-[50px]" use:appear={{ delay: 0 }}>
+      <div class="mb-8">
+        <h1 class="text-h1 mb-4 max-w-[450px] md:max-w-[600px]" use:appear={{ delay: 0 }}>
           {m.hero_title()}
         </h1>
-        <p class="max-w-[500px] text-lg" use:appear={{ delay: 100 }}>{m.hero_description()}</p>
+        <p class="text-[20px] max-w-[550px] mb-10" use:appear={{ delay: 100 }}>{m.hero_description()}</p>
 
-        <div class="flex flex-wrap gap-2" use:appear={{ delay: 200 }}>
+        <div class="flex flex-wrap gap-2 md:gap-6 mb-3" use:appear={{ delay: 200 }}>
           <Button variant="primary" href="#register">{m.hero_start_now()}</Button>
           <Button variant="outline" href="https://docs.nine.ch/docs/category/deploio-paas/" target="_blank">
             {m.hero_learn_more()}
           </Button>
         </div>
 
-        <div class="flex items-center gap-2 text-xs opacity-70" use:appear={{ delay: 300 }}>
-          <svg width="8" height="10" viewBox="0 0 8 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <a href="https://www.youtube.com/watch?v=3iOWZ4ou49Y" target="_blank" class="flex items-center py-3 gap-2 text-xs" use:appear={{ delay: 300 }}>
+          <svg class="opacity-70" width="8" height="10" viewBox="0 0 8 10" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path
               d="M0.416748 9.01688V0L7.73071 4.50844L0.416748 9.01688ZM1.50008 7.12042L5.76612 4.50844L1.50008 1.89646V7.12042Z"
               fill="white"
             />
           </svg>
 
-          <Link href="https://www.youtube.com/watch?v=3iOWZ4ou49Y" target="_blank">{m.hero_see_video()}</Link>
-        </div>
+          <Link class="opacity-70">{m.hero_see_video()}</Link>
+        </a>
       </div>
     </div>
   </section>

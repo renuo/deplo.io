@@ -1,5 +1,5 @@
-import forms from '@tailwindcss/forms';
 import type { Config } from 'tailwindcss';
+import forms from '@tailwindcss/forms';
 
 export default {
   content: ['./src/**/*.{html,js,svelte,ts}'],
@@ -7,6 +7,7 @@ export default {
     extend: {
       colors: {
         deploio: '#141D50',
+        hero: '#898EA7',
         mountain: '#FCFAFA',
         background: '#EAE9E8',
       },

@@ -9,6 +9,8 @@ export function appear(element: HTMLElement, options?: { delay?: number }) {
         element.classList.remove('appear-to');
       }
     });
+  }, {
+    rootMargin: '20px',
   });
 
   intersectionObserver.observe(element);

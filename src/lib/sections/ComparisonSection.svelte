@@ -11,12 +11,13 @@
 
 <section class="bg-background py-16">
   <div class="container space-y-8 !pb-4 text-deploio">
-    <h2 class="text-3xl font-medium uppercase" use:appear={{ delay: 0 }}>{m.comparison_title()}</h2>
+    <h2 class="text-h2" use:appear={{ delay: 0 }}>{m.comparison_title()}</h2>
     <p class="max-w-xl" use:appear={{ delay: 100 }}>{m.comparison_description()}</p>
   </div>
 
-  <div class="container" use:appear={{ delay: 200 }}>
+  <div class="container max-sm:!px-0" use:appear={{ delay: 200 }}>
     <ComparisonTable
+      class="max-sm:px-6"
       images={[deploioLogo, herokuLogo, divioLogo, renderLogo]}
       alts={['deploio logo', 'heroku logo', 'divio logo', 'render logo']}
       titles={[

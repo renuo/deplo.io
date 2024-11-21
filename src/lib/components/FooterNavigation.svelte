@@ -48,8 +48,8 @@
 
 <div class="container flex flex-col gap-20 !py-8 md:flex-row">
   {#each columns as { title, links }}
-    <nav class="flex flex-col gap-4 md:text-sm">
-      <h3 class="text-base font-medium uppercase">{title}</h3>
+    <nav class="flex flex-col gap-4">
+      <h3 class="text-base font-semibold uppercase">{title}</h3>
 
       {#each links as link}
         {#if link.href}
@@ -63,12 +63,12 @@
 
   <nav class="flex flex-col gap-4 text-sm md:ml-auto">
     <h3 class="text-base font-medium uppercase">{m.footer_service()}</h3>
-    <div class="flex flex-wrap gap-8">
+    <div class="flex flex-wrap gap-8 lg:gap-16">
       <a href="https://www.nine.ch" target="_blank">
-        <img class="h-12" src={nineLogo} alt="nine logo" />
+        <img class="h-10 lg:h-14" src={nineLogo} alt="nine logo" />
       </a>
       <a href="https://www.renuo.ch" target="_blank">
-        <img class="h-12" src={renuoLogo} alt="renuo logo" />
+        <img class="h-10 lg:h-14" src={renuoLogo} alt="renuo logo" />
       </a>
     </div>
   </nav>
