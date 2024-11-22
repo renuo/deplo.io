@@ -37,7 +37,7 @@
   ];
 </script>
 
-<nav class="container flex flex-wrap items-center gap-4 !pb-8 !mt-14">
+<nav class="container !mt-14 flex flex-wrap items-center gap-4 !pb-8">
   <a class="flex-grow basis-full md:basis-auto" href="https://www.swissmadesoftware.org/home.html">
     <img class="h-12" src={swissMadeSoftwareAndHosting} alt="swiss made software + hosting" />
   </a>
@@ -49,11 +49,11 @@
   {/each}
 </nav>
 
-<div class="container !py-0 !my-0">
+<div class="container !my-0 !py-0">
   <hr class="border-t" />
 </div>
 
-<nav class="container flex !pt-8 flex-wrap gap-8 text-sm">
+<nav class="container flex flex-wrap gap-8 !pt-8 text-sm">
   <p class="flex-grow">{m.footer_copyright({ year: new Date().getFullYear() })}</p>
   <Link href="https://docs.nine.ch/de/docs/legal-documents/general-terms-and-conditions">{m.footer_terms()}</Link>
   <Link href="https://www.nine.ch/de/privacy-policy">{m.footer_privacy()}</Link>

@@ -40,7 +40,7 @@
   </tr>
 {/snippet}
 
-<div class={twMerge("max-w-full overflow-x-auto whitespace-nowrap", className)}>
+<div class={twMerge('max-w-full overflow-x-auto whitespace-nowrap', className)}>
   <table class="w-full">
     <thead>
       <tr>

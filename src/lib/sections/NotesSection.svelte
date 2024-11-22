@@ -21,7 +21,7 @@
       alt="hosted on deploio sticker"
       class="pointer-events-none absolute -bottom-8 right-8 size-48 -rotate-12 opacity-5 transition-transform group-hover:rotate-12 md:bottom-auto md:right-auto md:-ml-44 md:-mt-8"
     />
-    <h2 class="mb-5 mt-8 text-h2 md:mt-0" use:appear={{ delay: 50 }}>{m.feature_why_title()}</h2>
+    <h2 class="text-h2 mb-5 mt-8 md:mt-0" use:appear={{ delay: 50 }}>{m.feature_why_title()}</h2>
     <p class="mb-8 text-[20px]" use:appear={{ delay: 100 }}>{m.feature_why_description()}</p>
     <div class="flex" use:appear={{ delay: 150 }}>
       <Button
@@ -35,7 +35,7 @@
   </div>
 
   <Carousel class="relative z-10 px-6 py-16">
-    <div class="my-16 flex w-max gap-6 md:my-0 lg:justify-between mx-auto " use:appear={{ delay: 0 }}>
+    <div class="mx-auto my-16 flex w-max gap-6 md:my-0 lg:justify-between" use:appear={{ delay: 0 }}>
       <Note title={m.notes_1_title()} description={m.notes_1_description()} />
       <Note title={m.notes_2_title()} description={m.notes_2_description()} />
       <Note title={m.notes_3_title()} description={m.notes_3_description()} />
@@ -43,7 +43,7 @@
     </div>
   </Carousel>
 
-  <div class="relative -z-0 -mt-[30%] h-[1000px] md:h-[1000px] lg:h-[1400px] 2xl:h-[2000px] 2xl:-mt-[600px]">
+  <div class="relative -z-0 -mt-[30%] h-[1000px] md:h-[1000px] lg:h-[1400px] 2xl:-mt-[600px] 2xl:h-[2000px]">
     <img
       src={mountainOne}
       alt="mountain from the swiss alps"
@@ -51,11 +51,13 @@
     />
 
     <div
-      class="relative flex h-full w-full items-center flex-col justify-end bg-gradient-to-t from-transparent to-mountain"
+      class="relative flex h-full w-full flex-col items-center justify-end bg-gradient-to-t from-transparent to-mountain"
     >
-      <div class="bg-gradient-to-t from-black/70 from-50% to-transparent flex flex-col w-full items-center px-8 py-[16%] 2xl:py-96">
-        <img src={swissMadeSoftware} alt="swiss made software badge" class="h-16 mb-20" use:appear={{ delay: 0 }} />
-        <h3 class="text-h2 text-center mb-5 text-white" use:appear={{ delay: 100 }}>
+      <div
+        class="flex w-full flex-col items-center bg-gradient-to-t from-black/70 from-50% to-transparent px-8 py-[16%] 2xl:py-96"
+      >
+        <img src={swissMadeSoftware} alt="swiss made software badge" class="mb-20 h-16" use:appear={{ delay: 0 }} />
+        <h3 class="text-h2 mb-5 text-center text-white" use:appear={{ delay: 100 }}>
           {m.swiss_title()}
         </h3>
         <p class="max-w-xl whitespace-pre-line text-center text-white" use:appear={{ delay: 200 }}>
