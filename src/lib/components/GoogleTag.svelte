@@ -16,6 +16,4 @@
         gtag('js', new Date());
         gtag('config', googleTagId);
     });
-
-    alert(`Tag: ${googleTagId}`)
 </script>
