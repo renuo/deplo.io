@@ -13,6 +13,18 @@ body {
   @apply mx-auto max-w-7xl p-6 md:p-16;
 }
 
+.text-h1 {
+  @apply text-[40px] font-medium uppercase leading-[110%] tracking-[0.02em] md:text-[57px];
+}
+
+.text-h2 {
+  @apply text-[24px] font-normal uppercase leading-[117%] tracking-[0.02em] md:text-[40px];
+}
+
+.text-h3 {
+  @apply text-[24px] font-medium uppercase leading-[117%] tracking-[0.02em] md:text-[24px];
+}
+
 .appear-from {
   @apply translate-y-10 opacity-0 transition duration-500 motion-reduce:transition-none;
 }

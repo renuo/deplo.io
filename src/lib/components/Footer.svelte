@@ -5,14 +5,14 @@
   import Background from '$lib/components/Background.svelte';
   import FooterNavigation from '$lib/components/FooterNavigation.svelte';
   import FooterSocials from '$lib/components/FooterSocials.svelte';
-  import mountainTwo from '$lib/assets/backgrounds/mountain_2.jpg';
+  import mountainTwo from '$lib/assets/backgrounds/mountain_2.png';
   import FooterCertificates from '$lib/components/FooterCertificates.svelte';
 </script>
 
 <Background
   image={mountainTwo}
-  class="-mt-[40vw] md:-mt-[20vw]"
-  gradient-class="bg-gradient-to-t from-deploio via-transparent/10 from-25% via-65% to-mountain"
+  class="-mt-px bg-mountain pt-16"
+  gradient-class="bg-gradient-to-t from-deploio to-transparent"
 >
   <footer class="pt-[500px] text-white md:pt-[40vw]">
     <FooterCertificates />

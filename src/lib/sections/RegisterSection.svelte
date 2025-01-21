@@ -40,8 +40,8 @@
   />
 
   <div class="container relative z-10 space-y-8 !pt-16 md:!pt-0">
-    <h2 class="mx-auto max-w-[800px] text-3xl uppercase" use:appear={{ delay: 0 }}>{m.register_title()}</h2>
-    <p class="mx-auto max-w-[620px]" use:appear={{ delay: 100 }}>{m.register_description()}</p>
+    <h2 class="text-h2 mx-auto max-w-[800px]" use:appear={{ delay: 0 }}>{m.register_title()}</h2>
+    <p class="mx-auto max-w-[620px] text-[20px]" use:appear={{ delay: 100 }}>{m.register_description()}</p>
 
     <form
       class="relative space-y-2 md:h-32"
@@ -57,7 +57,7 @@
         </div>
       {:else}
         <input
-          class="h-10 w-full border-2 border-background text-[15px] transition-colors focus:border-deploio focus:ring-0 max-md:text-sm sm:w-72"
+          class="h-10 w-full border-2 border-background bg-transparent text-[15px] transition-colors focus:border-deploio focus:ring-0 max-md:text-sm sm:w-72"
           class:opacity-50={state === 'submitting'}
           name="email"
           type="email"
@@ -66,7 +66,7 @@
           disabled={state === 'submitting'}
         />
         <Button
-          class="h-10 w-full sm:w-auto"
+          class="sm:ml-3 h-10 w-full sm:w-auto"
           type="submit"
           variant={state === 'idle' ? 'secondary' : 'primary'}
           disabled={state === 'submitting'}

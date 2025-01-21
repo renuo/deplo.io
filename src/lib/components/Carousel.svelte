@@ -8,7 +8,7 @@
     children: Snippet;
   }
 
-  let { speed = 0.01, children, class: className, ...rest }: CarouselProps = $props();
+  let { speed = 0.04, children, class: className, ...rest }: CarouselProps = $props();
 
   let scrolling = $state(false);
   let scrollable: HTMLDivElement | null = $state(null);

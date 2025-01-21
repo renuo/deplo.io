@@ -9,5 +9,5 @@ export const i18n = createI18n(runtime);
 export function switchToLanguage(newLanguage: AvailableLanguageTag) {
   const canonicalPath = i18n.route(get(page).url.pathname);
   const localisedPath = i18n.resolveRoute(canonicalPath, newLanguage);
-  goto(localisedPath);
+  return goto(localisedPath);
 }

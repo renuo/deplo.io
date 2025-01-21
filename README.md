@@ -1,5 +1,9 @@
 # Deplo.io
 
+- [Deplo.io](https://deplo.io)
+- [Deplo.io develop](https://develop.5666d75.deploio.app/)
+- [Deplo.io Contact Request Tracker](https://docs.google.com/spreadsheets/d/131rDpYeXOnmWOocurwgg0tjId01k5rn2navTFBl51dQ/edit?gid=0#gid=0)
+
 ## Developing
 
 Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
