@@ -6,7 +6,7 @@ WORKDIR /app
 COPY package.json ./
 RUN npm install
 
-RUN echo "VITE_GOOGLE_TAG_ID=$VITE_GOOGLE_TAG_ID" > .env
+ENV VITE_GOOGLE_TAG_ID=$VITE_GOOGLE_TAG_ID
 
 COPY . .
 RUN npm run build
