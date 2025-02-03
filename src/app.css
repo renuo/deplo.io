@@ -19,12 +19,17 @@ body {
 }
 
 .text-h2 {
-  @apply text-[24px] font-normal uppercase leading-[117%] tracking-[0.02em] md:text-[40px];
+  @apply text-[32px] font-normal uppercase leading-[117%] tracking-[0.02em] md:text-[40px];
 }
 
 .text-h3 {
   @apply text-[24px] font-normal uppercase leading-[117%] tracking-[0.02em] md:text-[24px];
 }
+
+.text-h4 {
+  @apply text-[20px] font-medium uppercase leading-[117%] tracking-[0.02em] md:text-[24px];
+}
+
 
 .appear-from {
   @apply translate-y-10 opacity-0 transition duration-500 motion-reduce:transition-none;

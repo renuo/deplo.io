@@ -38,7 +38,7 @@
   });
 </script>
 
-<header class="container absolute left-0 right-0 top-0 z-20 flex items-start justify-between">
+<header class="container absolute left-0 top-0 z-20 flex items-start justify-between">
   <a
     href="/"
     class="{isOpen ? 'hidden' : 'flex'} md:flex select-none flex-row items-center justify-center gap-2 md:h-48 md:w-48 md:flex-col md:rounded-full md:bg-deploio"
