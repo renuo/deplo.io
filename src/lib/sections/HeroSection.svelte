@@ -32,7 +32,7 @@
         <a
           href="https://www.youtube.com/watch?v=3iOWZ4ou49Y"
           target="_blank"
-          class="flex items-center gap-2 py-3 text-xs"
+          class="inline-flex items-center gap-2 py-3 text-xs"
           use:appear={{ delay: 300 }}
         >
           <svg
