@@ -63,7 +63,7 @@
       src={deploioSticker}
       draggable="false"
       alt="hosted on deploio sticker"
-      class="pointer-events-none absolute -bottom-8 right-8 size-48 -rotate-12 opacity-5 transition-transform group-hover:rotate-12 md:bottom-auto md:right-auto md:-ml-44 md:-mt-8"
+      class="pointer-events-none absolute -top-0 right-8 size-48 -rotate-12 opacity-5 transition-transform group-hover:rotate-12 md:bottom-auto md:right-auto md:-ml-44 md:-mt-8"
     />
     <h2 class="text-h2 mb-5 mt-8 md:mt-0" use:appear={{ delay: 50 }}>{m.feature_why_title()}</h2>
     <p class="mb-8 text-[20px]" use:appear={{ delay: 100 }}>{m.feature_why_description()}</p>
@@ -87,11 +87,12 @@
     </div>
   </Carousel>
 
-  <div class="relative -z-0 -mt-[30%] h-[1000px] md:h-[1000px] lg:h-[1400px] 2xl:-mt-[600px] 2xl:h-[2000px]">
+  <div
+    class="relative -z-0 -mt-[130%] h-[1400px] md:h-[1000px] md:-mt-[30%] lg:h-[1400px] 2xl:-mt-[600px] 2xl:h-[2000px]">
     <img
       src={mountainOne}
       alt="mountain from the swiss alps"
-      class="absolute bottom-0 top-0 h-full w-full object-cover object-top"
+      class="absolute bottom-0 top-0 h-full w-full object-cover object-[30%_70%]"
     />
 
     <div
