@@ -19,7 +19,7 @@
 <a {...rest} {href} class={twMerge('group relative inline-block truncate text-white', className)}>
   {@render children()}
   <span
-    class="absolute bottom-0 left-0 h-0.5 w-0 bg-white/50 text-[15px] transition-all group-hover:w-full"
+    class="absolute bottom-0 left-0 h-[0.9px] w-0 bg-white text-[15px] transition-all group-hover:w-full"
     class:w-full={isCurrentPage}
   >
     &nbsp;
