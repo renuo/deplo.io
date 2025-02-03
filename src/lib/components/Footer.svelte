@@ -11,7 +11,7 @@
 
 <Background
   image={mountainTwo}
-  class="-mt-px bg-mountain pt-16"
+  class="-mt-px bg-mountain pt-16 max-h-[950px] md:max-h-none"
   gradient-class="bg-gradient-to-t from-deploio to-transparent"
 >
   <footer class="pt-[500px] text-white md:pt-[40vw]">
