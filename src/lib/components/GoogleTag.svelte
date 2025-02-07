@@ -10,8 +10,8 @@
         document.head.appendChild(scriptTag);
 
         window.dataLayer = window.dataLayer || [];
-        function gtag(...args) {
-            window.dataLayer.push(args);
+        function gtag() {
+            window.dataLayer.push(arguments);
         }
         gtag('js', new Date());
         gtag('config', googleTagId);
