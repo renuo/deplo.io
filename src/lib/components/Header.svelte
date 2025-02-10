@@ -13,8 +13,8 @@
     href="/"
     class="flex select-none flex-row items-center justify-center gap-2 md:h-48 md:w-48 md:flex-col md:rounded-full md:bg-deploio"
   >
-    <img class="h-7 md:h-16" src={deploioLogo} alt="deploio logo" />
-    <img class="h-6 md:h-7" src={deploioName} alt="deploio" />
+    <img class="h-7 md:h-16" src={deploioLogo} width="74" height="64" alt="deploio logo" />
+    <img class="h-6 md:h-7" src={deploioName} width="115" height="28" alt="deploio" />
   </a>
 
   <nav class="flex items-center gap-8 max-md:gap-4 max-md:self-stretch">
