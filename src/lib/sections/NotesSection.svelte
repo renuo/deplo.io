@@ -5,10 +5,10 @@
   import * as m from '$lib/paraglide/messages';
   import { appear } from '$lib';
 
-  import deploioSticker from '$lib/assets/deploio_sticker.png';
+  import deploioSticker from '$lib/assets/deploio_sticker.webp';
   import mountainVector from '$lib/assets/backgrounds/mountain_vector.svg';
-  import mountainOne from '$lib/assets/backgrounds/mountain_1.jpg';
-  import swissMadeSoftware from '$lib/assets/swiss_made_software_and_hosting.png';
+  import mountainOne from '$lib/assets/backgrounds/mountain_1.webp';
+  import swissMadeSoftware from '$lib/assets/swiss_made_software_and_hosting.webp';
 </script>
 
 <img src={mountainVector} alt="mountain vector background" class="pointer-events-none -my-px w-full bg-deploio" />

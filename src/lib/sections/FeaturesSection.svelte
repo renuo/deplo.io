@@ -4,12 +4,12 @@
   import { appear } from '$lib';
 
   import deploioWave from '$lib/assets/deploio_wave.svg';
-  import node from '$lib/assets/language_node.png';
-  import django from '$lib/assets/language_django.png';
-  import go from '$lib/assets/language_go.png';
-  import php from '$lib/assets/language_php.png';
-  import python from '$lib/assets/language_python.png';
-  import ruby from '$lib/assets/language_ruby.png';
+  import node from '$lib/assets/language_node.webp';
+  import django from '$lib/assets/language_django.webp';
+  import go from '$lib/assets/language_go.webp';
+  import php from '$lib/assets/language_php.webp';
+  import python from '$lib/assets/language_python.webp';
+  import ruby from '$lib/assets/language_ruby.webp';
   import Feature from '$lib/components/Feature.svelte';
 </script>
 
