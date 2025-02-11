@@ -66,7 +66,7 @@
           disabled={state === 'submitting'}
         />
         <Button
-          class="sm:ml-3 h-10 w-full sm:w-auto"
+          class="h-10 w-full sm:ml-3 sm:w-auto"
           type="submit"
           variant={state === 'idle' ? 'secondary' : 'primary'}
           disabled={state === 'submitting'}
