@@ -65,10 +65,10 @@
     <h3 class="text-base font-medium uppercase">{m.footer_service()}</h3>
     <div class="flex flex-wrap gap-8 lg:gap-16">
       <a href="https://www.nine.ch" target="_blank">
-        <img class="h-10 lg:h-14" src={nineLogo} width="116" height="40" alt="nine logo" />
+        <img class="h-10 lg:h-14" src={nineLogo} alt="nine logo" />
       </a>
       <a href="https://www.renuo.ch" target="_blank">
-        <img class="h-10 lg:h-14" src={renuoLogo} width="154" height="40" alt="renuo logo" />
+        <img class="h-10 lg:h-14" src={renuoLogo} alt="renuo logo" />
       </a>
     </div>
   </nav>
