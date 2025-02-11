@@ -5,7 +5,7 @@
   import Background from '$lib/components/Background.svelte';
   import FooterNavigation from '$lib/components/FooterNavigation.svelte';
   import FooterSocials from '$lib/components/FooterSocials.svelte';
-  import mountainTwo from '$lib/assets/backgrounds/mountain_2.png';
+  import mountainTwo from '$lib/assets/backgrounds/mountain_2.webp';
   import FooterCertificates from '$lib/components/FooterCertificates.svelte';
 </script>
 

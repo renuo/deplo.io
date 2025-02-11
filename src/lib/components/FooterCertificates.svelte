@@ -1,7 +1,7 @@
 <script>
-  import iso9001Icon from '$lib/assets/icons/iso_9001:2015_certification.png';
-  import iso27001Icon from '$lib/assets/icons/iso_27001:2013_certification.png';
-  import co2NeutralIcon from '$lib/assets/icons/co2_neutral_certification.png';
+  import iso9001Icon from '$lib/assets/icons/iso_9001:2015_certification.webp';
+  import iso27001Icon from '$lib/assets/icons/iso_27001:2013_certification.webp';
+  import co2NeutralIcon from '$lib/assets/icons/co2_neutral_certification.webp';
 </script>
 
 <div class="container !mt-0">

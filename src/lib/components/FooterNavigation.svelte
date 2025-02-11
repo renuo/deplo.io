@@ -1,8 +1,8 @@
 <script lang="ts">
   import Link from '$lib/components/Link.svelte';
   import * as m from '$lib/paraglide/messages';
-  import nineLogo from '$lib/assets/logos/nine_logo.png';
-  import renuoLogo from '$lib/assets/logos/renuo_logo.png';
+  import nineLogo from '$lib/assets/logos/nine_logo.webp';
+  import renuoLogo from '$lib/assets/logos/renuo_logo.webp';
 
   interface NavigationColumn {
     title: string;
