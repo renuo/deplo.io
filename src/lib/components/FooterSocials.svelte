@@ -39,7 +39,7 @@
 
 <nav class="container !mt-14 flex flex-wrap items-center gap-4 !pb-8">
   <a class="flex-grow basis-full md:basis-auto" href="https://www.swissmadesoftware.org/home.html">
-    <img class="h-12" src={swissMadeSoftwareAndHosting} alt="swiss made software + hosting" />
+    <img class="h-12" src={swissMadeSoftwareAndHosting} width="240" height="48" alt="swiss made software + hosting" />
   </a>
 
   {#each socials as social}

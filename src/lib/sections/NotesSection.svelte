@@ -56,7 +56,14 @@
       <div
         class="flex w-full flex-col items-center bg-gradient-to-t from-black/70 from-50% to-transparent px-8 py-[16%] 2xl:py-96"
       >
-        <img src={swissMadeSoftware} alt="swiss made software badge" class="mb-20 h-16" use:appear={{ delay: 0 }} />
+        <img
+          src={swissMadeSoftware}
+          alt="swiss made software badge"
+          class="mb-20 h-16"
+          width="319"
+          height="64"
+          use:appear={{ delay: 0 }}
+        />
         <h3 class="text-h2 mb-5 text-center text-white" use:appear={{ delay: 100 }}>
           {m.swiss_title()}
         </h3>

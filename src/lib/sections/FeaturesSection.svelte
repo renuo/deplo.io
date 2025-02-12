@@ -25,12 +25,12 @@
       class="pointer-events-none flex w-max select-none items-center gap-[10vw] lg:w-full lg:justify-between lg:gap-16"
       use:appear={{ delay: 0 }}
     >
-      <img class="h-10" src={node} alt="Node.js" />
-      <img class="h-10" src={django} alt="Django" />
-      <img class="h-10" src={go} alt="Go" />
-      <img class="h-10" src={php} alt="PHP" />
-      <img class="h-10" src={python} alt="Python" />
-      <img class="h-10" src={ruby} alt="Ruby" />
+      <img class="h-10" src={node} width="64" height="40" alt="Node.js" />
+      <img class="h-10" src={django} width="111" height="40" alt="Django" />
+      <img class="h-10" src={go} width="104" height="40" alt="Go" />
+      <img class="h-10" src={php} width="78" height="40" alt="PHP" />
+      <img class="h-10" src={python} width="40" height="40" alt="Python" />
+      <img class="h-10" src={ruby} width="111" height="40" alt="Ruby" />
     </div>
   </Carousel>
 
