@@ -41,7 +41,7 @@
     href="/"
     class="{isOpen ? 'hidden' : 'flex'} md:flex select-none flex-row items-center justify-center gap-2 md:h-48 md:w-48 md:flex-col md:rounded-full md:bg-deploio"
   >
-    <img class="h-8 md:h-16" src={deploioLogo} alt="deploio logo" />
+    <img class="h-[30px] md:h-16" src={deploioLogo} alt="deploio logo" />
     <img class="h-6 md:h-7" src={deploioName} alt="deploio" />
   </a>
 
@@ -84,7 +84,7 @@
   >
     <div class="container pt-4">
       <a href="/" class="flex items-center">
-        <img class="h-7" src={deploioLogoMobile} alt="deploio logo" />
+        <img class="h-[30px]" src={deploioLogoMobile} alt="deploio logo" />
       </a>
     </div>
     
@@ -97,7 +97,7 @@
         {m.navigation_pricing()}
       </a>
       
-      <div class="h-6"></div>
+      <div class="h-2"></div>
       
       <a 
         href="https://docs.deplo.io" 
@@ -107,7 +107,7 @@
         {m.navigation_documentation()}
       </a>
       
-      <div class="h-6"></div>
+      <div class="h-2"></div>
       
       <a 
         href="https://cockpit.nine.ch/de/session/new?origin=%2F" 
@@ -118,7 +118,7 @@
         {m.navigation_login()}
       </a>
       
-      <div class="h-12"></div>
+      <div class="h-9"></div>
       
       <a 
         href="#register" 

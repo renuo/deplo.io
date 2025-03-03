@@ -17,7 +17,7 @@
   <button class="text-deploio text-2xl" onclick={() => switchToLanguage('de')} class:font-bold={language === 'de'}>
     {m.navigation_de()}
   </button>
-  <div class="h-7 w-px max-w-px bg-deploio self-center">&nbsp;</div>
+  <div class="h-[46px] md:h-7 w-[2px] max-w-[2px] bg-deploio self-center">&nbsp;</div>
   <button class="text-deploio text-2xl" onclick={() => switchToLanguage('en')} class:font-bold={language === 'en'}>
     {m.navigation_en()}
   </button>
