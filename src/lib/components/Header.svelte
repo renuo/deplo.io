@@ -42,7 +42,7 @@
     class="{isOpen ? 'hidden' : 'flex'} md:flex select-none flex-row items-center justify-center gap-2 md:h-48 md:w-48 md:flex-col md:rounded-full md:bg-deploio"
   >
     <img class="h-[30px] md:h-16" src={deploioLogo} alt="deploio logo" />
-    <img class="h-6 md:h-7" src={deploioName} alt="deploio" />
+    <img class="h-5 md:h-7" src={deploioName} alt="deploio" />
   </a>
 
   <!-- Desktop navigation -->
@@ -88,37 +88,33 @@
       </a>
     </div>
     
-    <nav class="flex flex-col w-full pt-12 container h-full relative">
+    <nav class="flex flex-col w-full pt-12 mt-9 container h-full relative">
       <a 
         href="/pricing" 
         on:click={toggleMenu}
-        class="text-deploio py-3 text-2xl tracking-[0.02em] font-medium w-full"
+        class="text-deploio py-3 text-2xl tracking-[0.02em] font-normal w-full"
       >
         {m.navigation_pricing()}
       </a>
       
-      <div class="h-2"></div>
-      
       <a 
         href="https://docs.deplo.io" 
         on:click={toggleMenu}
-        class="text-deploio py-3 text-2xl tracking-[0.02em] font-medium w-full"
+        class="text-deploio py-3 text-2xl tracking-[0.02em] font-normal w-full"
       >
         {m.navigation_documentation()}
       </a>
-      
-      <div class="h-2"></div>
       
       <a 
         href="https://cockpit.nine.ch/de/session/new?origin=%2F" 
         target="_blank" 
         on:click={toggleMenu}
-        class="text-deploio py-3 text-2xl tracking-[0.02em] font-medium w-full"
+        class="text-deploio py-3 text-2xl tracking-[0.02em] font-normal w-full"
       >
         {m.navigation_login()}
       </a>
       
-      <div class="h-9"></div>
+      <div class="h-8"></div>
       
       <a 
         href="#register" 
