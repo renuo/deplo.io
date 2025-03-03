@@ -56,7 +56,7 @@
   </nav>
 
   <button 
-    class="md:hidden p-3 z-30 ml-auto {isOpen ? 'text-deploio absolute top-0 right-0' : 'text-white absolute top-0 right-0'}" 
+    class="md:hidden p-3 z-30 ml-auto {isOpen ? 'text-deploio absolute top-0 right-0 p-0 pr-7 pt-3' : 'text-white absolute top-0 right-0'}"
     aria-label={isOpen ? 'Close menu' : 'Open menu'} 
     on:click={toggleMenu}
   >
