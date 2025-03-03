@@ -60,5 +60,6 @@
   "footer_service": "A SERVICE FROM",
   "footer_copyright": "Copyright © {year} Nine Internet Solutions AG",
   "footer_terms": "Terms of Service",
-  "footer_privacy": "Privacy Policy"
+  "footer_privacy": "Privacy Policy",
+  "customers_trust": "Customers who trust Deploio:"
 }

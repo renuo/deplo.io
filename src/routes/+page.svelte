@@ -1,5 +1,6 @@
 <script lang="ts">
   import HeroSection from '$lib/sections/HeroSection.svelte';
+  import CustomersSection from '$lib/sections/CustomersSection.svelte';
   import FeaturesSection from '$lib/sections/FeaturesSection.svelte';
   import NotesSection from '$lib/sections/NotesSection.svelte';
   import ComparisonSection from '$lib/sections/ComparisonSection.svelte';
@@ -14,6 +15,7 @@
 
 <main class="relative z-0">
   <HeroSection />
+  <CustomersSection />
   <FeaturesSection />
   <NotesSection />
   <ComparisonSection />
