@@ -47,7 +47,6 @@
     <img class="h-5 md:h-7" src={deploioName} alt="deploio" />
   </a>
 
-  <!-- Desktop navigation -->
   <nav class="hidden md:flex items-center gap-8">
     <LanguageSwitcher />
     <Link href="/pricing">{m.navigation_pricing()}</Link>
@@ -56,23 +55,19 @@
     <Button variant="primary" href="#register">{m.navigation_start()}</Button>
   </nav>
 
-  <!-- Mobile hamburger button -->
   <button 
     class="md:hidden p-3 z-30 ml-auto {isOpen ? 'text-deploio absolute top-0 right-0' : 'text-white absolute top-0 right-0'}" 
     aria-label={isOpen ? 'Close menu' : 'Open menu'} 
     on:click={toggleMenu}
   >
     {#if isOpen}
-      <!-- X icon -->
       <img src={closeIcon} alt="Close menu" />
     {:else}
-      <!-- Hamburger icon -->
       <img src={hamburgerIcon} alt="Open menu" />
     {/if}
   </button>
 </header>
 
-<!-- Mobile navigation overlay -->
 {#if isOpen}
   <div 
     class="fixed inset-0 bg-white z-10 flex flex-col md:hidden"
@@ -119,7 +114,6 @@
         {m.navigation_start()}
       </a>
       
-      <!-- Language switcher at bottom left -->
       <div class="absolute bottom-8 left-4">
         <LanguageSwitcher />
       </div>
