@@ -10,7 +10,7 @@ body {
 }
 
 .container {
-  @apply mx-auto max-w-7xl p-6 md:p-16;
+  @apply mx-auto max-w-7xl p-4 md:p-16;
 }
 
 .text-h1 {

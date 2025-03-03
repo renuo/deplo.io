@@ -18,7 +18,7 @@
           text: m.footer_status(),
         },
         {
-          href: 'https://docs.nine.ch/docs/category/deploio-paas/',
+          href: 'https://docs.deplo.io/',
           text: m.footer_documentation(),
         },
         {

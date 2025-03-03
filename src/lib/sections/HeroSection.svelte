@@ -23,8 +23,8 @@
         <p class="mb-10 max-w-[550px] text-[20px]" use:appear={{ delay: 100 }}>{m.hero_description()}</p>
 
         <div class="mb-3 flex flex-wrap gap-2 md:gap-6" use:appear={{ delay: 200 }}>
-          <Button variant="primary" href="#register">{m.hero_start_now()}</Button>
-          <Button variant="outline" href="https://docs.nine.ch/docs/category/deploio-paas/" target="_blank">
+          <Button variant="primary" class="w-full md:w-auto" href="#register">{m.hero_start_now()}</Button>
+          <Button variant="outline" class="w-full md:w-auto" href="https://docs.deplo.io/" target="_blank">
             {m.hero_learn_more()}
           </Button>
         </div>
