@@ -20,12 +20,11 @@
         class="pointer-events-none flex w-max select-none items-center gap-[10vw] lg:w-full lg:justify-between lg:gap-16"
         use:appear={{ delay: 0 }}
       >
+      <img class="h-34 w-auto object-contain brightness-0 invert" src={stadtZuerich} alt="Stadt Zürich" />
         <img class="h-34 w-auto object-contain brightness-0 invert" src={bdo} alt="BDO" />
-        <img class="h-34 w-auto object-contain brightness-0 invert" src={bienenSchweiz} alt="Bienen Schweiz" />
-        <img class="h-34 w-auto object-contain brightness-0 invert" src={stadtZuerich} alt="Stadt Zürich" />
         <img class="h-34 w-auto object-contain brightness-0 invert" src={swissIct} alt="Swiss ICT" />
-        <img class="h-34 w-auto object-contain brightness-0 invert" src={renuo} alt="Renuo" />
-        <img class="h-34 w-auto object-contain brightness-0 invert" src={nine} alt="Nine" />
+        <img class="h-34 w-auto object-contain brightness-0 invert" src={bienenSchweiz} alt="Bienen Schweiz" />
+      <img class="h-34 w-auto object-contain brightness-0 invert" src={stadtZuerich} alt="Stadt Zürich" />
       </div>
     </Carousel>
   </div>
