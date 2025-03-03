@@ -41,7 +41,7 @@
     href="/"
     class="{isOpen ? 'hidden' : 'flex'} md:flex select-none flex-row items-center justify-center gap-2 md:h-48 md:w-48 md:flex-col md:rounded-full md:bg-deploio"
   >
-    <img class="h-7 md:h-16" src={deploioLogo} alt="deploio logo" />
+    <img class="h-8 md:h-16" src={deploioLogo} alt="deploio logo" />
     <img class="h-6 md:h-7" src={deploioName} alt="deploio" />
   </a>
 
@@ -62,7 +62,7 @@
   >
     {#if isOpen}
       <!-- X icon -->
-      <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <svg xmlns="http://www.w3.org/2000/svg" width="46" height="46" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
         <line x1="18" y1="6" x2="6" y2="18"></line>
         <line x1="6" y1="6" x2="18" y2="18"></line>
       </svg>
@@ -82,44 +82,50 @@
   <div 
     class="fixed inset-0 bg-white z-10 flex flex-col md:hidden"
   >
-    <div class="px-4 pt-4">
+    <div class="container pt-4">
       <a href="/" class="flex items-center">
-        <img class="h-7" src={deploioLogoMobile} alt="deploio logo" />
+        <img class="h-8" src={deploioLogoMobile} alt="deploio logo" />
       </a>
     </div>
     
-    <nav class="flex flex-col w-full pt-12 px-4">
+    <nav class="flex flex-col w-full pt-12 container">
       <LanguageSwitcher class="mb-8 self-center" />
       
       <a 
         href="/pricing" 
         on:click={toggleMenu}
-        class="text-deploio py-6 text-xl border-b border-gray-100 w-full"
+        class="text-deploio py-3 text-2xl tracking-[0.02em] font-medium w-full"
       >
         {m.navigation_pricing()}
       </a>
       
+      <div class="h-6"></div>
+      
       <a 
         href="https://docs.deplo.io" 
         on:click={toggleMenu}
-        class="text-deploio py-6 text-xl border-b border-gray-100 w-full"
+        class="text-deploio py-3 text-2xl tracking-[0.02em] font-medium w-full"
       >
         {m.navigation_documentation()}
       </a>
+      
+      <div class="h-6"></div>
       
       <a 
         href="https://cockpit.nine.ch/de/session/new?origin=%2F" 
         target="_blank" 
         on:click={toggleMenu}
-        class="text-deploio py-6 text-xl border-b border-gray-100 w-full"
+        class="text-deploio py-3 text-2xl tracking-[0.02em] font-medium w-full"
       >
         {m.navigation_login()}
       </a>
       
+      <div class="h-12"></div>
+      
       <a 
         href="#register" 
         on:click={toggleMenu}
-        class="bg-deploio text-white font-bold py-4 text-xl mt-8 text-center w-full"
+        class="bg-deploio text-white py-4 text-2xl tracking-[0.02em] text-center w-full"
       >
         {m.navigation_start()}
       </a>
