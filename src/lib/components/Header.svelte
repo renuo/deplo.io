@@ -56,19 +56,19 @@
 
   <!-- Mobile hamburger button -->
   <button 
-    class="md:hidden p-2 z-30 ml-auto {isOpen ? 'text-deploio' : 'text-white'}" 
+    class="md:hidden p-3 z-30 ml-auto {isOpen ? 'text-deploio absolute top-0 right-0' : 'text-white absolute top-0 right-0'}" 
     aria-label={isOpen ? 'Close menu' : 'Open menu'} 
     on:click={toggleMenu}
   >
     {#if isOpen}
       <!-- X icon -->
-      <svg xmlns="http://www.w3.org/2000/svg" width="46" height="46" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
         <line x1="18" y1="6" x2="6" y2="18"></line>
         <line x1="6" y1="6" x2="18" y2="18"></line>
       </svg>
     {:else}
       <!-- Hamburger icon -->
-      <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
         <line x1="3" y1="12" x2="21" y2="12"></line>
         <line x1="3" y1="6" x2="21" y2="6"></line>
         <line x1="3" y1="18" x2="21" y2="18"></line>
@@ -84,13 +84,11 @@
   >
     <div class="container pt-4">
       <a href="/" class="flex items-center">
-        <img class="h-8" src={deploioLogoMobile} alt="deploio logo" />
+        <img class="h-7" src={deploioLogoMobile} alt="deploio logo" />
       </a>
     </div>
     
-    <nav class="flex flex-col w-full pt-12 container">
-      <LanguageSwitcher class="mb-8 self-center" />
-      
+    <nav class="flex flex-col w-full pt-12 container h-full relative">
       <a 
         href="/pricing" 
         on:click={toggleMenu}
@@ -125,10 +123,15 @@
       <a 
         href="#register" 
         on:click={toggleMenu}
-        class="bg-deploio text-white py-4 text-2xl tracking-[0.02em] text-center w-full"
+        class="bg-deploio text-white py-2 text-lg tracking-[0.02em] text-center w-full"
       >
         {m.navigation_start()}
       </a>
+      
+      <!-- Language switcher at bottom left -->
+      <div class="absolute bottom-8 left-4">
+        <LanguageSwitcher />
+      </div>
     </nav>
   </div>
 {/if}
