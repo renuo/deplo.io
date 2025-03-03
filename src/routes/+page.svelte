@@ -12,7 +12,7 @@
   <GoogleTag />
 </svelte:head>
 
-<main class="relative">
+<main class="relative z-0">
   <HeroSection />
   <FeaturesSection />
   <NotesSection />
