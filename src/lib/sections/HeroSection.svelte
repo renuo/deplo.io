@@ -24,7 +24,7 @@
 
         <div class="mb-3 flex flex-wrap gap-2 md:gap-6" use:appear={{ delay: 200 }}>
           <Button variant="primary" href="#register">{m.hero_start_now()}</Button>
-          <Button variant="outline" href="https://docs.nine.ch/docs/category/deploio-paas/" target="_blank">
+          <Button variant="outline" href="https://docs.deplo.io/" target="_blank">
             {m.hero_learn_more()}
           </Button>
         </div>
