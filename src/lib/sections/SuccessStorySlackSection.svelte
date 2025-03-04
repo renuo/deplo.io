@@ -4,13 +4,9 @@
   import { appear } from '$lib';
 
   import deploioWave from '$lib/assets/deploio_wave.svg';
-  import node from '$lib/assets/language_node.webp';
-  import django from '$lib/assets/language_django.webp';
-  import go from '$lib/assets/language_go.webp';
-  import php from '$lib/assets/language_php.webp';
-  import python from '$lib/assets/language_python.webp';
-  import ruby from '$lib/assets/language_ruby.webp';
-  import Feature from '$lib/components/Feature.svelte';
+  import samuelAvatar from '$lib/assets/samuel.png';
+  import thomasAvatar from '$lib/assets/thomas.png';
+  import SlackMessage from '$lib/components/SlackMessage.svelte';
 </script>
 
 <section class="relative overflow-x-clip bg-deploio pb-16 pt-20">
@@ -20,9 +16,20 @@
     class="pointer-events-none absolute left-0 right-0 top-0 z-0 w-full -rotate-6 scale-[3] opacity-5 sm:scale-[2] md:scale-[1.25]"
   />
 
-  <div class="container relative z-10 mb-30 space-y-20">
+  <div class="container relative z-10 mb-30 flex gap-12">
+  <div class="flex flex-col gap-5 w-1/2">
+    <SlackMessage name="Samuel Steiner · Renuo AG" avatar={samuelAvatar} date="23. Sep 2022 um 23:42 Uhr">
+    Hey zämä. Hostet jemand primär mit Heroku und ist mit deren kürzlich angekündigten Anpassungen auch nicht so zufrieden? Es wäre eine gute Gelegenheit, etwas eigenes aufzuziehen. Freue mich über PNs.
+    </SlackMessage>
+
+    <SlackMessage name="Thomas Hug" avatar={thomasAvatar} date="24. Sep 2022 um 14:15 Uhr">
+    Hey Samuel<br>Wir sind zwar nicht selber auf Heroku, haben aber viel eigene Infrastruktur, eine Kubernetes Platform im eigenen Datacenter sowie eine Platform, welche auf Googles Kubernetes Engine aufbaut auf Google Cloud.<br>Was möchtest du genau machen? Was passt dir nicht bei heroku?<br>Vielleicht sprechen wir mal?<br>Gruss<br>Tom
+    Ah … wir/ich = <a href="https://nine.ch" class="text-blue-800">nine.ch</a>
+    </SlackMessage>
+  </div>
+  <div class="w-1/2">
     <div class="text-white">
-      <h3 class="text-h2 pb-4">
+      <h3 class="text-h3 pb-4">
       DIE ZEIT VOR DER CLOUD
       </h3>
       <p>
@@ -30,11 +37,12 @@
       </p>
     </div>
 
-    <div class="text-white">
-      <h3 class="text-h2 pb-4">
+    <div class="text-white w-2/3 ml-auto">
+      <h3 class="text-h3 pb-4 mt-8">
       Die Schöne und das Biest
       </h3>
       <p>Renuo ist eine inhabergeführte Schweizer Firma. Aber Heroku ist Amerikanisch und läuft bei AWS. Das wurmte uns die nächsten zehn Jahre. Es muss doch möglich sein, ein so cooles Produkt wie Heroku zu nutzen, in der Schweiz, wo ich auch mal Türen eintreten kann, wenn mir etwas nicht passt – viel Glück damit bei Salesforce. Wir waren im Enterprise-Vertrag; schlicht ein Konstrukt der Hölle. Da bringt Deploio Entsatz und zur rechten Zeit!</p>
     </div>
+  </div>
   </div>
 </section>
