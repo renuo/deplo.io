@@ -6,6 +6,7 @@
   import { appear } from '$lib';
 
   import deploioSticker from '$lib/assets/deploio_sticker.webp';
+  import chevronIcon from '$lib/assets/icons/chevron.svg'
   import mountainVector from '$lib/assets/backgrounds/mountain_vector.svg';
   import successStoryBackground from '$lib/assets/backgrounds/success_story_background.png'
   import mountainOne from '$lib/assets/backgrounds/mountain_1.webp';
@@ -19,7 +20,7 @@
 <section class="bg-mountain">
   <div class="container p-0">
     <div class="bg-white group relative z-10 text-deploio w-full border-t-2 border-deploio flex" style="box-shadow: 0px 30px 40px 0px #141D501A;">
-      <div class="w-1/2 pt-7 pb-7 md:pl-6 md:pr-4 z-10">
+      <div class="md:w-1/2 pt-7 pb-7 pl-6 md:pl-6 md:pr-4 z-10">
         <h3 class="">{m.success_story_subtitle()}</h3>
         <h2 class="text-h2 mb-5 mt-0 md:mt-0" use:appear={{ delay: 50 }}>{m.success_story_title()}</h2>
         <p class="mb-8 text-[20px]" use:appear={{ delay: 100 }}>{m.success_story_description()}</p>
@@ -29,21 +30,23 @@
           class="text-deploio"
           target="_blank"
           >
-            {m.feature_why_button()}
+            <div class="flex">
+              {m.feature_why_button()}
+              <img src="{chevronIcon}">
+            </div>
           </Link>
         </div>
       </div>
-      <div class="w-1/2">
-
-      <div class="absolute w-7/12 h-full right-0">
-        <img src="{successStoryBackground}" class="w-full h-full object-cover object-top">
-      </div>
-      <div class="absolute w-7/12 h-full right-0" style="
-background: linear-gradient(0deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)),
-linear-gradient(90deg, rgba(252, 250, 250, 0) 48.71%, rgba(252, 250, 250, 0.6) 86.14%),
-linear-gradient(0deg, rgba(20, 29, 80, 0.2), rgba(20, 29, 80, 0.2));
-      "></div>
-      <div class="absolute w-7/12 h-full right-0" style="background: linear-gradient(90deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%);"></div>
+      <div class="w-full sm:w-1/2">
+        <div class="absolute w-full md:w-7/12 lg:h-full lg:right-0">
+          <img src="{successStoryBackground}" class="w-full h-full object-cover object-top">
+        </div>
+        <div class="absolute w-full md:w-7/12 lg:h-full lg:right-0" style="
+  background: linear-gradient(0deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)),
+  linear-gradient(90deg, rgba(252, 250, 250, 0) 48.71%, rgba(252, 250, 250, 0.6) 86.14%),
+  linear-gradient(0deg, rgba(20, 29, 80, 0.2), rgba(20, 29, 80, 0.2));
+        "></div>
+        <div class="absolute w-full md:w-7/12 lg:h-full lg:right-0" style="background: linear-gradient(90deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%);"></div>
       </div>
     </div>
   </div>
