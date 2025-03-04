@@ -2,7 +2,7 @@
   import SuccessStoryHeroSection from '$lib/sections/SuccessStoryHeroSection.svelte';
   import CustomersSection from '$lib/sections/CustomersSection.svelte';
   import SuccessStorySlackSection from '$lib/sections/SuccessStorySlackSection.svelte';
-  import NotesSection from '$lib/sections/NotesSection.svelte';
+  import SuccessStoryNotesSection from '$lib/sections/SuccessStoryNotesSection.svelte';
   import ComparisonSection from '$lib/sections/ComparisonSection.svelte';
   import RegisterSection from '$lib/sections/RegisterSection.svelte';
   import GoogleTag from '$lib/components/GoogleTag.svelte';
@@ -16,6 +16,6 @@
 <main class="relative z-0">
   <SuccessStoryHeroSection />
   <SuccessStorySlackSection />
-  <NotesSection />
+  <SuccessStoryNotesSection />
   <RegisterSection />
 </main>
