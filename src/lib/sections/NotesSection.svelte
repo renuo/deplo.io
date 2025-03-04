@@ -9,11 +9,29 @@
   import mountainVector from '$lib/assets/backgrounds/mountain_vector.svg';
   import mountainOne from '$lib/assets/backgrounds/mountain_1.webp';
   import swissMadeSoftware from '$lib/assets/swiss_made_software_and_hosting.webp';
+    import Link from '$lib/components/Link.svelte';
 </script>
 
 <img src={mountainVector} alt="mountain vector background" class="pointer-events-none -my-px w-full bg-deploio" />
 
 <section class="bg-mountain">
+  <div class="container p-0">
+    <div class="bg-white group relative z-10 text-deploio w-full md:pl-6 md:pr-4 pt-7 pb-7 border-t-2 border-deploio" style="box-shadow: 0px 30px 40px 0px #141D501A;">
+      <h3 class="">{m.success_story_subtitle()}</h3>
+      <h2 class="text-h2 mb-5 mt-0 md:mt-0" use:appear={{ delay: 50 }}>{m.success_story_title()}</h2>
+      <p class="mb-8 text-[20px]" use:appear={{ delay: 100 }}>{m.success_story_description()}</p>
+      <div class="flex" use:appear={{ delay: 150 }}>
+        <Link
+        href="#"
+        class="text-deploio"
+        target="_blank"
+        >
+          {m.feature_why_button()}
+        </Link>
+      </div>
+    </div>
+  </div>
+
   <div class="group container relative z-10 mx-auto text-deploio md:max-w-xl md:pl-40 md:pr-4 lg:max-w-3xl">
     <img
       src={deploioSticker}
