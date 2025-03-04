@@ -25,7 +25,7 @@
         <p class="mb-8 text-[20px]" use:appear={{ delay: 100 }}>{m.success_story_description()}</p>
         <div class="flex" use:appear={{ delay: 150 }}>
           <Link
-          href="#"
+          href="/success_story"
           class="text-deploio font-medium"
           target="_blank"
           >
