@@ -1,5 +1,6 @@
 <script lang="ts">
   import { appear } from '$lib';
+  import * as m from '$lib/paraglide/messages';
   import mountainVector from '$lib/assets/backgrounds/mountain_vector_dark.svg';
   import josuaAvatar from '$lib/assets/josua.png';
 </script>
@@ -11,11 +12,7 @@
     <div class="relative z-10 text-deploio md:max-w-xl md:pr-4">
       <h2 class="text-h2 mb-5 mt-8 md:mt-0" use:appear={{ delay: 50 }}>{'Wir machen Code, Deploio den Rest'}</h2>
       <p class="mb-8 text-[20px] font-normal" use:appear={{ delay: 100 }}>
-        <!-- TODO: Add translations -->
-        Renuo ist ein Software-Ingenieursbüro. Wir sind im Software-Geschäft, nicht im Infrastruktur-Geschäft. Ich möchte
-        kein Kubernetes selbst betreiben und auch keine Bare-Metal-Server (wie separiere ich die Mandaten? wer macht eigentlich
-        Kernel-Updates?). Wir entwickeln guten Code, das muss reichen: «git push», CI/CD und der Kunde kann testen. Die Infrastruktur
-        dazu macht Deploio, in der Schweiz, und sie machen das gut. Ich musste noch nie die Türe am Stauffacher-Platz eintreten.
+        {m.success_story_slack_text()}
       </p>
       <div class="flex" use:appear={{ delay: 150 }}></div>
     </div>
@@ -26,9 +23,7 @@
       use:appear={{ delay: 300 }}
     >
       <span class="text-2xl">
-        <!-- TODO: Add translations -->
-        Cloud ja, aber gerne in der Schweiz von einer Schweizer Firma mit fähigen Ingenieuren, nicht nur
-        Amazon-Reseller.
+        {m.success_story_note_quote()}
       </span>
       <div class="mt-6 flex items-center font-normal">
         <div class="border-t-1 mr-4 flex-shrink-0 border-deploio">

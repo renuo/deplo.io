@@ -1,5 +1,6 @@
 <script lang="ts">
   import { appear } from '$lib';
+  import * as m from '$lib/paraglide/messages';
 
   import deploioWave from '$lib/assets/deploio_wave.svg';
   import samuelAvatar from '$lib/assets/samuel.png';
@@ -37,8 +38,7 @@
     <div class="w-1/2">
       <div class="text-white" use:appear={{ delay: 100 }}>
         <h3 class="text-h3 pb-4">
-          <!-- TODO: Add translations -->
-          DIE ZEIT VOR DER CLOUD
+          {m.success_story_slack_before_cloud()}
         </h3>
         <p use:appear={{ delay: 200 }}>
           Deploio wird durch Nine betrieben und wir waren früher schon Nine-Kunde. Das war vor der Cloud. Wir haben für
