@@ -8,7 +8,7 @@
   import deploioSticker from '$lib/assets/deploio_sticker.webp';
   import chevronIcon from '$lib/assets/icons/chevron.svg';
   import mountainVector from '$lib/assets/backgrounds/mountain_vector.svg';
-  import successStoryBackground from '$lib/assets/backgrounds/success_story_background.png';
+  import successStoryBackground from '$lib/assets/backgrounds/success_story_background.webp';
   import mountainOne from '$lib/assets/backgrounds/mountain_1.webp';
   import swissMadeSoftware from '$lib/assets/swiss_made_software_and_hosting.webp';
   import Link from '$lib/components/Link.svelte';

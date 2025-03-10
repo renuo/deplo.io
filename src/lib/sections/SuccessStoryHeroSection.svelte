@@ -3,7 +3,7 @@
   import * as m from '$lib/paraglide/messages';
   import { appear } from '$lib';
 
-  import successStoryBackground from '$lib/assets/backgrounds/success_story_background.png';
+  import successStoryBackground from '$lib/assets/backgrounds/success_story_background.webp';
   import Link from '$lib/components/Link.svelte';
 </script>
 
