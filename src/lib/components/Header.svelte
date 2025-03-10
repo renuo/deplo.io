@@ -41,7 +41,7 @@
 <header class="container absolute left-0 right-0 top-0 z-20 flex items-start justify-between">
   <a
     href="/"
-    class="{isOpen ? 'hidden' : 'flex'} md:flex select-none flex-row items-center justify-center gap-2 md:h-48 md:w-48 md:flex-col md:rounded-full md:bg-deploio"
+    class="{isOpen ? 'hidden' : 'flex'} max-md:flex md:bg-deploio select-none flex-row items-center justify-center gap-2 md:h-48 md:w-48 md:flex-col md:rounded-full max-lg:hidden"
   >
     <img class="h-[30px] md:h-16" src={deploioLogo} alt="deploio logo" />
     <img class="h-5 md:h-7" src={deploioName} alt="deploio" />
