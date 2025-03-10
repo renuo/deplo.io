@@ -18,8 +18,8 @@ import Link from '$lib/components/Link.svelte';
 
 <section class="bg-mountain">
   <div class="container p-0">
-    <div class="bg-white group relative z-10 text-deploio w-full border-t-2 border-deploio flex" style="box-shadow: 0px 30px 40px 0px #141D501A;">
-      <div class="md:w-1/2 pt-7 pb-7 pl-6 md:pl-6 md:pr-4 z-10 max-sm:mt-32">
+    <div class="flex flex-col sm:flex-row w-full align-stretch items-stretch bg-white relative z-10 text-deploio border-t-2 border-deploio" style="box-shadow: 0px 30px 40px 0px #141D501A;">
+      <div class="flex-1 order-1 sm:order-first pt-7 pb-7 pl-6 md:pl-6 md:pr-4 z-10 max-sm:mt-32">
         <h3 class="">{m.success_story_subtitle()}</h3>
         <h2 class="text-h2 mb-5 mt-0 md:mt-0 max-sm:font-normal whitespace-nowrap" use:appear={{ delay: 50 }}>{m.success_story_title()}</h2>
         <p class="mb-8 text-[20px]" use:appear={{ delay: 100 }}>{m.success_story_description()}</p>
@@ -36,19 +36,16 @@ import Link from '$lib/components/Link.svelte';
           </Link>
         </div>
       </div>
-      <div class="w-0 sm:w-1/2">
-        <div class="absolute w-full md:w-7/12 lg:h-full max-sm:left-0 lg:right-0">
-          <img src="{successStoryBackground}" alt="Renuo success story" class="w-full h-full object-cover object-top">
-        </div>
-        <div class="absolute w-full sm:hidden" style="background: linear-gradient(0deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)),
-          linear-gradient(0deg, rgba(252, 250, 250, 0) 43.77%, rgba(252, 250, 250, 0.6) 79.97%),
-          linear-gradient(0deg, rgba(20, 29, 80, 0.2), rgba(20, 29, 80, 0.2));"></div>
-        <div class="absolute w-full md:w-7/12 lg:h-full max-sm:left-0 lg:right-0" style="
-          background: linear-gradient(0deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)),
-          linear-gradient(90deg, rgba(252, 250, 250, 0) 48.71%, rgba(252, 250, 250, 0.6) 86.14%),
-          linear-gradient(0deg, rgba(20, 29, 80, 0.2), rgba(20, 29, 80, 0.2));
-          "></div>
-        <div class="absolute w-full md:w-7/12 lg:h-full max-sm:left-0 lg:right-0" style="background: linear-gradient(90deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%);"></div>
+      <div class="flex-1">
+        <div class="opacity-50 absolute w-full sm:w-1/2 h-1/3 sm:h-full sm:right-0"></div>
+          <div class="opacity-50 absolute w-full sm:w-1/2 h-1/3 sm:h-full sm:right-0">
+            <img src="{successStoryBackground}" alt="Renuo success story" class="w-full h-full object-cover object-top">
+          </div>
+          <!-- Mobile Gradient -->
+          <div class="absolute block sm:hidden w-full h-1/3" style="background: linear-gradient(0deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%);
+"></div>
+          <!-- Desktop Gradient -->
+          <div class="absolute hidden sm:block sm:w-1/2 h-full sm:right-0 top-0" style="background: linear-gradient(90deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%);"></div>
       </div>
     </div>
   </div>
