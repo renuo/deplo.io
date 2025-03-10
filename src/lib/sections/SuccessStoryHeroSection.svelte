@@ -1,18 +1,17 @@
 <script lang="ts">
-  import Button from '$lib/components/Button.svelte';
   import Background from '$lib/components/Background.svelte';
   import * as m from '$lib/paraglide/messages';
   import { appear } from '$lib';
 
-  import successStoryBackground from '$lib/assets/backgrounds/success_story_background.png';
-    import Link from '$lib/components/Link.svelte';
+  import successStoryBackgroundGradient from '$lib/assets/backgrounds/success_story_background_gradient.png';
+  import Link from '$lib/components/Link.svelte';
 </script>
 
 <Background
-  image={successStoryBackground}
+  image={successStoryBackgroundGradient}
   class="h-[800px] max-sm:h-[700px]"
   background-class="max-sm:max-h-[450px]"
-  gradient-class="bg-gradient-to-t from-deploio to-hero/40"
+  gradient-class="bg-gradient-to-t from-deploio"
   wrapper-class="h-full"
 >
   <section class="container relative flex h-full flex-col justify-end pb-16 text-deploio">
@@ -32,7 +31,7 @@
           <div>
             <span>WEBSITE</span>
             <p class="opacity-80">
-            <Link href="https://renuo.ch">renuo.ch</Link>
+              <Link href="https://renuo.ch">renuo.ch</Link>
             </p>
           </div>
         </div>
