@@ -2,7 +2,7 @@
   import { appear } from '$lib';
   import * as m from '$lib/paraglide/messages';
   import mountainVector from '$lib/assets/backgrounds/mountain_vector_dark.svg';
-  import josuaAvatar from '$lib/assets/josua.png';
+  import josuaAvatar from '$lib/assets/josua.webp';
 </script>
 
 <img src={mountainVector} alt="mountain vector background" class="pointer-events-none -my-px w-full bg-deploio" />
