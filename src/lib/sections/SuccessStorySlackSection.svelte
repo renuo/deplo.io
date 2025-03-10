@@ -19,20 +19,20 @@
     <div class="flex w-1/2 flex-col gap-5">
       <SlackMessage
         baseDelay={200}
-        name="Samuel Steiner  ·  Renuo AG"
+        name={m.success_story_slack_message_1_name()}
         avatar={samuelAvatar}
-        date="23. Sep 2022 um 23:42 Uhr"
+        date={m.success_story_slack_message_1_date()}
       >
-        Hey zämä. Hostet jemand primär mit Heroku und ist mit deren kürzlich angekündigten Anpassungen auch nicht so
-        zufrieden? Es wäre eine gute Gelegenheit, etwas eigenes aufzuziehen. Freue mich über PNs.
+        {m.success_story_slack_message_1_text()}
       </SlackMessage>
 
-      <SlackMessage baseDelay={300} name="Thomas Hug" avatar={thomasAvatar} date="24. Sep 2022 um 14:15 Uhr">
-        Hey Samuel<br />Wir sind zwar nicht selber auf Heroku, haben aber viel eigene Infrastruktur, eine Kubernetes
-        Platform im eigenen Datacenter sowie eine Platform, welche auf Googles Kubernetes Engine aufbaut auf Google
-        Cloud.<br />Was möchtest du genau machen? Was passt dir nicht bei heroku?<br />Vielleicht sprechen wir mal?<br
-        />Gruss<br />Tom<br />
-        Ah … wir/ich = <a href="https://nine.ch" class="text-blue-600">nine.ch</a>
+      <SlackMessage 
+        baseDelay={300} 
+        name={m.success_story_slack_message_2_name()} 
+        avatar={thomasAvatar} 
+        date={m.success_story_slack_message_2_date()}
+      >
+        {@html m.success_story_slack_message_2_text().replace('nine.ch', '<a href="https://nine.ch" class="text-blue-600">nine.ch</a>')}
       </SlackMessage>
     </div>
     <div class="w-1/2">
@@ -41,23 +41,14 @@
           {m.success_story_slack_before_cloud()}
         </h3>
         <p use:appear={{ delay: 200 }}>
-          Deploio wird durch Nine betrieben und wir waren früher schon Nine-Kunde. Das war vor der Cloud. Wir haben für
-          unsere Kunden Server aufgesetzt und betrieben. Das hat viel Zeit und Nerven gekostet: SSL-Zertifikate kaufen,
-          SSH-Zugriffe verwalten, Festplattenplatz überwachen, Systembibliotheken aktualisieren, usw. Doch dann kam
-          Heroku. Es hat uns von der Server-Administration befreit. Wir konnten uns auf die Software-Entwicklung
-          konzentrieren, dank 12factor auch ohne Vendor-Lock-in. Einfach «git push», CI/CD und der Kunde kann testen.
-          Also sind wir in die Cloud umgezogen.
+          {m.success_story_slack_text()}
         </p>
       </div>
 
       <div class="ml-auto w-2/3 text-white">
-        <h3 class="text-h3 mt-8 pb-4" use:appear={{ delay: 300 }}>Die Schöne und das Biest</h3>
+        <h3 class="text-h3 mt-8 pb-4" use:appear={{ delay: 300 }}>{m.success_story_slack_beauty_beast()}</h3>
         <p use:appear={{ delay: 400 }}>
-          Renuo ist eine inhabergeführte Schweizer Firma. Aber Heroku ist Amerikanisch und läuft bei AWS. Das wurmte uns
-          die nächsten zehn Jahre. Es muss doch möglich sein, ein so cooles Produkt wie Heroku zu nutzen, in der
-          Schweiz, wo ich auch mal Türen eintreten kann, wenn mir etwas nicht passt – viel Glück damit bei Salesforce.
-          Wir waren im Enterprise-Vertrag; schlicht ein Konstrukt der Hölle. Da bringt Deploio Entsatz und zur rechten
-          Zeit!
+          {m.success_story_slack_beauty_beast_text()}
         </p>
       </div>
     </div>
