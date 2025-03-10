@@ -8,17 +8,17 @@
 <img src={mountainVector} alt="mountain vector background" class="pointer-events-none -my-px w-full bg-deploio" />
 
 <section class="bg-background">
-  <div class="container flex gap-9">
-    <div class="relative z-10 text-deploio md:max-w-xl md:pr-4">
+  <div class="container flex gap-9 flex-col xl:flex-row">
+    <div class="relative z-10 text-deploio xl:max-w-xl md:pr-4">
       <h2 class="text-h2 mb-5 mt-8 md:mt-0" use:appear={{ delay: 50 }}>{'Wir machen Code, Deploio den Rest'}</h2>
-      <p class="mb-8 text-[20px] font-normal" use:appear={{ delay: 100 }}>
+      <p class="text-[20px] font-normal" use:appear={{ delay: 100 }}>
         {m.success_story_slack_text()}
       </p>
       <div class="flex" use:appear={{ delay: 150 }}></div>
     </div>
 
     <div
-      class="relative mt-48 h-max self-end border-t-2 border-deploio bg-white p-4 pb-10 font-medium text-deploio"
+      class="relative mt-0 xl:mt-48 h-max self-end border-t-2 border-deploio bg-white p-4 pb-10 font-medium text-deploio"
       style="box-shadow: 0px 30px 40px 0px #141D501A;"
       use:appear={{ delay: 300 }}
     >
