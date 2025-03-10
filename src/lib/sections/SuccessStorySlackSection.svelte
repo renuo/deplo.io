@@ -18,13 +18,13 @@
 
   <div class="container relative z-10 mb-30 flex gap-12">
   <div class="flex flex-col gap-5 w-1/2">
-    <SlackMessage name="Samuel Steiner · Renuo AG" avatar={samuelAvatar} date="23. Sep 2022 um 23:42 Uhr">
+    <SlackMessage name="Samuel Steiner  ·  Renuo AG" avatar={samuelAvatar} date="23. Sep 2022 um 23:42 Uhr">
     Hey zämä. Hostet jemand primär mit Heroku und ist mit deren kürzlich angekündigten Anpassungen auch nicht so zufrieden? Es wäre eine gute Gelegenheit, etwas eigenes aufzuziehen. Freue mich über PNs.
     </SlackMessage>
 
     <SlackMessage name="Thomas Hug" avatar={thomasAvatar} date="24. Sep 2022 um 14:15 Uhr">
-    Hey Samuel<br>Wir sind zwar nicht selber auf Heroku, haben aber viel eigene Infrastruktur, eine Kubernetes Platform im eigenen Datacenter sowie eine Platform, welche auf Googles Kubernetes Engine aufbaut auf Google Cloud.<br>Was möchtest du genau machen? Was passt dir nicht bei heroku?<br>Vielleicht sprechen wir mal?<br>Gruss<br>Tom
-    Ah … wir/ich = <a href="https://nine.ch" class="text-blue-800">nine.ch</a>
+    Hey Samuel<br>Wir sind zwar nicht selber auf Heroku, haben aber viel eigene Infrastruktur, eine Kubernetes Platform im eigenen Datacenter sowie eine Platform, welche auf Googles Kubernetes Engine aufbaut auf Google Cloud.<br>Was möchtest du genau machen? Was passt dir nicht bei heroku?<br>Vielleicht sprechen wir mal?<br>Gruss<br>Tom<br>
+    Ah … wir/ich = <a href="https://nine.ch" class="text-blue-600">nine.ch</a>
     </SlackMessage>
   </div>
   <div class="w-1/2">

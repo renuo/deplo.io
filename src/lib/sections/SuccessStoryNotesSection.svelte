@@ -21,7 +21,8 @@
   <div class="container flex gap-9">
     <div class="relative z-10 text-deploio md:max-w-xl md:pr-4">
       <h2 class="text-h2 mb-5 mt-8 md:mt-0" use:appear={{ delay: 50 }}>{'Wir machen Code, Deploio den Rest'}</h2>
-      <p class="mb-8 text-[20px]" use:appear={{ delay: 100 }}>
+      <p class="mb-8 text-[20px] font-normal" use:appear={{ delay: 100 }}>
+        <!-- TODO: Add translations -->
         Renuo ist ein Software-Ingenieursbüro. Wir sind im Software-Geschäft, nicht im Infrastruktur-Geschäft. Ich
         möchte kein Kubernetes selbst betreiben und auch keine Bare-Metal-Server (wie separiere ich die Mandaten? wer
         macht eigentlich Kernel-Updates?). Wir entwickeln guten Code, das muss reichen: «git push», CI/CD und der Kunde
