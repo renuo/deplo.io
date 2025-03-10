@@ -1,17 +1,17 @@
 <script lang="ts">
-  import Button from '$lib/components/Button.svelte';
-  import Carousel from '$lib/components/Carousel.svelte';
-  import Note from '$lib/components/Note.svelte';
-  import * as m from '$lib/paraglide/messages';
-  import { appear } from '$lib';
+import Button from '$lib/components/Button.svelte';
+import Carousel from '$lib/components/Carousel.svelte';
+import Note from '$lib/components/Note.svelte';
+import * as m from '$lib/paraglide/messages';
+import { appear } from '$lib';
 
-  import deploioSticker from '$lib/assets/deploio_sticker.webp';
-  import chevronIcon from '$lib/assets/icons/chevron.svg'
-  import mountainVector from '$lib/assets/backgrounds/mountain_vector.svg';
-  import successStoryBackground from '$lib/assets/backgrounds/success_story_background.png'
-  import mountainOne from '$lib/assets/backgrounds/mountain_1.webp';
-  import swissMadeSoftware from '$lib/assets/swiss_made_software_and_hosting.webp';
-  import Link from '$lib/components/Link.svelte';
+import deploioSticker from '$lib/assets/deploio_sticker.webp';
+import chevronIcon from '$lib/assets/icons/chevron.svg'
+import mountainVector from '$lib/assets/backgrounds/mountain_vector.svg';
+import successStoryBackground from '$lib/assets/backgrounds/success_story_background.png'
+import mountainOne from '$lib/assets/backgrounds/mountain_1.webp';
+import swissMadeSoftware from '$lib/assets/swiss_made_software_and_hosting.webp';
+import Link from '$lib/components/Link.svelte';
 </script>
 
 <img src={mountainVector} alt="mountain vector background" class="pointer-events-none -my-px w-full bg-deploio" />
@@ -21,13 +21,13 @@
     <div class="bg-white group relative z-10 text-deploio w-full border-t-2 border-deploio flex" style="box-shadow: 0px 30px 40px 0px #141D501A;">
       <div class="md:w-1/2 pt-7 pb-7 pl-6 md:pl-6 md:pr-4 z-10 max-sm:mt-32">
         <h3 class="">{m.success_story_subtitle()}</h3>
-        <h2 class="text-h2 mb-5 mt-0 md:mt-0 max-sm:font-normal" use:appear={{ delay: 50 }}>{m.success_story_title()}</h2>
+        <h2 class="text-h2 mb-5 mt-0 md:mt-0 max-sm:font-normal whitespace-nowrap" use:appear={{ delay: 50 }}>{m.success_story_title()}</h2>
         <p class="mb-8 text-[20px]" use:appear={{ delay: 100 }}>{m.success_story_description()}</p>
         <div class="flex" use:appear={{ delay: 150 }}>
           <Link
-          href="/success_story"
-          class="text-deploio font-medium"
-          target="_blank"
+            href="/success_story"
+            class="text-deploio font-medium"
+            target="_blank"
           >
             <div class="flex">
               {m.feature_why_button()}
@@ -41,13 +41,13 @@
           <img src="{successStoryBackground}" alt="Renuo success story" class="w-full h-full object-cover object-top">
         </div>
         <div class="absolute w-full sm:hidden" style="background: linear-gradient(0deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)),
-linear-gradient(0deg, rgba(252, 250, 250, 0) 43.77%, rgba(252, 250, 250, 0.6) 79.97%),
-linear-gradient(0deg, rgba(20, 29, 80, 0.2), rgba(20, 29, 80, 0.2));"></div>
+          linear-gradient(0deg, rgba(252, 250, 250, 0) 43.77%, rgba(252, 250, 250, 0.6) 79.97%),
+          linear-gradient(0deg, rgba(20, 29, 80, 0.2), rgba(20, 29, 80, 0.2));"></div>
         <div class="absolute w-full md:w-7/12 lg:h-full max-sm:left-0 lg:right-0" style="
-  background: linear-gradient(0deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)),
-  linear-gradient(90deg, rgba(252, 250, 250, 0) 48.71%, rgba(252, 250, 250, 0.6) 86.14%),
-  linear-gradient(0deg, rgba(20, 29, 80, 0.2), rgba(20, 29, 80, 0.2));
-        "></div>
+          background: linear-gradient(0deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)),
+          linear-gradient(90deg, rgba(252, 250, 250, 0) 48.71%, rgba(252, 250, 250, 0.6) 86.14%),
+          linear-gradient(0deg, rgba(20, 29, 80, 0.2), rgba(20, 29, 80, 0.2));
+          "></div>
         <div class="absolute w-full md:w-7/12 lg:h-full max-sm:left-0 lg:right-0" style="background: linear-gradient(90deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%);"></div>
       </div>
     </div>

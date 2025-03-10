@@ -33,18 +33,18 @@
     </div>
 
     <div
-      class="relative mt-48 h-max self-end border-t-2 border-deploio bg-white p-4 pb-10 text-2xl font-medium text-deploio"
+      class="relative mt-48 h-max self-end border-t-2 border-deploio bg-white p-4 pb-10 font-medium text-deploio"
       style="box-shadow: 0px 30px 40px 0px #141D501A;"
     >
-      <span>
+      <span class="text-2xl">
         Cloud ja, aber gerne in der Schweiz von einer Schweizer Firma mit fähigen Ingenieuren, nicht nur
         Amazon-Reseller.
       </span>
       <div class="mt-6 flex items-center font-normal">
         <div class="border-t-1 mr-4 flex-shrink-0 border-deploio">
-          <img src={josuaAvatar} alt="Josua" class="m-2 h-12 h-full w-12 rounded-full bg-gray-200 object-cover" />
+          <img src={josuaAvatar} alt="Josua" class="m-2 h-11 h-full w-11 rounded-full bg-gray-200 object-cover" />
         </div>
-        <div>
+        <div class="text-base">
           <p>Josua Schmid</p>
           <p class="opacity-70">CTO Renuo AG</p>
         </div>
