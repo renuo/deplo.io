@@ -14,6 +14,7 @@ export default {
     },
     fontFamily: {
       sans: ['Montserrat', 'sans-serif'],
+      slack: ['Lato', 'sans-serif'],
       mono: ['Fira Code', 'monospace'],
     },
   },

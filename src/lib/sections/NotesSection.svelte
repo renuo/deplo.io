@@ -6,14 +6,61 @@
   import { appear } from '$lib';
 
   import deploioSticker from '$lib/assets/deploio_sticker.webp';
+  import chevronIcon from '$lib/assets/icons/chevron.svg';
   import mountainVector from '$lib/assets/backgrounds/mountain_vector.svg';
+  import successStoryBackground from '$lib/assets/backgrounds/success_story_background.webp';
   import mountainOne from '$lib/assets/backgrounds/mountain_1.webp';
   import swissMadeSoftware from '$lib/assets/swiss_made_software_and_hosting.webp';
+  import Link from '$lib/components/Link.svelte';
 </script>
 
 <img src={mountainVector} alt="mountain vector background" class="pointer-events-none -my-px w-full bg-deploio" />
 
 <section class="bg-mountain">
+  <div class="container p-0">
+    <div
+      class="align-stretch relative z-10 flex w-full flex-col items-stretch border-t-2 border-deploio bg-white text-deploio sm:flex-row"
+      style="box-shadow: 0px 30px 40px 0px #141D501A;"
+    >
+      <div class="z-10 order-1 flex-1 pb-7 pl-6 pr-6 pt-7 max-sm:mt-32 sm:order-first sm:pr-0 md:pl-6 md:pr-4">
+        <h3 class="">{m.success_story_subtitle()}</h3>
+        <h2
+          class="sm:text-h2 mb-5 mt-0 text-2xl max-sm:font-normal sm:whitespace-nowrap md:mt-0"
+          use:appear={{ delay: 50 }}
+        >
+          {m.success_story_title()}
+        </h2>
+        <p class="mb-8 text-[20px]" use:appear={{ delay: 100 }}>{m.success_story_description()}</p>
+        <div class="flex" use:appear={{ delay: 150 }}>
+          <Link href="/success_story" class="font-medium text-deploio" target="_blank">
+            <div class="flex">
+              {m.feature_why_button()}
+              <img src={chevronIcon} alt="chevron" />
+            </div>
+          </Link>
+        </div>
+      </div>
+      <div class="flex-1">
+        <div class="absolute h-1/3 w-full sm:right-0 sm:h-full sm:w-1/2"></div>
+        <div class="absolute h-1/3 w-full sm:right-0 sm:h-full sm:w-1/2">
+          <img src={successStoryBackground} alt="Renuo success story" class="h-full w-full object-cover object-top" />
+        </div>
+
+        <!-- Mobile Gradient -->
+        <div
+          class="absolute block h-1/3 w-full sm:hidden"
+          style="background: linear-gradient(0deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%);
+"
+        ></div>
+        <!-- Desktop Gradient -->
+        <div
+          class="absolute top-0 hidden h-full sm:right-0 sm:block sm:w-1/2"
+          style="background: linear-gradient(90deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%);"
+        ></div>
+      </div>
+    </div>
+  </div>
+
   <div class="group container relative z-10 mx-auto text-deploio md:max-w-xl md:pl-40 md:pr-4 lg:max-w-3xl">
     <img
       src={deploioSticker}

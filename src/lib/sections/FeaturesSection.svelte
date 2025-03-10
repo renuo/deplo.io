@@ -20,21 +20,7 @@
     class="pointer-events-none absolute left-0 right-0 top-0 z-0 w-full -rotate-6 scale-[3] opacity-5 sm:scale-[2] md:scale-[1.25]"
   />
 
-  <Carousel class="container relative z-10 mb-8">
-    <div
-      class="pointer-events-none flex w-max select-none items-center gap-[10vw] lg:w-full lg:justify-between lg:gap-16"
-      use:appear={{ delay: 0 }}
-    >
-      <img class="h-10" src={node} width="64" height="40" alt="Node.js" />
-      <img class="h-10" src={django} width="111" height="40" alt="Django" />
-      <img class="h-10" src={go} width="104" height="40" alt="Go" />
-      <img class="h-10" src={php} width="78" height="40" alt="PHP" />
-      <img class="h-10" src={python} width="40" height="40" alt="Python" />
-      <img class="h-10" src={ruby} width="111" height="40" alt="Ruby" />
-    </div>
-  </Carousel>
-
-  <div class="container relative z-10 mb-32 space-y-20">
+  <div class="container relative z-10 mb-30 space-y-20">
     <Feature
       title={m.feature_1_title()}
       description={m.feature_1_description()}
@@ -62,4 +48,18 @@
       ]}
     />
   </div>
+
+  <Carousel class="container relative z-10 mb-8">
+    <div
+      class="pointer-events-none flex w-max select-none items-center gap-[10vw] lg:w-full lg:justify-between lg:gap-16"
+      use:appear={{ delay: 0 }}
+    >
+      <img class="h-10" src={node} width="64" height="40" alt="Node.js" />
+      <img class="h-10" src={django} width="111" height="40" alt="Django" />
+      <img class="h-10" src={go} width="104" height="40" alt="Go" />
+      <img class="h-10" src={php} width="78" height="40" alt="PHP" />
+      <img class="h-10" src={python} width="40" height="40" alt="Python" />
+      <img class="h-10" src={ruby} width="111" height="40" alt="Ruby" />
+    </div>
+  </Carousel>
 </section>
