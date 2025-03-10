@@ -3,8 +3,8 @@
   import * as m from '$lib/paraglide/messages';
 
   import deploioWave from '$lib/assets/deploio_wave.svg';
-  import samuelAvatar from '$lib/assets/samuel.png';
-  import thomasAvatar from '$lib/assets/thomas.png';
+  import samuelAvatar from '$lib/assets/samuel.webp';
+  import thomasAvatar from '$lib/assets/thomas.webp';
   import SlackMessage from '$lib/components/SlackMessage.svelte';
 </script>
 
