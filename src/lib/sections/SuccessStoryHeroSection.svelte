@@ -24,7 +24,7 @@
 
         <div class="mb-3 flex flex-wrap gap-2 md:gap-6" use:appear={{ delay: 200 }}>
           <div>
-            <span>Client</span>
+            <span>CLIENT</span>
             <p class="opacity-80">Renuo AG</p>
           </div>
 
