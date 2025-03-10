@@ -30,6 +30,7 @@
   <div class="w-1/2">
     <div class="text-white">
       <h3 class="text-h3 pb-4">
+      <!-- TODO: Add translations -->
       DIE ZEIT VOR DER CLOUD
       </h3>
       <p>
