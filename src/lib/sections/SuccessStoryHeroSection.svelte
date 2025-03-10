@@ -3,12 +3,12 @@
   import * as m from '$lib/paraglide/messages';
   import { appear } from '$lib';
 
-  import successStoryBackgroundGradient from '$lib/assets/backgrounds/success_story_background_gradient.png';
+  import successStoryBackground from '$lib/assets/backgrounds/success_story_background.png';
   import Link from '$lib/components/Link.svelte';
 </script>
 
 <Background
-  image={successStoryBackgroundGradient}
+  image={successStoryBackground}
   class="h-[800px] max-sm:h-[700px]"
   background-class="max-sm:max-h-[450px]"
   gradient-class="bg-gradient-to-t from-deploio"
