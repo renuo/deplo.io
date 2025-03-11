@@ -58,12 +58,12 @@
     </a>
   </div>
 
-  <div class="group container relative z-10 mx-auto text-deploio md:max-w-xl md:pl-40 md:pr-4 lg:max-w-3xl">
+  <div class="group container relative z-10 mx-auto text-deploio md:max-w-xl md:pl-40 md:pr-4 lg:max-w-3xl max-md:mt-20">
     <img
       src={deploioSticker}
       draggable="false"
       alt="hosted on deploio sticker"
-      class="pointer-events-none absolute -top-0 right-14 size-48 -rotate-12 opacity-5 transition-transform group-hover:rotate-12 md:bottom-auto md:right-auto md:-ml-40 md:-mt-8"
+      class="pointer-events-none absolute max-md:-top-20 right-10 size-48 -rotate-12 opacity-5 transition-transform group-hover:rotate-12 md:bottom-auto md:right-auto md:-ml-40 md:-mt-8"
     />
     <h2 class="text-h2 mb-5 mt-8 md:mt-0" use:appear={{ delay: 50 }}>{m.feature_why_title()}</h2>
     <p class="mb-8 text-[20px]" use:appear={{ delay: 100 }}>{m.feature_why_description()}</p>

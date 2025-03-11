@@ -16,7 +16,7 @@
 >
   <section class="container relative flex h-full flex-col justify-end pb-16 text-deploio">
     <div class="relative flex h-full w-full flex-col justify-end text-white">
-      <div class="mb-8">
+      <div class="mb-8 max-lg:-mb-10">
         <h1 class="text-h1 mb-4 max-w-[450px] md:max-w-[600px]" use:appear={{ delay: 0 }}>
           {m.hero_title()}
         </h1>
