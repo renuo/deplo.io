@@ -9,14 +9,14 @@
 
 <Background
   video={deploioVideo}
-  class="h-[800px] max-sm:h-[700px]"
+  class="h-[800px]"
   background-class="max-sm:max-h-[450px]"
   gradient-class="bg-gradient-to-t from-deploio to-hero/40"
   wrapper-class="h-full"
 >
   <section class="container relative flex h-full flex-col justify-end pb-16 text-deploio">
     <div class="relative flex h-full w-full flex-col justify-end text-white">
-      <div class="mb-8 max-lg:-mb-10">
+      <div class="mb-8">
         <h1 class="text-h1 mb-4 max-w-[450px] md:max-w-[600px]" use:appear={{ delay: 0 }}>
           {m.hero_title()}
         </h1>

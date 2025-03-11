@@ -10,7 +10,7 @@
   import modeWeber from '$lib/assets/logos/mode_weber.png';
 </script>
 
-<section class="relative overflow-x-clip bg-deploio pb-6">
+<section class="relative overflow-x-clip bg-deploio pb-6 max-md:pt-10">
   <div class="container relative z-10">
     <span class="mb-6 block text-left text-lg font-normal text-white md:-mt-10">{m.customers_trust()}</span>
     
