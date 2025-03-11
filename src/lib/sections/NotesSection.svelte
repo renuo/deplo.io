@@ -20,7 +20,7 @@
   <div class="container p-0">
     <a
       href="/success_story"
-      class="align-stretch relative z-10 flex w-full flex-col items-stretch border-t-2 border-deploio bg-white text-deploio sm:flex-row"
+      class="hover:scale-105 transition-all align-stretch relative z-10 flex w-full flex-col items-stretch border-t-2 border-deploio bg-white text-deploio sm:flex-row"
       style="box-shadow: 0px 30px 40px 0px #141D501A;"
     >
       <div class="z-10 order-1 flex-1 pb-7 pl-6 pr-6 pt-7 max-sm:mt-32 sm:order-first sm:pr-0 md:pl-6 md:pr-4">
