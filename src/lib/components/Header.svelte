@@ -41,7 +41,7 @@
 <header class="container absolute left-0 right-0 top-0 z-20 flex items-center justify-between">
   <a
     href="/"
-    class="flex select-none flex-row items-center justify-center gap-2 md:hidden"
+    class="flex select-none flex-row items-center justify-center gap-2 md:hidden {isOpen ? 'hidden' : ''}"
   >
     <img class="h-7" src={deploioLogo} alt="deploio logo" />
     <img class="h-6" src={deploioName} alt="deploio" />
@@ -49,12 +49,12 @@
   
   <a
     href="/"
-    class="hidden lg:block absolute"
+    class="hidden lg:block absolute {isOpen ? 'opacity-0' : ''}"
   >
-    <img class="w-48 h-48 object-contain" src={deploioLogoHeader} alt="deploio header logo" />
+    <img class="w-48 h-48 object-contain mt-12" src={deploioLogoHeader} alt="deploio header logo" />
   </a>
 
-  <nav class="hidden md:flex items-center gap-8 ml-auto">
+  <nav class="hidden md:flex items-center gap-8 ml-auto -mt-10">
     <LanguageSwitcher />
     <Link href="/pricing">{m.navigation_pricing()}</Link>
     <Link href="https://docs.deplo.io">{m.navigation_documentation()}</Link>
@@ -78,11 +78,11 @@
 
 {#if isOpen}
   <div 
-    class="fixed inset-0 bg-white z-10 flex flex-col md:hidden pt-16"
+    class="fixed inset-0 bg-white z-10 flex flex-col md:hidden pt-5"
   >
-    <div class="container pt-4">
+    <div class="container">
       <a href="/" class="flex items-center">
-        <img class="h-[30px]" src={deploioLogoMobile} alt="deploio logo" />
+        <img class="h-7 -mt-1" src={deploioLogoMobile} alt="deploio logo" />
       </a>
     </div>
     
