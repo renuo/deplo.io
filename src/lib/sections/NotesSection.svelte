@@ -79,7 +79,7 @@
   </div>
 
   <Carousel class="relative z-10 px-6 py-5">
-    <div class="mx-auto my-16 flex w-max gap-6 md:my-0 lg:justify-between pb-5" use:appear={{ delay: 0 }}>
+    <div class="mx-auto my-16 flex w-max gap-6 md:my-0 lg:justify-between" use:appear={{ delay: 0 }}>
       <Note title={m.notes_1_title()} description={m.notes_1_description()} />
       <Note title={m.notes_2_title()} description={m.notes_2_description()} />
       <Note title={m.notes_3_title()} description={m.notes_3_description()} />

@@ -10,10 +10,10 @@
   import modeWeber from '$lib/assets/logos/mode_weber.png';
 </script>
 
-<section class="relative overflow-x-clip bg-deploio pb-6 pt-8">
+<section class="relative overflow-x-clip bg-deploio pb-6">
   <div class="container relative z-10">
-    <span class="mb-6 block text-left text-lg font-normal text-white">{m.customers_trust()}</span>
-
+    <span class="mb-6 block text-left text-lg font-normal text-white md:-mt-10">{m.customers_trust()}</span>
+    
     <Carousel>
       <div
         class="pointer-events-none flex w-max select-none items-center gap-[10vw] lg:w-full lg:justify-between lg:gap-16"
