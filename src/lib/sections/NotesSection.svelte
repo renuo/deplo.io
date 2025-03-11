@@ -18,7 +18,8 @@
 
 <section class="bg-mountain">
   <div class="container p-0">
-    <div
+    <a
+      href="/success_story"
       class="align-stretch relative z-10 flex w-full flex-col items-stretch border-t-2 border-deploio bg-white text-deploio sm:flex-row"
       style="box-shadow: 0px 30px 40px 0px #141D501A;"
     >
@@ -58,7 +59,7 @@
           style="background: linear-gradient(90deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%);"
         ></div>
       </div>
-    </div>
+    </a>
   </div>
 
   <div class="group container relative z-10 mx-auto text-deploio md:max-w-xl md:pl-40 md:pr-4 lg:max-w-3xl">
