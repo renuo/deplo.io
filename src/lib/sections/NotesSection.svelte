@@ -18,8 +18,9 @@
 
 <section class="bg-mountain">
   <div class="container p-0">
-    <div
-      class="align-stretch relative z-10 flex w-full flex-col items-stretch border-t-2 border-deploio bg-white text-deploio sm:flex-row"
+    <a
+      href="/success_story"
+      class="hover:scale-105 transition-all align-stretch relative z-10 flex w-full flex-col items-stretch border-t-2 border-deploio bg-white text-deploio sm:flex-row"
       style="box-shadow: 0px 30px 40px 0px #141D501A;"
     >
       <div class="z-10 order-1 flex-1 pb-7 pl-6 pr-6 pt-7 max-sm:mt-32 sm:order-first sm:pr-0 md:pl-6 md:pr-4">
@@ -58,7 +59,7 @@
           style="background: linear-gradient(90deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%);"
         ></div>
       </div>
-    </div>
+    </a>
   </div>
 
   <div class="group container relative z-10 mx-auto text-deploio md:max-w-xl md:pl-40 md:pr-4 lg:max-w-3xl">
