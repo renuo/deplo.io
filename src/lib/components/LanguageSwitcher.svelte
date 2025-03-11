@@ -14,11 +14,11 @@
 </script>
 
 <div class={twMerge('flex gap-2', className)}>
-  <button class="text-deploio md:text-white text-2xl md:text-[15px]" onclick={() => switchToLanguage('de')} class:font-bold={language === 'de'}>
+  <button class="text-deploio text-white text-2xl md:text-[15px]" onclick={() => switchToLanguage('de')} class:font-bold={language === 'de'}>
     {m.navigation_de()}
   </button>
-  <div class="h-[46px] md:h-[22px] md:h-7 w-[2px] md:w-px max-w-[2px] bg-deploio md:bg-white self-center">&nbsp;</div>
-  <button class="text-deploio md:text-white text-2xl md:text-[15px]" onclick={() => switchToLanguage('en')} class:font-bold={language === 'en'}>
+  <div class="h-[46px] md:h-[22px] md:h-7 w-[2px] md:w-px max-w-[2px] bg-deploio bg-white self-center">&nbsp;</div>
+  <button class="text-deploio text-white text-2xl md:text-[15px]" onclick={() => switchToLanguage('en')} class:font-bold={language === 'en'}>
     {m.navigation_en()}
   </button>
 </div>

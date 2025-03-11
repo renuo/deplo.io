@@ -4,7 +4,7 @@
   import Button from '$lib/components/Button.svelte';
   import LanguageSwitcher from '$lib/components/LanguageSwitcher.svelte';
   import { onMount } from 'svelte';
-
+  import deploioLogoHeader from '$lib/assets/deploio_logo_header.svg';
   import deploioLogoMobile from '$lib/assets/logos/deploio_logo.svg';
   import deploioLogo from '$lib/assets/deploio_logo.svg';
   import deploioName from '$lib/assets/deploio_name.svg';
@@ -38,16 +38,23 @@
   });
 </script>
 
-<header class="container absolute left-0 right-0 top-0 z-20 flex items-start justify-between">
+<header class="container absolute left-0 right-0 top-0 z-20 flex items-center justify-between">
   <a
     href="/"
-    class="{isOpen ? 'hidden' : 'flex'} md:flex select-none flex-row items-center justify-center gap-2 md:h-48 md:w-48 md:flex-col md:rounded-full md:bg-deploio"
+    class="flex select-none flex-row items-center justify-center gap-2 md:hidden {isOpen ? 'hidden' : ''}"
   >
-    <img class="h-[30px] md:h-16" src={deploioLogo} alt="deploio logo" />
-    <img class="h-5 md:h-7" src={deploioName} alt="deploio" />
+    <img class="h-7" src={deploioLogo} alt="deploio logo" />
+    <img class="h-6" src={deploioName} alt="deploio" />
+  </a>
+  
+  <a
+    href="/"
+    class="hidden lg:block absolute {isOpen ? 'opacity-0' : ''}"
+  >
+    <img class="w-48 h-48 object-contain mt-12" src={deploioLogoHeader} alt="deploio header logo" />
   </a>
 
-  <nav class="hidden md:flex items-center gap-8">
+  <nav class="hidden md:flex items-center gap-8 ml-auto -mt-10">
     <LanguageSwitcher />
     <Link href="/pricing">{m.navigation_pricing()}</Link>
     <Link href="https://docs.deplo.io">{m.navigation_documentation()}</Link>
@@ -56,7 +63,7 @@
   </nav>
 
   <button 
-    class="md:hidden p-3 z-30 ml-auto {isOpen ? 'text-deploio absolute top-0 right-0 p-0 pr-7 pt-3' : 'text-white absolute top-0 right-0'}"
+    class="md:hidden z-30 p-3 {isOpen ? 'fixed top-3 right-4' : 'relative'}"
     aria-label={isOpen ? 'Close menu' : 'Open menu'} 
     on:click={toggleMenu}
   >
@@ -68,17 +75,18 @@
   </button>
 </header>
 
+
 {#if isOpen}
   <div 
-    class="fixed inset-0 bg-white z-10 flex flex-col md:hidden"
+    class="fixed inset-0 bg-white z-10 flex flex-col md:hidden pt-5"
   >
-    <div class="container pt-4">
+    <div class="container">
       <a href="/" class="flex items-center">
-        <img class="h-[30px]" src={deploioLogoMobile} alt="deploio logo" />
+        <img class="h-7 -mt-1" src={deploioLogoMobile} alt="deploio logo" />
       </a>
     </div>
     
-    <nav class="flex flex-col w-full pt-12 mt-9 container h-full relative">
+    <nav class="flex flex-col w-full pt-12 mt-4 container h-full relative">
       <a 
         href="/pricing" 
         on:click={toggleMenu}

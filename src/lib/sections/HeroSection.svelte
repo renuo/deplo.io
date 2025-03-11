@@ -9,7 +9,7 @@
 
 <Background
   video={deploioVideo}
-  class="h-[800px] max-sm:h-[700px]"
+  class="h-[800px]"
   background-class="max-sm:max-h-[450px]"
   gradient-class="bg-gradient-to-t from-deploio to-hero/40"
   wrapper-class="h-full"
@@ -32,7 +32,7 @@
         <a
           href="https://www.youtube.com/watch?v=3iOWZ4ou49Y"
           target="_blank"
-          class="flex items-center gap-2 py-3 text-xs"
+          class="inline-flex items-center gap-2 py-3 text-xs"
           use:appear={{ delay: 300 }}
         >
           <svg

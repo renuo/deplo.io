@@ -22,6 +22,7 @@
 
   <div class="container relative z-10 mb-30 space-y-20">
     <Feature
+      isFirst
       title={m.feature_1_title()}
       description={m.feature_1_description()}
       commands={[
