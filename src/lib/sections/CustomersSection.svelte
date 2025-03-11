@@ -9,6 +9,7 @@
   import swissIct from '$lib/assets/logos/swiss_ict.svg';
   import renuo from '$lib/assets/logos/renuo_logo.webp';
   import nine from '$lib/assets/logos/nine_logo.webp';
+  import modeWeber from '$lib/assets/logos/mode_weber.png';
 </script>
 
 <section class="relative overflow-x-clip bg-deploio pb-6 pt-8">
@@ -24,7 +25,7 @@
         <img class="h-34 w-auto object-contain brightness-0 invert" src={bdo} alt="BDO" />
         <img class="h-34 w-auto object-contain brightness-0 invert" src={swissIct} alt="Swiss ICT" />
         <img class="h-34 w-auto object-contain brightness-0 invert" src={bienenSchweiz} alt="Bienen Schweiz" />
-      <img class="h-34 w-auto object-contain brightness-0 invert" src={stadtZuerich} alt="Stadt Zürich" />
+        <img class="h-34 w-auto object-contain brightness-0 invert" src={modeWeber} alt="Modeweber" />
       </div>
     </Carousel>
   </div>
