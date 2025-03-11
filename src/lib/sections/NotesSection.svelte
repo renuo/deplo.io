@@ -32,14 +32,10 @@
           {m.success_story_title()}
         </h2>
         <p class="mb-8 text-[20px]" use:appear={{ delay: 100 }}>{m.success_story_description()}</p>
-        <div class="flex" use:appear={{ delay: 150 }}>
-          <Link href="/success_story" class="font-medium text-deploio" target="_blank">
-            <div class="flex">
-              {m.feature_why_button()}
-              <img src={chevronIcon} alt="chevron" />
-            </div>
-          </Link>
-        </div>
+        <span class="flex font-medium text-deploio whitespace-nowrap" use:appear={{ delay: 150 }}>
+          {m.feature_why_button()}
+          <img src={chevronIcon} alt="chevron" />
+        </span>
       </div>
       <div class="flex-1">
         <div class="absolute h-1/3 w-full sm:right-0 sm:h-full sm:w-1/2"></div>
