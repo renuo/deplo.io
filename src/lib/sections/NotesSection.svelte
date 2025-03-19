@@ -70,7 +70,7 @@
     <div class="flex" use:appear={{ delay: 150 }}>
       <Button
         variant="secondary"
-        href="https://docs.nine.ch/docs/deplo-io/getting-started-with-deploio/"
+        href="https://docs.deplo.io"
         target="_blank"
       >
         {m.feature_why_button()}
