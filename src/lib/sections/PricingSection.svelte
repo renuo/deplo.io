@@ -29,7 +29,6 @@
       title="pricing"
       allow="clipboard-read; clipboard-write"
       src="https://pricing-calculator-deploio.9f1cecd.deploio.app"
-      class="rounded-xl"
       use:appear={{ delay: 200 }}
     ></iframe>
   </div>
