@@ -10,7 +10,7 @@
 <section class="bg-background">
   <div class="container flex gap-9 flex-col xl:flex-row">
     <div class="relative z-10 text-deploio xl:max-w-xl md:pr-4">
-      <h2 class="text-h2 mb-5 mt-8 md:mt-0" use:appear={{ delay: 50 }}>{'Wir machen Code, Deploio den Rest'}</h2>
+      <h2 class="text-h2 mb-5 mt-8 md:mt-0" use:appear={{ delay: 50 }}>{m.success_story_slack_title()}</h2>
       <p class="text-[20px] font-normal" use:appear={{ delay: 100 }}>
         {m.success_story_slack_text()}
       </p>
