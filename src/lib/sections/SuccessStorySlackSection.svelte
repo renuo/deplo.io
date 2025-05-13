@@ -38,17 +38,17 @@
     <div class="lg:w-1/2">
       <div class="text-white" use:appear={{ delay: 100 }}>
         <h3 class="text-h3 pb-4">
-          {m.success_story_slack_before_cloud()}
+          {m.success_story_before_cloud_title()}
         </h3>
         <p use:appear={{ delay: 200 }}>
-          {m.success_story_slack_text()}
+          {m.success_story_before_cloud_text()}
         </p>
       </div>
 
       <div class="ml-auto xl:w-2/3 text-white">
-        <h3 class="text-h3 mt-8 pb-4" use:appear={{ delay: 300 }}>{m.success_story_slack_beauty_beast()}</h3>
+        <h3 class="text-h3 mt-8 pb-4" use:appear={{ delay: 300 }}>{m.success_story_beauty_and_the_beast_title()}</h3>
         <p use:appear={{ delay: 400 }}>
-          {m.success_story_slack_beauty_beast_text()}
+          {m.success_story_beauty_and_the_beast_text()}
         </p>
       </div>
     </div>
