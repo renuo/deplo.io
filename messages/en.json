@@ -54,7 +54,7 @@
   "success_story_link": "LEARN MORE >",
   "success_story_slack_before_cloud": "THE TIME BEFORE THE CLOUD",
   "success_story_slack_title": "We code, Deploio does the rest",
-  "success_story_slack_text": "We are in the software business, not the infrastructure business. I don't want to run Kubernetes myself or bare-metal servers (how do I separate clients? who actually does kernel updates?). We develop good code, that must be enough: 'git push', CI/CD and the customer can test. Deploio handles the infrastructure, in Switzerland, and they do it well. I never had to break down the door at Stauffacher Square.",
+  "success_story_slack_text": "Deploio is operated by Nine and we used to be a Nine customer. That was before the cloud. We set up and operated servers for our customers. That took a lot of time and nerves: Buying SSL certificates, managing SSH access, monitoring disk space, updating system libraries. But then came Heroku. It freed us from server administration. We were able to concentrate on software development, even without vendor lock-in thanks to 12factor. Simply “git push”, CI/CD and the customer can test. So we moved to the cloud.",
   "success_story_slack_beauty_beast": "BEAUTY AND THE BEAST",
   "success_story_slack_beauty_beast_text": "Renuo is an owner-managed Swiss company. But Heroku is American and runs on AWS. That bothered us for the next ten years. It must be possible to use a product as cool as Heroku in Switzerland, where I can kick down doors if I don't like something – good luck with that at Salesforce. We were in the Enterprise contract; simply a construct from hell. That's when Deploio came to the rescue and at the right time!",
   "success_story_slack_message_1_name": "Samuel Steiner  ·  Renuo AG",
