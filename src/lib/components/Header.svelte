@@ -58,7 +58,7 @@
     <LanguageSwitcher />
     <Link href="/pricing">{m.navigation_pricing()}</Link>
     <Link href="https://docs.deplo.io">{m.navigation_documentation()}</Link>
-    <Link href="https://cockpit.nine.ch/de/session/new?origin=%2F" target="_blank">{m.navigation_login()}</Link>
+    <Link href="https://cockpit.nine.ch/{m.navigation_language()}/signup?origin=deploio" target="_blank">{m.navigation_login()}</Link>
     <Button variant="primary" href="#register">{m.navigation_start()}</Button>
   </nav>
 
@@ -104,7 +104,7 @@
       </a>
       
       <a 
-        href="https://cockpit.nine.ch/de/session/new?origin=%2F" 
+        href="https://cockpit.nine.ch/{m.navigation_language()}/signup?origin=deploio" 
         target="_blank" 
         on:click={toggleMenu}
         class="text-deploio py-3 text-2xl tracking-[0.02em] font-normal w-full"
