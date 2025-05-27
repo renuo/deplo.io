@@ -12,13 +12,29 @@
         <path class="background-path" d="M222 437L259 468L312 448.5L359 456L423 404.5L442 351L486 315.5" stroke="#141D50" stroke-width="4"/>
         <path class="background-path" d="M507.5 319L526.5 353L577.5 357.5L619 386L652.5 367L659 324.5L731 295.5L741.5 260.5" stroke="#141D50" stroke-width="4"/>
         <path class="background-path" d="M758.5 257L787 281L802.5 319L864 333L952.5 292.5L1051 281L1092 241L1039.5 221.5L1003.5 184L1051 156.5L1131 153L1207.5 113L1192 74L1198 38" stroke="#141D50" stroke-width="4"/>
-        <path class="animated-path" d="M222 437L259 468L312 448.5L359 456L423 404.5L442 351L486 315.5L507.5 319L526.5 353L577.5 357.5L619 386L652.5 367L659 324.5L731 295.5L741.5 260.5L758.5 257L787 281L802.5 319L864 333L952.5 292.5L1051 281L1092 241L1039.5 221.5L1003.5 184L1051 156.5L1131 153L1207.5 113L1192 74L1198 38" stroke="#141D50" stroke-width="4"/>
+        <path class="pulse-path" d="M222 437L259 468L312 448.5L359 456L423 404.5L442 351L486 315.5" stroke="#141D50" stroke-width="4"/>
+        <path class="pulse-path" d="M507.5 319L526.5 353L577.5 357.5L619 386L652.5 367L659 324.5L731 295.5L741.5 260.5" stroke="#141D50" stroke-width="4"/>
+        <path class="pulse-path" d="M758.5 257L787 281L802.5 319L864 333L952.5 292.5L1051 281L1092 241L1039.5 221.5L1003.5 184L1051 156.5L1131 153L1207.5 113L1192 74L1198 38" stroke="#141D50" stroke-width="4"/>
       </g>
   </g>
   <defs>
     <clipPath id="clip0_2455_4589">
       <rect width="986" height="433" fill="white" transform="translate(222 38)"/>
     </clipPath>
+    <mask id="pulseMask">
+      <rect width="1440" height="547" fill="black"/>
+      <circle r="140" fill="white">
+        <animateMotion
+          dur="4s"
+          repeatCount="indefinite"
+          keyTimes="0;1"
+          keySplines="0.25,0.1,0.25,1"
+          calcMode="spline">
+          <mpath href="#motionPath"/>
+        </animateMotion>
+      </circle>
+    </mask>
+    <path id="motionPath" d="M100 470Q150 450 222 437Q350 380 486 315.5Q550 340 659 324.5Q700 290 758.5 257Q850 320 1051 281Q1100 220 1198 38Q1280 -20 1350 -40" fill="none" stroke="none"/>
   </defs>
 </svg>
 
@@ -29,21 +45,10 @@
     opacity: 0.4;
   }
   
-  .animated-path {
-    stroke-dasharray: 100 2900;
-    animation: pulse-path 4s ease-in-out infinite;
+  .pulse-path {
+    stroke-dasharray: 16 16;
     stroke-linecap: round;
-  }
-  
-  @keyframes pulse-path {
-    0% {
-      stroke-dashoffset: 3000;
-    }
-    50% {
-      stroke-dashoffset: 1500;
-    }
-    100% {
-      stroke-dashoffset: 0;
-    }
+    mask: url(#pulseMask);
+    stroke-dashoffset: 0;
   }
 </style> 
