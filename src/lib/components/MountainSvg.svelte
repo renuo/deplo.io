@@ -8,9 +8,12 @@
     <mask id="mask0_2455_4589" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="-763" y="-392" width="2957" height="1290">
       <rect x="-763" y="-392" width="2956.5" height="1290" fill="#141D50"/>
     </mask>
-    <g mask="url(#mask0_2455_4589)">
-      <path class="animated-path" d="M222 437L259 468L312 448.5L359 456L423 404.5L442 351L486 315.5L507.5 319L526.5 353L577.5 357.5L619 386L652.5 367L659 324.5L731 295.5L741.5 260.5L758.5 257L787 281L802.5 319L864 333L952.5 292.5L1051 281L1092 241L1039.5 221.5L1003.5 184L1051 156.5L1131 153L1207.5 113L1192 74L1198 38" stroke="#141D50" stroke-width="4"/>
-    </g>
+          <g mask="url(#mask0_2455_4589)">
+        <path class="background-path" d="M222 437L259 468L312 448.5L359 456L423 404.5L442 351L486 315.5" stroke="#141D50" stroke-width="4"/>
+        <path class="background-path" d="M507.5 319L526.5 353L577.5 357.5L619 386L652.5 367L659 324.5L731 295.5L741.5 260.5" stroke="#141D50" stroke-width="4"/>
+        <path class="background-path" d="M758.5 257L787 281L802.5 319L864 333L952.5 292.5L1051 281L1092 241L1039.5 221.5L1003.5 184L1051 156.5L1131 153L1207.5 113L1192 74L1198 38" stroke="#141D50" stroke-width="4"/>
+        <path class="animated-path" d="M222 437L259 468L312 448.5L359 456L423 404.5L442 351L486 315.5L507.5 319L526.5 353L577.5 357.5L619 386L652.5 367L659 324.5L731 295.5L741.5 260.5L758.5 257L787 281L802.5 319L864 333L952.5 292.5L1051 281L1092 241L1039.5 221.5L1003.5 184L1051 156.5L1131 153L1207.5 113L1192 74L1198 38" stroke="#141D50" stroke-width="4"/>
+      </g>
   </g>
   <defs>
     <clipPath id="clip0_2455_4589">
@@ -20,6 +23,12 @@
 </svg>
 
 <style>
+  .background-path {
+    stroke-dasharray: 16 16;
+    stroke-linecap: round;
+    opacity: 0.4;
+  }
+  
   .animated-path {
     stroke-dasharray: 100 2900;
     animation: pulse-path 4s ease-in-out infinite;
