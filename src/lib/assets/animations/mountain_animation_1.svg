@@ -6,19 +6,14 @@
 <circle cx="1200" cy="20" r="18" stroke="#141D50" stroke-width="4"/>
 <g clip-path="url(#clip0_2455_4589)">
 <mask id="mask0_2455_4589" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="-763" y="-392" width="2957" height="1290">
-<rect x="-763" y="-392" width="2956.5" height="1290" fill="url(#paint0_linear_2455_4589)"/>
+<rect x="-763" y="-392" width="2956.5" height="1290" fill="#141D50"/>
 </mask>
 <g mask="url(#mask0_2455_4589)">
 <path d="M222 437L259 468L312 448.5L359 456L423 404.5L442 351L486 315.5M507.5 319L526.5 353L577.5 357.5L619 386L652.5 367L659 324.5L731 295.5L741.5 260.5M758.5 257L787 281L802.5 319L864 333L952.5 292.5L1051 281L1092 241L1039.5 221.5L1003.5 184L1051 156.5L1131 153L1207.5 113L1192 74L1198 38" stroke="#141D50" stroke-width="4" stroke-dasharray="16 16"/>
 </g>
 </g>
 <defs>
-<linearGradient id="paint0_linear_2455_4589" x1="-763" y1="898" x2="1456.28" y2="-1179.52" gradientUnits="userSpaceOnUse">
-<stop stop-color="#141D50"/>
-<stop offset="0.33" stop-color="#141D50" stop-opacity="0.2"/>
-<stop offset="0.66" stop-color="#141D50"/>
-<stop offset="1" stop-color="#141D50" stop-opacity="0.2"/>
-</linearGradient>
+
 <clipPath id="clip0_2455_4589">
 <rect width="986" height="433" fill="white" transform="translate(222 38)"/>
 </clipPath>

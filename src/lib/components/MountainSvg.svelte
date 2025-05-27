@@ -1,0 +1,40 @@
+<svg width="1440" height="547" viewBox="0 0 1440 547" fill="none" xmlns="http://www.w3.org/2000/svg" class="pointer-events-none -mb-px w-full select-none">
+  <path d="M1304.5 164L1455 303.5L1485.5 546.499H-68.0005L33 498.5L130 474.5L183 440L210.5 425L244.5 440L349 386L413 323.5H454L500.5 303.5L563 336.5L665 293L748 243L767 253L824 295.5L856 270.5L953.2 153.4L1089.5 114L1124 79.5L1150.5 66.5L1201 20L1232.5 46.5L1304.5 164Z" fill="#FCFAFA"/>
+  <circle cx="209" cy="426" r="18" stroke="#141D50" stroke-width="4"/>
+  <circle cx="499" cy="303" r="18" stroke="#141D50" stroke-width="4"/>
+  <circle cx="747" cy="243" r="18" stroke="#141D50" stroke-width="4"/>
+  <circle cx="1200" cy="20" r="18" stroke="#141D50" stroke-width="4"/>
+  <g clip-path="url(#clip0_2455_4589)">
+    <mask id="mask0_2455_4589" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="-763" y="-392" width="2957" height="1290">
+      <rect x="-763" y="-392" width="2956.5" height="1290" fill="#141D50"/>
+    </mask>
+    <g mask="url(#mask0_2455_4589)">
+      <path class="animated-path" d="M222 437L259 468L312 448.5L359 456L423 404.5L442 351L486 315.5L507.5 319L526.5 353L577.5 357.5L619 386L652.5 367L659 324.5L731 295.5L741.5 260.5L758.5 257L787 281L802.5 319L864 333L952.5 292.5L1051 281L1092 241L1039.5 221.5L1003.5 184L1051 156.5L1131 153L1207.5 113L1192 74L1198 38" stroke="#141D50" stroke-width="4"/>
+    </g>
+  </g>
+  <defs>
+    <clipPath id="clip0_2455_4589">
+      <rect width="986" height="433" fill="white" transform="translate(222 38)"/>
+    </clipPath>
+  </defs>
+</svg>
+
+<style>
+  .animated-path {
+    stroke-dasharray: 100 2900;
+    animation: pulse-path 4s ease-in-out infinite;
+    stroke-linecap: round;
+  }
+  
+  @keyframes pulse-path {
+    0% {
+      stroke-dashoffset: 3000;
+    }
+    50% {
+      stroke-dashoffset: 1500;
+    }
+    100% {
+      stroke-dashoffset: 0;
+    }
+  }
+</style> 
