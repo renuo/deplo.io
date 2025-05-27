@@ -1,10 +1,29 @@
 <script lang="ts">
   import { appear } from '$lib';
   import MountainAnimation from '$lib/components/MountainAnimation.svelte';
+  import * as m from '$lib/paraglide/messages';
+  import Button from '$lib/components/Button.svelte';
+  import BinarySection from '$lib/components/BinarySection.svelte';
 
   const labels = ['Deploio', 'Managed Server', 'Root-Server', 'Kubernetes Cluster'];
 </script>
 
 <section id="register" class="bg-mountain text-center text-deploio">
   <MountainAnimation {labels} />
+
+  <div class="container bg-mountain">
+    <div class="flex flex-col items-center justify-center">
+      <h2 class="text-h2 pb-8">{m.complex_projects_ready()}</h2>
+      <div class="flex" use:appear={{ delay: 150 }}>
+        <Button
+          variant="secondary"
+          href={m.complex_projects_button_url()}
+          target="_blank"
+        >
+          {m.complex_projects_button()}
+        </Button>
+      </div>
+    </div>
+  </div>
+  <BinarySection/>
 </section>

@@ -10,12 +10,12 @@
 <div class="bg-background">
   <div class="container relative z-10 space-y-8 text-left">
     <h2 class="text-h2 max-w-[800px]" use:appear={{ delay: 0 }}>{m.complex_projects()}</h2>
-    <p class="max-w-[620px] text-[20px]" use:appear={{ delay: 100 }}>{m.complex_projects_description()}</p>
+    <p class="max-w-[620px] text-p" use:appear={{ delay: 100 }}>{m.complex_projects_description()}</p>
 
     <div class="flex justify-start">
-      <a href={m.nine_url()} target="_blank" class="btn btn-primary flex items-center">
+      <a href={m.nine_url()} target="_blank" class="btn btn-primary flex items-center text-p font-medium">
         {m.nine()}
-        <img src={callMadeIcon} class="w-4 h-4 ml-2" alt="External link" />
+        <img src={callMadeIcon} class="w-5 h-5 ml-2" alt="External link" />
       </a>
     </div>
   </div>
