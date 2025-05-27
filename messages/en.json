@@ -79,5 +79,7 @@
   "footer_copyright": "Copyright © {year} Nine Internet Solutions AG",
   "footer_terms": "Terms of Service",
   "footer_privacy": "Privacy Policy",
-  "customers_trust": "Customers who trust Deploio:"
+  "customers_trust": "Customers who trust Deploio:",
+  "complex_projects": "Complex Projects?",
+  "complex_projects_description": "If Deploio is not enough, you can also buy more in the dashboard. Everything from a single provider: managed servers, root servers or even an entire K8 cluster."
 }

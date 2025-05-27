@@ -1,18 +1,15 @@
 <script lang="ts">
   import { appear } from '$lib';
   import MountainSvg from './MountainSvg.svelte';
+  import * as m from '$lib/paraglide/messages';
 
   export let labels: string[] = [];
 </script>
 
 <div class="bg-background">
   <div class="container relative z-10 space-y-8 text-left">
-    <h2 class="text-h2 max-w-[800px]" use:appear={{ delay: 0 }}>KOMPLIZIERTERE PROJEKTE?</h2>
-    <p class="max-w-[620px] text-[20px]" use:appear={{ delay: 100 }}>
-      Deploio ist nur der Anfang. Wenn dir Deploio in einem Projekt zu limitiert ist und du dennoch alle deine Projekte
-      an einem Ort haben möchtest: Über das Deploio-Dashboard kannst Du auch Managed Server, Root Server oder Kubernetes
-      Cluster bestellen.
-    </p>
+    <h2 class="text-h2 max-w-[800px]" use:appear={{ delay: 0 }}>{m.complex_projects()}</h2>
+    <p class="max-w-[620px] text-[20px]" use:appear={{ delay: 100 }}>{m.complex_projects_description()}</p>
 
     <div class="flex justify-start">
       <a href="/dashboard" class="btn btn-primary"> Deploio-Dashboard </a>
