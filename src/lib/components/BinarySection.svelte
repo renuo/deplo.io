@@ -1,6 +1,5 @@
 <script lang="ts">
   import { onMount } from 'svelte';
-  import { appear } from '$lib';
 
   let binaryLines: string[][] = [];
   let intervals: NodeJS.Timeout[] = [];
@@ -28,17 +27,35 @@
             const randomIndex = Math.floor(Math.random() * line.length);
             const positionKey = `${lineIndex}-${randomIndex}`;
             
-            if ((randomIndex < 37 || randomIndex > 41) && !transitioningPositions.has(positionKey)) {
-              transitioningPositions.add(positionKey);
-              
-              binaryLines[lineIndex][randomIndex] = Math.random() > 0.5 ? '1' : '0';
-              binaryLines = [...binaryLines];
-              
-              const timeoutId = setTimeout(() => {
-                transitioningPositions.delete(positionKey);
-                transitionTimeouts.delete(positionKey);
-              }, 1000);
-              transitionTimeouts.set(positionKey, timeoutId);
+            if (!transitioningPositions.has(positionKey)) {
+              if (randomIndex >= 37 && randomIndex <= 41) {
+                const specialIndex = randomIndex - 37;
+                const isHovered = hoveredIndex === specialIndex || (specialIndex >= 2 && hoveredIndex === 2);
+                
+                if (!isHovered) {
+                  transitioningPositions.add(positionKey);
+                  
+                  binaryLines[lineIndex][randomIndex] = Math.random() > 0.5 ? '1' : '0';
+                  binaryLines = [...binaryLines];
+                  
+                  const timeoutId = setTimeout(() => {
+                    transitioningPositions.delete(positionKey);
+                    transitionTimeouts.delete(positionKey);
+                  }, 1000);
+                  transitionTimeouts.set(positionKey, timeoutId);
+                }
+              } else {
+                transitioningPositions.add(positionKey);
+                
+                binaryLines[lineIndex][randomIndex] = Math.random() > 0.5 ? '1' : '0';
+                binaryLines = [...binaryLines];
+                
+                const timeoutId = setTimeout(() => {
+                  transitioningPositions.delete(positionKey);
+                  transitionTimeouts.delete(positionKey);
+                }, 1000);
+                transitionTimeouts.set(positionKey, timeoutId);
+              }
             }
           } else {
             const randomIndex = Math.floor(Math.random() * line.length);
@@ -64,12 +81,14 @@
   onMount(() => {
     initializeBinary();
     startAnimation();
+    startAutoHover();
 
     return () => {
       intervals.forEach(interval => clearInterval(interval));
       transitionTimeouts.forEach(timeout => clearTimeout(timeout));
       transitionTimeouts.clear();
       transitioningPositions.clear();
+      if (autoHoverTimeout) clearTimeout(autoHoverTimeout);
     };
   });
 
@@ -82,6 +101,9 @@
   ];
 
   let hoveredIndex: number | null = null;
+  let autoHoverTimeout: NodeJS.Timeout | null = null;
+  let isManuallyHovered: boolean = false;
+  let pausedAutoHover: boolean = false;
 
   function getLineConfig(lineIndex: number) {
     const configs = [
@@ -108,6 +130,48 @@
       return baseOpacity * fadeRatio;
     }
   }
+
+  function startAutoHover() {
+    function scheduleNextHover() {
+      if (pausedAutoHover) {
+        autoHoverTimeout = setTimeout(scheduleNextHover, 1000);
+        return;
+      }
+      
+      autoHoverTimeout = setTimeout(() => {
+        if (!isManuallyHovered && !pausedAutoHover) {
+          const randomSection = Math.floor(Math.random() * 3);
+          hoveredIndex = randomSection;
+          
+          setTimeout(() => {
+            if (!isManuallyHovered) {
+              hoveredIndex = null;
+            }
+            scheduleNextHover();
+          }, 3000);
+        } else {
+          scheduleNextHover();
+        }
+      }, 5000);
+    }
+    
+    scheduleNextHover();
+  }
+
+  function pauseAutoHover() {
+    pausedAutoHover = true;
+    if (autoHoverTimeout) {
+      clearTimeout(autoHoverTimeout);
+      autoHoverTimeout = null;
+    }
+  }
+
+  function resumeAutoHover() {
+    pausedAutoHover = false;
+    if (!autoHoverTimeout) {
+      startAutoHover();
+    }
+  }
 </script>
 
 <section class="relative bg-mountain py-16 overflow-hidden">
@@ -124,8 +188,16 @@
                   class="font-bold transition-all duration-500 cursor-pointer text-deploio relative inline-block"
                   class:hover-shadow={hoveredIndex === specialIndex || (specialIndex >= 2 && hoveredIndex === 2)}
                   style="font-size: {lineConfig.fontSize}; text-align: center;"
-                  on:mouseenter={() => hoveredIndex = specialIndex >= 2 ? 2 : specialIndex}
-                  on:mouseleave={() => hoveredIndex = null}
+                  on:mouseenter={() => {
+                    isManuallyHovered = true;
+                    pauseAutoHover();
+                    hoveredIndex = specialIndex >= 2 ? 2 : specialIndex;
+                  }}
+                  on:mouseleave={() => {
+                    isManuallyHovered = false;
+                    hoveredIndex = null;
+                    resumeAutoHover();
+                  }}
                   role="button"
                   tabindex="0"
                 >
@@ -133,10 +205,14 @@
                     {#if hoveredIndex === 2}
                       {specialIndex === 2 ? '1' : '0'}
                     {:else}
-                      {specialNumbers[specialIndex].value}
+                      {digit}
                     {/if}
                   {:else}
-                    {hoveredIndex === specialIndex ? specialNumbers[specialIndex].hoverValue : specialNumbers[specialIndex].value}
+                    {#if hoveredIndex === specialIndex}
+                      {specialIndex === 0 ? '1' : '0'}
+                    {:else}
+                      {digit}
+                    {/if}
                   {/if}
                 </span>
                   
