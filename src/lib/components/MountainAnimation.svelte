@@ -5,32 +5,41 @@
   export let labels: string[] = [];
 </script>
 
-<div class="relative mountain-container bg-background">
-  <MountainSvg />
+<div class="bg-background">
+     <div class="container relative z-10 space-y-8 text-left ">
+    <h2 class="text-h2 max-w-[800px]" use:appear={{ delay: 0 }}>
+      KOMPLIZIERTERE PROJEKTE?
+    </h2>
+    <p class="max-w-[620px] text-[20px]" use:appear={{ delay: 100 }}>
+      Deploio ist nur der Anfang. Wenn dir Deploio in einem Projekt zu limitiert ist und du dennoch alle deine Projekte an einem Ort haben möchtest: Über das Deploio-Dashboard kannst Du auch Managed Server, Root Server oder Kubernetes Cluster bestellen.
+    </p>
 
-
-  {#if labels.length > 0}
-    <div class="absolute top-0 left-0 w-full h-full pointer-events-none">
-      {#each labels as label, index}
-        <div 
-          class="absolute text-deploio text-h3 label-{index + 1}"
-          use:appear={{ delay: 200 + index * 100 }}
-        >
-          {label}
-        </div>
-      {/each}
+    <div class="flex justify-start">
+      <a href="/dashboard" class="btn btn-primary">
+        Deploio-Dashboard
+      </a>
     </div>
-  {/if}
+  </div>
+  
+  <div class="relative w-full mt-20 md:-mt-16 lg:-mt-48">
+    <MountainSvg />
+
+    {#if labels.length > 0}
+      <div class="absolute top-0 left-0 w-full h-full pointer-events-none">
+        {#each labels as label, index}
+          <div 
+            class="absolute text-deploio text-h3 label-{index + 1}"
+            use:appear={{ delay: 200 + index * 100 }}
+          >
+            {label}
+          </div>
+        {/each}
+      </div>
+    {/if}
+  </div>
 </div>
 
 <style>
-  .mountain-container {
-    position: relative;
-    width: 100%;
-  }
-  
-
-
   .label-1 {
     top: 60%;
     left: 14%;
