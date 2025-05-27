@@ -6,31 +6,26 @@
 </script>
 
 <div class="bg-background">
-     <div class="container relative z-10 space-y-8 text-left ">
-    <h2 class="text-h2 max-w-[800px]" use:appear={{ delay: 0 }}>
-      KOMPLIZIERTERE PROJEKTE?
-    </h2>
+  <div class="container relative z-10 space-y-8 text-left">
+    <h2 class="text-h2 max-w-[800px]" use:appear={{ delay: 0 }}>KOMPLIZIERTERE PROJEKTE?</h2>
     <p class="max-w-[620px] text-[20px]" use:appear={{ delay: 100 }}>
-      Deploio ist nur der Anfang. Wenn dir Deploio in einem Projekt zu limitiert ist und du dennoch alle deine Projekte an einem Ort haben möchtest: Über das Deploio-Dashboard kannst Du auch Managed Server, Root Server oder Kubernetes Cluster bestellen.
+      Deploio ist nur der Anfang. Wenn dir Deploio in einem Projekt zu limitiert ist und du dennoch alle deine Projekte
+      an einem Ort haben möchtest: Über das Deploio-Dashboard kannst Du auch Managed Server, Root Server oder Kubernetes
+      Cluster bestellen.
     </p>
 
     <div class="flex justify-start">
-      <a href="/dashboard" class="btn btn-primary">
-        Deploio-Dashboard
-      </a>
+      <a href="/dashboard" class="btn btn-primary"> Deploio-Dashboard </a>
     </div>
   </div>
-  
-  <div class="relative w-full mt-20 md:-mt-16 lg:-mt-48">
+
+  <div class="relative mt-20 w-full md:-mt-16 lg:-mt-48">
     <MountainSvg />
 
     {#if labels.length > 0}
-      <div class="absolute top-0 left-0 w-full h-full pointer-events-none">
+      <div class="pointer-events-none absolute left-0 top-0 h-full w-full">
         {#each labels as label, index}
-          <div 
-            class="absolute text-deploio text-h3 label-{index + 1}"
-            use:appear={{ delay: 200 + index * 100 }}
-          >
+          <div class="text-h3 absolute text-deploio label-{index + 1}" use:appear={{ delay: 200 + index * 100 }}>
             {label}
           </div>
         {/each}
@@ -45,22 +40,22 @@
     left: 14%;
     transform: translateX(-50%);
   }
-  
+
   .label-2 {
     top: 40%;
     left: 34%;
     transform: translateX(-50%);
   }
-  
+
   .label-3 {
     top: 30%;
     left: 52%;
     transform: translateX(-50%);
   }
-  
+
   .label-4 {
     top: -10%;
     left: 83%;
     transform: translateX(-50%);
   }
-</style> 
+</style>

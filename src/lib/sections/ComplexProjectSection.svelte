@@ -8,4 +8,3 @@
 <section id="register" class="bg-mountain text-center text-deploio">
   <MountainAnimation {labels} />
 </section>
-  
