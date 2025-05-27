@@ -1,6 +1,7 @@
 <script lang="ts">
   import { appear } from '$lib';
   import MountainSvg from './MountainSvg.svelte';
+  import callMadeIcon from '$lib/assets/icons/call_made.svg';
   import * as m from '$lib/paraglide/messages';
 
   export let labels: string[] = [];
@@ -12,7 +13,10 @@
     <p class="max-w-[620px] text-[20px]" use:appear={{ delay: 100 }}>{m.complex_projects_description()}</p>
 
     <div class="flex justify-start">
-      <a href="/dashboard" class="btn btn-primary"> Deploio-Dashboard </a>
+      <a href={m.nine_url()} target="_blank" class="btn btn-primary flex items-center">
+        {m.nine()}
+        <img src={callMadeIcon} class="w-4 h-4 ml-2" alt="External link" />
+      </a>
     </div>
   </div>
 
