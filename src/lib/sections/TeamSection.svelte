@@ -19,7 +19,7 @@
   import samuelSteiner from '$lib/assets/team/samuel_steiner.webp';
   import timGrethler from '$lib/assets/team/tim_grethler.webp';
   import thomasHug from '$lib/assets/team/thomas_hug.webp';
-  // import vanessaAlbrecht from '$lib/assets/team/vanessa_albrecht.webp';
+  import vanessaAlbrecht from '$lib/assets/team/vanessa_albrecht.webp';
   import yessinBenBrahim from '$lib/assets/team/yessin_ben_brahim.webp';
   import sebastianNickel from '$lib/assets/team/sebastian_nickel.webp';
 
@@ -41,7 +41,7 @@
     { name: 'Raphael Knecht', role: 'Marketing', image: raphaelKnecht },
     { name: 'Oliver Anthony', role: 'Dokumentation', image: oliverAnthony },
     { name: 'Yessin Ben Brahim', role: 'Marketing', image: yessinBenBrahim },
-    // { name: 'Vanessa Albrecht', role: 'Design', image: '' },
+    { name: 'Vanessa Albrecht', role: 'Design', image: vanessaAlbrecht },
   ];
 </script>
 
