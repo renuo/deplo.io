@@ -20,6 +20,7 @@
       class="h-10 w-full sm:ml-3 sm:w-auto mt-2"
       type="submit"
       href="https://cockpit.nine.ch/{m.navigation_language()}/signup?origin=deploio"
+      target="_blank"
       variant="secondary"
       >
         {m.register_button()}
