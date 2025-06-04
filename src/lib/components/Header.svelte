@@ -59,7 +59,7 @@
     <Link href="/pricing">{m.navigation_pricing()}</Link>
     <Link href="https://docs.deplo.io">{m.navigation_documentation()}</Link>
     <Link href="https://cockpit.nine.ch/{m.navigation_language()}/signup?origin=deploio" target="_blank">{m.navigation_login()}</Link>
-    <Button variant="primary" href="#register">{m.navigation_start()}</Button>
+    <Button variant="primary" href="https://cockpit.nine.ch/{m.navigation_language()}/signup?origin=deploio">{m.navigation_start()}</Button>
   </nav>
 
   <button 
@@ -115,7 +115,7 @@
       <div class="h-8"></div>
       
       <a 
-        href="#register" 
+        href="https://cockpit.nine.ch/{m.navigation_language()}/signup?origin=deploio"
         on:click={toggleMenu}
         class="bg-deploio text-white py-2 text-lg tracking-[0.02em] text-center w-full"
       >
