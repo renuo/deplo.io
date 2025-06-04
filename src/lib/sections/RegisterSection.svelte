@@ -3,13 +3,7 @@
   import Button from '$lib/components/Button.svelte';
   import mountainVector from '$lib/assets/backgrounds/mountain_vector.svg';
   import { appear } from '$lib';
-
-  const KEY_ID = '6LcrS4AqAAAAAMI4yWYJtgxIrLT6y5avlCWAOIle';
 </script>
-
-<svelte:head>
-  <script src="https://www.google.com/recaptcha/api.js?render={KEY_ID}"></script>
-</svelte:head>
 
 <section id="register" class="bg-mountain text-center text-deploio">
   <img
