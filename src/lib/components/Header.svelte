@@ -104,7 +104,7 @@
       </a>
       
       <a 
-        href="https://cockpit.nine.ch/{m.navigation_language()}/signup?origin=deploio" 
+        href="https://cockpit.nine.ch/{m.navigation_language()}/session/new?origin=deploio" 
         target="_blank" 
         on:click={toggleMenu}
         class="text-deploio py-3 text-2xl tracking-[0.02em] font-normal w-full"
