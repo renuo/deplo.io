@@ -14,6 +14,10 @@ body {
   @apply mx-auto max-w-7xl p-4 md:p-16;
 }
 
+.team-container {
+  @apply mx-auto max-w-7xl p-2 md:p-6;
+}
+
 .text-h1 {
   @apply text-[40px] font-medium uppercase leading-[110%] tracking-[0.02em] md:text-[57px];
 }
