@@ -12,11 +12,52 @@
   opacity: 0.2;
 } 
 
-.icon-month {
-    width: 200px;
-    height: 100px;
-    left: -105px;
-    top: -80px;
+.binary-line-fade {
+  background: linear-gradient(90deg, 
+    transparent 0%, 
+    rgba(20, 29, 80, 0.3) var(--fade-in), 
+    rgba(20, 29, 80, 0.3) var(--fade-out), 
+    transparent 100%);
+  background-clip: text;
+  color: transparent;
+}
+
+.first-line-fade-start {
+    --fade-in: 20%;
+    --fade-out: 100%;
+}
+
+.first-line-fade-end {
+    --fade-in: 0%;
+    --fade-out: 80%;
+}
+
+.binary-line-1 {
+  --fade-in: 30%;
+  --fade-out: 70%;
+  font-size: 16px;
+}
+
+.binary-line-2 {
+  --fade-in: 40%;
+  --fade-out: 60%;
+  font-size: 14px;
+}
+
+.binary-line-3 {
+  --fade-in: 50%;
+  --fade-out: 50%;
+  font-size: 12px;
+}
+
+.icon-overlay {
+  position: absolute;
+  z-index: 30;
+  pointer-events: none;
+  width: 200px;
+  height: 100px;
+  left: -105px;
+  top: -80px;
 }
 
 .icon-risk {

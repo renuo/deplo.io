@@ -5,164 +5,118 @@
   import RiskIcon from '$lib/assets/icons/0risk.svg';
   import ControlIcon from '$lib/assets/icons/100control.svg';
 
-  const LINE_LENGTH = 80;
   const LINE_COUNT = 4;
+  const LINE_LENGTH = 80;
   const SPECIAL_START = 37;
   const SPECIAL_END = 41;
-  const ANIMATION_INTERVAL = 15;
-  const AUTO_HOVER_CYCLE_INTERVAL = 5000; // 5 seconds between auto-hover switches
-  const AUTO_HOVER_DURATION = 3000; // 3 seconds display duration
-  const AUTO_HOVER_CYCLE_COUNT = Math.floor(AUTO_HOVER_CYCLE_INTERVAL / ANIMATION_INTERVAL);
-  const SPECIAL_COUNT = 3;
-  const HOVER_INDEX_MONTH = 0;
-  const HOVER_INDEX_RISK = 1;
-  const HOVER_INDEX_CONTROL = 2;
-  const POPUP_THRESHOLD = 2;
-  
-  const HOVER_VALUES: Record<number, string[]> = {
-    [HOVER_INDEX_MONTH]: ['1'],
-    [HOVER_INDEX_RISK]: ['0'], 
-    [HOVER_INDEX_CONTROL]: ['1', '0', '0']
-  };
-
-  const LINE_STYLES = [
-    { fontSize: '18px', opacity: 0.8, fadeEdge: 8 },
-    { fontSize: '16px', opacity: 0.6, fadeEdge: 12 },
-    { fontSize: '14px', opacity: 0.4, fadeEdge: 16 },
-    { fontSize: '12px', opacity: 0.2, fadeEdge: 20 }
-  ];
-
-  const ICON_MAP: Record<number, string> = {
-    [HOVER_INDEX_MONTH]: MonthIcon,
-    [HOVER_INDEX_RISK]: RiskIcon,
-    [HOVER_INDEX_CONTROL]: ControlIcon
-  };
+  const ICONS = [MonthIcon, RiskIcon, ControlIcon];
+  const AUTO_HOVER_DURATION = 5000;
 
   let binaryLines: string[][] = [];
   let hoveredIndex: number | null = null;
-  let intervals: NodeJS.Timeout[] = [];
+  let interval: NodeJS.Timeout;
+  let autoHoverTimeout: NodeJS.Timeout;
 
-  function randomBit(): string {
-    return Math.random() > 0.5 ? '1' : '0';
+  function createBinaryLines(): string[][] {
+    return Array.from({ length: LINE_COUNT }, () => 
+      Array.from({ length: LINE_LENGTH }, () => Math.random() > 0.5 ? '1' : '0')
+    );
   }
 
-  function createBinaryLine(): string[] {
-    return Array.from({ length: LINE_LENGTH }, randomBit);
-  }
-
-  function isSpecialPosition(digitIndex: number): boolean {
-    return digitIndex >= SPECIAL_START && digitIndex <= SPECIAL_END;
-  }
-
-  function getSpecialIndex(digitIndex: number): number {
-    return digitIndex - SPECIAL_START;
-  }
-
-  function calculateOpacity(digitIndex: number, style: typeof LINE_STYLES[0]): number {
-    const distanceFromEdge = Math.min(digitIndex, LINE_LENGTH - digitIndex - 1);
-    if (distanceFromEdge >= style.fadeEdge) return style.opacity;
-    if (distanceFromEdge <= 0) return 0;
-    return style.opacity * (distanceFromEdge / style.fadeEdge);
-  }
-
-  function getDisplayValue(digitIndex: number, originalDigit: string): string {
-    if (!isSpecialPosition(digitIndex) || hoveredIndex === null) return originalDigit;
-    
-    const specialIndex = getSpecialIndex(digitIndex);
-    const values = HOVER_VALUES[hoveredIndex];
-    
-    if (!values) return originalDigit;
-    
-    if (values.length === 1) {
-      return specialIndex === hoveredIndex ? values[0] : originalDigit;
+  function getDisplayLine(line: string[], lineIndex: number): string {
+    if (lineIndex !== 0 || hoveredIndex === null) {
+      return line.join('');
     }
     
-    if (hoveredIndex === HOVER_INDEX_CONTROL && specialIndex >= 2) {
-      return values[specialIndex - 2] || originalDigit;
+    const modifiedLine = [...line];
+    if (hoveredIndex === 0) modifiedLine[SPECIAL_START] = '1';
+    if (hoveredIndex === 1) modifiedLine[SPECIAL_START + 1] = '0';
+    if (hoveredIndex === 2) {
+      modifiedLine[SPECIAL_START + 2] = '1';
+      modifiedLine[SPECIAL_START + 3] = '0';
+      modifiedLine[SPECIAL_START + 4] = '0';
     }
     
-    return originalDigit;
+    return modifiedLine.join('');
   }
 
-  function handleMouseEnter(specialIndex: number): void {
-    hoveredIndex = specialIndex >= POPUP_THRESHOLD ? HOVER_INDEX_CONTROL : specialIndex;
-  }
-
-  function handleMouseLeave(): void {
-    hoveredIndex = null;
+  function startAutoHover() {
+    if (hoveredIndex === null) {
+      hoveredIndex = Math.floor(Math.random() * 3);
+      autoHoverTimeout = setTimeout(() => {
+        hoveredIndex = null;
+        setTimeout(startAutoHover, 2000);
+      }, 3000);
+    }
   }
 
   onMount(() => {
-    binaryLines = Array.from({ length: LINE_COUNT }, createBinaryLine);
+    binaryLines = createBinaryLines();
     
-          let autoHoverCounter = 0;
-      const interval = setInterval(() => {
-        for (let lineIndex = 0; lineIndex < LINE_COUNT; lineIndex++) {
-          const randomIndex = Math.floor(Math.random() * LINE_LENGTH);
-          binaryLines[lineIndex][randomIndex] = randomBit();
-        }
-        binaryLines = [...binaryLines];
-        
-        autoHoverCounter++;
-        if (autoHoverCounter >= AUTO_HOVER_CYCLE_COUNT) {
-          if (hoveredIndex === null) {
-            hoveredIndex = Math.floor(Math.random() * SPECIAL_COUNT);
-            setTimeout(() => {
-              if (hoveredIndex !== null) hoveredIndex = null;
-            }, AUTO_HOVER_DURATION);
-          }
-          autoHoverCounter = 0;
-        }
-      }, ANIMATION_INTERVAL);
-    
-    intervals.push(interval);
+    interval = setInterval(() => {
+      for (let lineIndex = 0; lineIndex < LINE_COUNT; lineIndex++) {
+        const randomIndex = Math.floor(Math.random() * LINE_LENGTH);
+        binaryLines[lineIndex][randomIndex] = Math.random() > 0.5 ? '1' : '0';
+      }
+      binaryLines = [...binaryLines];
+    }, 50);
+
+    setTimeout(startAutoHover, AUTO_HOVER_DURATION);
     
     return () => {
-      intervals.forEach(clearInterval);
+      clearInterval(interval);
+      clearTimeout(autoHoverTimeout);
     };
   });
+
+  function handleMouseEnter(index: number) {
+    clearTimeout(autoHoverTimeout);
+    hoveredIndex = index >= 2 ? 2 : index;
+  }
+
+  function handleMouseLeave() {
+    hoveredIndex = null;
+    setTimeout(startAutoHover, AUTO_HOVER_DURATION);
+  }
 </script>
 
 <section class="relative bg-mountain py-16">
   <div class="container relative z-10">
     <div class="absolute inset-0 font-mono select-none">
       {#each binaryLines as line, lineIndex}
-        {@const style = LINE_STYLES[lineIndex]}
         <div class="flex justify-center mb-4" style="letter-spacing: 0.5em;">
-          {#each line as digit, digitIndex}
-            {#if lineIndex === 0 && isSpecialPosition(digitIndex)}
-              {@const specialIndex = getSpecialIndex(digitIndex)}
-              {@const isHovered = hoveredIndex === specialIndex || (specialIndex >= POPUP_THRESHOLD && hoveredIndex === HOVER_INDEX_CONTROL)}
-              {@const showIcon = hoveredIndex !== null && specialIndex === 0}
-              {@const iconSrc = hoveredIndex !== null ? ICON_MAP[hoveredIndex] : MonthIcon}
-              {@const iconClass = hoveredIndex !== null ? `icon-${hoveredIndex === HOVER_INDEX_MONTH ? 'month' : hoveredIndex === HOVER_INDEX_RISK ? 'risk' : 'control'}` : 'icon-month'}
-              
+          {#if lineIndex === 0}
+            <span class="binary-line-fade first-line-fade-start text-lg">
+              {getDisplayLine(line, lineIndex).slice(0, SPECIAL_START)}
+            </span>
+            
+            {#each getDisplayLine(line, lineIndex).slice(SPECIAL_START, SPECIAL_END + 1) as digit, index}
               <span 
-                class="font-bold transition-all duration-500 cursor-pointer text-deploio relative"
-                class:hover-shadow={isHovered}
-                style="font-size: {style.fontSize};"
-                on:mouseenter={() => handleMouseEnter(specialIndex)}
+                class="font-bold relative cursor-pointer text-lg"
+                class:hover-shadow={hoveredIndex === index || (index >= 2 && hoveredIndex === 2)}
+                on:mouseenter={() => handleMouseEnter(index)}
                 on:mouseleave={handleMouseLeave}
                 role="button"
                 tabindex="0"
               >
-                {getDisplayValue(digitIndex, digit)}
-                
-                                  {#if showIcon && iconSrc}
-                    <div class="absolute z-30 pointer-events-none {iconClass}">
-                      <img src={iconSrc} alt="Icon" class="pointer-events-none"/>
-                    </div>
-                  {/if}
-              </span>
-            {:else}
-              <span 
-                class="transition-all duration-1000 text-deploio"
-                style="font-size: {style.fontSize}; opacity: {calculateOpacity(digitIndex, style)};"
-              >
                 {digit}
+                
+                {#if hoveredIndex !== null && index === 0}
+                  <div class="icon-overlay">
+                    <img src={ICONS[hoveredIndex]} alt="Icon" />
+                  </div>
+                {/if}
               </span>
-            {/if}
-          {/each}
+            {/each}
+            
+            <span class="binary-line-fade first-line-fade-end text-lg">
+              {getDisplayLine(line, lineIndex).slice(SPECIAL_END + 1)}
+            </span>
+          {:else}
+            <span class="binary-line-{lineIndex} binary-line-fade">
+              {getDisplayLine(line, lineIndex)}
+            </span>
+          {/if}
         </div>
       {/each}
     </div>
