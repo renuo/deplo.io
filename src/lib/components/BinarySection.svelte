@@ -1,20 +1,29 @@
 <script lang="ts">
   import { onMount } from 'svelte';
   import './BinarySection.css';
-
+  import MonthIcon from '$lib/assets/icons/1month.svg';
+  import RiskIcon from '$lib/assets/icons/0risk.svg';
+  import ControlIcon from '$lib/assets/icons/100control.svg';
 
   const LINE_LENGTH = 80;
   const LINE_COUNT = 4;
   const SPECIAL_START = 37;
   const SPECIAL_END = 41;
-  const ANIMATION_INTERVAL = 15; // ms
-  const AUTO_HOVER_CYCLE_COUNT = 333; // ~5 seconds at 15ms intervals
-  const AUTO_HOVER_DURATION = 3000; // ms
+  const ANIMATION_INTERVAL = 15;
+  const AUTO_HOVER_CYCLE_INTERVAL = 5000; // 5 seconds between auto-hover switches
+  const AUTO_HOVER_DURATION = 3000; // 3 seconds display duration
+  const AUTO_HOVER_CYCLE_COUNT = Math.floor(AUTO_HOVER_CYCLE_INTERVAL / ANIMATION_INTERVAL);
   const SPECIAL_COUNT = 3;
   const HOVER_INDEX_MONTH = 0;
   const HOVER_INDEX_RISK = 1;
   const HOVER_INDEX_CONTROL = 2;
   const POPUP_THRESHOLD = 2;
+  
+  const HOVER_VALUES: Record<number, string[]> = {
+    [HOVER_INDEX_MONTH]: ['1'],
+    [HOVER_INDEX_RISK]: ['0'], 
+    [HOVER_INDEX_CONTROL]: ['1', '0', '0']
+  };
 
   const LINE_STYLES = [
     { fontSize: '18px', opacity: 0.8, fadeEdge: 8 },
@@ -23,7 +32,11 @@
     { fontSize: '12px', opacity: 0.2, fadeEdge: 20 }
   ];
 
-  const POPUPS = ['1 month testing free', '0 risk', '100% control'];
+  const ICON_MAP: Record<number, string> = {
+    [HOVER_INDEX_MONTH]: MonthIcon,
+    [HOVER_INDEX_RISK]: RiskIcon,
+    [HOVER_INDEX_CONTROL]: ControlIcon
+  };
 
   let binaryLines: string[][] = [];
   let hoveredIndex: number | null = null;
@@ -53,15 +66,20 @@
   }
 
   function getDisplayValue(digitIndex: number, originalDigit: string): string {
-    if (!isSpecialPosition(digitIndex)) return originalDigit;
+    if (!isSpecialPosition(digitIndex) || hoveredIndex === null) return originalDigit;
     
     const specialIndex = getSpecialIndex(digitIndex);
+    const values = HOVER_VALUES[hoveredIndex];
     
-    if (hoveredIndex === HOVER_INDEX_MONTH && specialIndex === 0) return '1';
-    if (hoveredIndex === HOVER_INDEX_RISK && specialIndex === 1) return '0';
-    if (hoveredIndex === HOVER_INDEX_CONTROL && specialIndex === 2) return '1';
-    if (hoveredIndex === HOVER_INDEX_CONTROL && specialIndex === 3) return '0';
-    if (hoveredIndex === HOVER_INDEX_CONTROL && specialIndex === 4) return '0';
+    if (!values) return originalDigit;
+    
+    if (values.length === 1) {
+      return specialIndex === hoveredIndex ? values[0] : originalDigit;
+    }
+    
+    if (hoveredIndex === HOVER_INDEX_CONTROL && specialIndex >= 2) {
+      return values[specialIndex - 2] || originalDigit;
+    }
     
     return originalDigit;
   }
@@ -105,7 +123,7 @@
   });
 </script>
 
-<section class="relative bg-mountain py-16 overflow-hidden">
+<section class="relative bg-mountain py-16">
   <div class="container relative z-10">
     <div class="absolute inset-0 font-mono select-none">
       {#each binaryLines as line, lineIndex}
@@ -115,7 +133,9 @@
             {#if lineIndex === 0 && isSpecialPosition(digitIndex)}
               {@const specialIndex = getSpecialIndex(digitIndex)}
               {@const isHovered = hoveredIndex === specialIndex || (specialIndex >= POPUP_THRESHOLD && hoveredIndex === HOVER_INDEX_CONTROL)}
-              {@const showPopup = (hoveredIndex === specialIndex && specialIndex < POPUP_THRESHOLD) || (hoveredIndex === HOVER_INDEX_CONTROL && specialIndex === POPUP_THRESHOLD)}
+              {@const showIcon = hoveredIndex !== null && specialIndex === 0}
+              {@const iconSrc = hoveredIndex !== null ? ICON_MAP[hoveredIndex] : MonthIcon}
+              {@const iconClass = hoveredIndex !== null ? `icon-${hoveredIndex === HOVER_INDEX_MONTH ? 'month' : hoveredIndex === HOVER_INDEX_RISK ? 'risk' : 'control'}` : 'icon-month'}
               
               <span 
                 class="font-bold transition-all duration-500 cursor-pointer text-deploio relative"
@@ -128,12 +148,11 @@
               >
                 {getDisplayValue(digitIndex, digit)}
                 
-                {#if showPopup && specialIndex < POPUPS.length}
-                  <div class="absolute -top-12 left-1/2 transform -translate-x-1/2 bg-mountain text-deploio px-3 py-2 rounded-lg text-sm font-medium whitespace-nowrap shadow-lg z-30">
-                    {POPUPS[specialIndex]}
-                    <div class="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-mountain"></div>
-                  </div>
-                {/if}
+                                  {#if showIcon && iconSrc}
+                    <div class="absolute z-30 pointer-events-none {iconClass}">
+                      <img src={iconSrc} alt="Icon" class="pointer-events-none"/>
+                    </div>
+                  {/if}
               </span>
             {:else}
               <span 

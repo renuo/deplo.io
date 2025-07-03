@@ -1,16 +1,34 @@
 .hover-shadow {
   position: relative;
-  z-index: 10;
 }
 
 .hover-shadow::before {
   content: '';
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  left: -15%;
   width: 1.05em;
   height: 1.4em;
-  background-color: rgba(20, 29, 80, 0.5);
-  z-index: -1;
+  background-color: theme('colors.deploio');
+  opacity: 0.2;
 } 
+
+.icon-month {
+    width: 200px;
+    height: 100px;
+    left: -105px;
+    top: -80px;
+}
+
+.icon-risk {
+    width: 200px;
+    height: 100px;
+    left: 75%;
+    top: -80px;
+}
+
+.icon-control {
+    width: 200px;
+    height: 100px;
+    left: 90%;
+    top: -85px;
+}
