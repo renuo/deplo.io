@@ -17,7 +17,7 @@
       <div class="flex" use:appear={{ delay: 150 }}>
         <Button
           variant="secondary"
-          href={m.complex_projects_button_url()}
+          href="https://cockpit.nine.ch/{m.navigation_language()}/signup?origin=deploio"
           target="_blank"
         >
           {m.complex_projects_button()}
