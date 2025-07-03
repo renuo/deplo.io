@@ -3,6 +3,7 @@
   import MountainSvg from './MountainSvg.svelte';
   import callMadeIcon from '$lib/assets/icons/call_made.svg';
   import * as m from '$lib/paraglide/messages';
+  import './MountainAnimation.css';
 
   export let labels: string[] = [];
 </script>
@@ -20,13 +21,13 @@
     </div>
   </div>
 
-  <div class="relative mt-20 w-full md:-mt-16 lg:-mt-48">
+  <div class="relative pt-20 w-full overflow-hidden">
     <MountainSvg />
 
     {#if labels.length > 0}
       <div class="pointer-events-none absolute left-0 top-0 h-full w-full">
         {#each labels as label, index}
-          <div class="text-h3 absolute text-deploio label-{index + 1}" use:appear={{ delay: 200 + index * 100 }}>
+          <div class="text-p lg:text-2xl absolute text-deploio label-{index + 1}" use:appear={{ delay: 200 + index * 100 }}>
             {label}
           </div>
         {/each}
@@ -34,29 +35,3 @@
     {/if}
   </div>
 </div>
-
-<style>
-  .label-1 {
-    top: 60%;
-    left: 14%;
-    transform: translateX(-50%);
-  }
-
-  .label-2 {
-    top: 40%;
-    left: 34%;
-    transform: translateX(-50%);
-  }
-
-  .label-3 {
-    top: 30%;
-    left: 52%;
-    transform: translateX(-50%);
-  }
-
-  .label-4 {
-    top: -10%;
-    left: 83%;
-    transform: translateX(-50%);
-  }
-</style>

@@ -8,7 +8,7 @@
   const labels = ['Deploio', 'Managed Server', 'Root-Server', 'Kubernetes Cluster'];
 </script>
 
-<section id="register" class="bg-mountain text-center text-deploio">
+<section id="register" class="bg-mountain text-center text-deploio overflow-x-hidden">
   <MountainAnimation {labels} />
 
   <div class="container bg-mountain">
