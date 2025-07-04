@@ -3,7 +3,6 @@
   import MountainSvg from './MountainSvg.svelte';
   import callMadeIcon from '$lib/assets/icons/call_made.svg';
   import * as m from '$lib/paraglide/messages';
-  import './MountainAnimation.css';
 
   export let labels: string[] = [];
 </script>
@@ -35,3 +34,29 @@
     {/if}
   </div>
 </div>
+
+<style>
+  .label-1 {
+  top: 70%;
+  left: 14%;
+  transform: translateX(-50%);
+}
+
+.label-2 {
+  top: 50%;
+  left: 35%;
+  transform: translateX(-50%);
+}
+
+.label-3 {
+  top: 40%;
+  left: 52%;
+  transform: translateX(-50%);
+}
+
+.label-4 {
+  top: 5%;
+  left: 83%;
+  transform: translateX(-50%);
+} 
+</style>
