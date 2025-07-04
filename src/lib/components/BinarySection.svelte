@@ -10,18 +10,18 @@
   const AUTO_HOVER_DISPLAY_TIME = 3000;
   const AUTO_HOVER_RESTART_DELAY = 2000;
   const ANIMATION_INTERVAL = 10;
-  
+
   const BREAKPOINTS = {
     sm: 640,
     md: 768,
-    lg: 1024
+    lg: 1024,
   };
 
   const LINE_LENGTHS = {
     mobile: 30,
     tablet: 40,
     desktop: 60,
-    large: 90
+    large: 90,
   };
 
   let lineLength = LINE_LENGTHS.desktop;
@@ -51,8 +51,8 @@
   }
 
   function createBinaryLines(): string[][] {
-    return Array.from({ length: LINE_COUNT }, () => 
-      Array.from({ length: lineLength }, () => Math.random() > 0.5 ? '1' : '0')
+    return Array.from({ length: LINE_COUNT }, () =>
+      Array.from({ length: lineLength }, () => (Math.random() > 0.5 ? '1' : '0')),
     );
   }
 
@@ -66,11 +66,11 @@
 
   function applyHoverEffect(line: string[]): string {
     if (hoveredIndex === null) return line.join('');
-    
+
     const modifiedLine = [...line];
     const hoverValues = ['1', '0', '100'];
     const value = hoverValues[hoveredIndex];
-    
+
     if (value === '100') {
       modifiedLine[specialStart + 2] = '1';
       modifiedLine[specialStart + 3] = '0';
@@ -78,7 +78,7 @@
     } else {
       modifiedLine[specialStart + hoveredIndex] = value;
     }
-    
+
     return modifiedLine.join('');
   }
 
@@ -118,11 +118,11 @@
   onMount(() => {
     updateResponsiveValues();
     binaryLines = createBinaryLines();
-    
+
     window.addEventListener('resize', handleResize);
     interval = setInterval(updateRandomBit, ANIMATION_INTERVAL);
     setTimeout(startAutoHover, AUTO_HOVER_DURATION);
-    
+
     return () => {
       clearInterval(interval);
       clearTimeout(autoHoverTimeout);
@@ -131,19 +131,19 @@
   });
 </script>
 
-<section class="relative bg-mountain pt-28 pb-28 md:pb-12 overflow-x-hidden">
+<section class="relative overflow-x-hidden bg-mountain pb-28 pt-28 md:pb-12">
   <div class="container relative z-10">
-    <div class="absolute inset-0 font-mono select-none">
+    <div class="absolute inset-0 select-none font-mono">
       {#each binaryLines as line, lineIndex}
-        <div class="flex justify-center mb-2" style="letter-spacing: 0.5em;">
+        <div class="mb-2 flex justify-center" style="letter-spacing: 0.5em;">
           {#if lineIndex === 0}
             <span class="binary-line-fade first-line-fade-start text-lg">
               {getDisplayLine(line, lineIndex).slice(0, specialStart)}
             </span>
-            
+
             {#each getDisplayLine(line, lineIndex).slice(specialStart, specialEnd + 1) as digit, index}
-              <span 
-                class="font-bold relative cursor-pointer text-lg"
+              <span
+                class="relative cursor-pointer text-lg font-bold"
                 class:hover-shadow={isHoveredDigit(index)}
                 on:mouseenter={() => handleMouseEnter(index)}
                 on:mouseleave={handleMouseLeave}
@@ -151,7 +151,7 @@
                 tabindex="0"
               >
                 {digit}
-                
+
                 {#if hoveredIndex !== null && index === 0}
                   <div class="icon-{hoveredIndex}">
                     <img src={ICONS[hoveredIndex]} alt="Feature icon" />
@@ -159,7 +159,7 @@
                 {/if}
               </span>
             {/each}
-            
+
             <span class="binary-line-fade first-line-fade-end text-lg">
               {getDisplayLine(line, lineIndex).slice(specialEnd + 1)}
             </span>
@@ -176,91 +176,93 @@
 
 <style>
   .hover-shadow {
-  position: relative;
-}
+    position: relative;
+  }
 
-.hover-shadow::before {
-  content: '';
-  position: absolute;
-  left: -20%;
-  width: 1.04em;
-  height: 1.4em;
-  background-color: theme('colors.deploio');
-  opacity: 0.2;
-} 
+  .hover-shadow::before {
+    content: '';
+    position: absolute;
+    left: -20%;
+    width: 1.04em;
+    height: 1.4em;
+    background-color: theme('colors.deploio');
+    opacity: 0.2;
+  }
 
-.binary-line-fade {
-  background: linear-gradient(90deg, 
-    transparent 0%, 
-    transparent var(--fade-start), 
-    theme('colors.deploio' / 0.3) var(--fade-in), 
-    theme('colors.deploio' / 0.3) var(--fade-out), 
-    transparent var(--fade-end), 
-    transparent 100%);
-  background-clip: text;
-  color: transparent;
-}
+  .binary-line-fade {
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      transparent var(--fade-start),
+      theme('colors.deploio' / 0.3) var(--fade-in),
+      theme('colors.deploio' / 0.3) var(--fade-out),
+      transparent var(--fade-end),
+      transparent 100%
+    );
+    background-clip: text;
+    color: transparent;
+  }
 
-.first-line-fade-start {
-  --fade-start: 10%;
-  --fade-in: 50%;
-  --fade-out: 100%;
-  --fade-end: 100%;
-}
+  .first-line-fade-start {
+    --fade-start: 10%;
+    --fade-in: 50%;
+    --fade-out: 100%;
+    --fade-end: 100%;
+  }
 
-.first-line-fade-end {
-  --fade-start: 0%;
-  --fade-in: 0%;
-  --fade-out: 50%;
-  --fade-end: 90%;
-}
+  .first-line-fade-end {
+    --fade-start: 0%;
+    --fade-in: 0%;
+    --fade-out: 50%;
+    --fade-end: 90%;
+  }
 
-.binary-line-1 {
-  --fade-start: 10%;
-  --fade-end: 90%;
-  font-size: 17px;
-}
+  .binary-line-1 {
+    --fade-start: 10%;
+    --fade-end: 90%;
+    font-size: 17px;
+  }
 
-.binary-line-2 {
-  --fade-start: 15%;
-  --fade-end: 85%;
-  font-size: 16px;
-}
+  .binary-line-2 {
+    --fade-start: 15%;
+    --fade-end: 85%;
+    font-size: 16px;
+  }
 
-.binary-line-3 {
-  --fade-start: 20%;
-  --fade-end: 80%;
-  font-size: 15px;
-}
+  .binary-line-3 {
+    --fade-start: 20%;
+    --fade-end: 80%;
+    font-size: 15px;
+  }
 
-.binary-line-1,
-.binary-line-2,
-.binary-line-3 {
-  --fade-in: 50%;
-  --fade-out: 50%;
-}
+  .binary-line-1,
+  .binary-line-2,
+  .binary-line-3 {
+    --fade-in: 50%;
+    --fade-out: 50%;
+  }
 
-.icon-0,
-.icon-1,
-.icon-2 {
-  position: absolute;
-  pointer-events: none;
-  width: 200px;
-  height: 100px;
-}
+  .icon-0,
+  .icon-1,
+  .icon-2 {
+    position: absolute;
+    pointer-events: none;
+    width: 200px;
+    height: 100px;
+  }
 
-.icon-0 {
-  left: -105px;
-  top: -80px;
-}
+  .icon-0 {
+    left: -105px;
+    top: -80px;
+  }
 
-.icon-1 {
-  left: 80%;
-  top: -80px;
-}
+  .icon-1 {
+    left: 80%;
+    top: -80px;
+  }
 
-.icon-2 {
-  left: 90%;
-  top: -85px;
-}
+  .icon-2 {
+    left: 90%;
+    top: -85px;
+  }
 </style>

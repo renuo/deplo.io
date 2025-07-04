@@ -27,5 +27,5 @@
       </div>
     </div>
   </div>
-  <BinarySection/>
+  <BinarySection />
 </section>
