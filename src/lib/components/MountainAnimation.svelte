@@ -8,7 +8,7 @@
 </script>
 
 <div class="bg-background">
-  <div class="container relative z-10 space-y-8 text-left">
+  <div class="container relative z-10 space-y-8 text-left pb-0">
     <h2 class="text-h2 max-w-[800px]" use:appear={{ delay: 0 }}>{m.complex_projects()}</h2>
     <p class="text-p max-w-[620px]" use:appear={{ delay: 100 }}>{m.complex_projects_description()}</p>
 
