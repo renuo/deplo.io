@@ -8,10 +8,9 @@
 </script>
 
 <div class="bg-background">
-  <div class="container relative z-10 space-y-8 text-left pb-0">
+  <div class="container relative !py-0 lg:py-4 lg:absolute lg:left-1/2 lg:-translate-x-1/2 text-left">
     <h2 class="text-h2 max-w-[800px]" use:appear={{ delay: 0 }}>{m.complex_projects()}</h2>
-    <p class="text-p max-w-[620px]" use:appear={{ delay: 100 }}>{m.complex_projects_description()}</p>
-
+    <p class="max-w-[620px] pt-8 pb-2" use:appear={{ delay: 100 }}>{m.complex_projects_description()}</p>
     <div class="flex justify-start">
       <a href={m.nine_url()} target="_blank" class="btn btn-primary text-p flex items-center font-medium">
         {m.nine()}
@@ -24,7 +23,7 @@
     <MountainSvg />
 
     {#if labels.length > 0}
-      <div class="pointer-events-none absolute left-0 top-0 h-full w-full">
+      <div class="pointer-events-none">
         {#each labels as label, index}
           <div
             class="text-p absolute text-deploio lg:text-2xl label-{index + 1}"

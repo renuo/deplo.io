@@ -31,6 +31,7 @@
   let hoveredIndex: number | null = null;
   let interval: NodeJS.Timeout;
   let autoHoverTimeout: NodeJS.Timeout;
+  let currentHoverIndex = 0;
 
   $: {
     specialStart = Math.floor(lineLength / 2) - 3;
@@ -88,7 +89,8 @@
 
   function startAutoHover(): void {
     if (hoveredIndex === null) {
-      hoveredIndex = Math.floor(Math.random() * 3);
+      hoveredIndex = currentHoverIndex;
+      currentHoverIndex = (currentHoverIndex + 1) % 3;
       autoHoverTimeout = setTimeout(() => {
         hoveredIndex = null;
         setTimeout(startAutoHover, AUTO_HOVER_RESTART_DELAY);
@@ -182,9 +184,10 @@
   .hover-shadow::before {
     content: '';
     position: absolute;
-    left: -20%;
-    width: 1.04em;
-    height: 1.4em;
+    left: -19%;
+    top: 5%;
+    width: 1.18rem;
+    height: 1.4rem;
     background-color: theme('colors.deploio');
     opacity: 0.2;
   }
