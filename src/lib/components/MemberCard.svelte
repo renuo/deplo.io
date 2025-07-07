@@ -2,6 +2,13 @@
   export let name: string;
   export let role: string;
   export let image: string;
+
+  import img1 from '$lib/assets/backgrounds/team_mountain_vector_1.svg';
+  import img2 from '$lib/assets/backgrounds/team_mountain_vector_2.svg';
+  import img3 from '$lib/assets/backgrounds/team_mountain_vector_3.svg';
+
+  const images = [img1, img2, img3];
+  const imageSrc = images[Math.floor(Math.random() * images.length)];
 </script>
 
 <div
@@ -13,6 +20,6 @@
   </div>
   <div class="relative flex w-full flex-1 items-end justify-center overflow-hidden">
     <img src={image} alt={name} class=" z-10 h-[200px] object-cover" />
-    <img src={`/src/lib/assets/backgrounds/team_mountain_vector_${Math.floor(Math.random() * 3) + 1}.svg`} alt="mountain vector" class="absolute z-0 w-full" />
+    <img src={imageSrc} alt="mountain vector" class="absolute z-0 w-full" />
   </div>
 </div>
