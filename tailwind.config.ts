@@ -10,7 +10,6 @@ export default {
         hero: '#898EA7',
         mountain: '#FCFAFA',
         background: '#EAE9E8',
-        team: '#FFFFFF',
       },
     },
     fontFamily: {
