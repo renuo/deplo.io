@@ -8,9 +8,9 @@
 </script>
 
 <div class="bg-background">
-  <div class="container relative !py-0 lg:py-4 lg:absolute lg:left-1/2 lg:-translate-x-1/2 text-left">
+  <div class="container relative !py-0 text-left lg:absolute lg:left-1/2 lg:-translate-x-1/2 lg:py-4">
     <h2 class="text-h2 max-w-[800px]" use:appear={{ delay: 0 }}>{m.complex_projects()}</h2>
-    <p class="max-w-[620px] pt-8 pb-2" use:appear={{ delay: 100 }}>{m.complex_projects_description()}</p>
+    <p class="max-w-[620px] pb-2 pt-8" use:appear={{ delay: 100 }}>{m.complex_projects_description()}</p>
     <div class="flex justify-start">
       <a href={m.nine_url()} target="_blank" class="btn btn-primary text-p flex items-center font-medium">
         {m.nine()}
@@ -39,26 +39,102 @@
 
 <style>
   .label-1 {
-    top: 70%;
-    left: 14%;
-    transform: translateX(-50%);
+    top: 75%;
+    left: 7%;
+
+    @media (min-width: 580px) {
+      top: 74%;
+      left: 10%;
+    }
+
+    @media (min-width: 768px) {
+      top: 73%;
+      left: 11%;
+    }
+
+    @media (min-width: 1024px) {
+      top: 70%;
+      left: 11%;
+    }
+
+    @media (min-width: 1400px) {
+      top: 71%;
+      left: 12%;
+    }
   }
 
   .label-2 {
-    top: 50%;
-    left: 35%;
-    transform: translateX(-50%);
+    top: 60%;
+    left: 15%;
+
+    @media (min-width: 580px) {
+      top: 57%;
+      left: 25%;
+    }
+
+    @media (min-width: 768px) {
+      top: 54%;
+      left: 28%;
+    }
+
+    @media (min-width: 1024px) {
+      top: 51%;
+      left: 28%;
+    }
+
+    @media (min-width: 1400px) {
+      top: 51%;
+      left: 29%;
+    }
   }
 
   .label-3 {
-    top: 40%;
-    left: 52%;
-    transform: translateX(-50%);
+    top: 53%;
+    left: 40%;
+
+    @media (min-width: 580px) {
+      top: 49%;
+      left: 45%;
+    }
+
+    @media (min-width: 768px) {
+      top: 46%;
+      left: 47%;
+    }
+
+    @media (min-width: 1024px) {
+      top: 42%;
+      left: 47%;
+    }
+
+    @media (min-width: 1400px) {
+      top: 41%;
+      left: 48%;
+    }
   }
 
   .label-4 {
-    top: 5%;
-    left: 83%;
-    transform: translateX(-50%);
+    top: 19%;
+    left: 65%;
+
+    @media (min-width: 580px) {
+      top: 18%;
+      left: 73%;
+    }
+
+    @media (min-width: 768px) {
+      top: 11%;
+      left: 75%;
+    }
+
+    @media (min-width: 1024px) {
+      top: 6%;
+      left: 74%;
+    }
+
+    @media (min-width: 1400px) {
+      top: 5%;
+      left: 76%;
+    }
   }
 </style>
