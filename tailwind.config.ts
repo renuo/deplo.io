@@ -11,6 +11,9 @@ export default {
         mountain: '#FCFAFA',
         background: '#EAE9E8',
       },
+      backgroundImage: {
+        team: 'linear-gradient(#FFFFFF 0%, #EAE9E8 100%)',
+      },
     },
     fontFamily: {
       sans: ['Montserrat', 'sans-serif'],
