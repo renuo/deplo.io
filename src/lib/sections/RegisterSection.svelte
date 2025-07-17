@@ -17,11 +17,11 @@
     <p class="mx-auto max-w-[620px] text-[20px]" use:appear={{ delay: 100 }}>{m.register_description()}</p>
     <div class="mt-2">
       <Button
-      class="h-10 w-full sm:ml-3 sm:w-auto mt-2"
-      type="submit"
-      href="https://cockpit.nine.ch/{m.navigation_language()}/signup?origin=deploio"
-      target="_blank"
-      variant="secondary"
+        class="mt-2 h-10 w-full sm:ml-3 sm:w-auto"
+        type="submit"
+        href="https://cockpit.nine.ch/{m.navigation_language()}/signup?origin=deploio"
+        target="_blank"
+        variant="secondary"
       >
         {m.register_button()}
       </Button>

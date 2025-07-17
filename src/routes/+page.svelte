@@ -4,7 +4,7 @@
   import FeaturesSection from '$lib/sections/FeaturesSection.svelte';
   import NotesSection from '$lib/sections/NotesSection.svelte';
   import ComparisonSection from '$lib/sections/ComparisonSection.svelte';
-  import RegisterSection from '$lib/sections/RegisterSection.svelte';
+  import ComplexProjectSection from '$lib/sections/ComplexProjectSection.svelte';
   import GoogleTag from '$lib/components/GoogleTag.svelte';
 </script>
 
@@ -19,5 +19,5 @@
   <FeaturesSection />
   <NotesSection />
   <ComparisonSection />
-  <RegisterSection />
+  <ComplexProjectSection />
 </main>
