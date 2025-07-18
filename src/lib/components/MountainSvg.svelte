@@ -5,7 +5,7 @@
 <svg
   width="1440"
   height="747"
-  viewBox="0 -200 1440 747"
+  viewBox="40 -200 1440 747"
   fill="none"
   xmlns="http://www.w3.org/2000/svg"
   class="mountain-svg pointer-events-none -mb-px h-auto w-full select-none"
