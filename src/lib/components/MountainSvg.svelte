@@ -125,7 +125,13 @@
   
   @media (min-width: 1000px) {
     .mountain-label {
-      font-size: 24px;
+      font-size: 20px;
+    }
+  }
+
+  @media (min-width: 1200px) {
+    .mountain-label {
+      font-size: 16px;
     }
   }
 </style>
