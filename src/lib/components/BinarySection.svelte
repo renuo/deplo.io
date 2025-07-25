@@ -1,11 +1,28 @@
 <script lang="ts">
   import { onMount } from 'svelte';
+  import { i18n } from '$lib/i18n';
+  import { page } from '$app/state';
   import MonthIcon from '$lib/assets/icons/1month.svg';
+  import MonthIconEN from '$lib/assets/icons/1month_en.svg';
   import RiskIcon from '$lib/assets/icons/0risk.svg';
+  import RiskIconEN from '$lib/assets/icons/0risk_en.svg';
   import ControlIcon from '$lib/assets/icons/100control.svg';
+  import ControlIconEN from '$lib/assets/icons/100control_en.svg';
+
+  const language = i18n.getLanguageFromUrl(page.url);
+
+  let ICONS: any[] = [];
+
+  onMount(async () => {
+    console.log(language);
+    if (language == "de") {
+      ICONS = [MonthIcon, RiskIcon, ControlIcon];
+    } else {
+      ICONS = [MonthIconEN, RiskIconEN, ControlIconEN];
+    }
+  });
 
   const LINE_COUNT = 4;
-  const ICONS = [MonthIcon, RiskIcon, ControlIcon];
   const AUTO_HOVER_DURATION = 5000;
   const AUTO_HOVER_DISPLAY_TIME = 3000;
   const AUTO_HOVER_RESTART_DELAY = 2000;
