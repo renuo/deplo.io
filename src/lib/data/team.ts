@@ -37,3 +37,24 @@ export const team = [
   { name: 'Yessin Ben Brahim', role: 'Marketing', image: yessinBenBrahim },
   { name: 'Vanessa Albrecht', role: 'Design', image: vanessaAlbrecht },
 ];
+
+export const team_en = [
+  { name: 'Thomas Hug', role: 'Co-Founder', image: thomasHug },
+  { name: 'Samuel Steiner', role: 'Co-Founder', image: samuelSteiner },
+  { name: 'Tim Grethler', role: 'Head of Engineering', image: timGrethler },
+  { name: 'Nikky Jolley', role: 'Customer Success', image: nikkyJolley },
+  { name: 'Josua Schmid', role: 'Strategy', image: josuaSchmid },
+  { name: 'Cyrill Troxler', role: 'Platform Engineer', image: cyrillTroxler },
+  { name: 'Sebastian Nickel', role: 'Platform Engineer', image: sebastianNickel },
+  { name: 'Davor Gajic', role: 'Platform Engineer', image: davorGajic },
+  { name: 'Pawel Kuc', role: 'Platform Engineer', image: pawelKuc },
+  { name: 'Daniel Wilhelm', role: 'Senior Engineer Managed Services', image: danielWilhelm },
+  { name: 'Raphael Nestler', role: 'Senior Software Engineer', image: raphaelNestler },
+  { name: 'Kevin Ferranti', role: 'Software Engineer', image: kevinFerranti },
+  { name: 'Oliver Nietlisbach', role: 'Software Engineer', image: oliverNietlisbach },
+  { name: 'Etienne Kyburz', role: 'Software Engineer', image: etienneKyburz },
+  { name: 'Raphael Knecht', role: 'Marketing', image: raphaelKnecht },
+  { name: 'Oliver Anthony', role: 'Documentation', image: oliverAnthony },
+  { name: 'Yessin Ben Brahim', role: 'Marketing', image: yessinBenBrahim },
+  { name: 'Vanessa Albrecht', role: 'Design', image: vanessaAlbrecht },
+];
