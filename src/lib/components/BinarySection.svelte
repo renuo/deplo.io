@@ -11,7 +11,7 @@
 
   const language = i18n.getLanguageFromUrl(page.url);
 
-  let ICONS: [];
+  let ICONS: [string, string, string];
   onMount(async () => {
     if (language == "de") {
       ICONS = [MonthIcon_DE, RiskIcon_DE, ControlIcon_DE];
