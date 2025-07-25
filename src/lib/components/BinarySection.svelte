@@ -2,23 +2,21 @@
   import { onMount } from 'svelte';
   import { i18n } from '$lib/i18n';
   import { page } from '$app/state';
-  import MonthIcon from '$lib/assets/icons/1month.svg';
-  import MonthIconEN from '$lib/assets/icons/1month_en.svg';
-  import RiskIcon from '$lib/assets/icons/0risk.svg';
-  import RiskIconEN from '$lib/assets/icons/0risk_en.svg';
-  import ControlIcon from '$lib/assets/icons/100control.svg';
-  import ControlIconEN from '$lib/assets/icons/100control_en.svg';
+  import MonthIcon_DE from '$lib/assets/icons/1month_de.svg';
+  import MonthIcon_EN from '$lib/assets/icons/1month_en.svg';
+  import RiskIcon_DE from '$lib/assets/icons/0risk_de.svg';
+  import RiskIcon_EN from '$lib/assets/icons/0risk_en.svg';
+  import ControlIcon_DE from '$lib/assets/icons/100control_de.svg';
+  import ControlIcon_EN from '$lib/assets/icons/100control_en.svg';
 
   const language = i18n.getLanguageFromUrl(page.url);
 
-  let ICONS: any[] = [];
-
+  let ICONS: [];
   onMount(async () => {
-    console.log(language);
     if (language == "de") {
-      ICONS = [MonthIcon, RiskIcon, ControlIcon];
+      ICONS = [MonthIcon_DE, RiskIcon_DE, ControlIcon_DE];
     } else {
-      ICONS = [MonthIconEN, RiskIconEN, ControlIconEN];
+      ICONS = [MonthIcon_EN, RiskIcon_EN, ControlIcon_EN];
     }
   });
 
