@@ -1,11 +1,9 @@
 import cyrillTroxler from '$lib/assets/team/cyrill_troxler.webp';
 import danielWilhelm from '$lib/assets/team/daniel_wilhelm.webp';
 import davorGajic from '$lib/assets/team/davor_gajic.webp';
-import etienneKyburz from '$lib/assets/team/etienne_kyburz.webp';
 import josuaSchmid from '$lib/assets/team/josua_schmid.webp';
 import kevinFerranti from '$lib/assets/team/kevin_ferranti.webp';
 import nikkyJolley from '$lib/assets/team/nikky_jolley.webp';
-import oliverAnthony from '$lib/assets/team/oliver_anthony.webp';
 import oliverNietlisbach from '$lib/assets/team/oliver_nietlisbach.webp';
 import pawelKuc from '$lib/assets/team/pawel_kuc.webp';
 import raphaelKnecht from '$lib/assets/team/raphael_knecht.webp';
@@ -31,9 +29,7 @@ export const team = [
   { name: 'Raphael Nestler', role: 'Senior Software Engineer', image: raphaelNestler },
   { name: 'Kevin Ferranti', role: 'Software Engineer', image: kevinFerranti },
   { name: 'Oliver Nietlisbach', role: 'Software Engineer', image: oliverNietlisbach },
-  { name: 'Etienne Kyburz', role: 'Software Engineer', image: etienneKyburz },
   { name: 'Raphael Knecht', role: 'Marketing', image: raphaelKnecht },
-  { name: 'Oliver Anthony', role: 'Dokumentation', image: oliverAnthony },
   { name: 'Yessin Ben Brahim', role: 'Marketing', image: yessinBenBrahim },
   { name: 'Vanessa Albrecht', role: 'Design', image: vanessaAlbrecht },
 ];
@@ -52,9 +48,7 @@ export const team_en = [
   { name: 'Raphael Nestler', role: 'Senior Software Engineer', image: raphaelNestler },
   { name: 'Kevin Ferranti', role: 'Software Engineer', image: kevinFerranti },
   { name: 'Oliver Nietlisbach', role: 'Software Engineer', image: oliverNietlisbach },
-  { name: 'Etienne Kyburz', role: 'Software Engineer', image: etienneKyburz },
   { name: 'Raphael Knecht', role: 'Marketing', image: raphaelKnecht },
-  { name: 'Oliver Anthony', role: 'Documentation', image: oliverAnthony },
   { name: 'Yessin Ben Brahim', role: 'Marketing', image: yessinBenBrahim },
   { name: 'Vanessa Albrecht', role: 'Design', image: vanessaAlbrecht },
 ];
