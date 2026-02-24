@@ -2,6 +2,8 @@
   "$schema": "https://inlang.com/schema/inlang-message-format",
   "navigation_en": "EN",
   "navigation_de": "DE",
+  "navigation_fr": "FR",
+  "navigation_it": "IT",
   "navigation_language": "de",
   "navigation_pricing": "PREISE",
   "navigation_documentation": "DOKUMENTATION",
