@@ -7,6 +7,7 @@
   interface NavigationColumn {
     title: string;
     links: { href?: string; text: string }[];
+    note?: string;
   }
 
   const columns: NavigationColumn[] = [
@@ -42,12 +43,13 @@
         { href: `mailto:${m.footer_email()}`, text: m.footer_email() },
         { href: `tel:${m.footer_phone().replace(/\s/g, '')}`, text: m.footer_phone() },
       ],
+      note: m.footer_support_note(),
     },
   ];
 </script>
 
 <div class="container flex flex-col gap-20 !py-8 md:flex-row">
-  {#each columns as { title, links }}
+  {#each columns as { title, links, note }}
     <nav class="flex flex-col gap-4">
       <h3 class="text-base font-semibold uppercase">{title}</h3>
 
@@ -58,6 +60,10 @@
           <p class="max-w-fit whitespace-pre">{link.text}</p>
         {/if}
       {/each}
+
+      {#if note}
+        <p class="max-w-fit text-sm opacity-70">{note}</p>
+      {/if}
     </nav>
   {/each}
 
