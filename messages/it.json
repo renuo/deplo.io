@@ -16,7 +16,7 @@
   "hero_learn_more": "LEGGI LA DOCUMENTAZIONE",
   "hero_see_video": "Guarda il video completo",
   "feature_1_title": "Il tuo motore svizzero per le app",
-  "feature_1_description": "Perché preoccuparsi di Kubernetes o dei livelli OSI? Deploio è la tua soluzione PaaS dalla Svizzera che ti copre le spalle. Tu sviluppi, noi ci occupiamo di build, release, SSL, backup e altro ancora. Da Ruby al Dockerfile – la tecnologia sotto il tuo controllo.",
+  "feature_1_description": "Perché preoccuparsi di Kubernetes o dei livelli OSI? Deploio è la tua soluzione PaaS dalla Svizzera che ti copre le spalle. Tu sviluppi, noi ci occupiamo di build, release, TLS, backup e altro ancora. Da Ruby al Dockerfile – la tecnologia sotto il tuo controllo.",
   "feature_2_title": "Platform-as-a-Service",
   "feature_2_description": "Deploio rende il deployment delle app semplice. La nostra piattaforma ti offre deployment rapido, gestione scalabile e archiviazione dei dati – in sicurezza in Svizzera. Fino a dieci volte più veloce in dyno, per far brillare le tue applicazioni.",
   "feature_3_title": "Certezza giuridica",

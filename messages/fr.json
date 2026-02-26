@@ -16,7 +16,7 @@
   "hero_learn_more": "LIRE LA DOCUMENTATION",
   "hero_see_video": "Voir la vidéo complète",
   "feature_1_title": "Votre moteur d'applications suisse",
-  "feature_1_description": "Pourquoi se battre avec Kubernetes ou les couches OSI ? Deploio est votre solution PaaS de Suisse qui vous couvre. Vous développez, nous nous occupons de la compilation, la mise en production, SSL, les sauvegardes et plus encore. De Ruby au Dockerfile – la technologie sous votre contrôle.",
+  "feature_1_description": "Pourquoi se battre avec Kubernetes ou les couches OSI ? Deploio est votre solution PaaS de Suisse qui vous couvre. Vous développez, nous nous occupons de la compilation, la mise en production, TLS, les sauvegardes et plus encore. De Ruby au Dockerfile – la technologie sous votre contrôle.",
   "feature_2_title": "Platform-as-a-Service",
   "feature_2_description": "Deploio simplifie le déploiement d'applications. Notre plateforme vous offre un déploiement rapide, une gestion évolutive et un stockage de données – en sécurité en Suisse. Jusqu'à dix fois plus rapide en dyno, pour faire briller vos applications.",
   "feature_3_title": "Sécurité juridique",

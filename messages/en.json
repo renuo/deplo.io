@@ -16,7 +16,7 @@
   "hero_learn_more": "READ DOCUMENTATION",
   "hero_see_video": "Watch entire video",
   "feature_1_title": "Your Swiss app engine",
-  "feature_1_description": "Why bother with Kubernetes or OSI layers? Deploio is your PaaS solution from Switzerland that has your back. You develop, we take care of build, release, SSL, backups and more. From Ruby to Dockerfile - technology under your control.",
+  "feature_1_description": "Why bother with Kubernetes or OSI layers? Deploio is your PaaS solution from Switzerland that has your back. You develop, we take care of build, release, TLS, backups and more. From Ruby to Dockerfile - technology under your control.",
   "feature_2_title": "Platform-as-a-Service",
   "feature_2_description": "Deploio makes app deployment easy. Our platform offers you fast deployment, scalable management and data storage - securely in Switzerland. Up to ten times faster in dyno, so you can make your applications shine.",
   "feature_3_title": "Legal security",
