@@ -1,19 +1,19 @@
-import cyrillTroxler from '$lib/assets/team/cyrill_troxler.webp';
-import danielWilhelm from '$lib/assets/team/daniel_wilhelm.webp';
-import davorGajic from '$lib/assets/team/davor_gajic.webp';
-import josuaSchmid from '$lib/assets/team/josua_schmid.webp';
-import kevinFerranti from '$lib/assets/team/kevin_ferranti.webp';
-import nikkyJolley from '$lib/assets/team/nikky_jolley.webp';
-import oliverNietlisbach from '$lib/assets/team/oliver_nietlisbach.webp';
-import pawelKuc from '$lib/assets/team/pawel_kuc.webp';
-import raphaelKnecht from '$lib/assets/team/raphael_knecht.webp';
-import raphaelNestler from '$lib/assets/team/raphael_nestler.webp';
-import samuelSteiner from '$lib/assets/team/samuel_steiner.webp';
-import timGrethler from '$lib/assets/team/tim_grethler.webp';
-import thomasHug from '$lib/assets/team/thomas_hug.webp';
-import vanessaAlbrecht from '$lib/assets/team/vanessa_albrecht.webp';
-import yessinBenBrahim from '$lib/assets/team/yessin_ben_brahim.webp';
-import sebastianNickel from '$lib/assets/team/sebastian_nickel.webp';
+import cyrillTroxler from '$lib/assets/team/cyrill_troxler.png';
+import danielWilhelm from '$lib/assets/team/daniel_wilhelm.png';
+import davorGajic from '$lib/assets/team/davor_gajic.png';
+import josuaSchmid from '$lib/assets/team/josua_schmid.png';
+import kevinFerranti from '$lib/assets/team/kevin_ferranti.png';
+import nikkyJolley from '$lib/assets/team/nikky_jolley.png';
+import oliverNietlisbach from '$lib/assets/team/oliver_nietlisbach.png';
+import pawelKuc from '$lib/assets/team/pawel_kuc.png';
+import raphaelKnecht from '$lib/assets/team/raphael_knecht.png';
+import raphaelNestler from '$lib/assets/team/raphael_nestler.png';
+import samuelSteiner from '$lib/assets/team/samuel_steiner.png';
+import timGrethler from '$lib/assets/team/tim_grethler.png';
+import thomasHug from '$lib/assets/team/thomas_hug.png';
+import vanessaAlbrecht from '$lib/assets/team/vanessa_albrecht.png';
+import yessinBenBrahim from '$lib/assets/team/yessin_ben_brahim.png';
+import sebastianNickel from '$lib/assets/team/sebastian_nickel.png';
 
 export const team = [
   { name: 'Thomas Hug', role: 'Co-Founder', image: thomasHug },

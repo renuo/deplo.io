@@ -19,7 +19,7 @@
     <div class="text-p mt-3 text-deploio">{role}</div>
   </div>
   <div class="relative flex w-full flex-1 items-end justify-center overflow-hidden">
-    <img src={image} alt={name} class="z-10 h-[200px] object-cover" />
+    <img src={image} alt={name} loading="lazy" class="z-10 h-[200px] object-cover" />
     <img src={imageSrc} alt="mountain vector" class="absolute z-0 w-full" />
   </div>
 </div>
