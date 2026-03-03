@@ -6,10 +6,12 @@
   import ComparisonSection from '$lib/sections/ComparisonSection.svelte';
   import ComplexProjectSection from '$lib/sections/ComplexProjectSection.svelte';
   import GoogleTag from '$lib/components/GoogleTag.svelte';
+  import * as m from '$lib/paraglide/messages';
 </script>
 
 <svelte:head>
-  <title>Deploio - Schweizer PaaS</title>
+  <title>{m.meta_title_home()}</title>
+  <meta name="description" content={m.meta_description_home()} />
   <GoogleTag />
 </svelte:head>
 

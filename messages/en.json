@@ -92,5 +92,13 @@
   "complex_projects_0_risk": "0 risk",
   "complex_projects_control": "100% control",
   "nine": "Nine",
-  "nine_url": "https://nine.ch"
+  "nine_url": "https://nine.ch",
+  "meta_title_home": "Deploio – Swiss PaaS | App Hosting from Switzerland",
+  "meta_description_home": "Deploio is the Swiss Platform-as-a-Service for effortless app deployment. Securely hosted in Switzerland, ISO-certified, with 24/7 support.",
+  "meta_title_pricing": "Pricing – Deploio | Swiss PaaS",
+  "meta_description_pricing": "Calculate the costs for your app on Deploio. Transparent pricing for the Swiss Platform-as-a-Service.",
+  "meta_title_team": "Our Team – Deploio",
+  "meta_description_team": "Meet the team behind Deploio – Swiss engineers building a fully managed app platform.",
+  "meta_title_success_story": "Success Story: Renuo AG – Deploio",
+  "meta_description_success_story": "How Renuo AG found the perfect Swiss Heroku alternative with Deploio – simple, sovereign, carefree."
 }
