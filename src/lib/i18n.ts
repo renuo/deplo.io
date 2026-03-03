@@ -7,6 +7,7 @@ import { get } from 'svelte/store';
 export const i18n = createI18n(runtime, {
   defaultLanguageTag: 'en',
   prefixDefaultLanguage: 'always',
+  exclude: ['/sitemap.xml'],
 });
 
 export function switchToLanguage(newLanguage: AvailableLanguageTag) {
