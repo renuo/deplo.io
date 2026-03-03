@@ -40,7 +40,7 @@
       <div class="flex-1">
         <div class="absolute h-1/3 w-full sm:right-0 sm:h-full sm:w-1/2"></div>
         <div class="absolute h-1/3 w-full sm:right-0 sm:h-full sm:w-1/2">
-          <img src={successStoryBackground} alt="Renuo success story" class="h-full w-full object-cover object-top" />
+          <img src={successStoryBackground} alt="Renuo success story" loading="lazy" class="h-full w-full object-cover object-top" />
         </div>
 
         <!-- Mobile Gradient -->
@@ -92,6 +92,7 @@
     <img
       src={mountainOne}
       alt="mountain from the swiss alps"
+      loading="lazy"
       class="absolute bottom-0 top-0 h-full w-full object-cover object-[30%_70%]"
     />
 

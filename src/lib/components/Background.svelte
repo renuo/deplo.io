@@ -26,7 +26,7 @@
 <div class={twMerge('relative', className)}>
   <div class={twMerge('pointer-events-none absolute h-full w-full select-none', backgroundClass)}>
     {#if image}
-      <img aria-hidden="true" class="absolute h-full min-w-full object-cover object-top" src={image} alt="" />
+      <img aria-hidden="true" loading="lazy" class="absolute h-full min-w-full object-cover object-top" src={image} alt="" />
     {:else if video}
       <video
         aria-hidden="true"

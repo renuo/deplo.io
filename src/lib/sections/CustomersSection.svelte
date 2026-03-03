@@ -23,7 +23,7 @@
         <img class="h-34 w-auto object-contain brightness-0 invert" src={bdo} alt="BDO" />
         <img class="h-34 w-auto object-contain brightness-0 invert" src={swissIct} alt="Swiss ICT" />
         <img class="h-34 w-auto object-contain brightness-0 invert" src={bienenSchweiz} alt="Bienen Schweiz" />
-        <img class="h-34 w-auto object-contain brightness-0 invert" src={modeWeber} alt="Modeweber" />
+        <img class="h-34 w-auto object-contain brightness-0 invert" src={modeWeber} alt="Modeweber" loading="lazy" />
       </div>
     </Carousel>
   </div>
