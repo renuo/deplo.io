@@ -4,11 +4,7 @@ import type { AvailableLanguageTag } from '$lib/paraglide/runtime';
 import * as runtime from '$lib/paraglide/runtime';
 import { createI18n } from '@inlang/paraglide-sveltekit';
 import { get } from 'svelte/store';
-export const i18n = createI18n(runtime, {
-  defaultLanguageTag: 'en',
-  prefixDefaultLanguage: 'always',
-  exclude: ['/sitemap.xml'],
-});
+export const i18n = createI18n(runtime);
 
 export function switchToLanguage(newLanguage: AvailableLanguageTag) {
   const canonicalPath = i18n.route(get(page).url.pathname);
