@@ -1,4 +1,3 @@
-import cyrillTroxler from '$lib/assets/team/cyrill_troxler.png';
 import danielWilhelm from '$lib/assets/team/daniel_wilhelm.png';
 import davorGajic from '$lib/assets/team/davor_gajic.png';
 import josuaSchmid from '$lib/assets/team/josua_schmid.png';
@@ -21,7 +20,6 @@ export const team = [
   { name: 'Tim Grethler', role: 'Head of Engineering', image: timGrethler },
   { name: 'Nikky Jolley', role: 'Customer Success', image: nikkyJolley },
   { name: 'Josua Schmid', role: 'Strategie', image: josuaSchmid },
-  { name: 'Cyrill Troxler', role: 'Platform Engineer', image: cyrillTroxler },
   { name: 'Sebastian Nickel', role: 'Platform Engineer', image: sebastianNickel },
   { name: 'Davor Gajic', role: 'Platform Engineer', image: davorGajic },
   { name: 'Pawel Kuc', role: 'Platform Engineer', image: pawelKuc },
@@ -40,7 +38,6 @@ export const team_en = [
   { name: 'Tim Grethler', role: 'Head of Engineering', image: timGrethler },
   { name: 'Nikky Jolley', role: 'Customer Success', image: nikkyJolley },
   { name: 'Josua Schmid', role: 'Strategy', image: josuaSchmid },
-  { name: 'Cyrill Troxler', role: 'Platform Engineer', image: cyrillTroxler },
   { name: 'Sebastian Nickel', role: 'Platform Engineer', image: sebastianNickel },
   { name: 'Davor Gajic', role: 'Platform Engineer', image: davorGajic },
   { name: 'Pawel Kuc', role: 'Platform Engineer', image: pawelKuc },
