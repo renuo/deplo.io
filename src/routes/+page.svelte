@@ -103,7 +103,7 @@
           seller: { '@id': organizationId },
         },
         publisher: { '@id': organizationId },
-        downloadUrl: 'https://app.deplo.io/signup',
+        downloadUrl: `https://cockpit.nine.ch/signup?origin=deploio`,
       },
     ],
   };
