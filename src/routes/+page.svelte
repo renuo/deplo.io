@@ -34,7 +34,7 @@
             "description": m.structured_data_organization_description(),
             "address": {
               "@type": "PostalAddress",
-              "streetAddress": m.structured_data_address_street(),
+              "streetAddress": "Badenerstrasse 47",
               "addressLocality": m.structured_data_address_locality(),
               "postalCode": "8004",
               "addressCountry": "CH"
