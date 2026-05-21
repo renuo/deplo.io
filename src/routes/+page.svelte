@@ -9,7 +9,9 @@
   import * as m from '$lib/paraglide/messages';
   import { languageTag } from '$lib/paraglide/runtime.js';
   import deploioLogoFull from '$lib/assets/deploio_logo_full.webp';
+  import { page } from '$app/state';
 
+  const logoUrl = `${page.url.origin}${deploioLogoFull}`;
   const currentLanguage = $derived(languageTag());
   const baseUrl = `https://deplo.io/${currentLanguage}`;
   const organizationId = `${baseUrl}/#organization`;
@@ -25,7 +27,7 @@
             "url": baseUrl,
             "logo": {
               "@type": "ImageObject",
-              "url": `https://deplo.io${deploioLogoFull}`,
+              "url": logoUrl,
               "width": 790,
               "height": 760
             },
@@ -77,7 +79,7 @@
           },
           {
             "@type": "SoftwareApplication",
-            "@id": `${baseUrl}#software`,
+            "@id": `${baseUrl}/#software`,
             "name": "Deploio",
             "applicationCategory": "DeveloperApplication",
             "applicationSubCategory": "Platform as a Service (PaaS)",
