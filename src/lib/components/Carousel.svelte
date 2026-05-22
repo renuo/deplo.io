@@ -2,6 +2,7 @@
   import type { Snippet } from 'svelte';
   import type { HTMLAttributes } from 'svelte/elements';
   import { twMerge } from 'tailwind-merge';
+  import { appear } from '$lib';
 
   interface CarouselProps extends HTMLAttributes<HTMLDivElement> {
     speed?: number;
@@ -14,33 +15,44 @@
   let scrollable: HTMLDivElement | null = $state(null);
   let animationFrame = 0;
   let lastTime = 0;
-  let direction = 1;
   let scrollLeft = 0;
+
+  let containerWidth = $state(0);
+  let contentWidth = $state(0);
+  let shouldAnimate = $derived(contentWidth > containerWidth);
 
   function animate(time: number) {
     if (!lastTime) lastTime = time;
     const deltaTime = time - lastTime;
     lastTime = time;
 
-    const distance = speed * deltaTime;
-    const hasReachedEnd = scrollable!.scrollLeft + distance >= scrollable!.scrollWidth - scrollable!.clientWidth;
-    const hasReachedStart = scrollable!.scrollLeft - distance <= 0;
+    if (!scrolling && scrollable && shouldAnimate) {
+      const distance = speed * deltaTime;
+      scrollLeft += distance;
 
-    if (!scrolling) {
-      scrollLeft += distance * direction;
-      scrollable!.scrollLeft = scrollLeft;
-    }
+      if (scrollLeft >= contentWidth) {
+        scrollLeft -= contentWidth;
+      } else if (scrollLeft < 0) {
+        scrollLeft += contentWidth;
+      }
 
-    if ((direction === 1 && hasReachedEnd) || (direction === -1 && hasReachedStart)) {
-      direction = -direction;
+      scrollable.scrollLeft = scrollLeft;
     }
 
     animationFrame = requestAnimationFrame(animate);
   }
 
   function onscroll() {
+    if (!scrollable || !shouldAnimate) return;
     scrolling = true;
-    scrollLeft = scrollable?.scrollLeft ?? 0;
+
+    if (scrollable.scrollLeft >= contentWidth) {
+      scrollable.scrollLeft -= contentWidth;
+    } else if (scrollable.scrollLeft <= 0 && speed < 0) {
+      scrollable.scrollLeft += contentWidth;
+    }
+
+    scrollLeft = scrollable.scrollLeft;
   }
 
   function onscrollend() {
@@ -51,14 +63,30 @@
     animationFrame = requestAnimationFrame(animate);
     return () => cancelAnimationFrame(animationFrame);
   });
+
+  $effect(() => {
+    if (!shouldAnimate && scrollable) {
+      scrollable.scrollLeft = 0;
+      scrollLeft = 0;
+    }
+  });
 </script>
 
 <div
   {...rest}
   bind:this={scrollable}
-  class={twMerge('no-scrollbar overflow-x-scroll', className)}
+  bind:clientWidth={containerWidth}
+  class={twMerge('no-scrollbar flex overflow-x-scroll', className)}
   {onscroll}
   {onscrollend}
+  use:appear={{ delay: 0 }}
 >
-  {@render children()}
+  <div bind:clientWidth={contentWidth} class="min-w-full flex-shrink-0">
+    {@render children()}
+  </div>
+  {#if shouldAnimate}
+    <div class="min-w-full flex-shrink-0" aria-hidden="true">
+      {@render children()}
+    </div>
+  {/if}
 </div>

@@ -1,7 +1,6 @@
 <script lang="ts">
   import Carousel from '$lib/components/Carousel.svelte';
   import * as m from '$lib/paraglide/messages';
-  import { appear } from '$lib';
 
   import deploioWave from '$lib/assets/deploio_wave.svg';
   import node from '$lib/assets/language_node.webp';
@@ -20,7 +19,7 @@
     class="pointer-events-none absolute left-0 right-0 top-0 z-0 w-full -rotate-6 scale-[3] opacity-5 sm:scale-[2] md:scale-[1.25]"
   />
 
-  <div class="container relative z-10 mb-30 space-y-20">
+  <div class="mb-30 container relative z-10 space-y-20">
     <Feature
       isFirst
       title={m.feature_1_title()}
@@ -50,10 +49,9 @@
     />
   </div>
 
-  <Carousel class="container relative z-10 mb-8">
+  <Carousel class="container relative z-10 mb-8 gap-[10vw] lg:gap-16">
     <div
       class="pointer-events-none flex w-max select-none items-center gap-[10vw] lg:w-full lg:justify-between lg:gap-16"
-      use:appear={{ delay: 0 }}
     >
       <img class="h-10" src={node} width="64" height="40" alt="Node.js" />
       <img class="h-10" src={django} width="111" height="40" alt="Django" />
