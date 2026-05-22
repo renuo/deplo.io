@@ -23,13 +23,13 @@
     { src: bienenSchweiz, alt: 'Bienen Schweiz' },
     { src: modeWeber, alt: 'Modeweber', lazy: true },
     { src: demokratis, alt: 'Demokratis' },
-    { src: swissstaffing, alt: 'swissstaffing', lazy: true },
-    { src: gebaeudepass, alt: 'Gebäudepass ', lazy: true },
+    { src: swissstaffing, alt: 'swissstaffing' },
+    { src: gebaeudepass, alt: 'Gebäudepass' },
     { src: brevalia, alt: 'Brevalia', lazy: true },
-    { src: tincan, alt: 'Tincan', lazy: true },
-    { src: ohoDesign, alt: 'OHO Design', lazy: true },
+    { src: tincan, alt: 'Tincan' },
+    { src: ohoDesign, alt: 'OHO Design' },
     { src: jobRocks, alt: 'job.rocks', lazy: true },
-    { src: kidesia, alt: 'Kidesia', lazy: true },
+    { src: kidesia, alt: 'Kidesia' },
   ];
 </script>
 
