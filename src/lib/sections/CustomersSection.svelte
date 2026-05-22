@@ -11,10 +11,10 @@
   import demokratis from '$lib/assets/logos/demokratis.svg';
   import swissstaffing from '$lib/assets/logos/swissstaffing.svg';
   import gebaeudepass from '$lib/assets/logos/gebaeudepass.svg';
-  import brevalia from '$lib/assets/logos/brevalia.webp';
+  import brevalia from '$lib/assets/logos/brevalia.png';
   import tincan from '$lib/assets/logos/tincan.svg';
   import ohoDesign from '$lib/assets/logos/oho_design.svg';
-  import jobRocks from '$lib/assets/logos/job_rocks.webp';
+  import jobRocks from '$lib/assets/logos/job_rocks.png';
   import kidesia from '$lib/assets/logos/kidesia.svg';
 
   const customers = [
@@ -40,11 +40,11 @@
 
     <Carousel>
       <div
-        class="pointer-events-none flex w-max select-none items-center gap-[10vw] lg:w-full lg:justify-between lg:gap-16"
+        class="pointer-events-none flex w-max select-none items-center gap-[10vw] lg:min-w-full lg:justify-between lg:gap-16"
         use:appear={{ delay: 0 }}
       >
         {#each customers as customer }
-            <img class="h-34 w-auto object-contain brightness-0 invert"
+            <img class="max-h-[90px] object-contain brightness-0 invert"
                  src={customer.src}
                  alt={customer.alt}
                  loading={customer.lazy ? 'lazy' : null} />
