@@ -1,6 +1,7 @@
 <script lang="ts">
   import Button from '$lib/components/Button.svelte';
   import Background from '$lib/components/Background.svelte';
+  import NewsBanner from '$lib/components/NewsBanner.svelte';
   import * as m from '$lib/paraglide/messages';
   import { appear } from '$lib';
 
@@ -55,5 +56,6 @@
         </a>
       </div>
     </div>
+    <NewsBanner />
   </section>
 </Background>
