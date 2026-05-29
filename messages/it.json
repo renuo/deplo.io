@@ -100,5 +100,8 @@
   "meta_title_team": "Il nostro team – Deploio",
   "meta_description_team": "Scopri il team dietro Deploio – ingegneri svizzeri che costruiscono una piattaforma per applicazioni completamente gestita.",
   "meta_title_success_story": "Success Story: Renuo AG – Deploio",
-  "meta_description_success_story": "Come Renuo AG ha trovato la perfetta alternativa svizzera a Heroku con Deploio – semplice, sovrana, senza grattacapi."
+  "meta_description_success_story": "Come Renuo AG ha trovato la perfetta alternativa svizzera a Heroku con Deploio – semplice, sovrana, senza grattacapi.",
+  "news_question": "<span class='text-claude'>*</span> CREATO UN'APP CON <span class='text-claude'>CLAUDE CODE</span>?",
+  "news_cta": "Installa il plugin Deploio e distribuiscila direttamente dal terminale.",
+  "news_link": "Al plugin"
 }
