@@ -10,6 +10,7 @@ export default {
         hero: '#898EA7',
         mountain: '#FCFAFA',
         background: '#EAE9E8',
+        claude: '#D97757',
       },
       backgroundImage: {
         team: 'linear-gradient(#FFFFFF 0%, #EAE9E8 100%)',

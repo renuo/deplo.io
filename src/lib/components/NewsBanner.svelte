@@ -1,4 +1,5 @@
 <script lang="ts">
+  import * as m from '$lib/paraglide/messages';
   import closeIcon from '$lib/assets/icons/close_lg.svg';
   import chevronIcon from '$lib/assets/icons/chevron_lg.svg';
   import callMadeIcon from '$lib/assets/icons/call_made_lg.svg';
@@ -32,15 +33,13 @@
         <!-- eslint-disable-next-line -->
         {#each Array(4) as _, i}
           <div class="mx-[7.5rem] flex h-16 items-center font-mono text-2xl" aria-hidden={i > 0 ? 'true' : null}>
-            <span class="me-14 font-medium text-[#3D3D3A]">
-              <span class="text-[#D97757]">*</span> APP MIT <span class="text-[#D97757]">CLAUDE CODE</span> GEBAUT?
-            </span>
-            <span class="me-6">Installiere das Deploio Plugin und deploye sie direkt aus dem Terminal.</span>
+            <span class="me-14 font-medium text-[#3D3D3A]">{@html m.news_question()}</span>
+            <span class="me-6">{m.news_cta()}</span>
             <a
               href="https://github.com/ninech/deploio-skills"
               target="_blank"
               class="btn btn-primary flex items-center text-[#476DCC]"
-              >Zum Plugin
+              >{m.news_link()}
               <img src={callMadeIcon} class="ml-1 size-8" alt="External link" />
             </a>
           </div>
