@@ -1,7 +1,7 @@
 <script lang="ts">
   import closeIcon from '$lib/assets/icons/close.svg';
   import chevronIcon from '$lib/assets/icons/chevron.svg';
-  import callMadeIcon from '$lib/assets/icons/call_made.svg';
+  import callMadeIcon from '$lib/assets/icons/call_made_lg.svg';
 
   let isOpen = true;
 
@@ -23,8 +23,8 @@
     class="flex w-full animate-[marquee_14s_linear_infinite] overflow-auto bg-white hover:[animation-play-state:paused]"
   >
     {#each Array(2) as _}
-      <div class="mx-[7.5rem] flex h-16 w-max items-center font-mono text-2xl text-[#3D3D3A]">
-        <span class="me-14 font-medium">
+      <div class="mx-[7.5rem] flex h-16 w-max items-center font-mono text-2xl">
+        <span class="me-14 font-medium text-[#3D3D3A]">
           <span class="text-[#D97757]">*</span> APP MIT <span class="text-[#D97757]">CLAUDE CODE</span> GEBAUT?
         </span>
         <span class="me-6">Installiere das Deploio Plugin und deploye sie direkt aus dem Terminal.</span>
@@ -33,7 +33,7 @@
           target="_blank"
           class="btn btn-primary flex items-center text-[#476DCC]"
           >Zum Plugin
-          <img src={callMadeIcon} class="ml-2 h-5 w-5" alt="External link" />
+          <img src={callMadeIcon} class="size-8 ml-1" alt="External link" />
         </a>
       </div>
     {/each}
