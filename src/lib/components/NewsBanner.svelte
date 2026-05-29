@@ -1,6 +1,6 @@
 <script lang="ts">
-  import closeIcon from '$lib/assets/icons/close.svg';
-  import chevronIcon from '$lib/assets/icons/chevron.svg';
+  import closeIcon from '$lib/assets/icons/close_lg.svg';
+  import chevronIcon from '$lib/assets/icons/chevron_lg.svg';
   import callMadeIcon from '$lib/assets/icons/call_made_lg.svg';
 
   let isOpen = true;
