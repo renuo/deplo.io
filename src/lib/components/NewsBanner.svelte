@@ -54,7 +54,8 @@
               href="https://github.com/ninech/deploio-skills"
               target="_blank"
               class="btn btn-primary flex items-center text-[#476DCC]"
-              >{m.news_link()}
+            >
+              {m.news_link()}
               <img src={callMadeIcon} class="ml-1 size-8" alt="External link" />
             </a>
           </div>
