@@ -1,10 +1,25 @@
 <script lang="ts">
+  import { onMount } from 'svelte';
+  import { browser } from '$app/environment';
   import * as m from '$lib/paraglide/messages';
-  import closeIcon from '$lib/assets/icons/close_lg.svg';
-  import chevronIcon from '$lib/assets/icons/chevron_lg.svg';
   import callMadeIcon from '$lib/assets/icons/call_made_lg.svg';
+  import chevronIcon from '$lib/assets/icons/chevron_lg.svg';
+  import closeIcon from '$lib/assets/icons/close_lg.svg';
 
-  let isOpen = true;
+  let isOpen = $state(false);
+  let isReady = $state(false);
+
+  onMount(() => {
+    const saved = localStorage.getItem('newsBannerIsOpen');
+    isOpen = saved ? saved === 'true' : true;
+    isReady = true;
+  });
+
+  $effect(() => {
+    if (isReady && browser) {
+      localStorage.setItem('newsBannerIsOpen', String(isOpen));
+    }
+  });
 
   function toggleMenu() {
     isOpen = !isOpen;
@@ -16,7 +31,7 @@
     class="absolute bottom-full right-10 bg-white p-1"
     aria-controls="marquee"
     aria-expanded={isOpen}
-    on:click={toggleMenu}
+    onclick={toggleMenu}
   >
     {#if isOpen}
       <img class="size-8" src={closeIcon} alt="Close news banner" />
@@ -25,10 +40,10 @@
     {/if}
   </button>
   <div class="w-screen overflow-hidden">
-    {#if isOpen}
+    {#if isOpen && isReady}
       <div
         id="marquee"
-        class=" flex w-max animate-[marquee_14s_linear_infinite] bg-white hover:[animation-play-state:paused]"
+        class="flex w-max animate-[marquee_14s_linear_infinite] bg-white hover:[animation-play-state:paused]"
       >
         <!-- eslint-disable-next-line -->
         {#each Array(4) as _, i}
