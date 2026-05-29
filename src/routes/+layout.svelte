@@ -4,12 +4,14 @@
   import { ParaglideJS } from '@inlang/paraglide-sveltekit';
   import Header from '$lib/components/Header.svelte';
   import Footer from '$lib/components/Footer.svelte';
+  import NewsBanner from '$lib/components/NewsBanner.svelte';
   import { page } from '$app/stores';
   import { languageTag, availableLanguageTags } from '$lib/paraglide/runtime';
 
   let { children } = $props();
 
   const isTeamPage = $derived($page.url.pathname.includes('/team'));
+  const isHomePage = $derived(i18n.route($page.url.pathname) === '/');
 
   const origin = 'https://deplo.io';
 
@@ -40,4 +42,7 @@
   <Header />
   {@render children()}
   <Footer {isTeamPage} />
+  {#if isHomePage}
+    <NewsBanner />
+  {/if}
 </ParaglideJS>
