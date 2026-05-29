@@ -30,7 +30,7 @@
         class=" flex w-max animate-[marquee_14s_linear_infinite] bg-white hover:[animation-play-state:paused]"
       >
         <!-- eslint-disable-next-line -->
-        {#each Array(3) as _, i}
+        {#each Array(4) as _, i}
           <div class="mx-[7.5rem] flex h-16 items-center font-mono text-2xl" aria-hidden={i > 0 ? 'true' : null}>
             <span class="me-14 font-medium text-[#3D3D3A]">
               <span class="text-[#D97757]">*</span> APP MIT <span class="text-[#D97757]">CLAUDE CODE</span> GEBAUT?
