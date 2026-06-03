@@ -1,6 +1,5 @@
 <script lang="ts">
   import Button from '$lib/components/Button.svelte';
-  import Carousel from '$lib/components/Carousel.svelte';
   import Note from '$lib/components/Note.svelte';
   import SuccessStoryCard from '$lib/components/SuccessStoryCard.svelte';
   import * as m from '$lib/paraglide/messages';
@@ -61,14 +60,12 @@
     </div>
   </div>
 
-  <Carousel class="relative z-10 gap-6 px-6 py-5">
-    <div class="mx-auto my-16 flex w-max gap-6 md:my-0 lg:justify-between">
-      <Note title={m.notes_1_title()} description={m.notes_1_description()} />
-      <Note title={m.notes_2_title()} description={m.notes_2_description()} />
-      <Note title={m.notes_3_title()} description={m.notes_3_description()} />
-      <Note title={m.notes_4_title()} description={m.notes_4_description()} />
-    </div>
-  </Carousel>
+  <div class="relative z-10 mx-auto my-16 flex w-max gap-6 px-6 py-5 md:my-0 lg:justify-between">
+    <Note title={m.notes_1_title()} description={m.notes_1_description()} />
+    <Note title={m.notes_2_title()} description={m.notes_2_description()} />
+    <Note title={m.notes_3_title()} description={m.notes_3_description()} />
+    <Note title={m.notes_4_title()} description={m.notes_4_description()} />
+  </div>
 
   <div
     class="relative -z-0 -mt-[130%] h-[1400px] md:-mt-[30%] md:h-[1000px] lg:h-[1400px] 2xl:-mt-[600px] 2xl:h-[2000px]"
