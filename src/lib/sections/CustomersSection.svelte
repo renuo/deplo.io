@@ -15,6 +15,7 @@
   import ohoDesign from '$lib/assets/logos/oho_design.svg';
   import jobRocks from '$lib/assets/logos/job_rocks.png';
   import kidesia from '$lib/assets/logos/kidesia.svg';
+  import Marquee from '$lib/components/Marquee.svelte';
 
   const customers = [
     { src: stadtZuerich, alt: 'Stadt Zürich' },
@@ -51,5 +52,15 @@
         {/each}
       </div>
     </Carousel>
+
+    <Marquee>
+      {#each customers as customer}
+        <img
+          class="max-h-[90px] object-contain brightness-0 invert"
+          src={customer.src}
+          alt={customer.alt}
+        />
+      {/each}
+    </Marquee>
   </div>
 </section>
