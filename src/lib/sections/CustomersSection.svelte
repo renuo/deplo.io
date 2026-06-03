@@ -1,5 +1,5 @@
 <script lang="ts">
-  import Carousel from '$lib/components/Carousel.svelte';
+  import Marquee from '$lib/components/Marquee.svelte';
   import * as m from '$lib/paraglide/messages';
 
   import bdo from '$lib/assets/logos/bdo.svg';
@@ -15,7 +15,6 @@
   import ohoDesign from '$lib/assets/logos/oho_design.svg';
   import jobRocks from '$lib/assets/logos/job_rocks.png';
   import kidesia from '$lib/assets/logos/kidesia.svg';
-  import Marquee from '$lib/components/Marquee.svelte';
 
   const customers = [
     { src: stadtZuerich, alt: 'Stadt Zürich' },
@@ -32,51 +31,14 @@
     { src: jobRocks, alt: 'job.rocks', lazy: true },
     { src: kidesia, alt: 'Kidesia' },
   ];
-
-  const oldCustomers = [
-    { src: stadtZuerich, alt: 'Stadt Zürich' },
-    { src: bdo, alt: 'BDO' },
-    { src: swissIct, alt: 'Swiss ICT' },
-    { src: bienenSchweiz, alt: 'Bienen Schweiz' },
-  ];
 </script>
 
 <section class="relative overflow-x-clip bg-deploio pb-6 max-md:pt-10">
   <div class="container relative z-10">
     <span class="mb-6 block text-left text-lg font-normal text-white md:-mt-10">{m.customers_trust()}</span>
-
-    <Carousel class="gap-[10vw] lg:gap-16">
-      <div
-        class="pointer-events-none flex w-max select-none items-center gap-[10vw] lg:min-w-full lg:justify-between lg:gap-16"
-      >
-        {#each customers as customer}
-          <img
-            class="max-h-[90px] object-contain brightness-0 invert"
-            src={customer.src}
-            alt={customer.alt}
-            loading={customer.lazy ? 'lazy' : null}
-          />
-        {/each}
-      </div>
-    </Carousel>
-
-    <Marquee>
+    <Marquee class="pointer-events-none">
       {#each customers as customer}
-        <img
-          class="max-h-[90px] object-contain brightness-0 invert"
-          src={customer.src}
-          alt={customer.alt}
-        />
-      {/each}
-    </Marquee>
-
-    <Marquee>
-      {#each oldCustomers as customer}
-        <img
-          class="max-h-[90px] object-contain brightness-0 invert"
-          src={customer.src}
-          alt={customer.alt}
-        />
+        <img class="max-h-[90px] object-contain brightness-0 invert" src={customer.src} alt={customer.alt} />
       {/each}
     </Marquee>
   </div>

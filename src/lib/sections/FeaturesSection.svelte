@@ -1,5 +1,5 @@
 <script lang="ts">
-  import Carousel from '$lib/components/Carousel.svelte';
+  import Marquee from '$lib/components/Marquee.svelte';
   import * as m from '$lib/paraglide/messages';
 
   import deploioWave from '$lib/assets/deploio_wave.svg';
@@ -49,16 +49,12 @@
     />
   </div>
 
-  <Carousel class="container relative z-10 mb-8 gap-[10vw] lg:gap-16">
-    <div
-      class="pointer-events-none flex w-max select-none items-center gap-[10vw] lg:w-full lg:justify-between lg:gap-16"
-    >
-      <img class="h-10" src={node} width="64" height="40" alt="Node.js" />
-      <img class="h-10" src={django} width="111" height="40" alt="Django" />
-      <img class="h-10" src={go} width="104" height="40" alt="Go" />
-      <img class="h-10" src={php} width="78" height="40" alt="PHP" />
-      <img class="h-10" src={python} width="40" height="40" alt="Python" />
-      <img class="h-10" src={ruby} width="111" height="40" alt="Ruby" />
-    </div>
-  </Carousel>
+  <Marquee class="container relative z-10 mb-8">
+    <img class="h-10" src={node} width="64" height="40" alt="Node.js" />
+    <img class="h-10" src={django} width="111" height="40" alt="Django" />
+    <img class="h-10" src={go} width="104" height="40" alt="Go" />
+    <img class="h-10" src={php} width="78" height="40" alt="PHP" />
+    <img class="h-10" src={python} width="40" height="40" alt="Python" />
+    <img class="h-10" src={ruby} width="111" height="40" alt="Ruby" />
+  </Marquee>
 </section>
