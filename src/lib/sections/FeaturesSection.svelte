@@ -49,7 +49,7 @@
     />
   </div>
 
-  <Marquee class="container relative z-10 mb-8">
+  <Marquee class="container relative z-10 mb-8" gap={14}>
     <img class="h-10" src={node} width="64" height="40" alt="Node.js" />
     <img class="h-10" src={django} width="111" height="40" alt="Django" />
     <img class="h-10" src={go} width="104" height="40" alt="Go" />
