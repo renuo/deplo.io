@@ -32,6 +32,13 @@
     { src: jobRocks, alt: 'job.rocks', lazy: true },
     { src: kidesia, alt: 'Kidesia' },
   ];
+
+  const oldCustomers = [
+    { src: stadtZuerich, alt: 'Stadt Zürich' },
+    { src: bdo, alt: 'BDO' },
+    { src: swissIct, alt: 'Swiss ICT' },
+    { src: bienenSchweiz, alt: 'Bienen Schweiz' },
+  ];
 </script>
 
 <section class="relative overflow-x-clip bg-deploio pb-6 max-md:pt-10">
@@ -55,6 +62,16 @@
 
     <Marquee>
       {#each customers as customer}
+        <img
+          class="max-h-[90px] object-contain brightness-0 invert"
+          src={customer.src}
+          alt={customer.alt}
+        />
+      {/each}
+    </Marquee>
+
+    <Marquee>
+      {#each oldCustomers as customer}
         <img
           class="max-h-[90px] object-contain brightness-0 invert"
           src={customer.src}
