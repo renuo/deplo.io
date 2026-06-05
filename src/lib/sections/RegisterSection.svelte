@@ -19,7 +19,7 @@
       <Button
         class="mt-2 h-10 w-full sm:ml-3 sm:w-auto"
         type="submit"
-        href="https://cockpit.nine.ch/{m.navigation_language()}/signup?origin=deploio"
+        href="https://cockpit.nine.ch/{m.navigation_language()}/fast_onboardings/new?origin=deploio"
         target="_blank"
         variant="secondary"
       >

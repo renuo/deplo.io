@@ -57,7 +57,7 @@
     <Link href="/team">{m.navigation_team()}</Link>
     <Link href="https://docs.deplo.io">{m.navigation_documentation()}</Link>
     <Link href="https://cockpit.nine.ch/{m.navigation_language()}/session/new?origin=deploio" target="_blank">{m.navigation_login()}</Link>
-    <Button variant="primary" href="https://cockpit.nine.ch/{m.navigation_language()}/signup?origin=deploio" target="_blank">{m.navigation_start()}</Button>
+    <Button variant="primary" href="https://cockpit.nine.ch/{m.navigation_language()}/fast_onboardings/new?origin=deploio" target="_blank">{m.navigation_start()}</Button>
   </nav>
 
   <button
