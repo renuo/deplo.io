@@ -1,6 +1,5 @@
 <script lang="ts">
   import { appear } from '$lib';
-  import * as m from '$lib/paraglide/messages';
   import mountainVector from '$lib/assets/backgrounds/mountain_vector_dark.svg';
 
   interface SuccessStoryNotesSectionProps {

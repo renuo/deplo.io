@@ -1,6 +1,5 @@
 <script lang="ts">
   import { appear } from '$lib';
-  import * as m from '$lib/paraglide/messages';
 
   import deploioWave from '$lib/assets/deploio_wave.svg';
   import SlackMessage from '$lib/components/SlackMessage.svelte';
@@ -21,7 +20,7 @@
     text2: string;
   }
 
-  const { messages, title1, text1, title2, text2 } = $props();
+  const { messages, title1, text1, title2, text2 }: SuccessStorySlackSectionProps = $props();
 </script>
 
 <section class="relative overflow-x-clip bg-deploio pb-16 pt-20">
