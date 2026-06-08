@@ -101,6 +101,10 @@
   "meta_description_team": "Scopri il team dietro Deploio – ingegneri svizzeri che costruiscono una piattaforma per applicazioni completamente gestita.",
   "meta_title_success_story": "Success Story: Renuo AG – Deploio",
   "meta_description_success_story": "Come Renuo AG ha trovato la perfetta alternativa svizzera a Heroku con Deploio – semplice, sovrana, senza grattacapi.",
+  "structured_data_organization_description": "Deploio è una soluzione svizzera di Platform-as-a-Service (PaaS) per l'hosting automatizzato di applicazioni. Residenza dei dati 100% svizzera, certificata ISO 27001:2022.",
+  "structured_data_address_locality": "Zurigo",
+  "structured_data_website_description": "Platform-as-a-Service svizzera per l'hosting automatizzato di applicazioni da Git. Managed Databases, Swiss Object Storage, TLS — 100% in Svizzera.",
+  "structured_data_software_description": "Il turbo per il tuo hosting di applicazioni. Da repository Git ad app produttiva in pochi minuti. Managed Databases, Key-Value Store, Swiss Object Storage, certificati TLS automatici. Fino a 10 volte più veloce.",
   "news_question": "<span class='text-claude'>*</span> CREATO UN'APP CON <span class='text-claude'>CLAUDE CODE</span>?",
   "news_cta": "Installa lo skill Deploio e distribuisci direttamente",
   "news_link": "Allo skill"
