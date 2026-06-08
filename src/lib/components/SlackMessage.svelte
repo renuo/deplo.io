@@ -13,7 +13,10 @@
   let { baseDelay, name, avatar, date, children }: FeatureProps = $props();
 </script>
 
-<section class="flex flex-col rounded-lg bg-white p-4 font-slack text-black lg:flex-row" use:appear={{delay: baseDelay}}>
+<section
+  class="flex flex-col rounded-lg bg-white p-4 font-slack text-black lg:flex-row"
+  use:appear={{ delay: baseDelay }}
+>
   <div class="pr-3">
     <img src={avatar} alt={name} class="h-12 w-12 rounded-xl" />
   </div>

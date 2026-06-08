@@ -40,11 +40,7 @@
         </span>
         <div class="mt-6 flex items-center font-normal">
           <div class="border-t-1 mr-4 flex-shrink-0 border-deploio">
-            <img
-              src={quote.avatar}
-              alt={quote.name}
-              class="m-2 h-full w-11 rounded-full bg-gray-200 object-cover"
-            />
+            <img src={quote.avatar} alt={quote.name} class="m-2 h-full w-11 rounded-full bg-gray-200 object-cover" />
           </div>
           <div class="text-base">
             <p use:appear={{ delay: 350 }}>{quote.name}</p>

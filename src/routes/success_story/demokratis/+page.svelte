@@ -40,6 +40,9 @@
     title2={m.success_story_demokratis_swissness_title()}
     text2={m.success_story_demokratis_swissness_text()}
   />
-  <SuccessStoryNotesSection title={m.success_story_demokratis_note_title()} text={m.success_story_demokratis_note_text()} />
+  <SuccessStoryNotesSection
+    title={m.success_story_demokratis_note_title()}
+    text={m.success_story_demokratis_note_text()}
+  />
   <RegisterSection />
 </main>
