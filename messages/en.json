@@ -53,7 +53,6 @@
   "success_story_title": "HOSTING WITHOUT BULLSH*T",
   "success_story_description": "Renuo AG wanted cloud hosting without the detours. With Deploio, they found the perfect Swiss Heroku alternative – simple, sovereign, carefree.",
   "success_story_long_description": "Renuo AG is a Swiss software engineering company with a mission: to write great code – preferably in Ruby on Rails – without having to deal with server administration. For years, everything ran via Heroku, until a single Slack message got everything rolling. In this success story, we tell you how Renuo found the perfect cloud hosting partner in Switzerland – and why Deploio is now the clear number one for them.",
-  "success_story_link": "LEARN MORE >",
   "success_story_before_cloud_title": "THE TIME BEFORE THE CLOUD",
   "success_story_before_cloud_text": "Deploio is operated by Nine and we used to be a Nine customer. That was before the cloud. We set up and operated servers for our customers. That took a lot of time and nerves: Buying SSL certificates, managing SSH access, monitoring disk space, updating system libraries. But then came Heroku. It freed us from server administration. We were able to concentrate on software development, even without vendor lock-in thanks to 12factor. Simply “git push”, CI/CD and the customer can test. So we moved to the cloud.",
   "success_story_beauty_and_the_beast_title": "BEAUTY AND THE BEAST",
