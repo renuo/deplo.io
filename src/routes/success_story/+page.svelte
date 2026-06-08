@@ -9,6 +9,7 @@
 
   import samuelAvatar from '$lib/assets/samuel.webp';
   import thomasAvatar from '$lib/assets/thomas.webp';
+  import josuaAvatar from '$lib/assets/josua.webp';
 
   const slackMessages = [
     {
@@ -51,6 +52,10 @@
     title2={m.success_story_beauty_and_the_beast_title()}
     text2={m.success_story_beauty_and_the_beast_text()}
   />
-  <SuccessStoryNotesSection />
+  <SuccessStoryNotesSection
+    title={m.success_story_note_title()}
+    text={m.success_story_note_text()}
+    quote={{ text: m.success_story_note_quote(), avatar: josuaAvatar, name: 'Josua Schmid', role: 'CTO Renuo AG' }}
+  />
   <RegisterSection />
 </main>
