@@ -7,9 +7,9 @@
   import GoogleTag from '$lib/components/GoogleTag.svelte';
   import * as m from '$lib/paraglide/messages';
 
-  import samuelAvatar from '$lib/assets/samuel.webp';
-  import thomasAvatar from '$lib/assets/thomas.webp';
-  import josuaAvatar from '$lib/assets/josua.webp';
+  import samuelAvatar from '$lib/assets/avatars/samuel.webp';
+  import thomasAvatar from '$lib/assets/avatars/thomas.webp';
+  import josuaAvatar from '$lib/assets/avatars/josua.webp';
 
   const slackMessages = [
     {

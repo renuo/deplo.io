@@ -1,6 +1,6 @@
 <script lang="ts">
   import successStoryBackground from '$lib/assets/backgrounds/demokratis_success_story_background.webp';
-  import samuelAvatar from '$lib/assets/samuel.webp';
+  import samuelAvatar from '$lib/assets/avatars/demokratis_fabian.webp';
   import SuccessStoryHeroSection from '$lib/sections/SuccessStoryHeroSection.svelte';
   import SuccessStorySlackSection from '$lib/sections/SuccessStorySlackSection.svelte';
   import SuccessStoryNotesSection from '$lib/sections/SuccessStoryNotesSection.svelte';
