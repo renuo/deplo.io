@@ -1,6 +1,7 @@
 <script lang="ts">
   import { appear } from '$lib';
   import mountainVector from '$lib/assets/backgrounds/mountain_vector_dark.svg';
+  import { twMerge } from 'tailwind-merge';
 
   interface SuccessStoryNotesSectionProps {
     title: string;
@@ -19,9 +20,14 @@
 <img src={mountainVector} alt="mountain vector background" class="pointer-events-none -my-px w-full bg-deploio" />
 
 <section class="bg-background">
-  <div class="container flex flex-col gap-9 xl:flex-row">
-    <div class="relative z-10 text-deploio md:pr-4 xl:max-w-xl">
-      <h2 class="text-h2 mb-5 mt-8 md:mt-0" use:appear={{ delay: 50 }}>{title}</h2>
+  <div class="container grid grid-cols-12">
+    <div
+      class={twMerge(
+        'relative z-10 col-span-12 text-deploio',
+        quote ? 'xl:col-span-7' : 'xl:col-span-9 xl:col-start-2',
+      )}
+    >
+      <h2 class="text-h2 mb-5 mt-8 md:mt-0 xl:w-[90%]" use:appear={{ delay: 50 }}>{title}</h2>
       <p class="text-[20px] font-normal" use:appear={{ delay: 100 }}>
         {@html text}
       </p>
@@ -30,7 +36,7 @@
 
     {#if quote}
       <div
-        class="relative mt-0 h-max self-end border-t-2 border-deploio bg-white p-4 pb-10 font-medium text-deploio xl:mt-48"
+        class="relative col-span-12 mt-9 h-max border-t-2 border-deploio bg-white p-4 pb-10 font-medium text-deploio xl:col-span-4 xl:col-start-9 xl:mt-48"
         style="box-shadow: 0px 30px 40px 0px #141D501A;"
         use:appear={{ delay: 300 }}
       >
