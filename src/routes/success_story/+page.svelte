@@ -11,6 +11,8 @@
   import thomasAvatar from '$lib/assets/avatars/thomas.webp';
   import josuaAvatar from '$lib/assets/avatars/josua.webp';
 
+  const clientName = 'Renuo AG';
+
   const slackMessages = [
     {
       baseDelay: 200,
@@ -32,7 +34,7 @@
 </script>
 
 <svelte:head>
-  <title>{m.meta_title_success_story({ company: 'Renuo AG' })}</title>
+  <title>{m.meta_title_success_story({ clientName })}</title>
   <meta name="description" content={m.meta_description_success_story()} />
   <GoogleTag />
 </svelte:head>
@@ -41,7 +43,7 @@
   <SuccessStoryHeroSection
     title={m.success_story_title()}
     description={m.success_story_long_description()}
-    clientName="Renuo AG"
+    {clientName}
     clientWebsite="renuo.ch"
     backgroundImage={successStoryBackground}
   />

@@ -111,7 +111,7 @@
   "meta_description_pricing": "Calculate the costs for your app on Deploio. Transparent pricing for the Swiss Platform-as-a-Service.",
   "meta_title_team": "Our Team – Deploio",
   "meta_description_team": "Meet the team behind Deploio – Swiss engineers building a fully managed app platform.",
-  "meta_title_success_story": "Success Story: {company} – Deploio",
+  "meta_title_success_story": "Success Story: {clientName} – Deploio",
   "meta_description_success_story": "How Renuo AG found the perfect Swiss Heroku alternative with Deploio – simple, sovereign, carefree.",
   "structured_data_organization_description": "Deploio is a Swiss Platform-as-a-Service (PaaS) solution for automated app hosting. 100% Swiss data residency, ISO 27001:2022 certified.",
   "structured_data_address_locality": "Zurich",

@@ -8,6 +8,8 @@
   import GoogleTag from '$lib/components/GoogleTag.svelte';
   import * as m from '$lib/paraglide/messages';
 
+  const clientName = 'Demokratis';
+
   const slackMessages = [
     {
       baseDelay: 200,
@@ -20,7 +22,7 @@
 </script>
 
 <svelte:head>
-  <title>{m.meta_title_success_story({ company: 'Demokratis' })}</title>
+  <title>{m.meta_title_success_story({ clientName })}</title>
   <meta name="description" content={m.success_story_demokratis_description()} />
   <GoogleTag />
 </svelte:head>
@@ -29,7 +31,7 @@
   <SuccessStoryHeroSection
     title={m.success_story_demokratis_title()}
     description={m.success_story_demokratis_long_description()}
-    clientName="Demokratis"
+    {clientName}
     clientWebsite="demokratis.ch"
     backgroundImage={successStoryBackground}
   />
