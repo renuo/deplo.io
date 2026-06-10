@@ -20,7 +20,7 @@
 </script>
 
 <svelte:head>
-  <title>{m.meta_title_success_story()}</title>
+  <title>{m.meta_title_success_story({company: "Demokratis"})}</title>
   <meta name="description" content={m.meta_description_success_story()} />
   <GoogleTag />
 </svelte:head>
