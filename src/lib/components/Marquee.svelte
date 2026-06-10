@@ -32,7 +32,9 @@
   {#if shouldScroll}
     <div class="flex w-max" style:animation="marquee {duration}s linear infinite">
       {@render marqueeContent({ class: `flex-shrink-0 pr-[var(--gap)]` })}
-      {@render marqueeContent({ class: `flex-shrink-0 pr-[var(--gap)]`, 'aria-hidden': true })}
+      {#each Array(3)}
+        {@render marqueeContent({ class: `flex-shrink-0 pr-[var(--gap)]`, 'aria-hidden': true })}
+      {/each}
     </div>
   {:else}
     {@render marqueeContent({ class: 'w-full justify-between' })}
