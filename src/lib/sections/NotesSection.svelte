@@ -2,6 +2,7 @@
   import Button from '$lib/components/Button.svelte';
   import Carousel from '$lib/components/Carousel.svelte';
   import Note from '$lib/components/Note.svelte';
+  import SuccessStoryCard from '$lib/components/SuccessStoryCard.svelte';
   import * as m from '$lib/paraglide/messages';
   import { appear } from '$lib';
   import successStoryBackground from '$lib/assets/backgrounds/success_story_background.webp';
@@ -11,7 +12,6 @@
   import mountainVector from '$lib/assets/backgrounds/mountain_vector.svg';
   import mountainOne from '$lib/assets/backgrounds/mountain_1.webp';
   import swissMadeSoftware from '$lib/assets/swiss_made_software_and_hosting.webp';
-  import SuccessStoryCard from '$lib/components/SuccessStoryCard.svelte';
 
   import type { SuccessStoryCardProps } from '$lib/components/SuccessStoryCard.svelte';
 
@@ -35,7 +35,9 @@
 <img src={mountainVector} alt="mountain vector background" class="pointer-events-none -my-px w-full bg-deploio" />
 
 <section class="bg-mountain">
-  <div class="container flex flex-col gap-6 p-0">
+  <div
+    class="no-scrollbar container -mb-16 flex w-max !max-w-full gap-6 overflow-auto !pb-[5rem] sm:w-full sm:!max-w-7xl sm:flex-col md:-mb-4"
+  >
     {#each successStories as successStory}
       <SuccessStoryCard {...successStory} />
     {/each}
