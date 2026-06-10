@@ -26,10 +26,10 @@
   }
 </script>
 
-<div class="fixed bottom-0 left-0 z-20">
+<div class="fixed bottom-0 left-0 z-20 w-full">
   <button
     class="absolute bottom-full right-10 bg-white p-1"
-    aria-controls="marquee"
+    aria-controls="news-banner"
     aria-expanded={isOpen}
     onclick={toggleMenu}
   >
@@ -39,28 +39,20 @@
       <img class="size-8" src={chevronIcon} alt="Open news banner" />
     {/if}
   </button>
-  <div class="w-screen overflow-hidden">
-    {#if isOpen && isReady}
-      <div
-        id="marquee"
-        class="flex w-max animate-[marquee_14s_linear_infinite] bg-white hover:[animation-play-state:paused]"
-      >
-        <!-- eslint-disable-next-line -->
-        {#each Array(4) as _, i}
-          <div class="mx-[7.5rem] flex h-16 items-center font-mono text-2xl" aria-hidden={i > 0 ? 'true' : null}>
-            <span class="me-14 font-medium text-[#3D3D3A]">{@html m.news_question()}</span>
-            <span class="me-6">{m.news_cta()}</span>
-            <a
-              href="https://github.com/ninech/deploio-skills"
-              target="_blank"
-              class="btn btn-primary flex items-center text-[#476DCC]"
-            >
-              {m.news_link()}
-              <img src={callMadeIcon} class="ml-1 size-8" alt="External link" />
-            </a>
-          </div>
-        {/each}
+  {#if isOpen && isReady}
+    <div class="bg-white">
+      <div id="news-banner" class="container flex flex-wrap items-center gap-y-1 !py-4 font-mono text-xl">
+        <span class="me-10 font-medium text-[#3D3D3A]">{@html m.news_question()}</span>
+        <span class="me-5">{m.news_cta()}</span>
+        <a
+          href="https://github.com/ninech/deploio-skills"
+          target="_blank"
+          class="btn btn-primary flex items-center text-[#476DCC]"
+        >
+          {m.news_link()}
+          <img src={callMadeIcon} class="ml-1 size-8" alt="External link" />
+        </a>
       </div>
-    {/if}
-  </div>
+    </div>
+  {/if}
 </div>
