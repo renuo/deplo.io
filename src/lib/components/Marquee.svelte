@@ -9,22 +9,23 @@
     speed?: number;
   }
 
-  let { children, gap = 20, speed = 100, class: className, ...rest }: MarqueeProps = $props();
+  let { children, gap = 20, speed = 100, ...rest }: MarqueeProps = $props();
 
   let containerWidth = $state(0);
   let contentWidth = $state(0);
   let shouldScroll = $derived(contentWidth > containerWidth);
   let duration = $derived(speed > 0 ? contentWidth / speed : 0);
   let gapStyle = $derived(gap * 0.25 + 'rem');
+  let className = $derived(rest.class?.toString());
 </script>
 
-{#snippet marqueeContent({ class: className, ...rest })}
-  <div class={twMerge(`flex items-center gap-[var(--gap)]`, className)} {...rest}>
+{#snippet marqueeContent(snippetProps: HTMLAttributes<HTMLDivElement> = {})}
+  <div {...snippetProps} class={twMerge(`flex items-center gap-[var(--gap)]`, snippetProps.class?.toString())}>
     {@render children()}
   </div>
 {/snippet}
 
-<div class={twMerge('overflow-x-hidden', className)} {...rest} bind:clientWidth={containerWidth} style:--gap={gapStyle}>
+<div {...rest} class={twMerge('overflow-x-hidden', className)} bind:clientWidth={containerWidth} style:--gap={gapStyle}>
   <div class="invisible absolute -z-50 w-max pr-[var(--gap)]" aria-hidden="true" bind:clientWidth={contentWidth}>
     {@render marqueeContent()}
   </div>

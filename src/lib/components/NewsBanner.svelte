@@ -42,6 +42,7 @@
   {#if isOpen && isReady}
     <div class="bg-white">
       <div id="news-banner" class="container flex flex-wrap items-center gap-y-1 !py-4 font-mono text-xl">
+        <!-- eslint-disable-next-line svelte/no-at-html-tags -->
         <span class="me-10 font-medium text-[#3D3D3A]">{@html m.news_question()}</span>
         <span class="me-5">{m.news_cta()}</span>
         <a
