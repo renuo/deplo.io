@@ -29,6 +29,7 @@
     >
       <h2 class="text-h2 mb-5 mt-8 md:mt-0 xl:w-[90%]" use:appear={{ delay: 50 }}>{title}</h2>
       <p class="text-[20px] font-normal" use:appear={{ delay: 100 }}>
+        <!-- eslint-disable-next-line svelte/no-at-html-tags -->
         {@html text}
       </p>
       <div class="flex" use:appear={{ delay: 150 }}></div>

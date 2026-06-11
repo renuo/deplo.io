@@ -9,7 +9,7 @@
     avatar: string;
     name: string;
     date: string;
-    messages: string;
+    content: string;
   }
 
   interface SuccessStorySlackSectionProps {
@@ -34,6 +34,7 @@
     <div class="col-span-12 flex flex-col gap-5 lg:col-span-6 lg:row-span-2 lg:mr-9 xl:col-span-5">
       {#each messages as message}
         <SlackMessage baseDelay={message.baseDelay} name={message.name} avatar={message.avatar} date={message.date}>
+          <!-- eslint-disable-next-line svelte/no-at-html-tags -->
           {@html message.content}
         </SlackMessage>
       {/each}
@@ -44,6 +45,7 @@
         {title1}
       </h3>
       <p use:appear={{ delay: 200 }}>
+        <!-- eslint-disable-next-line svelte/no-at-html-tags -->
         {@html text1}
       </p>
     </div>

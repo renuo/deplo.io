@@ -1,6 +1,5 @@
 <script lang="ts">
   import Background from '$lib/components/Background.svelte';
-  import * as m from '$lib/paraglide/messages';
   import { appear } from '$lib';
 
   import Link from '$lib/components/Link.svelte';
