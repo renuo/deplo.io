@@ -2,77 +2,60 @@
   import Button from '$lib/components/Button.svelte';
   import Carousel from '$lib/components/Carousel.svelte';
   import Note from '$lib/components/Note.svelte';
+  import SuccessStoryCard from '$lib/components/SuccessStoryCard.svelte';
   import * as m from '$lib/paraglide/messages';
   import { appear } from '$lib';
+  import successStoryBackground from '$lib/assets/backgrounds/success_story_background.webp';
+  import demokratisSuccessStoryBackground from '$lib/assets/backgrounds/demokratis_success_story_background.webp';
 
   import deploioSticker from '$lib/assets/deploio_sticker.webp';
-  import chevronIcon from '$lib/assets/icons/chevron.svg';
   import mountainVector from '$lib/assets/backgrounds/mountain_vector.svg';
-  import successStoryBackground from '$lib/assets/backgrounds/success_story_background.webp';
   import mountainOne from '$lib/assets/backgrounds/mountain_1.webp';
   import swissMadeSoftware from '$lib/assets/swiss_made_software_and_hosting.webp';
-  import Link from '$lib/components/Link.svelte';
+
+  import type { SuccessStoryCardProps } from '$lib/components/SuccessStoryCard.svelte';
+
+  const successStories: Array<SuccessStoryCardProps> = [
+    {
+      title: m.success_story_title(),
+      subtitle: m.success_story_subtitle(),
+      description: m.success_story_description(),
+      backgroundImage: successStoryBackground,
+    },
+    {
+      title: m.success_story_demokratis_title(),
+      subtitle: m.success_story_demokratis_subtitle(),
+      description: m.success_story_demokratis_description(),
+      backgroundImage: demokratisSuccessStoryBackground,
+      url: '/demokratis',
+    },
+  ];
 </script>
 
 <img src={mountainVector} alt="mountain vector background" class="pointer-events-none -my-px w-full bg-deploio" />
 
 <section class="bg-mountain">
-  <div class="container p-0">
-    <a
-      href="/success_story"
-      class="hover:scale-105 transition-all align-stretch relative z-10 flex w-full flex-col items-stretch border-t-2 border-deploio bg-white text-deploio sm:flex-row"
-      style="box-shadow: 0px 30px 40px 0px #141D501A;"
-    >
-      <div class="z-10 order-1 flex-1 pb-7 pl-6 pr-6 pt-7 max-sm:mt-32 sm:order-first sm:pr-0 md:pl-6 md:pr-4">
-        <h3 class="">{m.success_story_subtitle()}</h3>
-        <h2
-          class="sm:text-h2 mb-5 mt-0 text-2xl max-sm:font-normal sm:whitespace-nowrap md:mt-0"
-          use:appear={{ delay: 50 }}
-        >
-          {m.success_story_title()}
-        </h2>
-        <p class="mb-8 text-[20px]" use:appear={{ delay: 100 }}>{m.success_story_description()}</p>
-        <span class="flex font-medium text-deploio whitespace-nowrap" use:appear={{ delay: 150 }}>
-          {m.feature_why_button()}
-          <img src={chevronIcon} alt="chevron" />
-        </span>
-      </div>
-      <div class="flex-1">
-        <div class="absolute h-1/3 w-full sm:right-0 sm:h-full sm:w-1/2"></div>
-        <div class="absolute h-1/3 w-full sm:right-0 sm:h-full sm:w-1/2">
-          <img src={successStoryBackground} alt="Renuo success story" loading="lazy" class="h-full w-full object-cover object-top" />
-        </div>
-
-        <!-- Mobile Gradient -->
-        <div
-          class="absolute block h-1/3 w-full sm:hidden"
-          style="background: linear-gradient(0deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%);
-"
-        ></div>
-        <!-- Desktop Gradient -->
-        <div
-          class="absolute top-0 hidden h-full sm:right-0 sm:block sm:w-1/2"
-          style="background: linear-gradient(90deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%);"
-        ></div>
-      </div>
-    </a>
+  <div
+    class="no-scrollbar container -mb-16 flex w-max !max-w-full gap-6 overflow-auto !pb-[5rem] sm:w-full sm:!max-w-7xl sm:flex-col md:-mb-4"
+  >
+    {#each successStories as successStory}
+      <SuccessStoryCard {...successStory} />
+    {/each}
   </div>
 
-  <div class="group container relative z-10 mx-auto text-deploio md:max-w-xl md:pl-40 md:pr-4 lg:max-w-3xl max-md:mt-20">
+  <div
+    class="group container relative z-10 mx-auto text-deploio max-md:mt-20 md:max-w-xl md:pl-40 md:pr-4 lg:max-w-3xl"
+  >
     <img
       src={deploioSticker}
       draggable="false"
       alt="hosted on deploio sticker"
-      class="pointer-events-none absolute max-md:-top-20 right-10 size-48 -rotate-12 opacity-5 transition-transform group-hover:rotate-12 md:bottom-auto md:right-auto md:-ml-40 md:-mt-8"
+      class="pointer-events-none absolute right-10 size-48 -rotate-12 opacity-5 transition-transform group-hover:rotate-12 max-md:-top-20 md:bottom-auto md:right-auto md:-ml-40 md:-mt-8"
     />
     <h2 class="text-h2 mb-5 mt-8 md:mt-0" use:appear={{ delay: 50 }}>{m.feature_why_title()}</h2>
     <p class="mb-8 text-[20px]" use:appear={{ delay: 100 }}>{m.feature_why_description()}</p>
     <div class="flex" use:appear={{ delay: 150 }}>
-      <Button
-        variant="secondary"
-        href="https://docs.deplo.io"
-        target="_blank"
-      >
+      <Button variant="secondary" href="https://docs.deplo.io" target="_blank">
         {m.feature_why_button()}
       </Button>
     </div>
@@ -88,7 +71,8 @@
   </Carousel>
 
   <div
-    class="relative -z-0 -mt-[130%] h-[1400px] md:h-[1000px] md:-mt-[30%] lg:h-[1400px] 2xl:-mt-[600px] 2xl:h-[2000px]">
+    class="relative -z-0 -mt-[130%] h-[1400px] md:-mt-[30%] md:h-[1000px] lg:h-[1400px] 2xl:-mt-[600px] 2xl:h-[2000px]"
+  >
     <img
       src={mountainOne}
       alt="mountain from the swiss alps"

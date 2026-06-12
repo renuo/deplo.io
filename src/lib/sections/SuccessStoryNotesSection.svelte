@@ -1,39 +1,59 @@
 <script lang="ts">
   import { appear } from '$lib';
-  import * as m from '$lib/paraglide/messages';
   import mountainVector from '$lib/assets/backgrounds/mountain_vector_dark.svg';
-  import josuaAvatar from '$lib/assets/josua.webp';
+  import { twMerge } from 'tailwind-merge';
+
+  interface SuccessStoryNotesSectionProps {
+    title: string;
+    text: string;
+    quote?: {
+      avatar: string;
+      text: string;
+      name: string;
+      role: string;
+    };
+  }
+
+  const { title, text, quote }: SuccessStoryNotesSectionProps = $props();
 </script>
 
 <img src={mountainVector} alt="mountain vector background" class="pointer-events-none -my-px w-full bg-deploio" />
 
 <section class="bg-background">
-  <div class="container flex gap-9 flex-col xl:flex-row">
-    <div class="relative z-10 text-deploio xl:max-w-xl md:pr-4">
-      <h2 class="text-h2 mb-5 mt-8 md:mt-0" use:appear={{ delay: 50 }}>{m.success_story_note_title()}</h2>
+  <div class="container grid grid-cols-12">
+    <div
+      class={twMerge(
+        'relative z-10 col-span-12 text-deploio',
+        quote ? 'xl:col-span-7' : 'xl:col-span-9 xl:col-start-2',
+      )}
+    >
+      <h2 class="text-h2 mb-5 mt-8 md:mt-0 xl:w-[90%]" use:appear={{ delay: 50 }}>{title}</h2>
       <p class="text-[20px] font-normal" use:appear={{ delay: 100 }}>
-        {m.success_story_note_text()}
+        <!-- eslint-disable-next-line svelte/no-at-html-tags -->
+        {@html text}
       </p>
       <div class="flex" use:appear={{ delay: 150 }}></div>
     </div>
 
-    <div
-      class="relative mt-0 xl:mt-48 h-max self-end border-t-2 border-deploio bg-white p-4 pb-10 font-medium text-deploio"
-      style="box-shadow: 0px 30px 40px 0px #141D501A;"
-      use:appear={{ delay: 300 }}
-    >
-      <span class="text-2xl">
-        {m.success_story_note_quote()}
-      </span>
-      <div class="mt-6 flex items-center font-normal">
-        <div class="border-t-1 mr-4 flex-shrink-0 border-deploio">
-          <img src={josuaAvatar} alt="Josua" class="m-2 h-full w-11 rounded-full bg-gray-200 object-cover" />
-        </div>
-        <div class="text-base">
-          <p use:appear={{ delay: 350 }}>Josua Schmid</p>
-          <p use:appear={{ delay: 400 }} class="opacity-70">CTO Renuo AG</p>
+    {#if quote}
+      <div
+        class="relative col-span-12 mt-9 h-max border-t-2 border-deploio bg-white p-4 pb-10 font-medium text-deploio xl:col-span-4 xl:col-start-9 xl:mt-48"
+        style="box-shadow: 0px 30px 40px 0px #141D501A;"
+        use:appear={{ delay: 300 }}
+      >
+        <span class="text-2xl">
+          {quote.text}
+        </span>
+        <div class="mt-6 flex items-center font-normal">
+          <div class="border-t-1 mr-4 flex-shrink-0 border-deploio">
+            <img src={quote.avatar} alt={quote.name} class="m-2 h-full w-11 rounded-full bg-gray-200 object-cover" />
+          </div>
+          <div class="text-base">
+            <p use:appear={{ delay: 350 }}>{quote.name}</p>
+            <p use:appear={{ delay: 400 }} class="opacity-70">{quote.role}</p>
+          </div>
         </div>
       </div>
-    </div>
+    {/if}
   </div>
 </section>
