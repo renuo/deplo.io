@@ -2,6 +2,7 @@
   import type { Snippet } from 'svelte';
   import type { HTMLAttributes } from 'svelte/elements';
   import { twMerge } from 'tailwind-merge';
+  import { appear } from '$lib';
 
   interface MarqueeProps extends HTMLAttributes<HTMLDivElement> {
     children: Snippet;
@@ -25,7 +26,7 @@
   </div>
 {/snippet}
 
-<div {...rest} class={twMerge('overflow-x-hidden', className)} bind:clientWidth={containerWidth} style:--gap={gapStyle}>
+<div {...rest} class={twMerge('overflow-x-hidden', className)} bind:clientWidth={containerWidth} style:--gap={gapStyle} use:appear={{ delay: 0 }}>
   <div class="invisible absolute -z-50 w-max pr-[var(--gap)]" aria-hidden="true" bind:clientWidth={contentWidth}>
     {@render marqueeContent()}
   </div>
