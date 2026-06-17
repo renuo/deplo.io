@@ -6,14 +6,14 @@
   import bienenSchweiz from '$lib/assets/logos/bienen_schweiz.svg';
   import stadtZuerich from '$lib/assets/logos/stadt_zuerich.svg';
   import swissIct from '$lib/assets/logos/swiss_ict.svg';
-  import modeWeber from '$lib/assets/logos/mode_weber.png';
+  import modeWeber from '$lib/assets/logos/mode_weber.webp';
   import demokratis from '$lib/assets/logos/demokratis.svg';
   import swissstaffing from '$lib/assets/logos/swissstaffing.svg';
   import gebaeudepass from '$lib/assets/logos/gebaeudepass.svg';
-  import brevalia from '$lib/assets/logos/brevalia.png';
+  import brevalia from '$lib/assets/logos/brevalia.webp';
   import tincan from '$lib/assets/logos/tincan.svg';
   import ohoDesign from '$lib/assets/logos/oho_design.svg';
-  import jobRocks from '$lib/assets/logos/job_rocks.png';
+  import jobRocks from '$lib/assets/logos/job_rocks.webp';
   import kidesia from '$lib/assets/logos/kidesia.svg';
 
   const customers = [
