@@ -77,7 +77,7 @@
   "success_story_demokratis_note_title": "UN SUPPORTO CHE ANTICIPA I BISOGNI",
   "success_story_demokratis_note_text": "Non siamo dei tecnici puri. Ecco perché l'installazione completa del cloud e la migrazione della nostra piattaforma ci hanno fatto sudare un po'. Ma invece di sistemi di ticket anonimi, abbiamo ricevuto un supporto super flessibile direttamente tramite Slack ed e-mail personali. Avevamo bisogno di alcune funzioni speciali per il routing – e il team di Deploio ce le ha fornite rapidamente e senza problemi. È davvero fantastico essere così vicini al prodotto.<br><br>In più, ora disponiamo di deployment moderni. Distribuzione di una feature branch tramite nctl come app di staging, test ed è fatta. Ci concentriamo interamente sulla nostra missione per rendere le consultazioni pubbliche più inclusive. Deploio si occupa dell'infrastruttura, in modo sicuro e interamente in Svizzera. E lo fanno davvero bene.",
   "success_story_demokratis_quote_name": "Fabian Ligibel",
-  "success_story_demokratis_quote_text": "La nostra missione è la democrazia digitale, non la gestione dei server. Grazie alla soluzione PaaS di Deploio, non dobbiamo preoccuparci minimamente dell’infrastruttura. E la sede in Svizzera offre ai nostri clienti del settore pubblico proprio la sicurezza di cui hanno bisogno.",
+  "success_story_demokratis_quote_text": "La nostra missione è la democrazia digitale, non la gestione dei server. Grazie alla soluzione PaaS di Deploio, non dobbiamo preoccuparci minimamente dell’infrastruttura.",
   "success_story_demokratis_quote_role": "Strategia e prodotto Demokratis",
   "footer_support": "SUPPORTO",
   "footer_status": "Stato",
