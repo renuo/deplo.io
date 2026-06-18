@@ -33,7 +33,7 @@
     text2={m.success_story_demokratis_swissness_text()}
   >
     <div
-      class="relative col-span-12 h-max border-t-2 border-deploio bg-white p-4 pb-10 font-medium text-deploio xl:col-span-4 xl:col-start-9"
+      class="relative col-span-12 h-max border-t-2 border-deploio bg-white p-6 pb-14 font-medium text-deploio xl:col-span-4 xl:col-start-9"
       style="box-shadow: 0px 30px 40px 0px #141D501A;"
       use:appear={{ delay: 300 }}
     >
