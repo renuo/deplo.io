@@ -2,8 +2,7 @@
   import { onMount } from 'svelte';
   import { i18n } from '$lib/i18n';
   import { page } from '$app/state';
-  import MonthIcon_DE from '$lib/assets/icons/1month_de.svg';
-  import MonthIcon_EN from '$lib/assets/icons/1month_en.svg';
+  import PushIcon from '$lib/assets/icons/1free_push.svg';
   import RiskIcon_DE from '$lib/assets/icons/0risk_de.svg';
   import RiskIcon_EN from '$lib/assets/icons/0risk_en.svg';
   import ControlIcon_DE from '$lib/assets/icons/100control_de.svg';
@@ -14,9 +13,9 @@
   let ICONS: [string, string, string];
   onMount(async () => {
     if (language == "de") {
-      ICONS = [MonthIcon_DE, RiskIcon_DE, ControlIcon_DE];
+      ICONS = [PushIcon, RiskIcon_DE, ControlIcon_DE];
     } else {
-      ICONS = [MonthIcon_EN, RiskIcon_EN, ControlIcon_EN];
+      ICONS = [PushIcon, RiskIcon_EN, ControlIcon_EN];
     }
   });
 
@@ -270,8 +269,8 @@
   }
 
   .icon-0 {
-    left: -105px;
-    top: -80px;
+    left: -85px;
+    top: -72px;
   }
 
   .icon-1 {
