@@ -15,17 +15,19 @@
   import ohoDesign from '$lib/assets/logos/oho_design.svg';
   import jobRocks from '$lib/assets/logos/job_rocks.webp';
   import kidesia from '$lib/assets/logos/kidesia.svg';
+  import adss from '$lib/assets/logos/adss.svg';
 
   const customers = [
     { src: stadtZuerich, alt: 'Stadt Zürich' },
     { src: bdo, alt: 'BDO' },
+    { src: adss, alt: 'Allianz Digitale Sicherheit Schweiz' },
     { src: swissIct, alt: 'Swiss ICT' },
     { src: bienenSchweiz, alt: 'Bienen Schweiz' },
-    { src: modeWeber, alt: 'Modeweber', lazy: true },
     { src: demokratis, alt: 'Demokratis' },
     { src: swissstaffing, alt: 'swissstaffing' },
     { src: gebaeudepass, alt: 'Gebäudepass' },
     { src: brevalia, alt: 'Brevalia', lazy: true },
+    { src: modeWeber, alt: 'Modeweber', lazy: true },
     { src: tincan, alt: 'Tincan' },
     { src: ohoDesign, alt: 'OHO Design' },
     { src: jobRocks, alt: 'job.rocks', lazy: true },
