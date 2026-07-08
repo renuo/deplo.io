@@ -19,19 +19,19 @@
 
   const customers = [
     { src: stadtZuerich, alt: 'Stadt Zürich' },
+    { src: jobRocks, alt: 'job.rocks', lazy: true },
     { src: bdo, alt: 'BDO' },
+    { src: brevalia, alt: 'Brevalia', lazy: true },
     { src: adss, alt: 'Allianz Digitale Sicherheit Schweiz' },
+    { src: tincan, alt: 'Tincan' },
     { src: swissIct, alt: 'Swiss ICT' },
     { src: bienenSchweiz, alt: 'Bienen Schweiz' },
-    { src: demokratis, alt: 'Demokratis' },
-    { src: swissstaffing, alt: 'swissstaffing' },
-    { src: gebaeudepass, alt: 'Gebäudepass' },
-    { src: brevalia, alt: 'Brevalia', lazy: true },
     { src: modeWeber, alt: 'Modeweber', lazy: true },
-    { src: tincan, alt: 'Tincan' },
+    { src: demokratis, alt: 'Demokratis' },
     { src: ohoDesign, alt: 'OHO Design' },
-    { src: jobRocks, alt: 'job.rocks', lazy: true },
+    { src: swissstaffing, alt: 'swissstaffing' },
     { src: kidesia, alt: 'Kidesia' },
+    { src: gebaeudepass, alt: 'Gebäudepass' },
   ];
 </script>
 
