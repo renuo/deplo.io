@@ -17,6 +17,7 @@
   let shouldScroll = $derived(contentWidth > containerWidth);
   let duration = $derived(speed > 0 ? contentWidth / speed : 0);
   let gapStyle = $derived(gap * 0.25 + 'rem');
+  let paddingStyle = $derived(gap + 'rem');
   let className = $derived(rest.class?.toString());
 </script>
 
@@ -26,16 +27,16 @@
   </div>
 {/snippet}
 
-<div {...rest} class={twMerge('overflow-x-hidden', className)} bind:clientWidth={containerWidth} style:--gap={gapStyle} use:appear={{ delay: 0 }}>
+<div {...rest} class={twMerge('overflow-x-hidden', className)} bind:clientWidth={containerWidth} style:--gap={gapStyle} style:--padding={paddingStyle} use:appear={{ delay: 0 }}>
   <div class="invisible absolute -z-50 w-max pr-[var(--gap)]" aria-hidden="true" bind:clientWidth={contentWidth}>
     {@render marqueeContent()}
   </div>
 
   {#if shouldScroll}
     <div class="flex w-max" style:animation="marquee {duration}s linear infinite">
-      {@render marqueeContent({ class: `flex-shrink-0 pr-[var(--gap)]` })}
+      {@render marqueeContent({ class: `flex-shrink-0 pr-[var(--padding)]` })}
       {#each Array(3)}
-        {@render marqueeContent({ class: `flex-shrink-0 pr-[var(--gap)]`, 'aria-hidden': true })}
+        {@render marqueeContent({ class: `flex-shrink-0 pr-[var(--padding)]`, 'aria-hidden': true })}
       {/each}
     </div>
   {:else}
