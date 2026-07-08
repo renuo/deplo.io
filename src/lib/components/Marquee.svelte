@@ -17,7 +17,7 @@
   let shouldScroll = $derived(contentWidth > containerWidth);
   let duration = $derived(speed > 0 ? contentWidth / speed : 0);
   let gapStyle = $derived(gap * 0.25 + 'rem');
-  let paddingStyle = $derived(gap + 'rem');
+  let paddingStyle = $derived(gap * 1.1 + 'rem');
   let className = $derived(rest.class?.toString());
 </script>
 
