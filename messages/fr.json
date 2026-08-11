@@ -98,8 +98,6 @@
   "complex_projects": "Des projets plus complexes ?",
   "complex_projects_description": "Si Deploio ne suffit pas, vous pouvez toujours obtenir plus dans le tableau de bord. Tout d'un seul fournisseur : serveurs gérés, serveurs dédiés ou même un cluster K8 complet.",
   "complex_projects_ready": "Prêt à vous lancer ?",
-  "complex_projects_button": "Commencez dès maintenant",
-  "complex_projects_button_url": "",
   "nine": "Nine",
   "nine_url": "https://nine.ch",
   "meta_title_home": "Deploio – PaaS suisse | Hébergement d'applications depuis la Suisse",
