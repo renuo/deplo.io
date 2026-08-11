@@ -15,16 +15,7 @@
 
   <div class="container bg-mountain !pb-0">
     <div class="flex flex-col items-center justify-center">
-      <h2 class="text-h2 pb-8">{m.complex_projects_ready()}</h2>
-      <div class="flex" use:appear={{ delay: 150 }}>
-        <Button
-          variant="secondary"
-          href="https://cockpit.nine.ch/{m.navigation_language()}/fast_onboardings/new?origin=deploio"
-          target="_blank"
-        >
-          {m.complex_projects_button()}
-        </Button>
-      </div>
+      <h2 class="text-h2">{m.complex_projects_ready()}</h2>
     </div>
   </div>
   <BinarySection />
