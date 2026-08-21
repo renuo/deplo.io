@@ -2,7 +2,14 @@
   import Background from '$lib/components/Background.svelte';
   import deploioVideo from '$lib/assets/backgrounds/deploio_video.mp4';
   import * as m from '$lib/paraglide/messages';
+  import { languageTag } from '$lib/paraglide/runtime.js';
   import { appear } from '$lib';
+  import { page } from '$app/state';
+
+  const currentLanguage = $derived(languageTag());
+  const pricingCalculatorSrc = $derived(
+    `https://pricing-calculator-deploio.9f1cecd.deploio.app?lang=${currentLanguage}&linkbase=${encodeURIComponent(page.url.href)}`
+  );
 </script>
 
 <Background
@@ -28,7 +35,7 @@
       height="787px"
       title="pricing"
       allow="clipboard-read; clipboard-write"
-      src="https://pricing-calculator-deploio.9f1cecd.deploio.app"
+      src={pricingCalculatorSrc}
       use:appear={{ delay: 200 }}
     ></iframe>
   </div>
