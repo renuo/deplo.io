@@ -12,7 +12,6 @@
   import closeIcon from '$lib/assets/icons/close.svg';
 
   let isOpen = false;
-  let isScrolled = false;
 
   function toggleMenu() {
     isOpen = !isOpen;
@@ -24,15 +23,7 @@
   }
 
   onMount(() => {
-    const handleScroll = () => {
-      isScrolled = window.scrollY > 10;
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    handleScroll();
-
     return () => {
-      window.removeEventListener('scroll', handleScroll);
       document.body.style.overflow = '';
     };
   });
