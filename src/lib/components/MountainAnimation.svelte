@@ -8,7 +8,7 @@
 </script>
 
 <div class="bg-background">
-  <div class="container relative !py-0 text-left lg:absolute lg:left-1/2 lg:-translate-x-1/2 lg:py-4 z-10">
+  <div class="container relative z-10 !py-0 text-left lg:absolute lg:left-1/2 lg:-translate-x-1/2 lg:py-4">
     <h2 class="text-h2 max-w-[800px]" use:appear={{ delay: 0 }}>{m.complex_projects()}</h2>
     <p class="max-w-[620px] pb-2 pt-8" use:appear={{ delay: 100 }}>{m.complex_projects_description()}</p>
     <div class="flex justify-start">

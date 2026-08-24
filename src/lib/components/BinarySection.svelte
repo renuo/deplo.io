@@ -12,7 +12,7 @@
 
   let ICONS: [string, string, string];
   onMount(async () => {
-    if (language == "de") {
+    if (language == 'de') {
       ICONS = [PushIcon, RiskIcon_DE, ControlIcon_DE];
     } else {
       ICONS = [PushIcon, RiskIcon_EN, ControlIcon_EN];

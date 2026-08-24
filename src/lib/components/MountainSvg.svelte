@@ -19,12 +19,20 @@
   <circle cx="499" cy="303" r="18" stroke="#141D50" stroke-width="4" />
   <circle cx="747" cy="243" r="18" stroke="#141D50" stroke-width="4" />
   <circle cx="1200" cy="20" r="18" stroke="#141D50" stroke-width="4" />
-  
-  <text x="209" y="380" text-anchor="middle" class="mountain-label" fill="#141D50" transform="rotate(-30, 209, 380)">{label1}</text>
-  <text x="499" y="260" text-anchor="middle" class="mountain-label" fill="#141D50" transform="rotate(-30, 499, 260)">{label2}</text>
-  <text x="747" y="200" text-anchor="middle" class="mountain-label" fill="#141D50" transform="rotate(-30, 747, 200)">{label3}</text>
-  <text x="1200" y="-20" text-anchor="middle" class="mountain-label" fill="#141D50" transform="rotate(-30, 1200, -20)">{label4}</text>
-  
+
+  <text x="209" y="380" text-anchor="middle" class="mountain-label" fill="#141D50" transform="rotate(-30, 209, 380)"
+    >{label1}</text
+  >
+  <text x="499" y="260" text-anchor="middle" class="mountain-label" fill="#141D50" transform="rotate(-30, 499, 260)"
+    >{label2}</text
+  >
+  <text x="747" y="200" text-anchor="middle" class="mountain-label" fill="#141D50" transform="rotate(-30, 747, 200)"
+    >{label3}</text
+  >
+  <text x="1200" y="-20" text-anchor="middle" class="mountain-label" fill="#141D50" transform="rotate(-30, 1200, -20)"
+    >{label4}</text
+  >
+
   <g>
     <mask
       id="mask0_2455_4589"
@@ -107,7 +115,7 @@
     mask: url(#pulseMask);
     stroke-dashoffset: 0;
   }
-  
+
   .mountain-label {
     font-family: inherit;
     font-size: 45px;
@@ -122,7 +130,7 @@
       font-size: 32px;
     }
   }
-  
+
   @media (min-width: 1000px) {
     .mountain-label {
       font-size: 20px;

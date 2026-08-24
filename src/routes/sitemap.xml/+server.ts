@@ -12,9 +12,7 @@ export const GET: RequestHandler = () => {
     const alternates = LANGUAGES.map(
       (lang) => `    <xhtml:link rel="alternate" hreflang="${lang}" href="${ORIGIN}/${lang}${path}" />`,
     );
-    alternates.push(
-      `    <xhtml:link rel="alternate" hreflang="x-default" href="${ORIGIN}/en${path}" />`,
-    );
+    alternates.push(`    <xhtml:link rel="alternate" hreflang="x-default" href="${ORIGIN}/en${path}" />`);
 
     return LANGUAGES.map(
       (lang) => `  <url>

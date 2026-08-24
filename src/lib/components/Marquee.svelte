@@ -27,7 +27,14 @@
   </div>
 {/snippet}
 
-<div {...rest} class={twMerge('overflow-x-hidden', className)} bind:clientWidth={containerWidth} style:--gap={gapStyle} style:--padding={paddingStyle} use:appear={{ delay: 0 }}>
+<div
+  {...rest}
+  class={twMerge('overflow-x-hidden', className)}
+  bind:clientWidth={containerWidth}
+  style:--gap={gapStyle}
+  style:--padding={paddingStyle}
+  use:appear={{ delay: 0 }}
+>
   <div class="invisible absolute -z-50 w-max pr-[var(--gap)]" aria-hidden="true" bind:clientWidth={contentWidth}>
     {@render marqueeContent()}
   </div>
