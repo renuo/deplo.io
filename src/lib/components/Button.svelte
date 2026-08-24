@@ -3,11 +3,12 @@
   import type { HTMLButtonAttributes, HTMLAnchorAttributes } from 'svelte/elements';
   import { twMerge } from 'tailwind-merge';
 
-  type ButtonAttributes = HTMLButtonAttributes & { href?: never };
-  type AnchorAttributes = HTMLAnchorAttributes & { href: string };
+  type ButtonAttributes = Omit<HTMLButtonAttributes, 'class'> & { href?: never };
+  type AnchorAttributes = Omit<HTMLAnchorAttributes, 'class'> & { href: string };
 
   type ButtonProps = (ButtonAttributes | AnchorAttributes) & {
     href?: string;
+    class?: string;
     variant: 'primary' | 'secondary' | 'outline';
     children: Snippet;
   };

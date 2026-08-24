@@ -4,7 +4,8 @@
   import { twMerge } from 'tailwind-merge';
   import { page } from '$app/stores';
 
-  interface LinkProps extends HTMLAnchorAttributes {
+  interface LinkProps extends Omit<HTMLAnchorAttributes, 'class'> {
+    class?: string;
     children: Snippet;
   }
 
