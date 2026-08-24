@@ -2,6 +2,7 @@
 // for information about these interfaces
 declare global {
   interface Window {
+    dataLayer?: unknown[][];
     gtag: (type: string, event: string, data: Record<string, unknown>) => void;
     grecaptcha: {
       ready: (callback: () => void) => void;

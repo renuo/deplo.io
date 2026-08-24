@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   const googleTagId = import.meta.env.VITE_GOOGLE_TAG_ID;
 
   import { onMount } from 'svelte';
@@ -9,9 +9,9 @@
     scriptTag.src = `https://www.googletagmanager.com/gtag/js?id=${googleTagId}`;
     document.head.appendChild(scriptTag);
 
-    window.dataLayer = window.dataLayer || [];
-    function gtag() {
-      window.dataLayer.push(arguments);
+    const dataLayer: unknown[][] = (window.dataLayer ??= []);
+    function gtag(...args: unknown[]) {
+      dataLayer.push(args);
     }
     gtag('js', new Date());
     gtag('config', googleTagId);
