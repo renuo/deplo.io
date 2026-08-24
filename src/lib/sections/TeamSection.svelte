@@ -12,7 +12,7 @@
 
   const language = i18n.getLanguageFromUrl(page.url);
 
-  let members: Array = [];
+  let members: typeof team = [];
   onMount(async () => {
     if (language == 'de') {
       members = team;
