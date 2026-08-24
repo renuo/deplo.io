@@ -43,8 +43,8 @@
   let specialEnd = 0;
   let binaryLines: string[][] = [];
   let hoveredIndex: number | null = null;
-  let interval: NodeJS.Timeout;
-  let autoHoverTimeout: NodeJS.Timeout;
+  let interval: ReturnType<typeof setInterval>;
+  let autoHoverTimeout: ReturnType<typeof setTimeout>;
   let currentHoverIndex = 0;
 
   $: {
