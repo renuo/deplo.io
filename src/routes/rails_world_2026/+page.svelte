@@ -3,7 +3,7 @@
   import Button from '$lib/components/Button.svelte';
   import mountainBackground from '$lib/assets/backgrounds/mountain_1.webp';
 
-  const videoSrc: string | null = '/videos/rails-world-2026-ceo.mp4';
+  const videoSrc = '/videos/rails-world-2026-ceo.mp4';
 </script>
 
 <svelte:head>
