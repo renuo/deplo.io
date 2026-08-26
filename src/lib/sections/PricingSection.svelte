@@ -8,7 +8,7 @@
 
   const currentLanguage = $derived(languageTag());
   const pricingCalculatorSrc = $derived(
-    `https://pricing-calculator-deploio.9f1cecd.deploio.app?lang=${currentLanguage}&linkbase=${encodeURIComponent(page.url.href)}&embed=true`
+    `https://main.c7d7505.deploio.app/?lang=${currentLanguage}&linkbase=${encodeURIComponent(page.url.href)}&embed=true`
   );
 </script>
 
