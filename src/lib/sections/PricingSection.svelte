@@ -6,9 +6,10 @@
   import { appear } from '$lib';
   import { page } from '$app/state';
 
+  const pricingCalculatorUrl = import.meta.env.PRICING_CALCULATOR_URL || 'https://main.c7d7505.deploio.app';
   const currentLanguage = $derived(languageTag());
   const pricingCalculatorSrc = $derived(
-    `https://main.c7d7505.deploio.app/?lang=${currentLanguage}&linkbase=${encodeURIComponent(page.url.href)}&embed=true`
+    `${pricingCalculatorUrl.replace(/\/$/, '')}/?lang=${currentLanguage}&linkbase=${encodeURIComponent(page.url.href)}&embed=true`,
   );
 </script>
 
