@@ -12,6 +12,7 @@
 
   const isTeamPage = $derived($page.url.pathname.includes('/team'));
   const isHomePage = $derived(i18n.route($page.url.pathname) === '/');
+  const isRailsWorldPage = $derived($page.url.pathname.includes('/rails_world_2026'));
 
   const origin = 'https://deplo.io';
 
@@ -27,7 +28,6 @@
       href: `${origin}${i18n.resolveRoute(canonicalPath, lang)}`,
     }));
   });
-
 </script>
 
 <svelte:head>
@@ -35,14 +35,22 @@
   {#each hreflangs() as { lang, href }}
     <link rel="alternate" hreflang={lang} {href} />
   {/each}
-  <link rel="alternate" hreflang="x-default" href={`${origin}${i18n.resolveRoute(i18n.route($page.url.pathname), 'en')}`} />
+  <link
+    rel="alternate"
+    hreflang="x-default"
+    href={`${origin}${i18n.resolveRoute(i18n.route($page.url.pathname), 'en')}`}
+  />
 </svelte:head>
 
 <ParaglideJS {i18n}>
-  <Header />
+  {#if !isRailsWorldPage}
+    <Header />
+  {/if}
   {@render children()}
-  <Footer {isTeamPage} />
-  {#if isHomePage}
+  {#if !isRailsWorldPage}
+    <Footer {isTeamPage} />
+  {/if}
+  {#if isHomePage && !isRailsWorldPage}
     <NewsBanner />
   {/if}
 </ParaglideJS>
