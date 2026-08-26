@@ -7,6 +7,7 @@ if (!process.env.VITE_GOOGLE_TAG_ID) {
 }
 
 export default defineConfig({
+  envPrefix: ['VITE_', 'PRICING_CALCULATOR_URL'],
   plugins: [
     sveltekit(),
     paraglide({
