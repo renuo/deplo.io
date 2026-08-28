@@ -12,8 +12,7 @@
   import { page } from '$app/state';
 
   const logoUrl = `${page.url.origin}${deploioLogoFull}`;
-  const currentLanguage = $derived(languageTag());
-  const baseUrl = `https://deplo.io/${currentLanguage}`;
+  const baseUrl = `https://deplo.io/${languageTag()}`;
   const organizationId = `${baseUrl}/#organization`;
 
   const schema = {
@@ -113,7 +112,7 @@
   <title>{m.meta_title_home()}</title>
   <meta name="description" content={m.meta_description_home()} />
   <GoogleTag />
-  {@html `<script type="application/ld+json">${JSON.stringify(schema)}</script>`}
+  <svelte:element this={'script'} type="application/ld+json">{JSON.stringify(schema)}</svelte:element>
 </svelte:head>
 
 <main class="relative z-0">

@@ -42,7 +42,7 @@
 <!-- Desktop: compact dropdown -->
 <div bind:this={container} class={twMerge('relative hidden md:inline-block', className)}>
   <button
-    class="flex items-center gap-1.5 text-current text-[15px]"
+    class="flex items-center gap-1.5 text-[15px] text-current"
     onclick={() => (open = !open)}
     aria-haspopup="listbox"
     aria-expanded={open}
@@ -64,13 +64,15 @@
 
   {#if open}
     <ul
-      class="absolute z-50 top-full mt-2 left-1/2 -translate-x-1/2 overflow-hidden rounded bg-white shadow-lg"
+      class="absolute left-1/2 top-full z-50 mt-2 -translate-x-1/2 overflow-hidden rounded bg-white shadow-lg"
       role="listbox"
     >
       {#each langs as lang}
         <li role="none">
           <button
-            class="block w-full px-5 py-2 text-sm text-deploio hover:bg-gray-50 {language === lang.tag ? 'font-bold' : 'font-normal'}"
+            class="block w-full px-5 py-2 text-sm text-deploio hover:bg-gray-50 {language === lang.tag
+              ? 'font-bold'
+              : 'font-normal'}"
             onclick={() => select(lang.tag)}
             role="option"
             aria-selected={language === lang.tag}
@@ -84,10 +86,10 @@
 </div>
 
 <!-- Mobile: row of large tappable buttons -->
-<div class={twMerge('flex md:hidden gap-6', className)}>
+<div class={twMerge('flex gap-6 md:hidden', className)}>
   {#each langs as lang}
     <button
-      class="text-current py-2 text-2xl tracking-[0.02em] {language === lang.tag ? 'font-bold' : 'font-normal'}"
+      class="py-2 text-2xl tracking-[0.02em] text-current {language === lang.tag ? 'font-bold' : 'font-normal'}"
       onclick={() => select(lang.tag)}
     >
       {lang.label}

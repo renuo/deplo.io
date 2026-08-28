@@ -4,17 +4,17 @@
   import * as m from '$lib/paraglide/messages';
   import { appear } from '$lib';
   import MemberCard from '$lib/components/MemberCard.svelte';
-  import { page } from "$app/state";
+  import { page } from '$app/state';
   import { i18n } from '$lib/i18n';
-  import { onMount } from "svelte";
+  import { onMount } from 'svelte';
   import { team } from '$lib/data/team';
   import { team_en } from '$lib/data/team';
 
-  const language = i18n.getLanguageFromUrl(page.url)
+  const language = i18n.getLanguageFromUrl(page.url);
 
-  let members: Array = [];
+  let members: typeof team = [];
   onMount(async () => {
-    if (language == "de") {
+    if (language == 'de') {
       members = team;
     } else {
       members = team_en;
@@ -39,9 +39,9 @@
 </Background>
 
 <div class="bg-background">
-  <div class="team-container !pb-32 !py-2 my-0 !pt-16 md:!pt-40">
+  <div class="team-container my-0 !py-2 !pb-32 !pt-16 md:!pt-40">
     <section>
-      <div class="grid grid-cols-1 gap-8 gap-y-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 justify-items-center">
+      <div class="grid grid-cols-1 justify-items-center gap-8 gap-y-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         {#each members as member}
           <MemberCard {...member} />
         {/each}

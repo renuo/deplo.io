@@ -21,23 +21,30 @@
   let className = $derived(rest.class?.toString());
 </script>
 
-{#snippet marqueeContent(snippetProps: HTMLAttributes<HTMLDivElement> = {})}
+{#snippet marqueeContent(snippetProps: HTMLAttributes<HTMLDivElement>)}
   <div {...snippetProps} class={twMerge(`flex items-center gap-[var(--gap)]`, snippetProps.class?.toString())}>
     {@render children()}
   </div>
 {/snippet}
 
-<div {...rest} class={twMerge('overflow-x-hidden', className)} bind:clientWidth={containerWidth} style:--gap={gapStyle} style:--padding={paddingStyle} use:appear={{ delay: 0 }}>
+<div
+  {...rest}
+  class={twMerge('overflow-x-hidden', className)}
+  bind:clientWidth={containerWidth}
+  style:--gap={gapStyle}
+  style:--padding={paddingStyle}
+  use:appear={{ delay: 0 }}
+>
   <div class="invisible absolute -z-50 w-max pr-[var(--gap)]" aria-hidden="true" bind:clientWidth={contentWidth}>
-    {@render marqueeContent()}
+    {@render marqueeContent({})}
   </div>
 
   {#if shouldScroll}
     <div class="flex w-max" style:animation="marquee {duration}s linear infinite">
       {@render marqueeContent({ class: `flex-shrink-0 pr-[var(--padding)]` })}
-      {#each Array(3)}
-        {@render marqueeContent({ class: `flex-shrink-0 pr-[var(--padding)]`, 'aria-hidden': true })}
-      {/each}
+      {@render marqueeContent({ class: `flex-shrink-0 pr-[var(--padding)]`, 'aria-hidden': true })}
+      {@render marqueeContent({ class: `flex-shrink-0 pr-[var(--padding)]`, 'aria-hidden': true })}
+      {@render marqueeContent({ class: `flex-shrink-0 pr-[var(--padding)]`, 'aria-hidden': true })}
     </div>
   {:else}
     {@render marqueeContent({ class: 'w-full justify-between' })}
