@@ -2,10 +2,10 @@
 
 ## Environments
 
-| Branch  | Domain                                   | Deployment |
-|---------|------------------------------------------|------------|
-| develop | https://develop.5666d75.deploio.app/     | auto       |
-| main    | https://deplo.io                         | release    |
+| Branch  | Domain                               | Deployment |
+| ------- | ------------------------------------ | ---------- |
+| develop | https://develop.5666d75.deploio.app/ | auto       |
+| main    | https://deplo.io                     | release    |
 
 - [Deplo.io Contact Request Tracker](https://docs.google.com/spreadsheets/d/131rDpYeXOnmWOocurwgg0tjId01k5rn2navTFBl51dQ/edit?gid=0#gid=0)
 
@@ -31,6 +31,12 @@ Run the linters and compile Paraglide (translations):
 
 ```sh
 bin/check
+```
+
+Automatically fix formatting and linting issues where possible:
+
+```sh
+bin/check --fix
 ```
 
 ## Building
