@@ -1,31 +1,51 @@
 # Deplo.io
 
-- [Deplo.io](https://deplo.io)
-- [Deplo.io develop](https://develop.5666d75.deploio.app/)
+## Environments
+
+| Branch  | Domain                                   | Deployment |
+|---------|------------------------------------------|------------|
+| develop | https://develop.5666d75.deploio.app/     | auto       |
+| main    | https://deplo.io                         | release    |
+
 - [Deplo.io Contact Request Tracker](https://docs.google.com/spreadsheets/d/131rDpYeXOnmWOocurwgg0tjId01k5rn2navTFBl51dQ/edit?gid=0#gid=0)
 
-## Developing
+## Setup
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+```sh
+git clone git@github.com:renuo/deplo.io.git
+cd deplo.io
+bin/setup
+```
 
-```bash
-npm run dev
+## Development
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
+Start the development server:
+
+```sh
+bin/run dev
+```
+
+## Checking
+
+Run the linters and compile Paraglide (translations):
+
+```sh
+bin/check
 ```
 
 ## Building
 
 To create a production version of your app:
 
-```bash
+```sh
 npm run build
 ```
 
-You can preview the production build with `npm run preview`.
+Production preview:
 
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+```sh
+npm run preview
+```
 
 ## Copyright
 
