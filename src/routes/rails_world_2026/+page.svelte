@@ -37,7 +37,7 @@
     </div>
 
     <div>
-      <Button variant="primary" href="/">To Deploio</Button>
+      <Button variant="primary" href="/en">To Deploio</Button>
     </div>
   </div>
 </Background>
