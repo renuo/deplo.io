@@ -1,5 +1,5 @@
-{% assign resolved_href = include.href %}
-{% assign resolved_target = include.target %}
+{% assign resolved_href = include.href | default: include.link.href %}
+{% assign resolved_target = include.target | default: include.link.target %}
 {% if include.route %}
   {% assign locale_prefix = '' %}
   {% unless page.lang == 'de' %}{% assign locale_prefix = '/' | append: page.lang %}{% endunless %}
@@ -8,7 +8,7 @@
   {% capture resolved_href %}https://cockpit.nine.ch/{{ page.lang }}{{ include.cockpit_path }}{% endcapture %}
   {% assign resolved_target = '_blank' %}
 {% endif %}
-{% assign resolved_text = include.text %}
+{% assign resolved_text = include.text | default: include.link.label %}
 {% if include.text_key %}{% assign resolved_text = include.text_key | t %}{% endif %}
 <a
   href='{{ resolved_href }}'
