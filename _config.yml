@@ -1,6 +1,6 @@
 title: Deploio
 url: https://deplo.io
-baseurl: ""
+baseurl: ''
 destination: _site
 permalink: pretty
 encoding: utf-8
@@ -15,4 +15,5 @@ exclude:
   - README.md
   - Gemfile
   - Gemfile.lock
+  - scripts
   - vendor

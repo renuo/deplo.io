@@ -1,5 +1,15 @@
-<a href="{{ include.href }}" class="group relative inline-block truncate text-white {{ include.class }}"{% if include.target %} target="{{ include.target }}"{% endif %}>
+<a
+  href='{{ include.href }}'
+  class='group relative inline-block truncate text-white {{ include.class }}'
+  {% if include.target %}
+    target='{{ include.target }}'
+  {% endif -%}
+  {% if include.href == page.url %}
+    aria-current='page'
+  {% endif %}
+>
   {{ include.text }}
-  <span class="absolute bottom-0 left-0 h-[0.9px] w-0 bg-white text-[15px] transition-all group-hover:w-full">&nbsp;</span>
+  <span class='absolute bottom-0 left-0 h-[0.9px] {% if include.href == page.url %}w-full{% else %}w-0{% endif %} bg-white text-[15px] transition-all group-hover:w-full'
+    >&nbsp;</span
+  >
 </a>
-

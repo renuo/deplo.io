@@ -1,53 +1,121 @@
-{% assign locale_prefix = '' %}{% unless page.lang == 'de' %}{% assign locale_prefix = '/' | append: page.lang %}{% endunless %}
-<div class="relative -mt-px {% if page.page_key == 'team' %}bg-background{% else %}bg-mountain{% endif %} max-h-[950px] pt-16 md:max-h-none">
-  <div class="pointer-events-none absolute h-full w-full select-none">
-    <img aria-hidden="true" loading="lazy" class="absolute h-full min-w-full object-cover object-top" src="/assets/images/backgrounds/mountain_2.webp" alt="">
-    <div class="relative h-full w-full bg-gradient-to-t from-deploio to-transparent">&nbsp;</div>
+{% assign locale_prefix = '' -%}
+{%- unless page.lang == 'de' %}{% assign locale_prefix = '/' | append: page.lang %}{% endunless %}
+<div class='relative -mt-px {% if page.page_key == 'team' %}bg-background{% else %}bg-mountain{% endif %} max-h-[950px] pt-16 md:max-h-none'>
+  <div class='pointer-events-none absolute h-full w-full select-none'>
+    <img
+      aria-hidden='true'
+      loading='lazy'
+      class='absolute h-full min-w-full object-cover object-top'
+      src='/assets/images/backgrounds/mountain_2.webp'
+      alt=''
+    >
+    <div class='relative h-full w-full bg-gradient-to-t from-deploio to-transparent'>&nbsp;</div>
   </div>
-  <footer class="relative pt-[500px] text-white md:pt-[40vw]">
-    <div class="container !mt-0"><div class="flex w-fit flex-wrap justify-center gap-8">
-      <a href="https://nine.ch/images/nine_ISO9001.pdf" target="_blank" rel="noreferrer"><img class="h-20" src="/assets/images/icons/iso_9001:2015_certification.webp" width="80" height="80" alt="ISO 9001:2015 certification"></a>
-      <a href="https://nine.ch/images/ISO-27001-Nine-Internet-Solutions-AG-2.pdf" target="_blank" rel="noreferrer"><img class="h-20" src="/assets/images/icons/iso_27001:2022_certification.webp" width="80" height="80" alt="ISO 27001:2022 certification"></a>
-      <a href="https://nine.ch/images/myclimate_confirmation_16836958-1.pdf" target="_blank" rel="noreferrer"><img class="h-20" src="/assets/images/icons/co2_neutral_certification.webp" width="80" height="80" alt="CO2 neutral certification"></a>
-    </div></div>
-    <div class="container flex items-center justify-between md:hidden">
-      {% capture footer_start_url %}https://cockpit.nine.ch/{{ page.lang }}/fast_onboardings/new?origin=deploio{% endcapture %}{% assign footer_start_text = 'navigation_start' | t %}{% include button.html variant='primary' href=footer_start_url text=footer_start_text %}
-      <div class="flex gap-4">{% for lang in site.data.languages %}{% assign switch_prefix = '/' | append: lang.code %}{% if lang.code == 'de' %}{% assign switch_prefix = '' %}{% endif %}<a class="{% if page.lang == lang.code %}font-bold{% endif %}" href="{{ switch_prefix }}{{ page.route }}">{{ lang.label }}</a>{% endfor %}</div>
+  <footer class='relative pt-[500px] text-white md:pt-[40vw]'>
+    <div class='container !mt-0'>
+      <div class='flex w-fit flex-wrap justify-center gap-8'>
+        <a href='https://nine.ch/images/nine_ISO9001.pdf' target='_blank' rel='noreferrer'
+          ><img
+            class='h-20'
+            src='/assets/images/icons/iso_9001:2015_certification.webp'
+            width='80'
+            height='80'
+            alt='ISO 9001:2015 certification'
+        ></a>
+        <a href='https://nine.ch/images/ISO-27001-Nine-Internet-Solutions-AG-2.pdf' target='_blank' rel='noreferrer'
+          ><img
+            class='h-20'
+            src='/assets/images/icons/iso_27001:2022_certification.webp'
+            width='80'
+            height='80'
+            alt='ISO 27001:2022 certification'
+        ></a>
+        <a href='https://nine.ch/images/myclimate_confirmation_16836958-1.pdf' target='_blank' rel='noreferrer'
+          ><img
+            class='h-20'
+            src='/assets/images/icons/co2_neutral_certification.webp'
+            width='80'
+            height='80'
+            alt='CO2 neutral certification'
+        ></a>
+      </div>
     </div>
-    <div class="container flex flex-col gap-20 !py-8 md:flex-row">
-      <nav class="flex flex-col gap-4">
-        <h3 class="text-base font-semibold uppercase">{% t footer_support %}</h3>
-        {% assign footer_status = 'footer_status' | t %}{% include link.html href='https://status.nine.ch/' target='_blank' text=footer_status class='max-w-fit' %}
-        {% assign footer_docs = 'footer_documentation' | t %}{% include link.html href='https://docs.deplo.io/' target='_blank' text=footer_docs class='max-w-fit' %}
-        {% assign footer_slack = 'footer_slack' | t %}{% include link.html href='https://join.slack.com/t/deploiocommunity/shared_invite/zt-20tb3k93m-O4NEUs0RjZYGQNQoih8zkA' target='_blank' text=footer_slack class='max-w-fit' %}
-        {% assign footer_github = 'footer_github' | t %}{% include link.html href='https://github.com/ninech/deploio-examples' target='_blank' text=footer_github class='max-w-fit' %}
-        {% assign footer_pricing_url = locale_prefix | append: '/pricing/' %}{% assign footer_pricing = 'footer_pricing' | t %}{% include link.html href=footer_pricing_url text=footer_pricing class='max-w-fit' %}
+    <div class='container flex items-center justify-between md:hidden'>
+      {% capture footer_start_url %}https://cockpit.nine.ch/{{ page.lang }}/fast_onboardings/new?origin=deploio{% endcapture -%}
+      {%- assign footer_start_text = 'navigation_start' | t -%}
+      {%- include button.html variant='primary' href=footer_start_url text=footer_start_text %}
+      <div class='flex gap-4'>
+        {% for lang in site.data.languages -%}
+          {%- assign switch_prefix = '/' | append: lang.code -%}
+          {%- if lang.code == 'de' %}{% assign switch_prefix = '' %}{% endif -%}
+          <a class='{% if page.lang == lang.code %}font-bold{% endif %}' href='{{ switch_prefix }}{{ page.route }}'>
+            {{- lang.label -}}
+          </a>
+        {%- endfor %}
+      </div>
+    </div>
+    <div class='container flex flex-col gap-20 !py-8 md:flex-row'>
+      <nav class='flex flex-col gap-4'>
+        <h3 class='text-base font-semibold uppercase'>{% t footer_support %}</h3>
+        {% assign footer_status = 'footer_status' | t -%}
+        {%- include link.html href='https://status.nine.ch/' target='_blank' text=footer_status class='max-w-fit' %}
+        {% assign footer_docs = 'footer_documentation' | t -%}
+        {%- include link.html href='https://docs.deplo.io/' target='_blank' text=footer_docs class='max-w-fit' %}
+        {% assign footer_slack = 'footer_slack' | t -%}
+        {%- include link.html href='https://join.slack.com/t/deploiocommunity/shared_invite/zt-20tb3k93m-O4NEUs0RjZYGQNQoih8zkA' target='_blank' text=footer_slack class='max-w-fit' %}
+        {% assign footer_github = 'footer_github' | t -%}
+        {%- include link.html href='https://github.com/ninech/deploio-examples' target='_blank' text=footer_github class='max-w-fit' %}
+        {% assign footer_pricing_url = locale_prefix | append: '/pricing/' -%}
+        {%- assign footer_pricing = 'footer_pricing' | t -%}
+        {%- include link.html href=footer_pricing_url text=footer_pricing class='max-w-fit' %}
       </nav>
-      <nav class="flex flex-col gap-4">
-        <h3 class="text-base font-semibold uppercase">{% t footer_contact %}</h3>
-        <p class="max-w-fit whitespace-pre">{% t footer_address %}</p>
-        {% assign email = 'footer_email' | t %}{% assign email_href = email | prepend: 'mailto:' %}{% include link.html href=email_href text=email class='max-w-fit' %}
-        {% assign phone = 'footer_phone' | t %}{% assign phone_href = phone | remove: ' ' | prepend: 'tel:' %}{% include link.html href=phone_href text=phone class='max-w-fit' %}
-        <p class="max-w-fit text-sm opacity-70">{% t footer_support_note %}</p>
+      <nav class='flex flex-col gap-4'>
+        <h3 class='text-base font-semibold uppercase'>{% t footer_contact %}</h3>
+        <p class='max-w-fit whitespace-pre'>{% t footer_address %}</p>
+        {% assign email = 'footer_email' | t -%}
+        {%- assign email_href = email | prepend: 'mailto:' -%}
+        {%- include link.html href=email_href text=email class='max-w-fit' %}
+        {% assign phone = 'footer_phone' | t -%}
+        {%- assign phone_href = phone | remove: ' ' | prepend: 'tel:' -%}
+        {%- include link.html href=phone_href text=phone class='max-w-fit' %}
+        <p class='max-w-fit text-sm opacity-70'>{% t footer_support_note %}</p>
       </nav>
-      <nav class="flex flex-col gap-4 text-sm md:ml-auto">
-        <h3 class="text-base font-medium uppercase">{% t footer_service %}</h3>
-        <div class="flex flex-wrap gap-8 lg:gap-16">
-          <a href="https://www.nine.ch" target="_blank"><img class="h-10 lg:h-14" src="/assets/images/logos/nine_logo.webp" alt="nine logo"></a>
-          <a href="https://www.renuo.ch" target="_blank"><img class="h-10 lg:h-14" src="/assets/images/logos/renuo_logo.webp" alt="renuo logo"></a>
+      <nav class='flex flex-col gap-4 text-sm md:ml-auto'>
+        <h3 class='text-base font-medium uppercase'>{% t footer_service %}</h3>
+        <div class='flex flex-wrap gap-8 lg:gap-16'>
+          <a href='https://www.nine.ch' target='_blank'
+            ><img class='h-10 lg:h-14' src='/assets/images/logos/nine_logo.webp' alt='nine logo'
+          ></a>
+          <a href='https://www.renuo.ch' target='_blank'
+            ><img class='h-10 lg:h-14' src='/assets/images/logos/renuo_logo.webp' alt='renuo logo'
+          ></a>
         </div>
       </nav>
     </div>
-    <nav class="container !mt-14 flex flex-wrap items-center gap-4 !pb-8">
-      <a class="flex-grow basis-full md:basis-auto" href="https://www.swissmadesoftware.org/home.html"><img class="h-12" src="/assets/images/swiss_made_software_and_hosting.webp" width="240" height="48" alt="swiss made software + hosting"></a>
-      {% for social in site.data.socials %}<a href="{{ social.href }}" target="_blank" class="p-2.5"><img class="size-5" src="/assets/images/icons/{{ social.icon }}" alt="{{ social.alt }}"></a>{% endfor %}
+    <nav class='container !mt-14 flex flex-wrap items-center gap-4 !pb-8'>
+      <a class='flex-grow basis-full md:basis-auto' href='https://www.swissmadesoftware.org/home.html'
+        ><img
+          class='h-12'
+          src='/assets/images/swiss_made_software_and_hosting.webp'
+          width='240'
+          height='48'
+          alt='swiss made software + hosting'
+      ></a>
+      {% for social in site.data.socials -%}
+        <a href='{{ social.href }}' target='_blank' class='p-2.5'
+          ><img class='size-5' src='/assets/images/icons/{{ social.icon }}' alt='{{ social.alt }}'
+        ></a>
+      {%- endfor %}
     </nav>
-    <div class="container !my-0 !py-0"><hr class="border-t"></div>
-    <nav class="container flex flex-wrap gap-8 !pt-8 text-sm">
-      {% assign current_year = site.time | date: '%Y' %}{% assign copyright = 'footer_copyright' | t | replace: '{year}', current_year %}
-      <p class="flex-grow">{{ copyright }}</p>
-      {% assign terms_text = 'footer_terms' | t %}{% include link.html href='https://docs.nine.ch/de/docs/legal-documents/general-terms-and-conditions' text=terms_text %}
-      {% assign privacy_text = 'footer_privacy' | t %}{% include link.html href='https://www.nine.ch/de/privacy-policy' text=privacy_text %}
+    <div class='container !my-0 !py-0'><hr class='border-t'></div>
+    <nav class='container flex flex-wrap gap-8 !pt-8 text-sm'>
+      {% assign current_year = site.time | date: '%Y' -%}
+      {%- assign copyright = 'footer_copyright' | t | replace: '{year}', current_year %}
+      <p class='flex-grow'>{{ copyright }}</p>
+      {% assign terms_text = 'footer_terms' | t -%}
+      {%- include link.html href='https://docs.nine.ch/de/docs/legal-documents/general-terms-and-conditions' text=terms_text %}
+      {% assign privacy_text = 'footer_privacy' | t -%}
+      {%- include link.html href='https://www.nine.ch/de/privacy-policy' text=privacy_text %}
     </nav>
   </footer>
 </div>
