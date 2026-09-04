@@ -27,20 +27,13 @@
   </div>
   <section class='relative overflow-x-hidden bg-mountain pb-28 pt-28 md:pb-12'>
     <div class='container relative z-10'>
-      <div class='select-none overflow-hidden text-center font-mono text-deploio/30' aria-hidden='true'>
-        <div class='mb-2 whitespace-nowrap text-lg'>
-          0100100110010110100101001001100101101001010010011001011010010100
-        </div>
-        <div class='mb-2 whitespace-nowrap text-[17px]'>
-          1101001010011001011010010100100110010110100101001001100101101001
-        </div>
-        <div class='mb-2 whitespace-nowrap text-base'>
-          0010110100101001001100101101001010010011001011010010100100110010
-        </div>
-        <div class='whitespace-nowrap text-[15px]'>
-          1010010011001011010010100100110010110100101001001100101101001010
-        </div>
-      </div>
+      <div
+        class='absolute inset-0 select-none font-mono'
+        data-binary
+        data-icon-push='/assets/images/icons/1free_push.svg'
+        data-icon-risk='/assets/images/icons/0risk_{% if page.lang == 'de' %}de{% else %}en{% endif %}.svg'
+        data-icon-control='/assets/images/icons/100control_{% if page.lang == 'de' %}de{% else %}en{% endif %}.svg'
+      ></div>
     </div>
   </section>
 </section>
