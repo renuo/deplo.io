@@ -8,9 +8,13 @@
     <h2 class='text-h2 mx-auto max-w-[800px]' data-appear>{% t register_title %}</h2>
     <p class='mx-auto max-w-[620px] text-[20px]' data-appear data-delay='100'>{% t register_description %}</p>
     <div class='mt-2'>
-      {% capture start_url %}https://cockpit.nine.ch/{{ page.lang }}/fast_onboardings/new?origin=deploio{% endcapture -%}
-      {%- assign button_text = 'register_button' | t -%}
-      {%- include button.html class='mt-2 h-10 w-full sm:ml-3 sm:w-auto' variant='secondary' href=start_url target='_blank' text=button_text %}
+      {%
+        include button.html
+        class='mt-2 h-10 w-full sm:ml-3 sm:w-auto'
+        variant='secondary'
+        cockpit_path='/fast_onboardings/new?origin=deploio'
+        text_key='register_button'
+      %}
     </div>
   </div>
 </section>

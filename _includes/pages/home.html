@@ -21,11 +21,8 @@
           <h1 class='text-h1 mb-4 max-w-[450px] md:max-w-[600px]' data-appear>{% t hero_title %}</h1>
           <p class='mb-10 max-w-[550px] text-[20px]' data-appear data-delay='100'>{% t hero_description %}</p>
           <div class='mb-3 flex flex-wrap gap-2 md:gap-6' data-appear data-delay='200'>
-            {% capture start_url %}https://cockpit.nine.ch/{{ page.lang }}/fast_onboardings/new?origin=deploio{% endcapture %}
-            {% assign start_text = 'hero_start_now' | t -%}
-            {%- include button.html variant='primary' class='w-full md:w-auto' href=start_url target='_blank' text=start_text %}
-            {% assign learn_text = 'hero_learn_more' | t -%}
-            {%- include button.html variant='outline' class='w-full md:w-auto' href='https://docs.deplo.io/' target='_blank' text=learn_text %}
+            {% include button.html class='w-full md:w-auto' cockpit_path='/fast_onboardings/new?origin=deploio' text_key='hero_start_now' %}
+            {% include button.html variant='outline' class='w-full md:w-auto' href='https://docs.deplo.io/' target='_blank' text_key='hero_learn_more' %}
           </div>
           <a
             href='https://www.youtube.com/watch?v=3iOWZ4ou49Y'
@@ -128,8 +125,7 @@
       <h2 class='text-h2 mb-5 mt-8 md:mt-0' data-appear data-delay='50'>{% t feature_why_title %}</h2>
       <p class='mb-8 text-[20px]' data-appear data-delay='100'>{% t feature_why_description %}</p>
       <div class='flex' data-appear data-delay='150'>
-        {% assign learn_text = 'feature_why_button' | t -%}
-        {%- include button.html variant='secondary' href='https://docs.deplo.io' target='_blank' text=learn_text %}
+        {% include button.html variant='secondary' href='https://docs.deplo.io' target='_blank' text_key='feature_why_button' %}
       </div>
     </div>
     <div

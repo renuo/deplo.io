@@ -16,9 +16,12 @@
     <div class='flex flex-col items-center justify-center'>
       <h2 class='text-h2 pb-8'>{% t complex_projects_ready %}</h2>
       <div class='flex' data-appear data-delay='150'>
-        {% capture start_url %}https://cockpit.nine.ch/{{ page.lang }}/fast_onboardings/new?origin=deploio{% endcapture -%}
-        {%- assign start_text = 'complex_projects_button' | t -%}
-        {%- include button.html variant='secondary' href=start_url target='_blank' text=start_text %}
+        {%
+          include button.html
+          variant='secondary'
+          cockpit_path='/fast_onboardings/new?origin=deploio'
+          text_key='complex_projects_button'
+        %}
       </div>
     </div>
   </div>
