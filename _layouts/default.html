@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="{{ page.lang }}" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta content="Nine Internet Solutions AG" name="author">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% if page.literal_title %}{% assign page_title = page.literal_title %}{% else %}{% assign page_title = page.title_key | t %}{% endif %}
+    {% if page.client_name %}{% assign page_title = page_title | replace: '{clientName}', page.client_name %}{% endif %}
+    <title>{{ page_title }}</title>
+    {% if page.literal_description %}<meta name="description" content="{{ page.literal_description | escape }}">{% elsif page.description_key %}<meta name="description" content="{{ page.description_key | t | escape }}">{% endif %}
+    {% if page.noindex %}<meta name="robots" content="noindex">{% endif %}
+    <meta property="og:image" content="https://deplo.io/meta/deploio-preview.png" name="image">
+    <meta name="twitter:site" content="@nine_ch">
+    <meta name="twitter:creator" content="@nine_ch">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Seamless App Deployment with Scalability and Reliability">
+    <meta name="twitter:image" content="https://deplo.io/meta/deploio-preview.png">
+    <meta name="twitter:url" content="https://deplo.io/">
+    <meta name="twitter:description" content="Lightweight, Scalable, and Effortless App Deployment &amp; Management">
+    <link rel="apple-touch-icon" sizes="180x180" href="/meta/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/meta/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/meta/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&display=swap">
+    <link rel="stylesheet" href="/assets/css/site.css">
+    <link rel="stylesheet" href="/assets/css/overrides.css">
+    {% assign canonical_prefix = '' %}{% unless page.lang == 'de' %}{% assign canonical_prefix = '/' | append: page.lang %}{% endunless %}
+    <link rel="canonical" href="https://deplo.io{{ canonical_prefix }}{{ page.route }}">
+    {% for lang in site.data.languages %}
+      {% assign alternate_prefix = '/' | append: lang.code %}{% if lang.code == 'de' %}{% assign alternate_prefix = '' %}{% endif %}
+      <link rel="alternate" hreflang="{{ lang.code }}" href="https://deplo.io{{ alternate_prefix }}{{ page.route }}">
+    {% endfor %}
+    <link rel="alternate" hreflang="x-default" href="https://deplo.io/en{{ page.route }}">
+    {% if page.page_key == 'home' %}{% include structured-data.html %}{% endif %}
+    <script>
+      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-MHQPVQD4');
+    </script>
+  </head>
+  <body>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MHQPVQD4" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    {% unless page.bare %}{% include header.html %}{% endunless %}
+    {{ content }}
+    {% unless page.bare %}{% include footer.html %}{% endunless %}
+    {% if page.show_news %}{% include news-banner.html %}{% endif %}
+    <script src="/assets/js/site.js" defer></script>
+  </body>
+</html>

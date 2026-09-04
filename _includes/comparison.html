@@ -1,0 +1,10 @@
+<section class="bg-background py-16">
+  <div class="container space-y-8 !pb-4 text-deploio"><h2 class="text-h2" data-appear>{% t comparison_title %}</h2><p class="max-w-xl" data-appear data-delay="100">{% t comparison_description %}</p></div>
+  <div class="container max-sm:!px-0" data-appear data-delay="200"><div class="max-w-full overflow-x-auto whitespace-nowrap max-sm:px-6"><table class="w-full">
+    <thead><tr><th></th>{% for vendor in site.data.comparison_vendors %}<th class="min-w-36 max-w-36 py-8 {% if forloop.first %}rounded-t-2xl bg-deploio/5{% endif %}"><img src="/assets/images/logos/{{ vendor.image }}" alt="{{ vendor.name }} logo" class="mx-auto h-8 w-24 object-contain"></th>{% endfor %}</tr></thead>
+    <tbody>{% for row in site.data.comparison_rows %}<tr class="border-t-[1px] border-deploio/10"><th class="sticky left-0 max-w-0 text-nowrap pb-12 text-left font-semibold text-deploio lg:max-w-none lg:p-4"><div class="pl-4 pt-1 lg:p-0">{{ row.key | t }}</div></th>{% for value in row.values %}<td class="pb-3 pt-10 text-center lg:pb-0 lg:pt-0 {% if forloop.first %}bg-deploio/5{% endif %}"><img class="inline-block" src="/assets/images/icons/{% if value %}{% if forloop.first %}check_deploio.svg{% else %}check_competitors.svg{% endif %}{% else %}{% if forloop.first %}cross_deploio.svg{% else %}cross_competitors.svg{% endif %}{% endif %}" alt="{% if value %}yes{% else %}no{% endif %}"></td>{% endfor %}</tr>{% endfor %}
+      <tr class="border-t-[1px] border-deploio/10"><th></th>{% for vendor in site.data.comparison_vendors %}<td class="h-8 {% if forloop.first %}rounded-b-2xl bg-deploio/5{% endif %}"></td>{% endfor %}</tr>
+    </tbody>
+  </table></div></div>
+</section>
+

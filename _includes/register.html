@@ -1,0 +1,9 @@
+<section id="register" class="bg-mountain text-center text-deploio">
+  <img class="pointer-events-none -mb-px w-full -scale-x-100 select-none bg-background pt-8" src="/assets/images/backgrounds/mountain_vector.svg" alt="mountain vector background">
+  <div class="container relative z-10 space-y-8 !pt-16 md:!pt-0">
+    <h2 class="text-h2 mx-auto max-w-[800px]" data-appear>{% t register_title %}</h2>
+    <p class="mx-auto max-w-[620px] text-[20px]" data-appear data-delay="100">{% t register_description %}</p>
+    <div class="mt-2">{% capture start_url %}https://cockpit.nine.ch/{{ page.lang }}/fast_onboardings/new?origin=deploio{% endcapture %}{% assign button_text = 'register_button' | t %}{% include button.html class='mt-2 h-10 w-full sm:ml-3 sm:w-auto' variant='secondary' href=start_url target='_blank' text=button_text %}</div>
+  </div>
+</section>
+

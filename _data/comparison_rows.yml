@@ -1,0 +1,13 @@
+- key: comparison_table_location
+  values: [true, false, true, false]
+- key: comparison_table_ownership
+  values: [true, false, false, true]
+- key: comparison_table_infrastructure
+  values: [true, true, false, false]
+- key: comparison_table_automation
+  values: [true, true, true, true]
+- key: comparison_table_object_storage
+  values: [true, false, true, true]
+- key: comparison_table_enterprise
+  values: [false, true, true, false]
+
