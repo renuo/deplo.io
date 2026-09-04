@@ -49,6 +49,3 @@ bin/build
 ## Copyright
 
 2022-2026 by Nine Internet Solutions AG and Renuo AG – License undecided, assume proprietary
-
-The previous Svelte implementation is retained in `legacy_svelte/` as a
-temporary migration reference and is excluded from Jekyll and Docker builds.
