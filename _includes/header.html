@@ -1,54 +1,133 @@
-{% assign locale_prefix = '' %}{% unless page.lang == 'de' %}{% assign locale_prefix = '/' | append: page.lang %}{% endunless %}
-<header class="container absolute left-0 right-0 top-0 z-30 flex items-center justify-between">
-  <a href="{{ locale_prefix }}/" class="flex select-none flex-row items-center justify-center gap-2 md:hidden">
-    <img class="h-7" src="/assets/images/deploio_logo.svg" alt="deploio logo">
-    <img class="h-6" src="/assets/images/deploio_name.svg" alt="deploio">
+{% assign locale_prefix = '' -%}
+{%- unless page.lang == 'de' %}{% assign locale_prefix = '/' | append: page.lang %}{% endunless %}
+<header class='container absolute left-0 right-0 top-0 z-30 flex items-center justify-between'>
+  <a
+    href='{{ locale_prefix }}/'
+    class='flex select-none flex-row items-center justify-center gap-2 md:hidden'
+    data-mobile-logo
+  >
+    <img class='h-7' src='/assets/images/deploio_logo.svg' alt='deploio logo'>
+    <img class='h-6' src='/assets/images/deploio_name.svg' alt='deploio'>
   </a>
-  <a href="{{ locale_prefix }}/" class="absolute hidden lg:block">
-    <img class="mt-12 h-48 w-48 object-contain" src="/assets/images/deploio_logo_header.svg" alt="deploio header logo">
+  <a href='{{ locale_prefix }}/' class='absolute hidden lg:block'>
+    <img class='mt-12 h-48 w-48 object-contain' src='/assets/images/deploio_logo_header.svg' alt='deploio header logo'>
   </a>
-  <nav class="-mt-10 ml-auto hidden items-center gap-8 md:flex">
-    <div class="relative hidden md:inline-block text-white">
-      <button class="flex items-center gap-1.5 text-[15px] text-current" data-language-toggle aria-haspopup="listbox" aria-expanded="false" aria-label="Select language">
+  <nav class='-mt-10 ml-auto hidden items-center gap-8 md:flex'>
+    <div class='relative hidden md:inline-block text-white'>
+      <button
+        class='flex items-center gap-1.5 text-[15px] text-current'
+        data-language-toggle
+        aria-haspopup='listbox'
+        aria-expanded='false'
+        aria-label='Select language'
+      >
         <span>{{ page.lang | upcase }}</span>
-        <svg class="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path></svg>
+        <svg
+          class='h-3 w-3 transition-transform duration-150'
+          fill='none'
+          viewBox='0 0 24 24'
+          stroke='currentColor'
+          stroke-width='3'
+          aria-hidden='true'
+          data-language-chevron
+        >
+          <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path>
+        </svg>
       </button>
-      <ul class="absolute left-1/2 top-full z-50 mt-2 hidden -translate-x-1/2 overflow-hidden rounded bg-white shadow-lg" data-language-menu role="listbox">
+      <ul
+        class='absolute left-1/2 top-full z-50 mt-2 hidden -translate-x-1/2 overflow-hidden rounded bg-white shadow-lg'
+        data-language-menu
+        role='listbox'
+      >
         {% for lang in site.data.languages %}
-          {% assign switch_prefix = '/' | append: lang.code %}{% if lang.code == 'de' %}{% assign switch_prefix = '' %}{% endif %}
-          <li><a class="block px-5 py-2 text-sm text-deploio {% if page.lang == lang.code %}font-bold{% endif %}" href="{{ switch_prefix }}{{ page.route }}">{{ lang.label }}</a></li>
+          {% assign switch_prefix = '/' | append: lang.code -%}
+          {%- if lang.code == 'de' %}{% assign switch_prefix = '' %}{% endif %}
+          <li role='none'>
+            <a
+              class='block px-5 py-2 text-sm text-deploio hover:bg-gray-50 {% if page.lang == lang.code %}font-bold{% endif %}'
+              href='{{ switch_prefix }}{{ page.route }}'
+              role='option'
+              aria-selected='{% if page.lang == lang.code %}true{% else %}false{% endif %}'
+            >
+              {{- lang.label -}}
+            </a>
+          </li>
         {% endfor %}
       </ul>
     </div>
-    {% assign pricing_url = locale_prefix | append: '/pricing/' %}{% assign pricing_text = 'navigation_pricing' | t %}{% include link.html href=pricing_url text=pricing_text %}
-    {% assign team_url = locale_prefix | append: '/team/' %}{% assign team_text = 'navigation_team' | t %}{% include link.html href=team_url text=team_text %}
-    {% assign docs_text = 'navigation_documentation' | t %}{% include link.html href='https://docs.deplo.io' text=docs_text %}
+    {% assign pricing_url = locale_prefix | append: '/pricing/' -%}
+    {%- assign pricing_text = 'navigation_pricing' | t -%}
+    {%- include link.html href=pricing_url text=pricing_text %}
+    {% assign team_url = locale_prefix | append: '/team/' -%}
+    {%- assign team_text = 'navigation_team' | t -%}
+    {%- include link.html href=team_url text=team_text %}
+    {% assign docs_text = 'navigation_documentation' | t -%}
+    {%- include link.html href='https://docs.deplo.io' text=docs_text %}
     {% capture login_url %}https://cockpit.nine.ch/{{ page.lang }}/session/new?origin=deploio{% endcapture %}
-    {% assign login_text = 'navigation_login' | t %}{% include link.html href=login_url target='_blank' text=login_text %}
+    {% assign login_text = 'navigation_login' | t -%}
+    {%- include link.html href=login_url target='_blank' text=login_text %}
     {% capture start_url %}https://cockpit.nine.ch/{{ page.lang }}/fast_onboardings/new?origin=deploio{% endcapture %}
-    {% assign start_text = 'navigation_start' | t %}{% include button.html variant='primary' href=start_url target='_blank' text=start_text %}
+    {% assign start_text = 'navigation_start' | t -%}
+    {%- include button.html variant='primary' href=start_url target='_blank' text=start_text %}
   </nav>
-  <button class="z-40 p-3 md:hidden" data-menu-toggle aria-expanded="false" aria-label="Open menu">
-    <img src="/assets/images/icons/hamburger.svg" alt="Open menu" data-open-icon>
-    <img class="hidden" src="/assets/images/icons/close.svg" alt="Close menu" data-close-icon>
+  <button class='relative z-40 p-3 md:hidden' data-menu-toggle aria-expanded='false' aria-label='Open menu'>
+    <img src='/assets/images/icons/hamburger.svg' alt='Open menu' data-open-icon>
+    <img class='hidden' src='/assets/images/icons/close.svg' alt='Close menu' data-close-icon>
   </button>
 </header>
-<div class="fixed inset-0 z-20 hidden flex flex-col bg-white pt-5 md:hidden" data-mobile-menu>
-  <div class="container"><a href="{{ locale_prefix }}/" class="flex items-center"><img class="-mt-1 h-7" src="/assets/images/logos/deploio_logo.svg" alt="deploio logo"></a></div>
-  <nav class="container mt-4 flex h-full w-full flex-col pt-12">
-    <a data-menu-link href="{{ locale_prefix }}/pricing/" class="w-full py-3 text-2xl font-normal tracking-[0.02em] text-deploio">{% t navigation_pricing %}</a>
-    <a data-menu-link href="https://docs.deplo.io" class="w-full py-3 text-2xl font-normal tracking-[0.02em] text-deploio">{% t navigation_documentation %}</a>
-    <a data-menu-link href="{{ login_url }}" target="_blank" class="w-full py-3 text-2xl font-normal tracking-[0.02em] text-deploio">{% t navigation_login %}</a>
-    <a data-menu-link href="{{ locale_prefix }}/team/" class="w-full py-3 text-2xl font-normal tracking-[0.02em] text-deploio">{% t navigation_team %}</a>
-    <div class="mt-auto"></div>
-    <div class="flex gap-6 text-deploio md:hidden">
+<div class='fixed inset-0 z-20 hidden flex flex-col bg-white pt-5 md:hidden' data-mobile-menu>
+  <div class='container'>
+    <a href='{{ locale_prefix }}/' class='flex items-center'
+      ><img class='-mt-1 h-7' src='/assets/images/logos/deploio_logo.svg' alt='deploio logo'
+    ></a>
+  </div>
+  <nav class='container mt-4 flex h-full w-full flex-col pt-12'>
+    <a
+      data-menu-link
+      href='{{ locale_prefix }}/pricing/'
+      class='w-full py-3 text-2xl font-normal tracking-[0.02em] text-deploio'
+    >
+      {%- t navigation_pricing -%}
+    </a>
+    <a
+      data-menu-link
+      href='https://docs.deplo.io'
+      class='w-full py-3 text-2xl font-normal tracking-[0.02em] text-deploio'
+    >
+      {%- t navigation_documentation -%}
+    </a>
+    <a
+      data-menu-link
+      href='{{ login_url }}'
+      target='_blank'
+      class='w-full py-3 text-2xl font-normal tracking-[0.02em] text-deploio'
+    >
+      {%- t navigation_login -%}
+    </a>
+    <a
+      data-menu-link
+      href='{{ locale_prefix }}/team/'
+      class='w-full py-3 text-2xl font-normal tracking-[0.02em] text-deploio'
+    >
+      {%- t navigation_team -%}
+    </a>
+    <div class='mt-auto'></div>
+    <div class='flex gap-6 text-deploio md:hidden'>
       {% for lang in site.data.languages %}
-        {% assign switch_prefix = '/' | append: lang.code %}{% if lang.code == 'de' %}{% assign switch_prefix = '' %}{% endif %}
-        <a class="py-2 text-2xl tracking-[0.02em] {% if page.lang == lang.code %}font-bold{% endif %}" href="{{ switch_prefix }}{{ page.route }}">{{ lang.label }}</a>
+        {% assign switch_prefix = '/' | append: lang.code -%}
+        {%- if lang.code == 'de' %}{% assign switch_prefix = '' %}{% endif %}
+        <a
+          class='py-2 text-2xl tracking-[0.02em] {% if page.lang == lang.code %}font-bold{% endif %}'
+          href='{{ switch_prefix }}{{ page.route }}'
+        >
+          {{- lang.label -}}
+        </a>
       {% endfor %}
     </div>
-    <div class="h-6"></div>
-    <a href="{{ start_url }}" class="w-full bg-deploio py-2 text-center text-lg tracking-[0.02em] text-white">{% t navigation_start %}</a>
-    <div class="h-8"></div>
+    <div class='h-6'></div>
+    <a href='{{ start_url }}' class='w-full bg-deploio py-2 text-center text-lg tracking-[0.02em] text-white'>
+      {%- t navigation_start -%}
+    </a>
+    <div class='h-8'></div>
   </nav>
 </div>
