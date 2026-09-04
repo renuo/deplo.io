@@ -25,6 +25,10 @@ Start the Jekyll development server:
 bin/run
 ```
 
+The development server watches both the Jekyll templates and Tailwind CSS.
+Site-specific styles live in `_assets/css/site.css`; Tailwind scans the HTML
+templates and writes the generated stylesheet to `assets/css/site.css`.
+
 Translations live in `_i18n/{de,en,fr,it}.yml` and are rendered with
 `jekyll-i18n`. German pages use root URLs; the other locales use a language
 prefix. Define pages once in `_data/routes.yml`; the localized variants are
