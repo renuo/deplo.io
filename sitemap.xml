@@ -3,13 +3,36 @@ layout: null
 permalink: /sitemap.xml
 ---
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
-{% assign routes = '/,/pricing/,/team/,/success_story/,/success_story/demokratis/' | split: ',' %}{% for route in routes %}{% for lang in site.data.languages %}{% assign prefix = '/' | append: lang.code %}{% if lang.code == 'de' %}{% assign prefix = '' %}{% endif %}
+<urlset
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml"
+>
+{% assign routes = '/,/pricing/,/team/,/success_story/,/success_story/demokratis/' | split: ',' %}
+{% for route in routes %}
+{% for lang in site.data.languages %}
+  {% assign prefix = '/' | append: lang.code %}
+  {% if lang.code == 'de' %}
+    {% assign prefix = '' %}
+  {% endif %}
   <url>
     <loc>{{ site.url }}{{ prefix }}{{ route }}</loc>
-    {% for alternate in site.data.languages %}{% assign alternate_prefix = '/' | append: alternate.code %}{% if alternate.code == 'de' %}{% assign alternate_prefix = '' %}{% endif %}<xhtml:link rel="alternate" hreflang="{{ alternate.code }}" href="{{ site.url }}{{ alternate_prefix }}{{ route }}" />{% endfor %}
-    <xhtml:link rel="alternate" hreflang="x-default" href="{{ site.url }}/en{{ route }}" />
+    {% for alternate in site.data.languages %}
+      {% assign alternate_prefix = '/' | append: alternate.code %}
+      {% if alternate.code == 'de' %}
+        {% assign alternate_prefix = '' %}
+      {% endif %}
+    <xhtml:link
+      rel="alternate"
+      hreflang="{{ alternate.code }}"
+      href="{{ site.url }}{{ alternate_prefix }}{{ route }}"
+    />
+    {% endfor %}
+    <xhtml:link
+      rel="alternate"
+      hreflang="x-default"
+      href="{{ site.url }}/en{{ route }}"
+    />
   </url>
-{% endfor %}{% endfor %}
+{% endfor %}
+{% endfor %}
 </urlset>
-
