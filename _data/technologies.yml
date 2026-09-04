@@ -1,0 +1,7 @@
+- { image: language_node.webp, name: Node.js }
+- { image: language_django.webp, name: Django }
+- { image: language_go.webp, name: Go }
+- { image: language_php.webp, name: PHP }
+- { image: language_python.webp, name: Python }
+- { image: language_ruby.webp, name: Ruby }
+
