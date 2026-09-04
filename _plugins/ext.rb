@@ -25,6 +25,31 @@ end
 
 Jekyll::Page.prepend(DeploioLocalizedUrl)
 
+class LocalizedPage < Jekyll::PageWithoutAFile
+  def initialize(site, route, language)
+    slug = route.fetch("page_key").tr("_", "-")
+    super(site, site.source, "", "#{slug}-#{language}.html")
+
+    self.data = route.reject { |key, _| key == "template" }.merge(
+      "lang" => language,
+      "layout" => "default"
+    )
+    self.content = "{% include pages/#{route.fetch('template')}.html %}"
+  end
+end
+
+class LocalizedPagesGenerator < Jekyll::Generator
+  safe true
+  priority :low
+
+  def generate(site)
+    languages = site.data.fetch("languages").map { |language| language.fetch("code") }
+    site.data.fetch("routes").product(languages).each do |route, language|
+      site.pages << LocalizedPage.new(site, route, language)
+    end
+  end
+end
+
 Jekyll::Hooks.register :site, :after_init do |site|
   site.config["pricing_calculator_url"] = ENV.fetch(
     "PRICING_CALCULATOR_URL",
