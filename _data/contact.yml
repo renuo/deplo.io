@@ -1,0 +1,9 @@
+company: Nine Internet Solutions AG
+street: Badenerstrasse 47
+locality: 8004 Zürich
+email:
+  label: info@nine.ch
+  href: mailto:info@nine.ch
+phone:
+  label: +41 44 637 40 40
+  href: tel:+41446374040
