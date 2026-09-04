@@ -2,4 +2,8 @@
 
 set -eu
 
-exec bundle exec jekyll serve --host 0.0.0.0 --port "${PORT:-3000}" "$@"
+npm run css:watch &
+tailwind_pid=$!
+trap 'kill "$tailwind_pid" 2>/dev/null || true' EXIT INT TERM
+
+bundle exec jekyll serve --host 0.0.0.0 --port "${PORT:-3000}" "$@"
