@@ -87,13 +87,7 @@ de:
   footer_github: GitHub Beispiele
   footer_pricing: Preise
   footer_contact: KONTAKT
-  footer_address: |-
-    Nine Internet Solutions AG
-    Badenerstrasse 47
-    8004 Zürich
-    Schweiz
-  footer_email: info@nine.ch
-  footer_phone: '+41 44 637 40 40'
+  footer_country: Schweiz
   footer_support_note: Support ist nur auf Englisch und Deutsch verfügbar.
   footer_service: EIN SERVICE VON
   footer_copyright: Copyright © {year} Nine Internet Solutions AG
