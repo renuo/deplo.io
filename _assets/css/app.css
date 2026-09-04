@@ -13,6 +13,28 @@
   }
 }
 
+@layer components {
+  .text-h1 {
+    @apply text-[40px] font-medium uppercase leading-[110%] tracking-[0.02em] md:text-[57px];
+  }
+
+  .text-h2 {
+    @apply text-[32px] font-normal uppercase leading-[117%] tracking-[0.02em] md:text-[40px];
+  }
+
+  .text-h3 {
+    @apply text-[24px] font-normal uppercase leading-[117%] tracking-[0.02em];
+  }
+
+  .text-h4 {
+    @apply text-[20px] font-medium uppercase leading-[117%] tracking-[0.02em] md:text-[24px];
+  }
+
+  .text-h5 {
+    @apply text-[16px] font-medium uppercase leading-[117%] tracking-[0.02em] md:text-[20px];
+  }
+}
+
 html,
 body {
   @apply min-w-[320px] bg-deploio;
@@ -24,26 +46,6 @@ body {
 
 .team-container {
   @apply mx-auto max-w-7xl p-2 md:p-6;
-}
-
-.text-h1 {
-  @apply text-[40px] font-medium uppercase leading-[110%] tracking-[0.02em] md:text-[57px];
-}
-
-.text-h2 {
-  @apply text-[32px] font-normal uppercase leading-[117%] tracking-[0.02em] md:text-[40px];
-}
-
-.text-h3 {
-  @apply text-[24px] font-normal uppercase leading-[117%] tracking-[0.02em] md:text-[24px];
-}
-
-.text-h4 {
-  @apply text-[20px] font-medium uppercase leading-[117%] tracking-[0.02em] md:text-[24px];
-}
-
-.text-h5 {
-  @apply text-[16px] font-medium uppercase leading-[117%] tracking-[0.02em] md:text-[20px];
 }
 
 .text-p {
