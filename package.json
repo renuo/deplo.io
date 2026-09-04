@@ -2,10 +2,14 @@
   "name": "deploio",
   "private": true,
   "scripts": {
-    "css:build": "tailwindcss -i ./_assets/css/site.css -o ./assets/css/site.css --minify",
-    "css:watch": "tailwindcss -i ./_assets/css/site.css -o ./assets/css/site.css --watch"
+    "css:build": "tailwindcss -i ./_assets/css/app.css -o ./assets/css/app.css --minify",
+    "css:watch": "tailwindcss -i ./_assets/css/app.css -o ./assets/css/app.css --watch",
+    "format": "prettier --write .",
+    "lint": "prettier --check ."
   },
   "devDependencies": {
+    "@shopify/prettier-plugin-liquid": "^1.11.0",
+    "prettier": "^3.9.6",
     "tailwindcss": "3.4.17"
   }
 }

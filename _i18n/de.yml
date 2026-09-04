@@ -1,6 +1,6 @@
 ---
 de:
-  "$schema": https://inlang.com/schema/inlang-message-format
+  '$schema': https://inlang.com/schema/inlang-message-format
   navigation_en: EN
   navigation_de: DE
   navigation_fr: FR
@@ -93,7 +93,7 @@ de:
     8004 Zürich
     Schweiz
   footer_email: info@nine.ch
-  footer_phone: "+41 44 637 40 40"
+  footer_phone: '+41 44 637 40 40'
   footer_support_note: Support ist nur auf Englisch und Deutsch verfügbar.
   footer_service: EIN SERVICE VON
   footer_copyright: Copyright © {year} Nine Internet Solutions AG
