@@ -63,13 +63,17 @@
       </nav>
       <nav class='flex flex-col gap-4'>
         <h3 class='text-base font-semibold uppercase'>{% t footer_contact %}</h3>
-        <p class='max-w-fit whitespace-pre'>{% t footer_address %}</p>
-        {% assign email = 'footer_email' | t -%}
-        {%- assign email_href = email | prepend: 'mailto:' -%}
-        {%- include link.html href=email_href text=email class='max-w-fit' %}
-        {% assign phone = 'footer_phone' | t -%}
-        {%- assign phone_href = phone | remove: ' ' | prepend: 'tel:' -%}
-        {%- include link.html href=phone_href text=phone class='max-w-fit' %}
+        <address class='max-w-fit not-italic'>
+          {{ site.data.contact.company -}}
+          <br>
+          {{ site.data.contact.street -}}
+          <br>
+          {{ site.data.contact.locality -}}
+          <br>
+          {% t footer_country %}
+        </address>
+        {% include link.html link=site.data.contact.email class='max-w-fit' %}
+        {% include link.html link=site.data.contact.phone class='max-w-fit' %}
         <p class='max-w-fit text-sm opacity-70'>{% t footer_support_note %}</p>
       </nav>
       <nav class='flex flex-col gap-4 text-sm md:ml-auto'>
