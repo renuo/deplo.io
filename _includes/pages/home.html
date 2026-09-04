@@ -44,11 +44,12 @@
   <section class='relative overflow-x-clip bg-deploio pb-6 max-md:pt-10'>
     <div class='container relative z-10'>
       <span class='mb-6 block text-left text-lg font-normal text-white md:-mt-10'>{% t customers_trust %}</span>
-      <div class='pointer-events-none overflow-x-hidden' data-marquee>
-        <div class='flex w-max animate-marquee' data-marquee-track>
+      <div class='pointer-events-none overflow-x-hidden' data-marquee data-marquee-gap='20' data-marquee-speed='100'>
+        <div class='flex w-max' data-marquee-track>
           {% for repeat in (1..4) %}
             <div
-              class='flex flex-shrink-0 items-center gap-20 pr-[5.5rem]'
+              class='flex flex-shrink-0 items-center gap-20'
+              data-marquee-item
               {% unless forloop.first %}
                 aria-hidden='true'
               {% endunless %}
@@ -84,11 +85,12 @@
           <img class='h-10' src='/assets/images/{{ technology.image }}' alt='{{ technology.name }}'>
         {%- endfor %}
       </div>
-      <div class='overflow-x-hidden lg:hidden' data-marquee>
-        <div class='flex w-max animate-marquee-fast' data-marquee-track>
+      <div class='overflow-x-hidden lg:hidden' data-marquee data-marquee-gap='14' data-marquee-speed='100'>
+        <div class='flex w-max' data-marquee-track>
           {% for repeat in (1..4) %}
             <div
-              class='flex flex-shrink-0 items-center gap-14 pr-14'
+              class='flex flex-shrink-0 items-center gap-14'
+              data-marquee-item
               {% unless forloop.first %}
                 aria-hidden='true'
               {% endunless %}

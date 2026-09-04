@@ -8,6 +8,6 @@ RUN bundle install && npm ci
 COPY . .
 RUN bin/build
 
-CMD ["bundle", "exec", "jekyll", "serve", "--host", "0.0.0.0", "--port", "3000", "--no-watch"]
+CMD ["bundle", "exec", "ruby", "scripts/serve.rb"]
 
 EXPOSE 3000

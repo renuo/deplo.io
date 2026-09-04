@@ -57,6 +57,19 @@
         f.parentNode.insertBefore(j, f);
       })(window, document, 'script', 'dataLayer', 'GTM-MHQPVQD4');
     </script>
+    {% if site.google_tag_id != empty %}
+      {% if page.page_key == 'home' or page.page_key contains 'success_story' %}
+        <script async src='https://www.googletagmanager.com/gtag/js?id={{ site.google_tag_id }}'></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag() {
+            dataLayer.push(arguments);
+          }
+          gtag('js', new Date());
+          gtag('config', '{{ site.google_tag_id }}');
+        </script>
+      {% endif %}
+    {% endif %}
   </head>
   <body>
     <noscript

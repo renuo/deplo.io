@@ -1,12 +1,36 @@
 - key: comparison_table_location
-  values: [true, false, true, false]
+  support:
+    deploio: true
+    heroku: false
+    divio: true
+    render: false
 - key: comparison_table_ownership
-  values: [true, false, false, true]
+  support:
+    deploio: true
+    heroku: false
+    divio: false
+    render: true
 - key: comparison_table_infrastructure
-  values: [true, true, false, false]
+  support:
+    deploio: true
+    heroku: true
+    divio: false
+    render: false
 - key: comparison_table_automation
-  values: [true, true, true, true]
+  support:
+    deploio: true
+    heroku: true
+    divio: true
+    render: true
 - key: comparison_table_object_storage
-  values: [true, false, true, true]
+  support:
+    deploio: true
+    heroku: false
+    divio: true
+    render: true
 - key: comparison_table_enterprise
-  values: [false, true, true, false]
+  support:
+    deploio: false
+    heroku: true
+    divio: true
+    render: false
