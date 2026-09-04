@@ -1,21 +1,90 @@
-<script type="application/ld+json">
-{
-  "@context":"https://schema.org",
-  "@graph":[
-    {
-      "@type":"Organization","@id":"https://deplo.io{{ canonical_prefix }}/#organization","name":"Deploio","legalName":"Nine Internet Solutions AG","url":"https://deplo.io{{ canonical_prefix }}/","logo":{"@type":"ImageObject","url":"https://deplo.io/assets/images/deploio_logo_full.webp","width":790,"height":760},"description":"{{ 'structured_data_organization_description' | t | escape }}",
-      "address":{"@type":"PostalAddress","streetAddress":"Badenerstrasse 47","addressLocality":"{{ 'structured_data_address_locality' | t | escape }}","postalCode":"8004","addressCountry":"CH"},
-      "contactPoint":{"@type":"ContactPoint","telephone":"+41-44-637-40-40","email":"info@nine.ch","contactType":"customer service","availableLanguage":["German","English"]},
-      "sameAs":["https://www.facebook.com/deploioch/","https://www.instagram.com/deploio/","https://www.linkedin.com/company/deploio","https://www.reddit.com/user/deploio","https://twitter.com/deplo_io","https://github.com/ninech/deploio-examples"],
-      "parentOrganization":{"@type":"Organization","name":"Nine Internet Solutions AG","url":"https://nine.ch"}
-    },
-    {
-      "@type":"WebSite","@id":"https://deplo.io{{ canonical_prefix }}/#website","url":"https://deplo.io{{ canonical_prefix }}/","name":"{{ 'meta_title_home' | t | escape }}","description":"{{ 'structured_data_website_description' | t | escape }}","publisher":{"@id":"https://deplo.io{{ canonical_prefix }}/#organization"},"inLanguage":"{{ page.lang }}","potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://docs.deplo.io/search?q={search_term_string}"},"query-input":"required name=search_term_string"}
-    },
-    {
-      "@type":"SoftwareApplication","@id":"https://deplo.io{{ canonical_prefix }}/#software","name":"Deploio","applicationCategory":"DeveloperApplication","applicationSubCategory":"Platform as a Service (PaaS)","operatingSystem":"Web","url":"https://deplo.io{{ canonical_prefix }}/","description":"{{ 'structured_data_software_description' | t | escape }}","featureList":["Git-based deployment","Managed Databases","Key-Value Store","Swiss Object Storage","Automatic TLS/SSL","Automatic backups","Node.js, Python, Django, Go, PHP, Ruby, Docker"],"offers":{"@type":"Offer","url":"https://deplo.io{{ canonical_prefix }}/pricing/","priceCurrency":"CHF","availability":"https://schema.org/InStock","seller":{"@id":"https://deplo.io{{ canonical_prefix }}/#organization"}},"publisher":{"@id":"https://deplo.io{{ canonical_prefix }}/#organization"},"downloadUrl":"https://cockpit.nine.ch/signup?origin=deploio"
-    }
-  ]
-}
+<script type='application/ld+json'>
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://deplo.io{{ canonical_prefix }}/#organization",
+        "name": "Deploio",
+        "legalName": "Nine Internet Solutions AG",
+        "url": "https://deplo.io{{ canonical_prefix }}/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://deplo.io/assets/images/deploio_logo_full.webp",
+          "width": 790,
+          "height": 760
+        },
+        "description": "{{ 'structured_data_organization_description' | t | escape }}",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Badenerstrasse 47",
+          "addressLocality": "{{ 'structured_data_address_locality' | t | escape }}",
+          "postalCode": "8004",
+          "addressCountry": "CH"
+        },
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+41-44-637-40-40",
+          "email": "info@nine.ch",
+          "contactType": "customer service",
+          "availableLanguage": ["German", "English"]
+        },
+        "sameAs": [
+          "https://www.facebook.com/deploioch/",
+          "https://www.instagram.com/deploio/",
+          "https://www.linkedin.com/company/deploio",
+          "https://www.reddit.com/user/deploio",
+          "https://twitter.com/deplo_io",
+          "https://github.com/ninech/deploio-examples"
+        ],
+        "parentOrganization": {
+          "@type": "Organization",
+          "name": "Nine Internet Solutions AG",
+          "url": "https://nine.ch"
+        }
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://deplo.io{{ canonical_prefix }}/#website",
+        "url": "https://deplo.io{{ canonical_prefix }}/",
+        "name": "{{ 'meta_title_home' | t | escape }}",
+        "description": "{{ 'structured_data_website_description' | t | escape }}",
+        "publisher": { "@id": "https://deplo.io{{ canonical_prefix }}/#organization" },
+        "inLanguage": "{{ page.lang }}",
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": { "@type": "EntryPoint", "urlTemplate": "https://docs.deplo.io/search?q={search_term_string}" },
+          "query-input": "required name=search_term_string"
+        }
+      },
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://deplo.io{{ canonical_prefix }}/#software",
+        "name": "Deploio",
+        "applicationCategory": "DeveloperApplication",
+        "applicationSubCategory": "Platform as a Service (PaaS)",
+        "operatingSystem": "Web",
+        "url": "https://deplo.io{{ canonical_prefix }}/",
+        "description": "{{ 'structured_data_software_description' | t | escape }}",
+        "featureList": [
+          "Git-based deployment",
+          "Managed Databases",
+          "Key-Value Store",
+          "Swiss Object Storage",
+          "Automatic TLS/SSL",
+          "Automatic backups",
+          "Node.js, Python, Django, Go, PHP, Ruby, Docker"
+        ],
+        "offers": {
+          "@type": "Offer",
+          "url": "https://deplo.io{{ canonical_prefix }}/pricing/",
+          "priceCurrency": "CHF",
+          "availability": "https://schema.org/InStock",
+          "seller": { "@id": "https://deplo.io{{ canonical_prefix }}/#organization" }
+        },
+        "publisher": { "@id": "https://deplo.io{{ canonical_prefix }}/#organization" },
+        "downloadUrl": "https://cockpit.nine.ch/signup?origin=deploio"
+      }
+    ]
+  }
 </script>
-

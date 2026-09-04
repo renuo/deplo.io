@@ -7,5 +7,12 @@
 {% else %}
   {% assign classes = classes | prepend: 'border-2 border-white bg-transparent text-white ' %}
 {% endif %}
-<a href="{{ include.href }}" class="{{ classes }} {{ include.class }}"{% if include.target %} target="{{ include.target }}"{% endif %}>{{ include.text }}</a>
-
+<a
+  href='{{ include.href }}'
+  class='{{ classes }} {{ include.class }}'
+  {% if include.target %}
+    target='{{ include.target }}'
+  {% endif %}
+>
+  {{- include.text -}}
+</a>

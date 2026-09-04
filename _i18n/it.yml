@@ -1,6 +1,6 @@
 ---
 it:
-  "$schema": https://inlang.com/schema/inlang-message-format
+  '$schema': https://inlang.com/schema/inlang-message-format
   navigation_en: EN
   navigation_de: DE
   navigation_fr: FR
@@ -53,13 +53,13 @@ it:
   success_story_subtitle: COME È INIZIATO TUTTO
   success_story_title: HOSTING SENZA STORIE
   success_story_description: Renuo AG voleva un hosting cloud senza complicazioni. Con Deploio hanno trovato la perfetta alternativa svizzera a Heroku – semplice, sovrana, senza grattacapi.
-  success_story_long_description: 'Renuo AG è una società svizzera di ingegneria del software con una missione: scrivere ottimo codice – preferibilmente in Ruby on Rails – senza doversi occupare dell''amministrazione dei server. Per anni tutto è andato tramite Heroku, finché un singolo messaggio Slack ha dato il via a tutto. In questa success story vi raccontiamo come Renuo ha trovato il partner perfetto per l''hosting cloud in Svizzera – e perché Deploio è ora il numero uno indiscusso per loro.'
+  success_story_long_description: "Renuo AG è una società svizzera di ingegneria del software con una missione: scrivere ottimo codice – preferibilmente in Ruby on Rails – senza doversi occupare dell'amministrazione dei server. Per anni tutto è andato tramite Heroku, finché un singolo messaggio Slack ha dato il via a tutto. In questa success story vi raccontiamo come Renuo ha trovato il partner perfetto per l'hosting cloud in Svizzera – e perché Deploio è ora il numero uno indiscusso per loro."
   success_story_before_cloud_title: IL TEMPO PRIMA DEL CLOUD
   success_story_before_cloud_text: 'Deploio è gestito da Nine e noi eravamo già clienti Nine in precedenza. Era prima del cloud. Abbiamo configurato e gestito server per i nostri clienti. Questo costava molto tempo e nervi: acquistare certificati SSL, gestire accessi SSH, monitorare lo spazio su disco, aggiornare le librerie di sistema. Poi è arrivato Heroku. Ci ha liberati dall''amministrazione dei server. Abbiamo potuto concentrarci sullo sviluppo software, anche senza vendor lock-in grazie a 12factor. Semplicemente "git push", CI/CD e il cliente può testare. Così siamo migrati nel cloud.'
   success_story_beauty_and_the_beast_title: LA BELLA E LA BESTIA
   success_story_beauty_and_the_beast_text: Renuo è un'azienda svizzera a conduzione familiare. Ma Heroku è americano e gira su AWS. Questo ci ha sempre dato fastidio per i successivi dieci anni. Deve essere possibile usare un prodotto così figo come Heroku in Svizzera, dove posso anche bussare alla porta di qualcuno se qualcosa non mi piace – buona fortuna a farlo con Salesforce. Eravamo nel contratto Enterprise; semplicemente un vero incubo. Ed è stato Deploio ad arrivare in soccorso, al momento giusto!
   success_story_note_title: Noi scriviamo codice, Deploio fa il resto
-  success_story_note_text: 'Siamo nel business del software, non dell''infrastruttura. Non voglio gestire Kubernetes da solo né server bare-metal (come separo i clienti? chi fa veramente gli aggiornamenti del kernel?). Sviluppiamo buon codice, questo deve bastare: ''git push'', CI/CD e il cliente può testare. L''infrastruttura la gestisce Deploio, in Svizzera, e lo fanno bene. Non ho mai avuto bisogno di bussare alla loro porta di Stauffacher Platz.'
+  success_story_note_text: "Siamo nel business del software, non dell'infrastruttura. Non voglio gestire Kubernetes da solo né server bare-metal (come separo i clienti? chi fa veramente gli aggiornamenti del kernel?). Sviluppiamo buon codice, questo deve bastare: 'git push', CI/CD e il cliente può testare. L'infrastruttura la gestisce Deploio, in Svizzera, e lo fanno bene. Non ho mai avuto bisogno di bussare alla loro porta di Stauffacher Platz."
   success_story_slack_message_1_name: Samuel Steiner  ·  Renuo AG
   success_story_slack_message_1_date: 23 set 2022 alle 23:42
   success_story_slack_message_1_text: Ciao a tutti. C'è qualcuno che ospita principalmente con Heroku e non è soddisfatto delle modifiche recentemente annunciate? Sarebbe una buona opportunità per creare qualcosa di nostro. Attendo messaggi privati.
@@ -72,7 +72,7 @@ it:
   success_story_demokratis_description: 'Demokratis vuole digitalizzare la politica svizzera. In Deploio ha trovato un partner locale: sicuro, affidabile e senza complicazioni.'
   success_story_demokratis_long_description: Portare la politica svizzera nell'era digitale non è una passeggiata. Soprattutto se i clienti principali sono cantoni e autorità pubbliche. Perché quando si tratta di dati sensibili e di localizzazione dei server, non si scherza. In questa Success Story raccontiamo come la piattaforma indipendente Demokratis abbia trovato la perfetta soluzione cloud svizzera con Deploio – e perché fa un'enorme differenza avere un partner che offre un aiuto flessibile proprio lì dove serve di più.
   success_story_demokratis_public_hand_title: LA SFIADA CON IL SETTORE PUBBLICO
-  success_story_demokratis_public_hand_text: 'Per i clienti e i partner di Demokratis, che provengono principalmente dal settore pubblico (come i cantoni), la localizzazione dei dati è assolutamente essenziale. Una soluzione all''estero?<br>Per questi processi statali è semplicemente fuori discussione.<br><br>A ciò si è aggiunto un vero e proprio grattacapo tecnico: i primi cantoni utilizzano l''applicazione Demokratis sotto il proprio dominio. Per fare questo, è stato necessario configurare record CNAME che reindirizzassero in modo fluido alla piattaforma di Demokratis. Per la migrazione occorreva quindi un partner in grado di gestire questo specifico routing di dominio in modo affidabile.'
+  success_story_demokratis_public_hand_text: "Per i clienti e i partner di Demokratis, che provengono principalmente dal settore pubblico (come i cantoni), la localizzazione dei dati è assolutamente essenziale. Una soluzione all'estero?<br>Per questi processi statali è semplicemente fuori discussione.<br><br>A ciò si è aggiunto un vero e proprio grattacapo tecnico: i primi cantoni utilizzano l'applicazione Demokratis sotto il proprio dominio. Per fare questo, è stato necessario configurare record CNAME che reindirizzassero in modo fluido alla piattaforma di Demokratis. Per la migrazione occorreva quindi un partner in grado di gestire questo specifico routing di dominio in modo affidabile."
   success_story_demokratis_swissness_title: LA SWISSNESS COME FATTORE DECISIVO
   success_story_demokratis_swissness_text: 'La soluzione? "Demokratis powered by Deploio". Il passaggio è stato il passo logico per soddisfare i severi requisiti delle autorità. Il motivo principale del trasferimento era evidente: l''intera infrastruttura si trova in Svizzera ed è fornita e gestita da Deploio. Questo garantisce ai cantoni la sicurezza e la fiducia necessarie.'
   success_story_demokratis_note_title: UN SUPPORTO CHE ANTICIPA I BISOGNI
@@ -93,7 +93,7 @@ it:
     8004 Zürich
     Svizzera
   footer_email: info@nine.ch
-  footer_phone: "+41 44 637 40 40"
+  footer_phone: '+41 44 637 40 40'
   footer_support_note: Il supporto è disponibile solo in inglese e tedesco.
   footer_service: UN SERVIZIO DI
   footer_copyright: Copyright © {year} Nine Internet Solutions AG

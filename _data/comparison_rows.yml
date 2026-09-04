@@ -10,4 +10,3 @@
   values: [true, false, true, true]
 - key: comparison_table_enterprise
   values: [false, true, true, false]
-

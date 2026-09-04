@@ -3,6 +3,7 @@ _site
 .jekyll-metadata
 vendor/bundle
 node_modules
+/assets/css/
 
 # OS
 .DS_Store

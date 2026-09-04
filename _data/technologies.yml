@@ -4,4 +4,3 @@
 - { image: language_php.webp, name: PHP }
 - { image: language_python.webp, name: Python }
 - { image: language_ruby.webp, name: Ruby }
-

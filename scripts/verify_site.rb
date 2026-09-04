@@ -8,6 +8,10 @@ errors = []
 languages = %w[de en fr it]
 routes = %w[/ /pricing/ /team/ /success_story/ /success_story/demokratis/ /rails_world_2026/]
 
+%w[bin node_modules scripts vendor].each do |directory|
+  errors << "development directory copied to site: #{directory}" if root.join(directory).exist?
+end
+
 languages.product(routes).each do |language, route|
   prefix = language == "de" ? "" : "/#{language}"
   output = root.join("#{prefix}#{route}".sub(%r{\A/}, ""), "index.html")
@@ -33,4 +37,3 @@ end
 
 abort(errors.uniq.join("\n")) unless errors.empty?
 puts "Verified #{Dir[root.join('**', '*.html')].length} HTML files and #{languages.length * routes.length} localized routes"
-
