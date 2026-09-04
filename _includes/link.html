@@ -1,15 +1,27 @@
+{% assign resolved_href = include.href %}
+{% assign resolved_target = include.target %}
+{% if include.route %}
+  {% assign locale_prefix = '' %}
+  {% unless page.lang == 'de' %}{% assign locale_prefix = '/' | append: page.lang %}{% endunless %}
+  {% assign resolved_href = locale_prefix | append: include.route %}
+{% elsif include.cockpit_path %}
+  {% capture resolved_href %}https://cockpit.nine.ch/{{ page.lang }}{{ include.cockpit_path }}{% endcapture %}
+  {% assign resolved_target = '_blank' %}
+{% endif %}
+{% assign resolved_text = include.text %}
+{% if include.text_key %}{% assign resolved_text = include.text_key | t %}{% endif %}
 <a
-  href='{{ include.href }}'
+  href='{{ resolved_href }}'
   class='group relative inline-block truncate text-white {{ include.class }}'
-  {% if include.target %}
-    target='{{ include.target }}'
+  {% if resolved_target %}
+    target='{{ resolved_target }}'
   {% endif -%}
-  {% if include.href == page.url %}
+  {% if resolved_href == page.url %}
     aria-current='page'
   {% endif %}
 >
-  {{ include.text }}
-  <span class='absolute bottom-0 left-0 h-[0.9px] {% if include.href == page.url %}w-full{% else %}w-0{% endif %} bg-white text-[15px] transition-all group-hover:w-full'
+  {{ resolved_text }}
+  <span class='absolute bottom-0 left-0 h-[0.9px] {% if resolved_href == page.url %}w-full{% else %}w-0{% endif %} bg-white text-[15px] transition-all group-hover:w-full'
     >&nbsp;</span
   >
 </a>

@@ -41,9 +41,7 @@
       </div>
     </div>
     <div class='container flex items-center justify-between md:hidden'>
-      {% capture footer_start_url %}https://cockpit.nine.ch/{{ page.lang }}/fast_onboardings/new?origin=deploio{% endcapture -%}
-      {%- assign footer_start_text = 'navigation_start' | t -%}
-      {%- include button.html variant='primary' href=footer_start_url text=footer_start_text %}
+      {% include button.html cockpit_path='/fast_onboardings/new?origin=deploio' text_key='navigation_start' %}
       <div class='flex gap-4'>
         {% for lang in site.data.languages -%}
           {%- assign switch_prefix = '/' | append: lang.code -%}
@@ -57,17 +55,11 @@
     <div class='container flex flex-col gap-20 !py-8 md:flex-row'>
       <nav class='flex flex-col gap-4'>
         <h3 class='text-base font-semibold uppercase'>{% t footer_support %}</h3>
-        {% assign footer_status = 'footer_status' | t -%}
-        {%- include link.html href='https://status.nine.ch/' target='_blank' text=footer_status class='max-w-fit' %}
-        {% assign footer_docs = 'footer_documentation' | t -%}
-        {%- include link.html href='https://docs.deplo.io/' target='_blank' text=footer_docs class='max-w-fit' %}
-        {% assign footer_slack = 'footer_slack' | t -%}
-        {%- include link.html href='https://join.slack.com/t/deploiocommunity/shared_invite/zt-20tb3k93m-O4NEUs0RjZYGQNQoih8zkA' target='_blank' text=footer_slack class='max-w-fit' %}
-        {% assign footer_github = 'footer_github' | t -%}
-        {%- include link.html href='https://github.com/ninech/deploio-examples' target='_blank' text=footer_github class='max-w-fit' %}
-        {% assign footer_pricing_url = locale_prefix | append: '/pricing/' -%}
-        {%- assign footer_pricing = 'footer_pricing' | t -%}
-        {%- include link.html href=footer_pricing_url text=footer_pricing class='max-w-fit' %}
+        {% include link.html href='https://status.nine.ch/' target='_blank' text_key='footer_status' class='max-w-fit' %}
+        {% include link.html href='https://docs.deplo.io/' target='_blank' text_key='footer_documentation' class='max-w-fit' %}
+        {% include link.html href='https://join.slack.com/t/deploiocommunity/shared_invite/zt-20tb3k93m-O4NEUs0RjZYGQNQoih8zkA' target='_blank' text_key='footer_slack' class='max-w-fit' %}
+        {% include link.html href='https://github.com/ninech/deploio-examples' target='_blank' text_key='footer_github' class='max-w-fit' %}
+        {% include link.html route='/pricing/' text_key='footer_pricing' class='max-w-fit' %}
       </nav>
       <nav class='flex flex-col gap-4'>
         <h3 class='text-base font-semibold uppercase'>{% t footer_contact %}</h3>
@@ -112,10 +104,8 @@
       {% assign current_year = site.time | date: '%Y' -%}
       {%- assign copyright = 'footer_copyright' | t | replace: '{year}', current_year %}
       <p class='flex-grow'>{{ copyright }}</p>
-      {% assign terms_text = 'footer_terms' | t -%}
-      {%- include link.html href='https://docs.nine.ch/de/docs/legal-documents/general-terms-and-conditions' text=terms_text %}
-      {% assign privacy_text = 'footer_privacy' | t -%}
-      {%- include link.html href='https://www.nine.ch/de/privacy-policy' text=privacy_text %}
+      {% include link.html href='https://docs.nine.ch/de/docs/legal-documents/general-terms-and-conditions' text_key='footer_terms' %}
+      {% include link.html href='https://www.nine.ch/de/privacy-policy' text_key='footer_privacy' %}
     </nav>
   </footer>
 </div>
