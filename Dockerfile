@@ -1,16 +1,13 @@
-FROM node:alpine
+FROM ruby:3.4-alpine
 
-ARG VITE_GOOGLE_TAG_ID
+RUN apk add --no-cache build-base nodejs npm
 
 WORKDIR /app
-COPY package.json ./
-RUN npm install
-
-ENV VITE_GOOGLE_TAG_ID=$VITE_GOOGLE_TAG_ID
-
+COPY Gemfile Gemfile.lock package.json package-lock.json ./
+RUN bundle install && npm ci
 COPY . .
-RUN npm run build
+RUN bin/build
 
-CMD ["node", "build"]
+CMD ["bundle", "exec", "ruby", "scripts/serve.rb"]
 
 EXPOSE 3000

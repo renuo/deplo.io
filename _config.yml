@@ -1,0 +1,19 @@
+title: Deploio
+url: https://deplo.io
+baseurl: ''
+destination: _site
+permalink: pretty
+encoding: utf-8
+
+exclude:
+  - bin
+  - node_modules
+  - package.json
+  - package-lock.json
+  - tailwind.config.js
+  - Dockerfile
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - scripts
+  - vendor

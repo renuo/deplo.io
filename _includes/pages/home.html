@@ -1,0 +1,174 @@
+{% assign locale_prefix = '' -%}
+{%- unless page.lang == 'de' %}{% assign locale_prefix = '/' | append: page.lang %}{% endunless %}
+<main class='relative z-0'>
+  <div class='relative h-[800px]'>
+    <div class='pointer-events-none absolute h-full w-full select-none max-sm:max-h-[450px]'>
+      <video
+        aria-hidden='true'
+        class='pointer-events-none absolute h-full min-w-full object-cover object-top'
+        autoplay
+        muted
+        loop
+        playsinline
+      >
+        <source src='/assets/images/backgrounds/deploio_video.mp4' type='video/mp4'>
+      </video>
+      <div class='relative h-full w-full bg-gradient-to-t from-deploio to-hero/40'>&nbsp;</div>
+    </div>
+    <section class='container relative flex h-full flex-col justify-end pb-16 text-deploio'>
+      <div class='relative flex h-full w-full flex-col justify-end text-white'>
+        <div class='mb-8'>
+          <h1 class='text-h1 mb-4 max-w-[450px] md:max-w-[600px]' data-appear>{% t hero_title %}</h1>
+          <p class='mb-10 max-w-[550px] text-[20px]' data-appear data-delay='100'>{% t hero_description %}</p>
+          <div class='mb-3 flex flex-wrap gap-2 md:gap-6' data-appear data-delay='200'>
+            {% include button.html class='w-full md:w-auto' cockpit_path='/fast_onboardings/new?origin=deploio' text_key='hero_start_now' %}
+            {% include button.html variant='outline' class='w-full md:w-auto' href='https://docs.deplo.io/' target='_blank' text_key='hero_learn_more' %}
+          </div>
+          <a
+            href='https://www.youtube.com/watch?v=3iOWZ4ou49Y'
+            target='_blank'
+            class='inline-flex items-center gap-2 py-3 text-xs'
+            data-appear
+            data-delay='300'
+          >
+            <svg class='opacity-70' width='8' height='10' viewBox='0 0 8 10' fill='none'>
+              <path d="M0.416748 9.01688V0L7.73071 4.50844L0.416748 9.01688ZM1.50008 7.12042L5.76612 4.50844L1.50008 1.89646V7.12042Z" fill="white"></path>
+            </svg>
+            <p class='opacity-70 transition-opacity hover:opacity-100'>{% t hero_see_video %}</p>
+          </a>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <section class='relative overflow-x-clip bg-deploio pb-6 max-md:pt-10'>
+    <div class='container relative z-10'>
+      <span class='mb-6 block text-left text-lg font-normal text-white md:-mt-10'>{% t customers_trust %}</span>
+      <div class='pointer-events-none overflow-x-hidden' data-marquee data-marquee-gap='20' data-marquee-speed='100'>
+        <div class='flex w-max' data-marquee-track>
+          {% for repeat in (1..4) %}
+            <div
+              class='flex flex-shrink-0 items-center gap-20'
+              data-marquee-item
+              {% unless forloop.first %}
+                aria-hidden='true'
+              {% endunless %}
+            >
+              {% for customer in site.data.customers -%}
+                <img
+                  class='max-h-[90px] object-contain brightness-0 invert'
+                  src='/assets/images/logos/{{ customer.image }}'
+                  alt='{{ customer.name }}'
+                >
+              {%- endfor %}
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class='relative overflow-x-clip bg-deploio pb-16 pt-20'>
+    <img
+      src='/assets/images/deploio_wave.svg'
+      alt='abstract waves background'
+      class='pointer-events-none absolute left-0 right-0 top-0 z-0 w-full -rotate-6 scale-[3] opacity-5 sm:scale-[2] md:scale-[1.25]'
+    >
+    <div class='container relative z-10 space-y-20'>
+      {% include feature.html index=1 heading='h2' title_key='feature_1_title' description_key='feature_1_description' %}
+      {% include feature.html index=2 heading='h3' title_key='feature_2_title' description_key='feature_2_description' %}
+      {% include feature.html index=3 heading='h3' title_key='feature_3_title' description_key='feature_3_description' %}
+    </div>
+    <div class='container relative z-10 mb-8 overflow-x-hidden'>
+      <div class='hidden items-center justify-between gap-14 lg:flex'>
+        {% for technology in site.data.technologies -%}
+          <img class='h-10' src='/assets/images/{{ technology.image }}' alt='{{ technology.name }}'>
+        {%- endfor %}
+      </div>
+      <div class='overflow-x-hidden lg:hidden' data-marquee data-marquee-gap='14' data-marquee-speed='100'>
+        <div class='flex w-max' data-marquee-track>
+          {% for repeat in (1..4) %}
+            <div
+              class='flex flex-shrink-0 items-center gap-14'
+              data-marquee-item
+              {% unless forloop.first %}
+                aria-hidden='true'
+              {% endunless %}
+            >
+              {% for technology in site.data.technologies -%}
+                <img class='h-10' src='/assets/images/{{ technology.image }}' alt='{{ technology.name }}'>
+              {%- endfor %}
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <img
+    src='/assets/images/backgrounds/mountain_vector.svg'
+    alt='mountain vector background'
+    class='pointer-events-none -my-px w-full bg-deploio'
+  >
+  <section class='bg-mountain'>
+    <div class='no-scrollbar container -mb-16 flex w-max !max-w-full gap-6 overflow-auto !pb-[5rem] sm:w-full sm:!max-w-7xl sm:flex-col md:-mb-4'>
+      {% assign story_url = locale_prefix | append: '/success_story/' -%}
+      {%- include success-story-card.html title_key='success_story_title' subtitle_key='success_story_subtitle' description_key='success_story_description' image='success_story_background.webp' href=story_url %}
+      {% assign demokratis_url = locale_prefix | append: '/success_story/demokratis/' -%}
+      {%- include success-story-card.html title_key='success_story_demokratis_title' subtitle_key='success_story_demokratis_subtitle' description_key='success_story_demokratis_description' image='demokratis_success_story_background.webp' href=demokratis_url %}
+    </div>
+    <div class='group container relative z-10 mx-auto text-deploio max-md:mt-20 md:max-w-xl md:pl-40 md:pr-4 lg:max-w-3xl'>
+      <img
+        src='/assets/images/deploio_sticker.webp'
+        draggable='false'
+        alt='hosted on deploio sticker'
+        class='pointer-events-none absolute right-10 size-48 -rotate-12 opacity-5 transition-transform group-hover:rotate-12 max-md:-top-20 md:bottom-auto md:right-auto md:-ml-40 md:-mt-8'
+      >
+      <h2 class='text-h2 mb-5 mt-8 md:mt-0' data-appear data-delay='50'>{% t feature_why_title %}</h2>
+      <p class='mb-8 text-[20px]' data-appear data-delay='100'>{% t feature_why_description %}</p>
+      <div class='flex' data-appear data-delay='150'>
+        {% include button.html variant='secondary' href='https://docs.deplo.io' target='_blank' text_key='feature_why_button' %}
+      </div>
+    </div>
+    <div
+      class='no-scrollbar relative z-10 mx-auto my-16 flex w-max max-w-full gap-6 overflow-auto px-6 py-5 md:my-0 lg:justify-between'
+      data-appear
+    >
+      {% for number in (1..4) %}
+        {% capture title_key %}notes_{{ number }}_title{% endcapture -%}
+        {%- capture description_key %}notes_{{ number }}_description{% endcapture %}
+        <div class='min-w-[320px] max-w-[320px] border-t-2 border-deploio bg-white p-6 pb-14 text-deploio shadow-xl transition-all hover:scale-105 hover:shadow-2xl'>
+          <h4 class='text-h4 h-[75px]'>{{ title_key | t }}</h4>
+          <p>{{ description_key | t }}</p>
+        </div>
+      {% endfor %}
+    </div>
+    <div class='relative -z-0 -mt-[130%] h-[1400px] md:-mt-[30%] md:h-[1000px] lg:h-[1400px] 2xl:-mt-[600px] 2xl:h-[2000px]'>
+      <img
+        src='/assets/images/backgrounds/mountain_1.webp'
+        alt='mountain from the swiss alps'
+        loading='lazy'
+        class='absolute bottom-0 top-0 h-full w-full object-cover object-[30%_70%]'
+      >
+      <div class='relative flex h-full w-full flex-col items-center justify-end bg-gradient-to-t from-transparent to-mountain'>
+        <div class='flex w-full flex-col items-center bg-gradient-to-t from-black/70 from-50% to-transparent px-8 py-[16%] 2xl:py-96'>
+          <img
+            src='/assets/images/swiss_made_software_and_hosting.webp'
+            alt='swiss made software badge'
+            class='mb-20 h-16'
+            width='319'
+            height='64'
+            data-appear
+          >
+          <h3 class='text-h2 mb-5 text-center text-white' data-appear data-delay='100'>{% t swiss_title %}</h3>
+          <p class='max-w-xl whitespace-pre-line text-center text-white' data-appear data-delay='200'>
+            {% t swiss_description %}
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {% include comparison.html %}
+  {% include complex-project.html %}
+</main>

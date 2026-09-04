@@ -1,0 +1,42 @@
+- route: /
+  template: home
+  page_key: home
+  title_key: meta_title_home
+  description_key: meta_description_home
+  show_news: true
+
+- route: /pricing/
+  template: pricing
+  page_key: pricing
+  title_key: meta_title_pricing
+  description_key: meta_description_pricing
+
+- route: /team/
+  template: team
+  page_key: team
+  title_key: meta_title_team
+  description_key: meta_description_team
+
+- route: /success_story/
+  template: success-story
+  page_key: success_story
+  story: renuo
+  client_name: Renuo AG
+  title_key: meta_title_success_story
+  description_key: meta_description_success_story
+
+- route: /success_story/demokratis/
+  template: success-story
+  page_key: success_story_demokratis
+  story: demokratis
+  client_name: Demokratis
+  title_key: meta_title_success_story
+  description_key: success_story_demokratis_description
+
+- route: /rails_world_2026/
+  template: rails-world
+  page_key: rails_world_2026
+  literal_title: Rails World 2026 – Deploio
+  literal_description: Thanks for scratching your card at Rails World 2026.
+  bare: true
+  noindex: true

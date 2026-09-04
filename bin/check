@@ -2,22 +2,11 @@
 
 set -eu
 
-if [ "$#" -gt 1 ]; then
-  echo "Usage: bin/check [--fix]" >&2
-  exit 2
-fi
-
-case "${1:-}" in
-  '')
-    npm run lint
-    ;;
-  --fix)
-    npm run lint:fix
-    ;;
-  *)
-    echo "Usage: bin/check [--fix]" >&2
-    exit 2
-    ;;
-esac
-
-npm run precheck
+bundle check
+bin/lint
+npm run css:build
+bundle exec ruby -c _plugins/ext.rb
+bundle exec ruby -c scripts/serve.rb
+node --check assets/js/site.js
+bundle exec jekyll build --strict_front_matter
+bundle exec ruby scripts/verify_site.rb

@@ -1,0 +1,20 @@
+<section id='register' class='bg-mountain text-center text-deploio'>
+  <img
+    class='pointer-events-none -mb-px w-full -scale-x-100 select-none bg-background pt-8'
+    src='/assets/images/backgrounds/mountain_vector.svg'
+    alt='mountain vector background'
+  >
+  <div class='container relative z-10 space-y-8 !pt-16 md:!pt-0'>
+    <h2 class='text-h2 mx-auto max-w-[800px]' data-appear>{% t register_title %}</h2>
+    <p class='mx-auto max-w-[620px] text-[20px]' data-appear data-delay='100'>{% t register_description %}</p>
+    <div class='mt-2'>
+      {%
+        include button.html
+        class='mt-2 h-10 w-full sm:ml-3 sm:w-auto'
+        variant='secondary'
+        cockpit_path='/fast_onboardings/new?origin=deploio'
+        text_key='register_button'
+      %}
+    </div>
+  </div>
+</section>

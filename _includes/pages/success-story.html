@@ -1,0 +1,148 @@
+<main class='relative z-0'>
+  {% if page.story == 'demokratis' -%}
+    {%- assign hero_image = 'demokratis_success_story_background.webp' -%}
+    {%- assign title_key = 'success_story_demokratis_title' -%}
+    {%- assign description_key = 'success_story_demokratis_long_description' -%}
+    {%- assign client = 'Demokratis' -%}
+    {%- assign website = 'demokratis.ch' -%}
+  {%- else -%}
+    {%- assign hero_image = 'success_story_background.webp' -%}
+    {%- assign title_key = 'success_story_title' -%}
+    {%- assign description_key = 'success_story_long_description' -%}
+    {%- assign client = 'Renuo AG' -%}
+    {%- assign website = 'renuo.ch' -%}
+  {%- endif %}
+  <div class='relative h-[800px] max-sm:h-[700px]'>
+    <div class='pointer-events-none absolute h-full w-full select-none max-sm:max-h-[450px]'>
+      <img
+        aria-hidden='true'
+        loading='lazy'
+        class='absolute h-full min-w-full object-cover object-top'
+        src='/assets/images/backgrounds/{{ hero_image }}'
+        alt=''
+      >
+      <div class='relative h-full w-full bg-gradient-to-t from-deploio'>&nbsp;</div>
+    </div>
+    <section class='container relative flex h-full flex-col justify-end pb-16 text-deploio'>
+      <div class='relative flex h-full w-full flex-col justify-end text-white'>
+        <div class='mb-8'>
+          <h1 class='text-h1 mb-4 max-w-[450px] uppercase md:max-w-[800px]' data-appear>{{ title_key | t }}</h1>
+          <p class='mb-10 max-w-[800px] text-[20px]' data-appear data-delay='100'>{{ description_key | t }}</p>
+          <div class='mb-3 flex flex-wrap gap-2 md:gap-6' data-appear data-delay='200'>
+            <div>
+              <span>CLIENT</span>
+              <p class='opacity-80'>{{ client }}</p>
+            </div>
+            <div>
+              <span>WEBSITE</span>
+              <p class='opacity-80'>
+                {% assign website_url = website | prepend: 'https://' -%}
+                {%- include link.html href=website_url text=website %}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <section class='relative overflow-x-clip bg-deploio pb-16 pt-20'>
+    <img
+      src='/assets/images/deploio_wave.svg'
+      alt='abstract waves background'
+      class='pointer-events-none absolute left-0 right-0 top-0 z-0 w-full -rotate-6 scale-[3] opacity-5 sm:scale-[2] md:scale-[1.25]'
+    >
+    <div class='container relative z-10 grid grid-cols-12 grid-rows-[auto_1fr]'>
+      <div class='col-span-12 flex flex-col gap-5 lg:col-span-6 lg:row-span-2 lg:mr-9 xl:col-span-5'>
+        {% if page.story == 'demokratis' %}
+          <div
+            class='relative col-span-12 h-max border-t-2 border-deploio bg-white p-6 pb-14 font-medium text-deploio shadow-card xl:col-span-4 xl:col-start-9'
+            data-appear
+            data-delay='300'
+          >
+            <span class='text-2xl'>{% t success_story_demokratis_quote_text %}</span>
+            <div class='mt-6 flex items-center font-normal'>
+              <div class='mr-4 flex-shrink-0 border-deploio'>
+                <img
+                  src='/assets/images/avatars/demokratis_fabian.webp'
+                  alt='{% t success_story_demokratis_quote_name %}'
+                  class='m-2 h-full w-11 rounded-full bg-gray-200 object-cover'
+                >
+              </div>
+              <div class='text-base'>
+                <p>{% t success_story_demokratis_quote_name %}</p>
+                <p class='opacity-70'>{% t success_story_demokratis_quote_role %}</p>
+              </div>
+            </div>
+          </div>
+        {% else %}
+          {% include slack-message.html avatar='samuel.webp' name_key='success_story_slack_message_1_name' date_key='success_story_slack_message_1_date' text_key='success_story_slack_message_1_text' delay='200' %}
+          {% include slack-message.html avatar='thomas.webp' name_key='success_story_slack_message_2_name' date_key='success_story_slack_message_2_date' text_key='success_story_slack_message_2_text' delay='300' link_nine=true %}
+        {% endif %}
+      </div>
+      {% if page.story == 'demokratis' -%}
+        {%- assign section_one_title = 'success_story_demokratis_public_hand_title' -%}
+        {%- assign section_one_text = 'success_story_demokratis_public_hand_text' -%}
+        {%- assign section_two_title = 'success_story_demokratis_swissness_title' -%}
+        {%- assign section_two_text = 'success_story_demokratis_swissness_text' -%}
+      {%- else -%}
+        {%- assign section_one_title = 'success_story_before_cloud_title' -%}
+        {%- assign section_one_text = 'success_story_before_cloud_text' -%}
+        {%- assign section_two_title = 'success_story_beauty_and_the_beast_title' -%}
+        {%- assign section_two_text = 'success_story_beauty_and_the_beast_text' -%}
+      {%- endif %}
+      <div class='col-span-12 mt-12 text-white lg:col-span-6 lg:mt-0' data-appear data-delay='100'>
+        <h3 class='text-h3 pb-4'>{{ section_one_title | t }}</h3>
+        <p data-appear data-delay='200'>{{ section_one_text | t }}</p>
+      </div>
+      <div class='col-span-12 text-white lg:col-span-6 xl:col-span-5 xl:col-start-8'>
+        <h3 class='text-h3 mt-8 pb-4' data-appear data-delay='300'>{{ section_two_title | t }}</h3>
+        <p data-appear data-delay='400'>{{ section_two_text | t }}</p>
+      </div>
+    </div>
+  </section>
+
+  <img
+    src='/assets/images/backgrounds/mountain_vector_dark.svg'
+    alt='mountain vector background'
+    class='pointer-events-none -my-px w-full bg-deploio'
+  >
+  <section class='bg-background'>
+    <div class='container grid grid-cols-12'>
+      {% if page.story == 'demokratis' -%}
+        {%- assign note_title = 'success_story_demokratis_note_title' -%}
+        {%- assign note_text = 'success_story_demokratis_note_text' -%}
+      {%- else -%}
+        {%- assign note_title = 'success_story_note_title' -%}
+        {%- assign note_text = 'success_story_note_text' -%}
+      {%- endif %}
+      <div class='relative z-10 col-span-12 text-deploio {% unless page.story == 'demokratis' %}xl:col-span-7{% else %}xl:col-span-9 xl:col-start-2{% endunless %}'>
+        <h2 class='text-h2 mb-5 mt-8 md:mt-0 xl:w-[90%]' data-appear data-delay='50'>{{ note_title | t }}</h2>
+        <p class='text-[20px] font-normal' data-appear data-delay='100'>{{ note_text | t }}</p>
+      </div>
+      {% unless page.story == 'demokratis' %}
+        <div
+          class='relative col-span-12 mt-9 h-max border-t-2 border-deploio bg-white p-4 pb-10 font-medium text-deploio shadow-card xl:col-span-4 xl:col-start-9 xl:mt-48'
+          data-appear
+          data-delay='300'
+        >
+          <span class='text-2xl'>{% t success_story_note_quote %}</span>
+          <div class='mt-6 flex items-center font-normal'>
+            <div class='mr-4 flex-shrink-0'>
+              <img
+                src='/assets/images/avatars/josua.webp'
+                alt='Josua Schmid'
+                class='m-2 h-full w-11 rounded-full bg-gray-200 object-cover'
+              >
+            </div>
+            <div class='text-base'>
+              <p>Josua Schmid</p>
+              <p class='opacity-70'>CTO Renuo AG</p>
+            </div>
+          </div>
+        </div>
+      {% endunless %}
+    </div>
+  </section>
+  {% include register.html %}
+</main>

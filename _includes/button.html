@@ -1,0 +1,26 @@
+{% assign variant = include.variant | default: 'primary' %}
+{% assign classes = 'text-center truncate p-1.5 px-4 text-[15px] font-medium uppercase transition-opacity hover:opacity-70 max-md:text-sm' %}
+{% assign resolved_href = include.href %}
+{% assign resolved_target = include.target %}
+{% if include.cockpit_path %}
+  {% capture resolved_href %}https://cockpit.nine.ch/{{ page.lang }}{{ include.cockpit_path }}{% endcapture %}
+  {% assign resolved_target = '_blank' %}
+{% endif %}
+{% assign resolved_text = include.text %}
+{% if include.text_key %}{% assign resolved_text = include.text_key | t %}{% endif %}
+{% if variant == 'primary' %}
+  {% assign classes = classes | prepend: 'bg-white border-2 border-white text-deploio ' %}
+{% elsif variant == 'secondary' %}
+  {% assign classes = classes | prepend: 'bg-deploio border-2 border-deploio text-white ' %}
+{% else %}
+  {% assign classes = classes | prepend: 'border-2 border-white bg-transparent text-white ' %}
+{% endif %}
+<a
+  href='{{ resolved_href }}'
+  class='{{ classes }} {{ include.class }}'
+  {% if resolved_target %}
+    target='{{ resolved_target }}'
+  {% endif %}
+>
+  {{- resolved_text -}}
+</a>
