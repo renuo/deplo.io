@@ -55,20 +55,11 @@
         {% endfor %}
       </ul>
     </div>
-    {% assign pricing_url = locale_prefix | append: '/pricing/' -%}
-    {%- assign pricing_text = 'navigation_pricing' | t -%}
-    {%- include link.html href=pricing_url text=pricing_text %}
-    {% assign team_url = locale_prefix | append: '/team/' -%}
-    {%- assign team_text = 'navigation_team' | t -%}
-    {%- include link.html href=team_url text=team_text %}
-    {% assign docs_text = 'navigation_documentation' | t -%}
-    {%- include link.html href='https://docs.deplo.io' text=docs_text %}
-    {% capture login_url %}https://cockpit.nine.ch/{{ page.lang }}/session/new?origin=deploio{% endcapture %}
-    {% assign login_text = 'navigation_login' | t -%}
-    {%- include link.html href=login_url target='_blank' text=login_text %}
-    {% capture start_url %}https://cockpit.nine.ch/{{ page.lang }}/fast_onboardings/new?origin=deploio{% endcapture %}
-    {% assign start_text = 'navigation_start' | t -%}
-    {%- include button.html variant='primary' href=start_url target='_blank' text=start_text %}
+    {% include link.html route='/pricing/' text_key='navigation_pricing' %}
+    {% include link.html route='/team/' text_key='navigation_team' %}
+    {% include link.html href='https://docs.deplo.io' text_key='navigation_documentation' %}
+    {% include link.html cockpit_path='/session/new?origin=deploio' text_key='navigation_login' %}
+    {% include button.html cockpit_path='/fast_onboardings/new?origin=deploio' text_key='navigation_start' %}
   </nav>
   <button class='relative z-40 p-3 md:hidden' data-menu-toggle aria-expanded='false' aria-label='Open menu'>
     <img src='/assets/images/icons/hamburger.svg' alt='Open menu' data-open-icon>
@@ -98,7 +89,7 @@
     </a>
     <a
       data-menu-link
-      href='{{ login_url }}'
+      href='https://cockpit.nine.ch/{{ page.lang }}/session/new?origin=deploio'
       target='_blank'
       class='w-full py-3 text-2xl font-normal tracking-[0.02em] text-deploio'
     >
@@ -125,7 +116,10 @@
       {% endfor %}
     </div>
     <div class='h-6'></div>
-    <a href='{{ start_url }}' class='w-full bg-deploio py-2 text-center text-lg tracking-[0.02em] text-white'>
+    <a
+      href='https://cockpit.nine.ch/{{ page.lang }}/fast_onboardings/new?origin=deploio'
+      class='w-full bg-deploio py-2 text-center text-lg tracking-[0.02em] text-white'
+    >
       {%- t navigation_start -%}
     </a>
     <div class='h-8'></div>
