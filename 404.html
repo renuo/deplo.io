@@ -10,13 +10,20 @@ permalink: /404.html
     <link rel='stylesheet' href='{% link assets/css/app.css %}'>
     <title>Page not found – Deploio</title>
   </head>
-  <body class='bg-deploio text-white'>
-    <main
-      class='container flex min-h-screen flex-col items-center justify-center gap-6 text-center'
-    >
-      <h1 class='text-h1'>404</h1>
-      <p>The requested page could not be found.</p>
-      <a class='border-2 border-white px-4 py-2 uppercase' href='/en/'> Back to Deploio </a>
+  <body class='bg-background text-deploio'>
+    <div class='bg-background'>
+      <img
+        class='w-full pt-[320px]'
+        src='/assets/images/backgrounds/mountain_vector.svg'
+        alt='mountain vector background'
+      >
+    </div>
+    <main class='-mt-[5vw] bg-mountain py-32 text-deploio'>
+      <div class='relative z-10 flex flex-col items-center justify-center gap-6 text-center'>
+        <h1 class='text-9xl font-semibold'>404</h1>
+        <p class='text-4xl uppercase'>Page not found</p>
+        <a class='border-2 border-deploio px-4 py-2 uppercase' href='/en/'>Back to Deploio</a>
+      </div>
     </main>
   </body>
 </html>

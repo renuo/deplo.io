@@ -64,9 +64,176 @@ body {
   opacity: 0.4;
 }
 
+.pulse-path {
+  stroke-dasharray: 16 16;
+  stroke-linecap: round;
+}
+
+.mountain-label {
+  font-family: inherit;
+  font-size: 45px;
+  font-weight: normal;
+  line-height: 117%;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.terminal-animated [data-terminal-prompt],
+.terminal-animated [data-terminal-character] {
+  animation: typing 0.1s linear var(--terminal-delay) forwards;
+  opacity: 0;
+}
+
+[data-terminal-result-line] {
+  display: block;
+  animation: echo 0.3s linear var(--terminal-delay) forwards;
+  opacity: 0;
+  transform: translateX(-100%);
+}
+
+[data-marquee-item] {
+  padding-right: var(--marquee-padding);
+}
+
+[data-marquee-track].marquee-active {
+  animation: marquee var(--marquee-duration) linear infinite;
+}
+
+.binary-line {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.5em;
+}
+
+.binary-line-fade {
+  color: transparent;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    transparent var(--fade-start),
+    color-mix(in srgb, theme('colors.deploio.DEFAULT') 30%, transparent) var(--fade-in),
+    color-mix(in srgb, theme('colors.deploio.DEFAULT') 30%, transparent) var(--fade-out),
+    transparent var(--fade-end),
+    transparent 100%
+  );
+  background-clip: text;
+}
+
+.binary-first-line-start {
+  --fade-start: 10%;
+  --fade-in: 50%;
+  --fade-out: 100%;
+  --fade-end: 100%;
+}
+
+.binary-first-line-end {
+  --fade-start: 0%;
+  --fade-in: 0%;
+  --fade-out: 50%;
+  --fade-end: 90%;
+}
+
+.binary-line-1,
+.binary-line-2,
+.binary-line-3 {
+  --fade-in: 50%;
+  --fade-out: 50%;
+}
+
+.binary-line-1 {
+  --fade-start: 10%;
+  --fade-end: 90%;
+  font-size: 17px;
+}
+
+.binary-line-2 {
+  --fade-start: 15%;
+  --fade-end: 85%;
+  font-size: 16px;
+}
+
+.binary-line-3 {
+  --fade-start: 20%;
+  --fade-end: 80%;
+  font-size: 15px;
+}
+
+.binary-digit {
+  position: relative;
+  cursor: pointer;
+  font-size: 1.125rem;
+  font-weight: 700;
+}
+
+.binary-digit-active::before {
+  position: absolute;
+  top: 5%;
+  left: -19%;
+  width: 1.18rem;
+  height: 1.4rem;
+  content: '';
+  background-color: theme('colors.deploio.DEFAULT');
+  opacity: 0.2;
+}
+
+.binary-icon {
+  position: absolute;
+  width: 200px;
+  height: 100px;
+  pointer-events: none;
+}
+
+.binary-icon[data-index='0'] {
+  top: -72px;
+  left: -85px;
+}
+
+.binary-icon[data-index='1'] {
+  top: -80px;
+  left: 80%;
+}
+
+.binary-icon[data-index='2'] {
+  top: -85px;
+  left: 90%;
+}
+
+@media (min-width: 750px) {
+  .mountain-label {
+    font-size: 32px;
+  }
+}
+
+@media (min-width: 1000px) {
+  .mountain-label {
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .mountain-label {
+    font-size: 16px;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
-  [data-marquee-track] {
+  [data-marquee-track],
+  .terminal-animated [data-terminal-prompt],
+  .terminal-animated [data-terminal-character],
+  [data-terminal-result-line] {
     animation: none !important;
+  }
+
+  .terminal-animated [data-terminal-prompt],
+  .terminal-animated [data-terminal-character],
+  [data-terminal-result-line] {
+    opacity: 1;
+    transform: none;
+  }
+
+  .pulse-path {
+    display: none;
   }
 }
 

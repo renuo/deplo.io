@@ -4,9 +4,30 @@
   viewBox='40 -200 1440 747'
   fill='none'
   xmlns='http://www.w3.org/2000/svg'
-  class='pointer-events-none -mb-px h-auto w-full select-none'
+  class='mountain-svg pointer-events-none -mb-px h-auto w-full select-none'
 >
   <path class="fill-mountain" d="M1304.5 164L1455 303.5L1485.5 546.499H-68.0005L33 498.5L130 474.5L183 440L210.5 425L244.5 440L349 386L413 323.5H454L500.5 303.5L563 336.5L665 293L748 243L767 253L824 295.5L856 270.5L953.2 153.4L1089.5 114L1124 79.5L1150.5 66.5L1201 20L1232.5 46.5L1304.5 164Z"></path>
   <g class="stroke-deploio" fill="none" stroke-width="4"><circle cx="209" cy="426" r="18"></circle><circle cx="499" cy="303" r="18"></circle><circle cx="747" cy="243" r="18"></circle><circle cx="1200" cy="20" r="18"></circle><path class="background-path" d="M222 437L259 468L312 448.5L359 456L423 404.5L442 351L486 315.5"></path><path class="background-path" d="M507.5 319L526.5 353L577.5 357.5L619 386L652.5 367L659 324.5L731 295.5L741.5 260.5"></path><path class="background-path" d="M758.5 257L787 281L802.5 319L864 333L952.5 292.5L1051 281L1092 241L1039.5 221.5L1003.5 184L1051 156.5L1131 153L1207.5 113L1192 74L1198 40"></path></g>
-  <g class="fill-deploio font-sans text-base" text-anchor="middle"><text x="209" y="380" transform="rotate(-30 209 380)">Deploio</text><text x="499" y="260" transform="rotate(-30 499 260)">Managed Server</text><text x="747" y="200" transform="rotate(-30 747 200)">Root-Server</text><text x="1200" y="-20" transform="rotate(-30 1200 -20)">Kubernetes Cluster</text></g>
+  <g class="stroke-deploio" fill="none" stroke-width="4" mask="url(#mountain-pulse-mask)"><path class="pulse-path" d="M222 437L259 468L312 448.5L359 456L423 404.5L442 351L486 315.5"></path><path class="pulse-path" d="M507.5 319L526.5 353L577.5 357.5L619 386L652.5 367L659 324.5L731 295.5L741.5 260.5"></path><path class="pulse-path" d="M758.5 257L787 281L802.5 319L864 333L952.5 292.5L1051 281L1092 241L1039.5 221.5L1003.5 184L1051 156.5L1131 153L1207.5 113L1192 74L1198 40"></path></g>
+  <g class="mountain-label fill-deploio" text-anchor="middle"><text x="209" y="380" transform="rotate(-30 209 380)">Deploio</text><text x="499" y="260" transform="rotate(-30 499 260)">Managed Server</text><text x="747" y="200" transform="rotate(-30 747 200)">Root-Server</text><text x="1200" y="-20" transform="rotate(-30 1200 -20)">Kubernetes Cluster</text></g>
+  <defs>
+    <mask id='mountain-pulse-mask'>
+      <rect width='1440' height='547' fill='black'></rect>
+      <circle r='140' fill='white'>
+        <animateMotion
+          dur='4s'
+          repeatCount='indefinite'
+          keyTimes='0;1'
+          keySplines='0.25,0.1,0.25,1'
+          calcMode='spline'
+        >
+          <mpath href='#mountain-motion-path'></mpath>
+        </animateMotion>
+      </circle>
+    </mask>
+    <path
+      id='mountain-motion-path'
+      d='M100 470Q150 450 222 437Q350 380 486 315.5Q550 340 659 324.5Q700 290 758.5 257Q850 320 1051 281Q1100 220 1198 38Q1280 -20 1350 -40'
+    ></path>
+  </defs>
 </svg>
