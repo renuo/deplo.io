@@ -7,6 +7,10 @@ encoding: utf-8
 
 exclude:
   - bin
+  - node_modules
+  - package.json
+  - package-lock.json
+  - tailwind.config.js
   - Dockerfile
   - README.md
   - Gemfile
