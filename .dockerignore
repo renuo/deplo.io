@@ -2,9 +2,3 @@
 _site
 .jekyll-cache
 .jekyll-metadata
-node_modules
-.svelte-kit
-build
-test-results
-legacy_svelte
-
