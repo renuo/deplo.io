@@ -2,4 +2,5 @@
 
 set -eu
 
-exec bundle install
+bundle install
+npm ci
