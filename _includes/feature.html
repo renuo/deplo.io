@@ -13,27 +13,46 @@
       ><span class='size-3 rounded-full bg-neutral-500/50 group-hover:bg-terminal-yellow'>&nbsp;</span
       ><span class='size-3 rounded-full bg-neutral-500/50 group-hover:bg-terminal-green'>&nbsp;</span>
     </div>
-    <div class='flex flex-col p-2 pr-6 text-left font-mono text-[13px] font-medium text-neutral-700'>
+    <div
+      class='flex flex-col p-2 pr-6 text-left font-mono text-[13px] font-medium text-neutral-700'
+      data-terminal
+    >
       {% if include.index == 1 %}
-        <code><span class='inline-block min-w-4 select-none font-bold text-deploio'>$</span>git push origin main</code
-        ><code class='mb-2 ml-4 mt-2 inline-block select-none font-bold'>🪄</code>
-        <code
-          ><span class='inline-block min-w-4 select-none font-bold text-deploio'>$</span>curl -I
-          https://deine-plattform.ch/up</code
-        ><code class='mb-2 ml-4 mt-2 inline-block select-none font-bold'>HTTP/2 200</code>
+        <div class='flex flex-col' data-terminal-entry>
+          <code
+            ><span class='inline-block min-w-4 select-none font-bold text-deploio' data-terminal-prompt>$</span
+            ><span data-terminal-command>git push origin main</span></code
+          >
+          <code class='mb-2 ml-4 mt-2 inline-block select-none font-bold' data-terminal-result>🪄</code>
+        </div>
+        <div class='flex flex-col' data-terminal-entry>
+          <code
+            ><span class='inline-block min-w-4 select-none font-bold text-deploio' data-terminal-prompt>$</span
+            ><span data-terminal-command>curl -I https://deine-plattform.ch/up</span></code
+          >
+          <code class='mb-2 ml-4 mt-2 inline-block select-none font-bold' data-terminal-result>HTTP/2 200</code>
+        </div>
       {% elsif include.index == 2 %}
-        <code
-          ><span class='inline-block min-w-4 select-none font-bold text-deploio'>$</span>curl -s
-          https://ipinfo.io/178.209.32.0 | jq .country</code
-        ><code class='mb-2 ml-4 mt-2 inline-block select-none font-bold'>&quot;CH&quot;</code>
+        <div class='flex flex-col' data-terminal-entry>
+          <code
+            ><span class='inline-block min-w-4 select-none font-bold text-deploio' data-terminal-prompt>$</span
+            ><span data-terminal-command>curl -s https://ipinfo.io/178.209.32.0 | jq .country</span></code
+          >
+          <code class='mb-2 ml-4 mt-2 inline-block select-none font-bold' data-terminal-result>&quot;CH&quot;</code>
+        </div>
       {% else %}
-        <code><span class='inline-block min-w-4 select-none font-bold text-deploio'>$</span>whois deploio.ch</code
-        ><code class='mb-2 ml-4 mt-2 inline-block select-none font-bold'
-          >Nine Internet Solutions AG<br>
-          owned by Tom, Tim and 9 more employees<br>
-          AS29691<br>
-          Rechenzentren NTS AG, NTT AG (Zürich)</code
-        >
+        <div class='flex flex-col' data-terminal-entry>
+          <code
+            ><span class='inline-block min-w-4 select-none font-bold text-deploio' data-terminal-prompt>$</span
+            ><span data-terminal-command>whois deploio.ch</span></code
+          >
+          <code class='mb-2 ml-4 mt-2 inline-block select-none font-bold' data-terminal-result
+            >Nine Internet Solutions AG<br>
+            owned by Tom, Tim and 9 more employees<br>
+            AS29691<br>
+            Rechenzentren NTS AG, NTT AG (Zürich)</code
+          >
+        </div>
       {% endif %}
     </div>
   </div>
