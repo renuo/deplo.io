@@ -1,14 +1,26 @@
-<div class="relative {{ include.class }}">
-  <div class="pointer-events-none absolute h-full w-full select-none {{ include.background_class }}">
+<div class='relative {{ include.class }}'>
+  <div class='pointer-events-none absolute h-full w-full select-none {{ include.background_class }}'>
     {% if include.image %}
-      <img aria-hidden="true" loading="lazy" class="absolute h-full min-w-full object-cover object-top" src="{{ include.image }}" alt="">
+      <img
+        aria-hidden='true'
+        loading='lazy'
+        class='absolute h-full min-w-full object-cover object-top'
+        src='{{ include.image }}'
+        alt=''
+      >
     {% elsif include.video %}
-      <video aria-hidden="true" class="pointer-events-none absolute h-full min-w-full object-cover object-top" autoplay muted loop playsinline>
-        <source src="{{ include.video }}" type="video/mp4">
+      <video
+        aria-hidden='true'
+        class='pointer-events-none absolute h-full min-w-full object-cover object-top'
+        autoplay
+        muted
+        loop
+        playsinline
+      >
+        <source src='{{ include.video }}' type='video/mp4'>
       </video>
     {% endif %}
-    <div class="relative h-full w-full {{ include.gradient_class }}">&nbsp;</div>
+    <div class='relative h-full w-full {{ include.gradient_class }}'>&nbsp;</div>
   </div>
-  <div class="relative {{ include.wrapper_class }}">{{ include.content }}</div>
+  <div class='relative {{ include.wrapper_class }}'>{{ include.content }}</div>
 </div>
-

@@ -1,21 +1,43 @@
-<section id="register" class="bg-mountain text-center text-deploio">
-  <div class="overflow-x-hidden bg-background">
-    <div class="container relative z-10 !py-0 text-left lg:absolute lg:left-1/2 lg:-translate-x-1/2 lg:py-4">
-      <h2 class="text-h2 max-w-[800px]" data-appear>{% t complex_projects %}</h2>
-      <p class="max-w-[620px] pb-2 pt-8" data-appear data-delay="100">{% t complex_projects_description %}</p>
-      <div class="flex justify-start"><a href="{% t nine_url %}" target="_blank" class="btn btn-primary text-p flex items-center font-medium">{% t nine %}<img src="/assets/images/icons/call_made.svg" class="ml-2 h-5 w-5" alt="External link"></a></div>
+<section id='register' class='bg-mountain text-center text-deploio'>
+  <div class='overflow-x-hidden bg-background'>
+    <div class='container relative z-10 !py-0 text-left lg:absolute lg:left-1/2 lg:-translate-x-1/2 lg:py-4'>
+      <h2 class='text-h2 max-w-[800px]' data-appear>{% t complex_projects %}</h2>
+      <p class='max-w-[620px] pb-2 pt-8' data-appear data-delay='100'>{% t complex_projects_description %}</p>
+      <div class='flex justify-start'>
+        <a href='{% t nine_url %}' target='_blank' class='text-p flex items-center font-medium'>
+          {%- t nine -%}
+          <img src='/assets/images/icons/call_made.svg' class='ml-2 h-5 w-5' alt='External link'
+        ></a>
+      </div>
     </div>
-    <div class="relative w-full overflow-hidden">{% include mountain.html %}</div>
+    <div class='relative w-full overflow-hidden'>{% include mountain.html %}</div>
   </div>
-  <div class="container bg-mountain !pb-0"><div class="flex flex-col items-center justify-center">
-    <h2 class="text-h2 pb-8">{% t complex_projects_ready %}</h2>
-    <div class="flex" data-appear data-delay="150">{% capture start_url %}https://cockpit.nine.ch/{{ page.lang }}/fast_onboardings/new?origin=deploio{% endcapture %}{% assign start_text = 'complex_projects_button' | t %}{% include button.html variant='secondary' href=start_url target='_blank' text=start_text %}</div>
-  </div></div>
-  <section class="relative overflow-x-hidden bg-mountain pb-28 pt-28 md:pb-12"><div class="container relative z-10"><div class="select-none overflow-hidden text-center font-mono text-deploio/30" aria-hidden="true">
-    <div class="mb-2 whitespace-nowrap text-lg">0100100110010110100101001001100101101001010010011001011010010100</div>
-    <div class="mb-2 whitespace-nowrap text-[17px]">1101001010011001011010010100100110010110100101001001100101101001</div>
-    <div class="mb-2 whitespace-nowrap text-base">0010110100101001001100101101001010010011001011010010100100110010</div>
-    <div class="whitespace-nowrap text-[15px]">1010010011001011010010100100110010110100101001001100101101001010</div>
-  </div></div></section>
+  <div class='container bg-mountain !pb-0'>
+    <div class='flex flex-col items-center justify-center'>
+      <h2 class='text-h2 pb-8'>{% t complex_projects_ready %}</h2>
+      <div class='flex' data-appear data-delay='150'>
+        {% capture start_url %}https://cockpit.nine.ch/{{ page.lang }}/fast_onboardings/new?origin=deploio{% endcapture -%}
+        {%- assign start_text = 'complex_projects_button' | t -%}
+        {%- include button.html variant='secondary' href=start_url target='_blank' text=start_text %}
+      </div>
+    </div>
+  </div>
+  <section class='relative overflow-x-hidden bg-mountain pb-28 pt-28 md:pb-12'>
+    <div class='container relative z-10'>
+      <div class='select-none overflow-hidden text-center font-mono text-deploio/30' aria-hidden='true'>
+        <div class='mb-2 whitespace-nowrap text-lg'>
+          0100100110010110100101001001100101101001010010011001011010010100
+        </div>
+        <div class='mb-2 whitespace-nowrap text-[17px]'>
+          1101001010011001011010010100100110010110100101001001100101101001
+        </div>
+        <div class='mb-2 whitespace-nowrap text-base'>
+          0010110100101001001100101101001010010011001011010010100100110010
+        </div>
+        <div class='whitespace-nowrap text-[15px]'>
+          1010010011001011010010100100110010110100101001001100101101001010
+        </div>
+      </div>
+    </div>
+  </section>
 </section>
-
