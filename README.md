@@ -19,24 +19,22 @@ bin/setup
 
 ## Development
 
-Start the development server:
+Start the Jekyll development server:
 
 ```sh
-bin/run dev
+bin/run
 ```
+
+Translations live in `_i18n/{de,en,fr,it}.yml` and are rendered with
+`jekyll-i18n`. German pages use root URLs; the other locales use a language
+prefix.
 
 ## Checking
 
-Run the linters and compile Paraglide (translations):
+Validate Ruby, translations, and the generated site:
 
 ```sh
 bin/check
-```
-
-Automatically fix formatting and linting issues where possible:
-
-```sh
-bin/check --fix
 ```
 
 ## Building
@@ -44,15 +42,12 @@ bin/check --fix
 To create a production version of your app:
 
 ```sh
-npm run build
-```
-
-Production preview:
-
-```sh
-npm run preview
+bin/build
 ```
 
 ## Copyright
 
 2022-2026 by Nine Internet Solutions AG and Renuo AG – License undecided, assume proprietary
+
+The previous Svelte implementation is retained in `legacy_svelte/` as a
+temporary migration reference and is excluded from Jekyll and Docker builds.
