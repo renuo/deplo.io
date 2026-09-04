@@ -55,4 +55,5 @@ Jekyll::Hooks.register :site, :after_init do |site|
     "PRICING_CALCULATOR_URL",
     "https://main.c7d7505.deploio.app"
   ).sub(%r{/$}, "")
+  site.config["google_tag_id"] = ENV.fetch("GOOGLE_TAG_ID", ENV.fetch("VITE_GOOGLE_TAG_ID", ""))
 end
