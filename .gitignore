@@ -2,10 +2,6 @@ _site
 .jekyll-cache
 .jekyll-metadata
 vendor/bundle
-node_modules
-.svelte-kit
-build
-test-results
 
 # OS
 .DS_Store
