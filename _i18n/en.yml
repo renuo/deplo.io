@@ -1,0 +1,124 @@
+---
+en:
+  "$schema": https://inlang.com/schema/inlang-message-format
+  navigation_en: EN
+  navigation_de: DE
+  navigation_fr: FR
+  navigation_it: IT
+  navigation_language: en
+  navigation_pricing: PRICING
+  navigation_documentation: DOCUMENTATION
+  navigation_login: LOGIN
+  navigation_start: START NOW
+  navigation_team: TEAM
+  hero_title: THE TURBO FOR YOUR APP HOSTING
+  hero_description: Deploio is a Fully Managed App Platform that transforms Git repositories into applications.
+  hero_start_now: START NOW
+  hero_learn_more: READ DOCUMENTATION
+  hero_see_video: Watch entire video
+  feature_1_title: Your Swiss app engine
+  feature_1_description: Why bother with Kubernetes or OSI layers? Deploio is your PaaS solution from Switzerland that has your back. You develop, we take care of build, release, TLS, backups and more. From Ruby to Dockerfile - technology under your control.
+  feature_2_title: Platform-as-a-Service
+  feature_2_description: Deploio makes app deployment easy. Our platform offers you fast deployment, scalable management and data storage - securely in Switzerland. Up to ten times faster in dyno, so you can make your applications shine.
+  feature_3_title: Legal security
+  feature_3_description: With Deploio, your data is not only stored 100% in Switzerland, but is also 100% subject to Swiss law. The NSA has no access.
+  feature_why_title: Why Deploio?
+  feature_why_description: It offers you everything you need for seamless app deployment. Discover how Deploio takes away the complexity and improves your development experience.
+  feature_why_button: LEARN MORE
+  notes_1_title: Simple deployment
+  notes_1_description: Your application is ready with just a few clicks.
+  notes_2_title: Swiss cloud infrastructure
+  notes_2_description: Locally hosted and in Swiss ownership.
+  notes_3_title: Additional services
+  notes_3_description: Such as Managed Database and Key-Value Store.
+  notes_4_title: Developer-Friendly
+  notes_4_description: More code, less infrastructure worries.
+  swiss_title: PERFECT FOR SWITZERLAND
+  swiss_description: "Deplo.io is genuine Swiss quality and 100% CH-owned. \nFor developers and companies looking for precision, security and compliance \nwith a root server in the same network and 24/7 support.\n\nYou can rely on us to handle your data, we even have a certificate: Deploio is ISO:27001 and ISO:9001 certified."
+  comparison_title: The Deploio advantage at a glance
+  comparison_description: Compare Deploio with other platforms and discover what sets us apart and why we are the perfect choice for your project.
+  comparison_table_location: Swiss Location
+  comparison_table_ownership: Swiss Owned
+  comparison_table_infrastructure: Own Infrastructure
+  comparison_table_automation: Fully Automated
+  comparison_table_object_storage: Swiss Object Storage
+  comparison_table_enterprise: Multicloud Enterprise Solution
+  register_title: GET STARTED NOW
+  register_description: Ready for less stress and more success? Just type in your email and lean back - we'll bring your app to the cloud without you breaking a sweat. Let's go!
+  register_button: REGISTER NOW
+  pricing_title: Price Calculator
+  pricing_description: Calculate the costs for your app and choose the right package for your needs.
+  team_title: Our Team
+  team_description: We develop Deploio – a fully managed app platform from Switzerland. Our team combines expertise in development, operations, and security to seamlessly transform Git repositories into applications.
+  success_story_subtitle: HOW IT ALL BEGAN
+  success_story_title: HOSTING WITHOUT BULLSH*T
+  success_story_description: Renuo AG wanted cloud hosting without the detours. With Deploio, they found the perfect Swiss Heroku alternative – simple, sovereign, carefree.
+  success_story_long_description: 'Renuo AG is a Swiss software engineering company with a mission: to write great code – preferably in Ruby on Rails – without having to deal with server administration. For years, everything ran via Heroku, until a single Slack message got everything rolling. In this success story, we tell you how Renuo found the perfect cloud hosting partner in Switzerland – and why Deploio is now the clear number one for them.'
+  success_story_before_cloud_title: THE TIME BEFORE THE CLOUD
+  success_story_before_cloud_text: 'Deploio is operated by Nine and we used to be a Nine customer. That was before the cloud. We set up and operated servers for our customers. That took a lot of time and nerves: Buying SSL certificates, managing SSH access, monitoring disk space, updating system libraries. But then came Heroku. It freed us from server administration. We were able to concentrate on software development, even without vendor lock-in thanks to 12factor. Simply “git push”, CI/CD and the customer can test. So we moved to the cloud.'
+  success_story_beauty_and_the_beast_title: BEAUTY AND THE BEAST
+  success_story_beauty_and_the_beast_text: Renuo is an owner-managed Swiss company. But Heroku is American and runs on AWS. That bothered us for the next ten years. It must be possible to use a product as cool as Heroku in Switzerland, where I can kick down doors if I don't like something – good luck with that at Salesforce. We were in the Enterprise contract; simply a construct from hell. That's when Deploio came to the rescue and at the right time!
+  success_story_note_title: We code, Deploio does the rest
+  success_story_note_text: 'We are in the software business, not the infrastructure business. I don''t want to run Kubernetes myself or bare-metal servers (how do I separate clients? who actually does kernel updates?). We develop good code, that must be enough: ''git push'', CI/CD and the customer can test. Deploio handles the infrastructure, in Switzerland, and they do it well. I never had to break down the door at Stauffacher Square.'
+  success_story_slack_message_1_name: Samuel Steiner  ·  Renuo AG
+  success_story_slack_message_1_date: Sep 23, 2022 at 11:42 PM
+  success_story_slack_message_1_text: Hey everyone. Is anyone primarily hosting with Heroku and also not happy with their recently announced changes? It would be a good opportunity to set up something of our own. I look forward to receiving PMs.
+  success_story_slack_message_2_name: Thomas Hug
+  success_story_slack_message_2_date: Sep 24, 2022 at 2:15 PM
+  success_story_slack_message_2_text: Hey Samuel<br />We're not using Heroku ourselves, but we have a lot of our own infrastructure, a Kubernetes platform in our own datacenter, and a platform based on Google's Kubernetes Engine on Google Cloud.<br />What exactly do you want to do? What don't you like about Heroku?<br />Maybe we should talk?<br />Regards<br />Tom<br />Oh... we/I = nine.ch
+  success_story_note_quote: Cloud yes, but preferably in Switzerland from a Swiss company with capable engineers, not just Amazon resellers.
+  success_story_demokratis_subtitle: SWISSNESS
+  success_story_demokratis_title: WE MAKE DEMOCRACY
+  success_story_demokratis_description: Demokratis wants to digitalize Swiss politics. In Deploio, they found a local partner – secure, reliable, and uncomplicated.
+  success_story_demokratis_long_description: Bringing Swiss politics into the digital age is no walk in the park. Especially not when cantons and public authorities are the primary customers. Because when it comes to sensitive data and server locations, the fun stops. In this success story, we share how the independent platform Demokratis found the perfect Swiss cloud solution with Deploio – and why it makes a massive difference when a partner offers flexible help right where it hurts the most.
+  success_story_demokratis_public_hand_title: THE CHALLENGE WITH THE PUBLIC SECTOR
+  success_story_demokratis_public_hand_text: 'For Demokratis''s customers and partners, who primarily come from the public sector (such as cantons), the data location is absolutely essential. A solution hosted abroad?<br>That is simply out of the question for these governmental processes.<br><br>In addition, there was a real technical nut to crack: the first cantons are using the Demokratis application under their own domains. This required setting up CNAME records that seamlessly forward to the Demokratis platform. For the migration, they needed a partner capable of reliably handling this specific domain routing.'
+  success_story_demokratis_swissness_title: SWISSNESS AS A DECISIVE FACTOR
+  success_story_demokratis_swissness_text: 'The solution? "Demokratis powered by Deploio". Moving was the logical step to meet the strict requirements of the authorities. The main reason for the migration was obvious: the entire infrastructure is located in Switzerland and is provided and managed by Deploio. This gives the cantons the necessary security and trust.'
+  success_story_demokratis_note_title: SUPPORT THAT THINKS AHEAD
+  success_story_demokratis_note_text: We aren't hardcore techies. That's why we broke a bit of a sweat during the complete cloud setup and migration of our platform. But instead of anonymous ticket systems, we received super flexible support directly via Slack and personal emails. We needed a few special features for the routing – and the Deploio team delivered them for us quickly and without any fuss. It’s just cool to be so close to the product.<br><br>On top of that, we now have modern deployments. Deploying a feature branch via nctl as a staging app, testing it, and you're done. We can focus entirely on our mission and make public consultations more inclusive. Deploio handles the infrastructure for it, securely and completely in Switzerland. And they do a really good job at it.
+  success_story_demokratis_quote_name: Fabian Ligibel
+  success_story_demokratis_quote_text: Our mission is digital democracy, not server management. With Deploio’s PaaS solution, we don’t have to worry about the infrastructure at all.
+  success_story_demokratis_quote_role: Strategy & Product Demokratis
+  footer_support: SUPPORT
+  footer_status: Status
+  footer_documentation: Documentation
+  footer_slack: Slack Community
+  footer_github: GitHub Examples
+  footer_pricing: Pricing
+  footer_contact: CONTACT
+  footer_address: |-
+    Nine Internet Solutions AG
+    Badenerstrasse 47
+    8004 Zürich
+    Schweiz
+  footer_email: info@nine.ch
+  footer_phone: "+41 44 637 40 40"
+  footer_support_note: Support is only available in English and German.
+  footer_service: A SERVICE FROM
+  footer_copyright: Copyright © {year} Nine Internet Solutions AG
+  footer_terms: Terms of Service
+  footer_privacy: Privacy Policy
+  customers_trust: 'Customers who trust Deploio:'
+  complex_projects: More complex Projects?
+  complex_projects_description: 'If Deploio is not enough, you can always get more in the dashboard. Everything from a single provider: managed servers, root servers or even an entire K8 cluster.'
+  complex_projects_ready: Ready to get started?
+  complex_projects_button: Get started now
+  complex_projects_button_url: ''
+  nine: Nine
+  nine_url: https://nine.ch
+  meta_title_home: Deploio – Swiss PaaS | App Hosting from Switzerland
+  meta_description_home: Deploio is the Swiss Platform-as-a-Service for effortless app deployment. Securely hosted in Switzerland, ISO-certified, with 24/7 support.
+  meta_title_pricing: Pricing – Deploio | Swiss PaaS
+  meta_description_pricing: Calculate the costs for your app on Deploio. Transparent pricing for the Swiss Platform-as-a-Service.
+  meta_title_team: Our Team – Deploio
+  meta_description_team: Meet the team behind Deploio – Swiss engineers building a fully managed app platform.
+  meta_title_success_story: 'Success Story: {clientName} – Deploio'
+  meta_description_success_story: How Renuo AG found the perfect Swiss Heroku alternative with Deploio – simple, sovereign, carefree.
+  structured_data_organization_description: Deploio is a Swiss Platform-as-a-Service (PaaS) solution for automated app hosting. 100% Swiss data residency, ISO 27001:2022 certified.
+  structured_data_address_locality: Zurich
+  structured_data_website_description: Swiss Platform-as-a-Service for automated app hosting from Git. Managed Databases, Swiss Object Storage, TLS — 100% in Switzerland.
+  structured_data_software_description: The turbo for your app hosting. Git repository to productive app in minutes. Managed Databases, Key-Value Store, Swiss Object Storage, automatic TLS certificates. Up to 10x faster.
+  news_question: "<span class='text-claude'>*</span> BUILT AN APP WITH <span class='text-claude'>CLAUDE CODE</span>?"
+  news_cta: Install the Deploio skill and deploy right away.
+  news_link: To the skill

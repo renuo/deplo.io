@@ -1,0 +1,11 @@
+{% assign variant = include.variant | default: 'primary' %}
+{% assign classes = 'text-center truncate p-1.5 px-4 text-[15px] font-medium uppercase transition-opacity hover:opacity-70 max-md:text-sm' %}
+{% if variant == 'primary' %}
+  {% assign classes = classes | prepend: 'bg-white border-2 border-white text-deploio ' %}
+{% elsif variant == 'secondary' %}
+  {% assign classes = classes | prepend: 'bg-deploio border-2 border-deploio text-white ' %}
+{% else %}
+  {% assign classes = classes | prepend: 'border-2 border-white bg-transparent text-white ' %}
+{% endif %}
+<a href="{{ include.href }}" class="{{ classes }} {{ include.class }}"{% if include.target %} target="{{ include.target }}"{% endif %}>{{ include.text }}</a>
+

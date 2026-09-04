@@ -1,0 +1,19 @@
+<section class="flex flex-col gap-8 lg:flex-row lg:gap-24">
+  <div class="flex-1 space-y-4 text-white">
+    {% if include.heading == 'h2' %}<h2 class="text-h2" data-appear>{{ include.title_key | t }}</h2>{% else %}<h3 class="text-h3" data-appear>{{ include.title_key | t }}</h3>{% endif %}
+    <p data-appear data-delay="100">{{ include.description_key | t }}</p>
+  </div>
+  <div class="group w-full max-w-[600px] self-end overflow-hidden rounded-lg bg-neutral-100/90 shadow-2xl backdrop-blur lg:flex-1 lg:self-stretch">
+    <div class="flex w-full select-none items-center gap-2 bg-neutral-100/50 p-2"><span class="size-3 rounded-full bg-neutral-500/50 group-hover:bg-[#FA6058]">&nbsp;</span><span class="size-3 rounded-full bg-neutral-500/50 group-hover:bg-[#FABD2E]">&nbsp;</span><span class="size-3 rounded-full bg-neutral-500/50 group-hover:bg-[#27CA41]">&nbsp;</span></div>
+    <div class="flex flex-col p-2 pr-6 text-left font-mono text-[13px] font-medium text-neutral-700">
+      {% if include.index == 1 %}
+        <code><span class="inline-block min-w-4 select-none font-bold text-deploio">$</span>git push origin main</code><code class="mb-2 ml-4 mt-2 inline-block select-none font-bold">🪄</code>
+        <code><span class="inline-block min-w-4 select-none font-bold text-deploio">$</span>curl -I https://deine-plattform.ch/up</code><code class="mb-2 ml-4 mt-2 inline-block select-none font-bold">HTTP/2 200</code>
+      {% elsif include.index == 2 %}
+        <code><span class="inline-block min-w-4 select-none font-bold text-deploio">$</span>curl -s https://ipinfo.io/178.209.32.0 | jq .country</code><code class="mb-2 ml-4 mt-2 inline-block select-none font-bold">&quot;CH&quot;</code>
+      {% else %}
+        <code><span class="inline-block min-w-4 select-none font-bold text-deploio">$</span>whois deploio.ch</code><code class="mb-2 ml-4 mt-2 inline-block select-none font-bold">Nine Internet Solutions AG<br>owned by Tom, Tim and 9 more employees<br>AS29691<br>Rechenzentren NTS AG, NTT AG (Zürich)</code>
+      {% endif %}
+    </div>
+  </div>
+</section>

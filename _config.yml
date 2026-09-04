@@ -1,0 +1,31 @@
+title: Deploio
+url: https://deplo.io
+baseurl: ""
+destination: _site
+permalink: pretty
+encoding: utf-8
+
+exclude:
+  - bin
+  - legacy_svelte
+  - node_modules
+  - src
+  - static
+  - messages
+  - project.inlang
+  - build
+  - test-results
+  - package.json
+  - package-lock.json
+  - svelte.config.js
+  - vite.config.ts
+  - tailwind.config.ts
+  - postcss.config.js
+  - playwright.config.ts
+  - tsconfig.json
+  - eslint.config.js
+  - Dockerfile
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor

@@ -1,0 +1,5 @@
+- { image: deploio_logo.svg, name: Deploio }
+- { image: heroku_logo.svg, name: Heroku }
+- { image: divio_logo.svg, name: Divio }
+- { image: render_logo.svg, name: Render }
+
