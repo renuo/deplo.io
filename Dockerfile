@@ -1,16 +1,13 @@
-FROM node:alpine
+FROM ruby:3.4-alpine
 
-ARG VITE_GOOGLE_TAG_ID
+RUN apk add --no-cache build-base
 
 WORKDIR /app
-COPY package.json ./
-RUN npm install
-
-ENV VITE_GOOGLE_TAG_ID=$VITE_GOOGLE_TAG_ID
-
+COPY Gemfile Gemfile.lock ./
+RUN bundle install
 COPY . .
-RUN npm run build
+RUN bundle exec jekyll build
 
-CMD ["node", "build"]
+CMD ["bundle", "exec", "jekyll", "serve", "--host", "0.0.0.0", "--port", "3000", "--no-watch"]
 
 EXPOSE 3000
