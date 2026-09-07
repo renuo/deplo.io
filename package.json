@@ -13,7 +13,8 @@
     "lint": "prettier --check . && eslint .",
     "lint:fix": "prettier --write . && eslint . --fix",
     "test:e2e": "playwright test",
-    "test": "npm run test:e2e"
+    "test": "npm run test:e2e",
+    "start": "node build"
   },
   "devDependencies": {
     "@playwright/test": "^1.50.1",
