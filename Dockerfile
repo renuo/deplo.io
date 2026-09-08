@@ -11,6 +11,6 @@ ENV VITE_GOOGLE_TAG_ID=$VITE_GOOGLE_TAG_ID
 COPY . .
 RUN npm run build
 
-CMD ["node", "build"]
+CMD ["node", "server.js"]
 
 EXPOSE 3000

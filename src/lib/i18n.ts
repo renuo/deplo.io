@@ -10,6 +10,7 @@ export const i18n = createI18n(runtime, {
 });
 
 export function switchToLanguage(newLanguage: AvailableLanguageTag) {
+  document.cookie = `deploio_language=${newLanguage};Path=/;SameSite=Lax;Max-Age=31557600`;
   const canonicalPath = i18n.route(get(page).url.pathname);
   const localisedPath = i18n.resolveRoute(canonicalPath, newLanguage);
   return goto(localisedPath);
