@@ -56,6 +56,15 @@ To create a production version of your app:
 bin/build
 ```
 
+Deployment uses Deploio's static-site buildpack. The buildpack configuration in
+`project.toml` builds the site into `_site`, serves that directory, and defines
+the custom redirects and 404 page. Configure the Deploio application language
+as `static`:
+
+```sh
+nctl update application <app-name> --language=static
+```
+
 ## Copyright
 
 2022-2026 by Nine Internet Solutions AG and Renuo AG – License undecided, assume proprietary
