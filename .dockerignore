@@ -1,0 +1,6 @@
+.git
+_site
+node_modules
+vendor
+assets/css
+.github
