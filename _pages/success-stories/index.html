@@ -1,9 +1,23 @@
 ---
 route: /success_story/
 page_key: success_story
-story: renuo
 client_name: Renuo AG
 title_key: meta_title_success_story
 description_key: meta_description_success_story
 ---
-{% include success-story.html %}
+<main class='relative z-0'>
+  {% include success-story-hero.html image='success_story_background.webp' title_key='success_story_title' description_key='success_story_long_description' client='Renuo AG' website='renuo.ch' %}
+
+  {% capture story_aside %}
+    {% include slack-message.html avatar='samuel.webp' name_key='success_story_slack_message_1_name' date_key='success_story_slack_message_1_date' text_key='success_story_slack_message_1_text' delay='200' %}
+    {% include slack-message.html avatar='thomas.webp' name_key='success_story_slack_message_2_name' date_key='success_story_slack_message_2_date' text_key='success_story_slack_message_2_text' delay='300' link_nine=true %}
+  {% endcapture %}
+  {% include success-story-main.html aside=story_aside first_title_key='success_story_before_cloud_title' first_text_key='success_story_before_cloud_text' second_title_key='success_story_beauty_and_the_beast_title' second_text_key='success_story_beauty_and_the_beast_text' %}
+
+  {% capture story_quote %}
+    {% include testimonial.html text_key='success_story_note_quote' avatar='josua.webp' name='Josua Schmid' role='CTO Renuo AG' delay=300 %}
+  {% endcapture %}
+  {% include success-story-notes.html title_key='success_story_note_title' text_key='success_story_note_text' quote=story_quote %}
+
+  {% include register.html %}
+</main>

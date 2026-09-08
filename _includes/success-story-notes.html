@@ -1,0 +1,18 @@
+<img
+  src='/assets/images/backgrounds/mountain_vector_dark.svg'
+  alt=''
+  class='pointer-events-none -my-px w-full bg-deploio'
+>
+<section class='bg-background'>
+  <div class='container grid grid-cols-12 gap-y-12 lg:gap-x-12'>
+    <div class='relative z-10 col-span-12 text-deploio {% if include.quote %}xl:col-span-7{% else %}xl:col-span-9 xl:col-start-2{% endif %}'>
+      <h2 class='text-h2 mb-5 mt-8 md:mt-0 xl:w-[90%]' data-appear data-delay='50'>
+        {{ include.title_key | t }}
+      </h2>
+      <p class='text-[20px] font-normal' data-appear data-delay='100'>{{ include.text_key | t }}</p>
+    </div>
+    {% if include.quote %}
+      <div class='col-span-12 xl:col-span-4 xl:col-start-9 xl:mt-40'>{{ include.quote }}</div>
+    {% endif %}
+  </div>
+</section>
