@@ -7,7 +7,10 @@ require "yaml"
 root = Pathname.new(__dir__).join("..", "_site").expand_path
 errors = []
 languages = %w[de en fr it]
-routes = %w[/ /pricing/ /team/ /success_story/ /success_story/demokratis/ /rails_world_2026/]
+routes = Dir[root.join("..", "_pages", "**", "*.html")].sort.map do |filename|
+  front_matter = File.read(filename).match(/\A---\s*\n(.*?)\n---/m)
+  YAML.safe_load(front_matter[1]).fetch("route")
+end
 vendors = YAML.load_file(root.join("..", "_data", "comparison_vendors.yml"))
 comparison_rows = YAML.load_file(root.join("..", "_data", "comparison_rows.yml"))
 vendor_keys = vendors.map { |vendor| vendor.fetch("key") }

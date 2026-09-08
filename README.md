@@ -31,8 +31,8 @@ templates and writes the ignored, generated stylesheet to `assets/css/app.css`.
 
 Translations live in `_i18n/{de,en,fr,it}.yml` and are rendered with
 `jekyll-i18n`. German pages use root URLs; the other locales use a language
-prefix. Define pages once in `_data/routes.yml`; the localized variants are
-generated during the build.
+prefix. Define pages once in `_pages/`; the localized variants are generated
+during the build.
 
 ## Checking
 
