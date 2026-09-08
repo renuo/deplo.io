@@ -1,0 +1,53 @@
+[_]
+schema-version = "0.2"
+
+[[io.buildpacks.group]]
+id = "heroku/nodejs"
+
+[[io.buildpacks.group]]
+id = "heroku/ruby"
+
+[[io.buildpacks.group]]
+id = "heroku/static-web-server"
+
+[com.heroku.static-web-server]
+root = "_site"
+index = "index.html"
+
+[com.heroku.static-web-server.build]
+command = "sh"
+args = ["-c", "bin/build"]
+
+[com.heroku.static-web-server.runtime_config]
+enabled = false
+
+[com.heroku.static-web-server.errors.404]
+file_path = "404.html"
+
+[[com.heroku.static-web-server.caddy_server_opts.static_responses]]
+path_matcher = "/claude_skill"
+status = 301
+
+[com.heroku.static-web-server.caddy_server_opts.static_responses.headers]
+Location = "https://github.com/ninech/deploio-skills"
+
+[[com.heroku.static-web-server.caddy_server_opts.static_responses]]
+path_matcher = "/claude_skill/"
+status = 301
+
+[com.heroku.static-web-server.caddy_server_opts.static_responses.headers]
+Location = "https://github.com/ninech/deploio-skills"
+
+[[com.heroku.static-web-server.caddy_server_opts.static_responses]]
+path_matcher = "/terms"
+status = 301
+
+[com.heroku.static-web-server.caddy_server_opts.static_responses.headers]
+Location = "https://docs.nine.ch/docs/legal-documents/general-terms-and-conditions/"
+
+[[com.heroku.static-web-server.caddy_server_opts.static_responses]]
+path_matcher = "/terms/"
+status = 301
+
+[com.heroku.static-web-server.caddy_server_opts.static_responses.headers]
+Location = "https://docs.nine.ch/docs/legal-documents/general-terms-and-conditions/"
