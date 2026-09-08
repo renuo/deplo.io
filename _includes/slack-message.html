@@ -15,13 +15,13 @@
       <span class='mr-1 whitespace-pre font-black'>{{ include.name_key | t }}</span
       ><span class='text-gray-600'>{{ include.date_key | t }}</span>
     </div>
-    {% assign message = include.text_key | t -%}
+    {% assign message_text = include.text_key | t -%}
     {%- if include.link_nine -%}
-      {%- assign message = message
+      {%- assign message_text = message_text
         | replace: 'nine.ch', '<a href="https://nine.ch" class="text-blue-600">nine.ch</a>'
       -%}
     {%- endif %}
     {% assign message_delay = include.delay | plus: 200 %}
-    <p class='mt-0 pt-0' data-appear data-delay='{{ message_delay }}'>{{ message }}</p>
+    <p class='mt-0 pt-0' data-appear data-delay='{{ message_delay }}'>{{ message_text }}</p>
   </div>
 </section>

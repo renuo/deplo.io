@@ -119,10 +119,11 @@ show_news: true
   >
   <section class='bg-mountain'>
     <div class='no-scrollbar container -mb-16 flex w-max !max-w-full gap-6 overflow-auto !pb-[5rem] sm:w-full sm:!max-w-7xl sm:flex-col md:-mb-4'>
-      {% assign story_url = locale_prefix | append: '/success_story/' -%}
-      {%- include success-story-card.html title_key='success_story_title' subtitle_key='success_story_subtitle' description_key='success_story_description' image='success_story_background.webp' href=story_url %}
-      {% assign demokratis_url = locale_prefix | append: '/success_story/demokratis/' -%}
-      {%- include success-story-card.html title_key='success_story_demokratis_title' subtitle_key='success_story_demokratis_subtitle' description_key='success_story_demokratis_description' image='demokratis_success_story_background.webp' href=demokratis_url %}
+      {% for story_item in site.data.success_stories -%}
+        {%- assign story = story_item[1] -%}
+        {%- assign story_url = locale_prefix | append: story.path -%}
+        {%- include success-story-card.html title_key=story.title_key subtitle_key=story.subtitle_key description_key=story.description_key image=story.hero_image href=story_url %}
+      {%- endfor %}
     </div>
     <div class='group container relative z-10 mx-auto text-deploio max-md:mt-20 md:max-w-xl md:pl-40 md:pr-4 lg:max-w-3xl'>
       <img
