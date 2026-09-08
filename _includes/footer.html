@@ -40,13 +40,16 @@
         ></a>
       </div>
     </div>
-    <div class='container flex items-center justify-between md:hidden'>
+    <div class='container flex justify-between md:hidden'>
       {% include button.html cockpit_path='/fast_onboardings/new?origin=deploio' text_key='navigation_start' %}
-      <div class='flex gap-4'>
+      <div class='flex gap-6 md:hidden'>
         {% for lang in site.data.languages -%}
           {%- assign switch_prefix = '/' | append: lang.code -%}
           {%- if lang.code == 'de' %}{% assign switch_prefix = '' %}{% endif -%}
-          <a class='{% if page.lang == lang.code %}font-bold{% endif %}' href='{{ switch_prefix }}{{ page.route }}'>
+          <a
+            class='py-2 text-2xl tracking-[0.02em] text-current {% if page.lang == lang.code %}font-bold{% else %}font-normal{% endif %}'
+            href='{{ switch_prefix }}{{ page.route }}'
+          >
             {{- lang.label -}}
           </a>
         {%- endfor %}
