@@ -16,7 +16,7 @@ comparison_rows = YAML.load_file(root.join("..", "_data", "comparison_rows.yml")
 vendor_keys = vendors.map { |vendor| vendor.fetch("key") }
 
 comparison_rows.each do |row|
-  support_keys = row.fetch("support").keys
+  support_keys = row.keys - ["key"]
   errors << "comparison keys do not match vendors for #{row.fetch('key')}" unless support_keys == vendor_keys
 end
 

@@ -27,7 +27,7 @@
                 <div class='pl-4 pt-1 lg:p-0'>{{ row.key | t }}</div>
               </th>
               {% for vendor in site.data.comparison_vendors -%}
-                {%- assign value = row.support[vendor.key] %}
+                {%- assign value = row[vendor.key] %}
                 <td class='pb-3 pt-10 text-center lg:pb-0 lg:pt-0 {% if forloop.first %}bg-deploio/5{% endif %}'>
                   <img
                     class='inline-block'
