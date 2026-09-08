@@ -1,9 +1,19 @@
 ---
 route: /success_story/demokratis/
 page_key: success_story_demokratis
-story: demokratis
 client_name: Demokratis
 title_key: meta_title_success_story
 description_key: success_story_demokratis_description
 ---
-{% include success-story.html %}
+<main class='relative z-0'>
+  {% include success-story-hero.html image='demokratis_success_story_background.webp' title_key='success_story_demokratis_title' description_key='success_story_demokratis_long_description' client='Demokratis' website='demokratis.ch' %}
+
+  {% capture story_aside %}
+    {% include testimonial.html text_key='success_story_demokratis_quote_text' avatar='demokratis_fabian.webp' name_key='success_story_demokratis_quote_name' role_key='success_story_demokratis_quote_role' delay=200 %}
+  {% endcapture %}
+  {% include success-story-main.html aside=story_aside first_title_key='success_story_demokratis_public_hand_title' first_text_key='success_story_demokratis_public_hand_text' second_title_key='success_story_demokratis_swissness_title' second_text_key='success_story_demokratis_swissness_text' %}
+
+  {% include success-story-notes.html title_key='success_story_demokratis_note_title' text_key='success_story_demokratis_note_text' %}
+
+  {% include register.html %}
+</main>

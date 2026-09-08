@@ -1,0 +1,35 @@
+<div class='relative h-[800px] max-sm:h-[700px]'>
+  <div class='pointer-events-none absolute h-full w-full select-none max-sm:max-h-[450px]'>
+    <img
+      aria-hidden='true'
+      loading='lazy'
+      class='absolute h-full min-w-full object-cover object-top'
+      src='/assets/images/backgrounds/{{ include.image }}'
+      alt=''
+    >
+    <div class='relative h-full w-full bg-gradient-to-t from-deploio'>&nbsp;</div>
+  </div>
+  <section class='container relative flex h-full flex-col justify-end pb-16 text-deploio'>
+    <div class='relative flex h-full w-full flex-col justify-end text-white'>
+      <div class='mb-8'>
+        <h1 class='text-h1 mb-4 max-w-[450px] md:max-w-[800px]' data-appear>{{ include.title_key | t }}</h1>
+        <p class='mb-10 max-w-[800px] text-[20px]' data-appear data-delay='100'>
+          {{ include.description_key | t }}
+        </p>
+        <div class='mb-3 flex flex-wrap gap-2 md:gap-6' data-appear data-delay='200'>
+          <div>
+            <span>CLIENT</span>
+            <p class='opacity-80'>{{ include.client }}</p>
+          </div>
+          <div>
+            <span>WEBSITE</span>
+            <p class='opacity-80'>
+              {% assign website_url = include.website | prepend: 'https://' -%}
+              {%- include link.html href=website_url text=include.website %}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
