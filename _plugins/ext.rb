@@ -26,15 +26,15 @@ end
 Jekyll::Page.prepend(DeploioLocalizedUrl)
 
 class LocalizedPage < Jekyll::PageWithoutAFile
-  def initialize(site, route, language)
-    slug = route.fetch("page_key").tr("_", "-")
+  def initialize(site, source_page, language)
+    slug = source_page.data.fetch("page_key").tr("_", "-")
     super(site, site.source, "", "#{slug}-#{language}.html")
 
-    self.data = route.reject { |key, _| key == "template" }.merge(
+    self.data = source_page.data.merge(
       "lang" => language,
       "layout" => "default"
     )
-    self.content = "{% include pages/#{route.fetch('template')}.html %}"
+    self.content = source_page.content
   end
 end
 
@@ -44,8 +44,11 @@ class LocalizedPagesGenerator < Jekyll::Generator
 
   def generate(site)
     languages = site.data.fetch("languages").map { |language| language.fetch("code") }
-    site.data.fetch("routes").product(languages).each do |route, language|
-      site.pages << LocalizedPage.new(site, route, language)
+    source_pages = site.collections.fetch("pages").docs
+    site.data["localized_pages"] = source_pages.map(&:data)
+
+    source_pages.product(languages).each do |source_page, language|
+      site.pages << LocalizedPage.new(site, source_page, language)
     end
   end
 end

@@ -7,8 +7,9 @@ permalink: /sitemap.xml
   xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml"
 >
-{% assign routes = '/,/pricing/,/team/,/success_story/,/success_story/demokratis/' | split: ',' %}
-{% for route in routes %}
+{% for source_page in site.data.localized_pages %}
+{% unless source_page.noindex %}
+{% assign route = source_page.route %}
 {% for lang in site.data.languages %}
   {% assign prefix = '/' | append: lang.code %}
   {% if lang.code == 'de' %}
@@ -34,5 +35,6 @@ permalink: /sitemap.xml
     />
   </url>
 {% endfor %}
+{% endunless %}
 {% endfor %}
 </urlset>

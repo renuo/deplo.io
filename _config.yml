@@ -5,6 +5,18 @@ destination: _site
 permalink: pretty
 encoding: utf-8
 
+collections:
+  pages:
+    output: false
+
+defaults:
+  - scope:
+      path: ''
+      type: pages
+    values:
+      lang: de
+      excerpt_separator: ''
+
 exclude:
   - bin
   - node_modules
