@@ -1,3 +1,10 @@
+---
+route: /
+page_key: home
+title_key: meta_title_home
+description_key: meta_description_home
+show_news: true
+---
 {% assign locale_prefix = '' -%}
 {%- unless page.lang == 'de' %}{% assign locale_prefix = '/' | append: page.lang %}{% endunless %}
 <main class='relative z-0'>
