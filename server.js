@@ -11,7 +11,10 @@ const server = createServer((request, response) => {
   const url = new URL(request.url ?? '/', 'http://localhost');
   const accept = String(request.headers.accept ?? '');
   const acceptLanguage = request.headers['accept-language'];
-  const savedLanguage = String(request.headers.cookie ?? '').match(/(?:^|;\s*)paraglide_lang=([^;]+)/)?.[1];
+  const cookie = String(request.headers.cookie ?? '');
+  const selectedLanguage = cookie.match(/(?:^|;\s*)deploio_language=([^;]+)/)?.[1];
+  const paraglideLanguage = cookie.match(/(?:^|;\s*)paraglide_lang=([^;]+)/)?.[1];
+  const savedLanguage = selectedLanguage ?? (paraglideLanguage !== sourceLanguageTag ? paraglideLanguage : undefined);
   const preferredLanguage = availableLanguageTags.some((language) => language === savedLanguage)
     ? savedLanguage
     : acceptLanguage && acceptLanguage !== '*'
