@@ -58,16 +58,17 @@ document.addEventListener('DOMContentLoaded', () => {
     bannerToggle.querySelector('[data-banner-open]')?.classList.toggle('hidden', open);
   }
 
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => entry.target.classList.toggle('appear-to', entry.isIntersecting));
-    },
-    { rootMargin: '20px' },
-  );
   document.querySelectorAll('[data-appear]').forEach((element) => {
-    element.classList.add('appear-from');
-    element.style.transitionDelay = `${element.dataset.delay || 0}ms`;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => element.classList.toggle('appear-to', entry.isIntersecting));
+      },
+      { rootMargin: '20px' },
+    );
+
     observer.observe(element);
+    element.style.transitionDelay = `${element.dataset.delay || 0}ms`;
+    element.classList.add('appear-from');
   });
 
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -94,6 +95,7 @@ document.addEventListener('DOMContentLoaded', () => {
           ...Array.from(commandText, (character, characterIndex) => {
             const span = document.createElement('span');
             span.dataset.terminalCharacter = '';
+            span.className = 'inline-block opacity-0';
             span.style.setProperty('--terminal-delay', `${commandStartMs + characterIndex * characterMs}ms`);
             span.textContent = character === ' ' ? '\u00a0' : character;
             return span;
@@ -105,6 +107,7 @@ document.addEventListener('DOMContentLoaded', () => {
           ...lines.map((line, lineIndex) => {
             const span = document.createElement('span');
             span.dataset.terminalResultLine = '';
+            span.className = '-translate-x-full opacity-0';
             span.style.setProperty('--terminal-delay', `${resultStartMs + lineIndex * characterMs}ms`);
             span.textContent = line;
             return span;
@@ -309,3 +312,127 @@ document.addEventListener('DOMContentLoaded', () => {
     );
   });
 });
+
+// Opt-in bridge for compare_svelte_jekyll.html. It is inert during normal visits.
+(() => {
+  const syncParameter = 'compare-sync';
+  const parameters = new URLSearchParams(window.location.search);
+  if (window.parent === window || parameters.get(syncParameter) !== '1') return;
+
+  const bridgeSource = 'compare-sync-bridge';
+  const hostSource = 'compare-sync-host';
+  const isAllowedHost = (origin) => origin === 'null' || /^https?:\/\/(localhost|127\.0\.0\.1)(:\d+)?$/.test(origin);
+  let hostOrigin = '*';
+  let suppressClick = false;
+  let suppressScroll = false;
+  let scrollFrame = null;
+  let sequence = 0;
+
+  const currentPath = () => {
+    const url = new URL(window.location.href);
+    url.searchParams.delete(syncParameter);
+    return `${url.pathname}${url.search}${url.hash}`;
+  };
+
+  const syncUrl = (value) => {
+    const url = new URL(value, window.location.origin);
+    url.searchParams.set(syncParameter, '1');
+    return url;
+  };
+
+  const send = (type, payload = {}) => {
+    window.parent.postMessage(
+      {
+        source: bridgeSource,
+        type,
+        payload,
+        id: `${Date.now().toString(36)}-${++sequence}`,
+      },
+      hostOrigin,
+    );
+  };
+
+  const navigate = (path) => {
+    const target = syncUrl(path);
+    if (target.href !== window.location.href) window.location.assign(target.href);
+  };
+
+  window.addEventListener(
+    'scroll',
+    () => {
+      if (suppressScroll || scrollFrame !== null) return;
+      scrollFrame = window.requestAnimationFrame(() => {
+        scrollFrame = null;
+        const root = document.documentElement;
+        const maxX = Math.max(1, root.scrollWidth - window.innerWidth);
+        const maxY = Math.max(1, root.scrollHeight - window.innerHeight);
+        send('scroll', {
+          xRatio: window.scrollX / maxX,
+          yRatio: window.scrollY / maxY,
+        });
+      });
+    },
+    { passive: true },
+  );
+
+  document.addEventListener(
+    'click',
+    (event) => {
+      if (suppressClick) return;
+
+      const link = event.target.closest?.('a[href]');
+      const isPlainPrimaryClick =
+        event.button === 0 && !event.metaKey && !event.ctrlKey && !event.shiftKey && !event.altKey;
+
+      if (link && isPlainPrimaryClick && link.target !== '_blank') {
+        const target = new URL(link.href, window.location.href);
+        if (target.origin === window.location.origin) {
+          event.preventDefault();
+          const path = `${target.pathname}${target.search}${target.hash}`;
+          send('navigate', { path });
+          navigate(path);
+          return;
+        }
+      }
+
+      send('click', {
+        xRatio: event.clientX / window.innerWidth,
+        yRatio: event.clientY / window.innerHeight,
+      });
+    },
+    true,
+  );
+
+  window.addEventListener('popstate', () => send('navigate', { path: currentPath() }));
+
+  window.addEventListener('message', (event) => {
+    if (event.source !== window.parent || event.data?.source !== hostSource || !isAllowedHost(event.origin)) return;
+
+    hostOrigin = event.origin === 'null' ? '*' : event.origin;
+    const { type, payload = {} } = event.data;
+
+    if (type === 'hello') {
+      send('ready');
+    } else if (type === 'scroll') {
+      const root = document.documentElement;
+      const maxX = Math.max(0, root.scrollWidth - window.innerWidth);
+      const maxY = Math.max(0, root.scrollHeight - window.innerHeight);
+      suppressScroll = true;
+      window.scrollTo(payload.xRatio * maxX, payload.yRatio * maxY);
+      window.requestAnimationFrame(() => {
+        window.requestAnimationFrame(() => {
+          suppressScroll = false;
+        });
+      });
+    } else if (type === 'click') {
+      const target = document.elementFromPoint(payload.xRatio * window.innerWidth, payload.yRatio * window.innerHeight);
+      suppressClick = true;
+      target?.click();
+      suppressClick = false;
+    } else if (type === 'navigate' && payload.path) {
+      navigate(payload.path);
+    }
+  });
+
+  send('ready');
+})();

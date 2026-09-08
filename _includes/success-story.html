@@ -52,17 +52,18 @@
       alt='abstract waves background'
       class='pointer-events-none absolute left-0 right-0 top-0 z-0 w-full -rotate-6 scale-[3] opacity-5 sm:scale-[2] md:scale-[1.25]'
     >
-    <div class='container relative z-10 grid grid-cols-12 grid-rows-[auto_1fr]'>
+    <div class='mb-30 container relative z-10 grid grid-cols-12 grid-rows-[auto_1fr]'>
       <div class='col-span-12 flex flex-col gap-5 lg:col-span-6 lg:row-span-2 lg:mr-9 xl:col-span-5'>
         {% if page.story == 'demokratis' %}
           <div
-            class='relative col-span-12 h-max border-t-2 border-deploio bg-white p-6 pb-14 font-medium text-deploio shadow-card xl:col-span-4 xl:col-start-9'
+            class='relative col-span-12 h-max border-t-2 border-deploio bg-white p-6 pb-14 font-medium text-deploio xl:col-span-4 xl:col-start-9'
+            style='box-shadow: 0px 30px 40px 0px #141D501A;'
             data-appear
             data-delay='300'
           >
             <span class='text-2xl'>{% t success_story_demokratis_quote_text %}</span>
             <div class='mt-6 flex items-center font-normal'>
-              <div class='mr-4 flex-shrink-0 border-deploio'>
+              <div class='border-t-1 mr-4 flex-shrink-0 border-deploio'>
                 <img
                   src='/assets/images/avatars/demokratis_fabian.webp'
                   alt='{% t success_story_demokratis_quote_name %}'
@@ -70,8 +71,8 @@
                 >
               </div>
               <div class='text-base'>
-                <p>{% t success_story_demokratis_quote_name %}</p>
-                <p class='opacity-70'>{% t success_story_demokratis_quote_role %}</p>
+                <p data-appear data-delay='350'>{% t success_story_demokratis_quote_name %}</p>
+                <p class='opacity-70' data-appear data-delay='400'>{% t success_story_demokratis_quote_role %}</p>
               </div>
             </div>
           </div>
@@ -122,13 +123,14 @@
       </div>
       {% unless page.story == 'demokratis' %}
         <div
-          class='relative col-span-12 mt-9 h-max border-t-2 border-deploio bg-white p-4 pb-10 font-medium text-deploio shadow-card xl:col-span-4 xl:col-start-9 xl:mt-48'
+          class='relative col-span-12 mt-9 h-max border-t-2 border-deploio bg-white p-4 pb-10 font-medium text-deploio xl:col-span-4 xl:col-start-9 xl:mt-48'
+          style='box-shadow: 0px 30px 40px 0px #141D501A;'
           data-appear
           data-delay='300'
         >
           <span class='text-2xl'>{% t success_story_note_quote %}</span>
           <div class='mt-6 flex items-center font-normal'>
-            <div class='mr-4 flex-shrink-0'>
+            <div class='border-t-1 mr-4 flex-shrink-0 border-deploio'>
               <img
                 src='/assets/images/avatars/josua.webp'
                 alt='Josua Schmid'
@@ -136,8 +138,8 @@
               >
             </div>
             <div class='text-base'>
-              <p>Josua Schmid</p>
-              <p class='opacity-70'>CTO Renuo AG</p>
+              <p data-appear data-delay='350'>Josua Schmid</p>
+              <p class='opacity-70' data-appear data-delay='400'>CTO Renuo AG</p>
             </div>
           </div>
         </div>

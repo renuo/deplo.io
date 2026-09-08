@@ -21,6 +21,7 @@
         | replace: 'nine.ch', '<a href="https://nine.ch" class="text-blue-600">nine.ch</a>'
       -%}
     {%- endif %}
-    <p class='mt-0 pt-0'>{{ message }}</p>
+    {% assign message_delay = include.delay | plus: 200 %}
+    <p class='mt-0 pt-0' data-appear data-delay='{{ message_delay }}'>{{ message }}</p>
   </div>
 </section>
