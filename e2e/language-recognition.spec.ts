@@ -1,59 +1,43 @@
-import { readFileSync } from 'node:fs';
-import { runInNewContext } from 'node:vm';
 import { expect, test } from '@playwright/test';
 
-const redirectScript = readFileSync('static/language-redirect.js', 'utf8');
-const alternateLinks = [
-  { hreflang: 'de', href: 'https://deplo.io/' },
-  { hreflang: 'en', href: 'https://deplo.io/en' },
-  { hreflang: 'fr', href: 'https://deplo.io/fr' },
-  { hreflang: 'it', href: 'https://deplo.io/it' },
-];
+const htmlHeaders = { accept: 'text/html' };
 
-function runRedirect({
-  browserLanguages,
-  cookie = '',
-  currentLanguage = 'de',
-  pathname = '/',
-}: {
-  browserLanguages: string[];
-  cookie?: string;
-  currentLanguage?: string;
-  pathname?: string;
-}) {
-  let redirectedTo: string | undefined;
-
-  runInNewContext(redirectScript, {
-    document: {
-      cookie,
-      documentElement: { lang: currentLanguage },
-      querySelectorAll: () => alternateLinks,
-    },
-    location: {
-      hash: '',
-      pathname,
-      search: '',
-      replace: (target: string) => (redirectedTo = target),
-    },
-    navigator: { languages: browserLanguages },
-    URL,
+test('uses English for a client configured for US English', async ({ request }) => {
+  const response = await request.get('/', {
+    headers: { ...htmlHeaders, 'accept-language': 'en-US,en;q=0.9' },
   });
 
-  return redirectedTo;
-}
-
-test('uses English for a client configured for US English', () => {
-  expect(runRedirect({ browserLanguages: ['en-US', 'en'] })).toBe('/en');
+  expect(response.url()).toMatch(/\/en\/?$/);
+  expect(await response.text()).toContain('<html lang="en"');
 });
 
-test('keeps German for a client configured for Swiss German', () => {
-  expect(runRedirect({ browserLanguages: ['de-CH', 'de'] })).toBeUndefined();
+test('keeps German for a client configured for Swiss German', async ({ request }) => {
+  const response = await request.get('/', {
+    headers: { ...htmlHeaders, 'accept-language': 'de-CH,de;q=0.9' },
+  });
+
+  expect(response.url()).toMatch(/\/$/);
+  expect(await response.text()).toContain('<html lang="de"');
 });
 
-test('respects a previously selected language', () => {
-  expect(runRedirect({ browserLanguages: ['de-CH'], cookie: 'paraglide_lang=en' })).toBe('/en');
+test('respects a previously selected language', async ({ request }) => {
+  const response = await request.get('/', {
+    headers: {
+      ...htmlHeaders,
+      'accept-language': 'de-CH,de;q=0.9',
+      cookie: 'paraglide_lang=en',
+    },
+  });
+
+  expect(response.url()).toMatch(/\/en\/?$/);
+  expect(await response.text()).toContain('<html lang="en"');
 });
 
-test('does not override an explicit language in the URL', () => {
-  expect(runRedirect({ browserLanguages: ['en-US'], currentLanguage: 'fr', pathname: '/fr' })).toBeUndefined();
+test('does not override an explicit language in the URL', async ({ request }) => {
+  const response = await request.get('/fr', {
+    headers: { ...htmlHeaders, 'accept-language': 'en-US,en;q=0.9' },
+  });
+
+  expect(response.url()).toMatch(/\/fr\/?$/);
+  expect(await response.text()).toContain('<html lang="fr"');
 });
