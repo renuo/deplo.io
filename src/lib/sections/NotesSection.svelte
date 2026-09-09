@@ -6,6 +6,7 @@
   import { appear } from '$lib';
   import successStoryBackground from '$lib/assets/backgrounds/success_story_background.webp';
   import demokratisSuccessStoryBackground from '$lib/assets/backgrounds/demokratis_success_story_background.webp';
+  import swissictSuccessStoryBackground from '$lib/assets/backgrounds/swissict_success_story_background.webp';
 
   import deploioSticker from '$lib/assets/deploio_sticker.webp';
   import mountainVector from '$lib/assets/backgrounds/mountain_vector.svg';
@@ -27,6 +28,13 @@
       description: m.success_story_demokratis_description(),
       backgroundImage: demokratisSuccessStoryBackground,
       url: '/demokratis',
+    },
+    {
+      title: m.success_story_swissict_title(),
+      subtitle: m.success_story_swissict_subtitle(),
+      description: m.success_story_swissict_description(),
+      backgroundImage: swissictSuccessStoryBackground,
+      url: '/swissict',
     },
   ];
 </script>
