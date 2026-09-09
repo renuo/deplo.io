@@ -1,14 +1,7 @@
 import type { RequestHandler } from './$types';
 
 const ORIGIN = 'https://deplo.io';
-const ROUTES = [
-  '/',
-  '/pricing',
-  '/team',
-  '/success_story',
-  '/success_story/demokratis',
-  '/success_story/swissict',
-];
+const ROUTES = ['/', '/pricing', '/team', '/success_story', '/success_story/demokratis', '/success_story/swissict'];
 const LANGUAGES = ['en', 'de', 'fr', 'it'];
 
 export const prerender = true;
