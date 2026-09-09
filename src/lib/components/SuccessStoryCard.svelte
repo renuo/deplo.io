@@ -23,7 +23,7 @@
   <div class="z-10 order-1 flex-1 pb-7 pl-6 pr-6 pt-7 max-sm:mt-32 sm:order-first sm:pr-0 md:pl-6 md:pr-4">
     <h3 class="uppercase">{subtitle}</h3>
     <h2
-      class="sm:text-h2 mb-5 mt-0 text-2xl uppercase max-sm:font-normal sm:whitespace-nowrap md:mt-0"
+      class="sm:text-h2 mb-5 mt-0 text-2xl uppercase max-sm:font-normal md:mt-0 lg:whitespace-nowrap"
       use:appear={{ delay: 50 }}
     >
       {title}
@@ -37,12 +37,7 @@
   <div class="flex-1">
     <div class="absolute h-1/3 w-full sm:right-0 sm:h-full sm:w-1/2"></div>
     <div class="absolute h-1/3 w-full sm:right-0 sm:h-full sm:w-1/2">
-      <img
-        src={backgroundImage}
-        alt="Renuo success story"
-        loading="lazy"
-        class="h-full w-full object-cover object-top"
-      />
+      <img src={backgroundImage} alt={title} loading="lazy" class="h-full w-full object-cover object-top" />
     </div>
 
     <!-- Mobile Gradient -->
