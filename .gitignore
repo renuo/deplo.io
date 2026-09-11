@@ -1,22 +1,16 @@
-test-results
+_site
+.jekyll-cache
+.jekyll-metadata
+vendor/bundle
 node_modules
-
-# Output
-.output
-.vercel
-/.svelte-kit
-/build
+/assets/css/
 
 # OS
 .DS_Store
 Thumbs.db
 
-# Env
+# Environment
 .env
 .env.*
 !.env.example
 !.env.test
-
-# Vite
-vite.config.js.timestamp-*
-vite.config.ts.timestamp-*

@@ -1,0 +1,118 @@
+---
+de:
+  '$schema': https://inlang.com/schema/inlang-message-format
+  navigation_en: EN
+  navigation_de: DE
+  navigation_fr: FR
+  navigation_it: IT
+  navigation_language: de
+  navigation_pricing: PREISE
+  navigation_documentation: DOKUMENTATION
+  navigation_login: LOGIN
+  navigation_start: JETZT STARTEN
+  navigation_team: TEAM
+  hero_title: DER TURBO FÜR DEIN APP HOSTING
+  hero_description: Deploio ist eine vollständig verwaltete App-Plattform, die Git-Repositories in Anwendungen umwandelt.
+  hero_start_now: JETZT STARTEN
+  hero_learn_more: DOKUMENTATION LESEN
+  hero_see_video: Ganzes Video ansehen
+  feature_1_title: Deine Schweizer App-Engine
+  feature_1_description: Warum sich mit Kubernetes oder OSI-Schichten abmühen? Deploio ist deine PaaS-Lösung aus der Schweiz, die dir den Rücken freihält. Du entwickelst, wir kümmern uns um Build, Release, TLS, Backups und mehr. Von Ruby bis Dockerfile – Technologie in deiner Kontrolle.
+  feature_2_title: Platform-as-a-Service
+  feature_2_description: Mit Deploio wird App-Deployment einfach. Unsere Plattform bietet dir schnelle Bereitstellung, skalierbares Management und Datenspeicherung – sicher in der Schweiz. Bis zu zehnmal schneller im dyno, damit du deine Anwendungen zum Strahlen bringst.
+  feature_3_title: Rechtssicherheit
+  feature_3_description: Mit Deploio liegen Deine Daten nicht nur zu 100% in der Schweiz, sondern unterliegen auch 100% dem Schweizer Recht. Durchgriffe der NSA gibt's nicht.
+  feature_why_title: Wieso Deploio?
+  feature_why_description: Es bietet dir alles, was du für nahtloses App-Deployment brauchst. Entdecke, wie Deploio dir die Komplexität abnimmt und dein Entwicklungserlebnis verbessert.
+  feature_why_button: MEHR ERFAHREN
+  notes_1_title: Einfache Bereitstellung
+  notes_1_description: Mit einigen Klicks ist deine Anwendung bereit.
+  notes_2_title: Schweizer Cloud-Infrastruktur
+  notes_2_description: Lokal gehostet und in Schweizer Händen.
+  notes_3_title: Zusatzdienste
+  notes_3_description: Wie Managed Database und Key-Value Store.
+  notes_4_title: Developer-Friendly
+  notes_4_description: Mehr Code, weniger Infrastruktur-Sorgen.
+  swiss_title: PERFEKT FÜR DIE SCHWEIZ
+  swiss_description: "Deploio ist echte Schweizer Qualität und zu 100% in CH–Eigentum. \nFür Entwickler und Firmen, die Präzision, Sicherheit und Konformität \nsuchen – mit Root Server im selben Netz und 24/7 Support.\n\nAuf unseren Umgang mit euren Daten ist Verlass, sogar mit Zertifikat: Deploio ist ISO:27001 sowie ISO:9001 zertifiziert."
+  comparison_title: Der Deploio-Vorteil auf einen Blick
+  comparison_description: Vergleiche Deploio mit anderen Plattformen und entdecke, was uns auszeichnet und warum wir die perfekte Wahl für dein Projekt sind.
+  comparison_table_location: Swiss Location
+  comparison_table_ownership: Swiss Owned
+  comparison_table_infrastructure: Own Infrastructure
+  comparison_table_automation: Fully Automated
+  comparison_table_object_storage: Swiss Object Storage
+  comparison_table_enterprise: Multicloud Enterprise Solution
+  register_title: JETZT LOSLEGEN
+  register_description: Bereit für weniger Stress und mehr Erfolg? Einfach E-Mail eintippen und zurücklehnen – wir bringen deine App in die Cloud, ohne dass du ins Schwitzen kommst. Los geht's!
+  register_button: JETZT REGISTRIEREN
+  pricing_title: Preis​rechner
+  pricing_description: Berechne die Kosten für deine App und wähle das passende Paket für deine Bedürfnisse.
+  team_title: Unser Team
+  team_description: Wir entwickeln Deploio – eine vollständig verwaltete App-Plattform aus der Schweiz. Unser Team vereint Expertise in Entwicklung, Betrieb und Sicherheit, um Git-Repositories nahtlos in Anwendungen zu transformieren.
+  success_story_subtitle: WIE ALLES BEGANN
+  success_story_title: HOSTING OHNE BULLSH*T
+  success_story_description: Renuo AG wollte Cloud-Hosting ohne Umwege. Mit Deploio fanden sie die perfekte Schweizer Heroku-Alternative – einfach, souverän, sorgenfrei.
+  success_story_long_description: 'Renuo AG ist ein Schweizer Software-Ingenieursbüro mit einer Mission: grossartigen Code schreiben – am liebsten in Ruby on Rails – ohne sich mit Server-Administration herumzuschlagen. Jahrelang lief alles über Heroku, bis eine einzige Slack-Nachricht alles ins Rollen brachte. In dieser Success Story erzählen wir, wie Renuo den perfekten Cloud-Hosting-Partner in der Schweiz fand – und warum Deploio heute die klare Nummer eins für uns ist.'
+  success_story_before_cloud_title: DIE ZEIT VOR DER CLOUD
+  success_story_before_cloud_text: 'Deploio wird durch Nine betrieben und wir waren früher schon Nine-Kunde. Das war vor der Cloud. Wir haben für unsere Kunden Server aufgesetzt und betrieben. Das hat viel Zeit und Nerven gekostet: SSL-Zertifikate kaufen, SSH-Zugriffe verwalten, Festplattenplatz überwachen, Systembibliotheken aktualisieren. Doch dann kam Heroku. Es hat uns von der Server-Administration befreit. Wir konnten uns auf die Software-Entwicklung konzentrieren, dank 12factor auch ohne Vendor-Lock-in. Einfach “git push”, CI/CD und der Kunde kann testen. Also sind wir in die Cloud umgezogen.'
+  success_story_beauty_and_the_beast_title: DIE SCHÖNE UND DAS BIEST
+  success_story_beauty_and_the_beast_text: Renuo ist eine inhabergeführte Schweizer Firma. Aber Heroku ist Amerikanisch und läuft bei AWS. Das wurmte uns die nächsten zehn Jahre. Es muss doch möglich sein, ein so cooles Produkt wie Heroku zu nutzen, in der Schweiz, wo ich auch mal Türen eintreten kann, wenn mir etwas nicht passt – viel Glück damit bei Salesforce. Wir waren im Enterprise-Vertrag; schlicht ein Konstrukt der Hölle. Da bringt Deploio Entsatz und zur rechten Zeit!
+  success_story_note_title: Wir machen Code, Deploio den Rest
+  success_story_note_text: 'Wir sind im Software-Geschäft, nicht im Infrastruktur-Geschäft. Ich möchte kein Kubernetes selbst betreiben und auch keine Bare-Metal-Server (wie separiere ich die Mandanten? Wer macht eigentlich Kernel-Updates?). Wir entwickeln guten Code, das muss reichen: «git push», CI/CD und der Kunde kann testen. Die Infrastruktur dazu macht Deploio, in der Schweiz, und sie machen das gut. Ich musste noch nie die Tür am Stauffacher-Platz eintreten.'
+  success_story_slack_message_1_name: Samuel Steiner  ·  Renuo AG
+  success_story_slack_message_1_date: 23. Sep 2022 um 23:42 Uhr
+  success_story_slack_message_1_text: Hey zämä. Hostet jemand primär mit Heroku und ist mit deren kürzlich angekündigten Anpassungen auch nicht so zufrieden? Es wäre eine gute Gelegenheit, etwas Eigenes aufzuziehen. Freue mich über PN.
+  success_story_slack_message_2_name: Thomas Hug
+  success_story_slack_message_2_date: 24. Sep 2022 um 14:15 Uhr
+  success_story_slack_message_2_text: Hey Samuel<br />Wir sind zwar nicht selber auf Heroku, haben aber viel eigene Infrastruktur, eine Kubernetes Plattform im eigenen Datacenter sowie eine Plattform, welche auf Googles Kubernetes Engine aufbaut auf Google Cloud.<br />Was möchtest du genau machen? Was passt dir nicht bei Heroku?<br />Vielleicht sprechen wir mal?<br />Gruss<br />Tom<br />Ah … wir/ich = nine.ch
+  success_story_note_quote: Cloud ja, aber gerne in der Schweiz von einer Schweizer Firma mit fähigen Ingenieuren, nicht nur Amazon-Reseller.
+  success_story_demokratis_subtitle: SWISSNESS
+  success_story_demokratis_title: WIR MACHEN DEMOKRATIE
+  success_story_demokratis_description: Demokratis will die Schweizer Politik digitalisieren. Mit Deploio fanden sie einen lokalen Partner – sicher, zuverlässig, unkompliziert.
+  success_story_demokratis_long_description: Die Schweizer Politik ins digitale Zeitalter zu holen, ist kein Spaziergang. Vor allem dann nicht, wenn Kantone und Behörden die primären Kunden sind. Denn bei sensiblen Daten und Serverstandorten hört der Spass auf. In dieser Success Story erzählen wir, wie die unabhängige Plattform Demokratis mit Deploio die perfekte Schweizer Cloud-Lösung gefunden hat – und warum es den grossen Unterschied macht, wenn ein Partner genau dort flexibel hilft, wo der Schuh drückt.
+  success_story_demokratis_public_hand_title: DIE HERAUSFORDERUNG MIT DER ÖFFENTLICHEN HAND
+  success_story_demokratis_public_hand_text: 'Für die Kunden und Partner von Demokratis, die primär aus der öffentlichen Hand stammen (wie beispielsweise Kantone), ist der Datenstandort absolut essenziell. Eine Lösung im Ausland?<br>Kommt für diese staatlichen Prozesse schlicht nicht in Frage.<br><br>Hinzu kam eine echte technische Knacknuss: Erste Kantone nutzen die Demokratis-Applikation unter ihrer eigenen Domain. Dafür mussten CNAME-Einträge eingerichtet werden, die nahtlos auf die Plattform von Demokratis weiterleiten. Für den Umzug brauchte es also einen Partner, der dieses spezifische Domain-Routing verlässlich abbilden kann.'
+  success_story_demokratis_swissness_title: SWISSNESS ALS ENTSCHEIDENDER FAKTOR
+  success_story_demokratis_swissness_text: 'Die Lösung? "Demokratis powered by Deploio". Der Wechsel war der logische Schritt, um die strikten Anforderungen der Behörden zu erfüllen. Der Hauptgrund für den Umzug lag auf der Hand: Die gesamte Infrastruktur befindet sich in der Schweiz und wird von Deploio bereitgestellt und betreut. Dies gibt den Kantonen die nötige Sicherheit und das Vertrauen.'
+  success_story_demokratis_note_title: SUPPORT, DER MITDENKT
+  success_story_demokratis_note_text: Wir sind keine Hardcore-Techies. Beim kompletten Cloud-Setup und der Migration unserer Plattform kamen wir deshalb kurz ins Schwitzen. Doch statt anonymer Ticket-Systeme gab es super flexiblen Support direkt über Slack und persönliche E-Mails. Für das Routing brauchten wir einige Spezialfunktionen – das Deploio-Team hat diese schnell und unkompliziert für uns nachgeliefert. Es ist einfach cool, so nah am Produkt zu sein.<br><br>Obendrauf gibt es nun moderne Deployments. Feature-Branch via nctl als Staging-App deployen, testen, fertig. Wir konzentrieren uns voll auf unsere Mission und machen Vernehmlassungen integrativer. Die Infrastruktur dazu macht Deploio, sicher und komplett in der Schweiz. Und sie machen das echt gut.
+  success_story_demokratis_quote_name: Fabian Ligibel
+  success_story_demokratis_quote_text: Unsere Mission ist die digitale Demokratie, nicht das Server-Management. Mit der PaaS-Lösung von Deploio müssen wir uns um die Infrastruktur null Gedanken machen.
+  success_story_demokratis_quote_role: Strategie & Produkt Demokratis
+  footer_support: SUPPORT
+  footer_status: Status
+  footer_documentation: Dokumentation
+  footer_slack: Slack Community
+  footer_github: GitHub Beispiele
+  footer_pricing: Preise
+  footer_contact: KONTAKT
+  footer_country: Schweiz
+  footer_support_note: Support ist nur auf Englisch und Deutsch verfügbar.
+  footer_service: EIN SERVICE VON
+  footer_copyright: Copyright © {year} Nine Internet Solutions AG
+  footer_terms: AGB
+  footer_privacy: Datenschutz
+  customers_trust: 'Kunden, die auf Deploio vertrauen:'
+  complex_projects: Komplexere Projekte?
+  complex_projects_description: 'Falls Deploio nicht genug ist, kannst du im Dashboard auch mehr beziehen. Alles aus einer Hand: Managed Server, Root Server oder gar ein ganzes K8 Cluster.'
+  complex_projects_ready: Bereit durchzustarten?
+  complex_projects_button: Jetzt loslegen
+  complex_projects_button_url: ''
+  nine: Nine
+  nine_url: https://nine.ch/de
+  meta_title_home: Deploio – Schweizer PaaS | App Hosting aus der Schweiz
+  meta_description_home: Deploio ist die Schweizer Platform-as-a-Service für einfaches App-Deployment. Sicher gehostet in der Schweiz, ISO-zertifiziert, mit 24/7 Support.
+  meta_title_pricing: Preise – Deploio | Schweizer PaaS
+  meta_description_pricing: Berechne die Kosten für deine App auf Deploio. Transparente Preise für die Schweizer Platform-as-a-Service.
+  meta_title_team: Unser Team – Deploio
+  meta_description_team: Lerne das Team hinter Deploio kennen – Schweizer Entwickler, die eine vollständig verwaltete App-Plattform bauen.
+  meta_title_success_story: 'Success Story: {clientName} – Deploio'
+  meta_description_success_story: Wie Renuo AG mit Deploio die perfekte Schweizer Heroku-Alternative fand – einfach, souverän, sorgenfrei.
+  structured_data_organization_description: Deploio ist eine Schweizer Platform-as-a-Service (PaaS) Lösung für automatisiertes App Hosting. 100% Swiss data residency, ISO 27001:2022 zertifiziert.
+  structured_data_address_locality: Zürich
+  structured_data_website_description: Schweizer Platform-as-a-Service für automatisiertes App Hosting aus Git. Managed Databases, Swiss Object Storage, TLS — 100% in der Schweiz.
+  structured_data_software_description: Der Turbo für dein App Hosting. Git Repository zu produktiver App in Minuten. Managed Databases, Key-Value Store, Swiss Object Storage, automatische TLS-Zertifikate. Bis zu 10x schneller.
+  news_question: "<span class='text-claude'>*</span> APP MIT <span class='text-claude'>CLAUDE CODE</span> GEBAUT?"
+  news_cta: Installiere den Deploio Skill und deploye direkt.
+  news_link: Zum Skill

@@ -1,0 +1,25 @@
+- { name: Thomas Hug, role: Co-Founder, role_de: Co-Founder, image: thomas_hug.png }
+- { name: Samuel Steiner, role: Co-Founder, role_de: Co-Founder, image: samuel_steiner.png }
+- { name: Tim Grethler, role: Head of Engineering, role_de: Head of Engineering, image: tim_grethler.png }
+- { name: Nikky Jolley, role: Customer Success, role_de: Customer Success, image: nikky_jolley.png }
+- { name: Josua Schmid, role: Strategy, role_de: Strategie, image: josua_schmid.png }
+- { name: Sebastian Nickel, role: Platform Engineer, role_de: Platform Engineer, image: sebastian_nickel.png }
+- { name: Davor Gajic, role: Platform Engineer, role_de: Platform Engineer, image: davor_gajic.png }
+- { name: Pawel Kuc, role: Platform Engineer, role_de: Platform Engineer, image: pawel_kuc.png }
+- {
+    name: Daniel Wilhelm,
+    role: Senior Engineer Managed Services,
+    role_de: Senior Engineer Managed Services,
+    image: daniel_wilhelm.png,
+  }
+- {
+    name: Raphael Nestler,
+    role: Senior Software Engineer,
+    role_de: Senior Software Engineer,
+    image: raphael_nestler.png,
+  }
+- { name: Kevin Ferranti, role: Software Engineer, role_de: Software Engineer, image: kevin_ferranti.png }
+- { name: Oliver Nietlisbach, role: Software Engineer, role_de: Software Engineer, image: oliver_nietlisbach.png }
+- { name: Raphael Knecht, role: Marketing, role_de: Marketing, image: raphael_knecht.png }
+- { name: Yessin Ben Brahim, role: Marketing, role_de: Marketing, image: yessin_ben_brahim.png }
+- { name: Vanessa Albrecht, role: Design, role_de: Design, image: vanessa_albrecht.png }
