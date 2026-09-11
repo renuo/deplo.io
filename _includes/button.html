@@ -16,10 +16,10 @@
   {% assign classes = classes | prepend: 'border-2 border-white bg-transparent text-white ' %}
 {% endif %}
 <a
-  href='{{ resolved_href }}'
-  class='{{ classes }} {{ include.class }}'
+  href="{{ resolved_href }}"
+  class="{{ classes }} {{ include.class }}"
   {% if resolved_target %}
-    target='{{ resolved_target }}'
+    target="{{ resolved_target }}"
   {% endif %}
 >
   {{- resolved_text -}}

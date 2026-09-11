@@ -11,17 +11,17 @@
 {% assign resolved_text = include.text | default: include.link.label %}
 {% if include.text_key %}{% assign resolved_text = include.text_key | t %}{% endif %}
 <a
-  href='{{ resolved_href }}'
-  class='group relative inline-block truncate text-white {{ include.class }}'
+  href="{{ resolved_href }}"
+  class="group relative inline-block truncate text-white {{ include.class }}"
   {% if resolved_target %}
-    target='{{ resolved_target }}'
+    target="{{ resolved_target }}"
   {% endif -%}
   {% if resolved_href == page.url %}
-    aria-current='page'
+    aria-current="page"
   {% endif %}
 >
   {{ resolved_text }}
-  <span class='absolute bottom-0 left-0 h-[0.9px] {% if resolved_href == page.url %}w-full{% else %}w-0{% endif %} bg-white text-[15px] transition-all group-hover:w-full'
+  <span class="absolute bottom-0 left-0 h-[0.9px] {% if resolved_href == page.url %}w-full{% else %}w-0{% endif %} bg-white text-[15px] transition-all group-hover:w-full"
     >&nbsp;</span
   >
 </a>
