@@ -1,19 +1,19 @@
 <section
-  class='flex flex-col rounded-lg bg-white p-4 font-slack text-black lg:flex-row'
+  class="flex flex-col rounded-lg bg-white p-4 font-slack text-black lg:flex-row"
   data-appear
-  data-delay='{{ include.delay }}'
+  data-delay="{{ include.delay }}"
 >
-  <div class='pr-3'>
+  <div class="pr-3">
     <img
-      src='/assets/images/avatars/{{ include.avatar }}'
-      alt='{{ include.name_key | t }}'
-      class='h-12 w-12 rounded-xl'
+      src="/assets/images/avatars/{{ include.avatar }}"
+      alt="{{ include.name_key | t }}"
+      class="h-12 w-12 rounded-xl"
     >
   </div>
-  <div class='flex-1 font-normal'>
+  <div class="flex-1 font-normal">
     <div>
-      <span class='mr-1 whitespace-pre font-black'>{{ include.name_key | t }}</span
-      ><span class='text-gray-600'>{{ include.date_key | t }}</span>
+      <span class="mr-1 whitespace-pre font-black">{{ include.name_key | t }}</span
+      ><span class="text-gray-600">{{ include.date_key | t }}</span>
     </div>
     {% assign message_text = include.text_key | t -%}
     {%- if include.link_nine -%}
@@ -22,6 +22,6 @@
       -%}
     {%- endif %}
     {% assign message_delay = include.delay | plus: 200 %}
-    <p class='mt-0 pt-0' data-appear data-delay='{{ message_delay }}'>{{ message_text }}</p>
+    <p class="mt-0 pt-0" data-appear data-delay="{{ message_delay }}">{{ message_text }}</p>
   </div>
 </section>
