@@ -1,6 +1,6 @@
-- { key: comparison_table_location,       deploio: true,  heroku: false, divio: true,  render: false }
-- { key: comparison_table_ownership,      deploio: true,  heroku: false, divio: false, render: true }
-- { key: comparison_table_infrastructure, deploio: true,  heroku: true,  divio: false, render: false }
-- { key: comparison_table_automation,     deploio: true,  heroku: true,  divio: true,  render: true }
-- { key: comparison_table_object_storage, deploio: true,  heroku: false, divio: true,  render: true }
-- { key: comparison_table_enterprise,     deploio: false, heroku: true,  divio: true,  render: false }
+- { key: comparison_table_location, deploio: true, heroku: false, divio: true, render: false }
+- { key: comparison_table_ownership, deploio: true, heroku: false, divio: false, render: true }
+- { key: comparison_table_infrastructure, deploio: true, heroku: true, divio: false, render: false }
+- { key: comparison_table_automation, deploio: true, heroku: true, divio: true, render: true }
+- { key: comparison_table_object_storage, deploio: true, heroku: false, divio: true, render: true }
+- { key: comparison_table_enterprise, deploio: false, heroku: true, divio: true, render: false }
