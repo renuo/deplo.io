@@ -7,10 +7,36 @@
 :{$PORT:8080} {
 	root * /srv
 
-	redir /claude_skill  https://github.com/ninech/deploio-skills 301
+	redir /claude_skill https://github.com/ninech/deploio-skills 301
 	redir /claude_skill/ https://github.com/ninech/deploio-skills 301
-	redir /terms  https://docs.nine.ch/docs/legal-documents/general-terms-and-conditions/ 301
+	redir /terms https://docs.nine.ch/docs/legal-documents/general-terms-and-conditions/ 301
 	redir /terms/ https://docs.nine.ch/docs/legal-documents/general-terms-and-conditions/ 301
+
+	@english {
+		method GET HEAD
+		header Accept text/html*
+		header_regexp language Accept-Language (?i)^en(?:[-;,]|$)
+		not path /en /en/* /fr /fr/* /it /it/*
+	}
+	@french {
+		method GET HEAD
+		header Accept text/html*
+		header_regexp language Accept-Language (?i)^fr(?:[-;,]|$)
+		not path /en /en/* /fr /fr/* /it /it/*
+	}
+	@italian {
+		method GET HEAD
+		header Accept text/html*
+		header_regexp language Accept-Language (?i)^it(?:[-;,]|$)
+		not path /en /en/* /fr /fr/* /it /it/*
+	}
+
+	header @english Vary Accept-Language
+	header @french Vary Accept-Language
+	header @italian Vary Accept-Language
+	redir @english /en{uri} 302
+	redir @french /fr{uri} 302
+	redir @italian /it{uri} 302
 
 	encode gzip zstd
 
