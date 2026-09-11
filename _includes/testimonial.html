@@ -1,20 +1,20 @@
 <blockquote
-  class='h-max border-t-2 border-deploio bg-white p-6 pb-10 font-medium text-deploio shadow-card'
+  class="h-max border-t-2 border-deploio bg-white p-6 pb-10 font-medium text-deploio shadow-card"
   data-appear
-  data-delay='{{ include.delay | default: 200 }}'
+  data-delay="{{ include.delay | default: 200 }}"
 >
-  <p class='text-2xl leading-snug'>{{ include.text_key | t }}</p>
-  <footer class='mt-6 flex items-center font-normal'>
+  <p class="text-2xl leading-snug">{{ include.text_key | t }}</p>
+  <footer class="mt-6 flex items-center font-normal">
     <img
-      src='/assets/images/avatars/{{ include.avatar }}'
-      alt=''
-      class='mr-4 size-12 flex-shrink-0 rounded-full bg-gray-200 object-cover'
+      src="/assets/images/avatars/{{ include.avatar }}"
+      alt=""
+      class="mr-4 size-12 flex-shrink-0 rounded-full bg-gray-200 object-cover"
     >
-    <div class='text-base'>
-      <cite class='not-italic'>
+    <div class="text-base">
+      <cite class="not-italic">
         {% if include.name_key %}{{ include.name_key | t }}{% else %}{{ include.name }}{% endif %}
       </cite>
-      <p class='opacity-70'>
+      <p class="opacity-70">
         {% if include.role_key %}{{ include.role_key | t }}{% else %}{{ include.role }}{% endif %}
       </p>
     </div>
