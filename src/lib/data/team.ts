@@ -1,7 +1,6 @@
 import danielWilhelm from '$lib/assets/team/daniel_wilhelm.png';
 import davorGajic from '$lib/assets/team/davor_gajic.png';
 import josuaSchmid from '$lib/assets/team/josua_schmid.png';
-import kevinFerranti from '$lib/assets/team/kevin_ferranti.png';
 import nikkyJolley from '$lib/assets/team/nikky_jolley.png';
 import oliverNietlisbach from '$lib/assets/team/oliver_nietlisbach.png';
 import pawelKuc from '$lib/assets/team/pawel_kuc.png';
@@ -25,7 +24,6 @@ export const team = [
   { name: 'Pawel Kuc', role: 'Platform Engineer', image: pawelKuc },
   { name: 'Daniel Wilhelm', role: 'Senior Engineer Managed Services', image: danielWilhelm },
   { name: 'Raphael Nestler', role: 'Senior Software Engineer', image: raphaelNestler },
-  { name: 'Kevin Ferranti', role: 'Software Engineer', image: kevinFerranti },
   { name: 'Oliver Nietlisbach', role: 'Software Engineer', image: oliverNietlisbach },
   { name: 'Raphael Knecht', role: 'Marketing', image: raphaelKnecht },
   { name: 'Yessin Ben Brahim', role: 'Marketing', image: yessinBenBrahim },
@@ -43,7 +41,6 @@ export const team_en = [
   { name: 'Pawel Kuc', role: 'Platform Engineer', image: pawelKuc },
   { name: 'Daniel Wilhelm', role: 'Senior Engineer Managed Services', image: danielWilhelm },
   { name: 'Raphael Nestler', role: 'Senior Software Engineer', image: raphaelNestler },
-  { name: 'Kevin Ferranti', role: 'Software Engineer', image: kevinFerranti },
   { name: 'Oliver Nietlisbach', role: 'Software Engineer', image: oliverNietlisbach },
   { name: 'Raphael Knecht', role: 'Marketing', image: raphaelKnecht },
   { name: 'Yessin Ben Brahim', role: 'Marketing', image: yessinBenBrahim },
