@@ -43,7 +43,7 @@
     <LanguageSwitcher class="text-white" />
     <Link href="/pricing">{m.navigation_pricing()}</Link>
     <Link href="/team">{m.navigation_team()}</Link>
-    <Link href="https://docs.deplo.io">{m.navigation_documentation()}</Link>
+    <Link href="https://guides.deplo.io">{m.navigation_documentation()}</Link>
     <Link href="https://cockpit.nine.ch/{m.navigation_language()}/session/new?origin=deploio" target="_blank"
       >{m.navigation_login()}</Link
     >
@@ -81,7 +81,7 @@
       </a>
 
       <a
-        href="https://docs.deplo.io"
+        href="https://guides.deplo.io"
         on:click={toggleMenu}
         class="w-full py-3 text-2xl font-normal tracking-[0.02em] text-deploio"
       >
