@@ -1,6 +1,7 @@
 <script>
   import Link from '$lib/components/Link.svelte';
   import * as m from '$lib/paraglide/messages';
+  import { languageTag } from '$lib/paraglide/runtime';
   import swissMadeSoftwareAndHosting from '$lib/assets/swiss_made_software_and_hosting.webp';
   import facebookIcon from '$lib/assets/icons/facebook.svg';
   import instagramIcon from '$lib/assets/icons/instagram.svg';
@@ -35,6 +36,11 @@
       alt: 'Deploio Twitter account',
     },
   ];
+
+  const dpaHref =
+    languageTag() === 'de'
+      ? 'https://docs.nine.ch/de/docs/legal-documents/data-processing-agreement'
+      : 'https://docs.nine.ch/docs/legal-documents/data-processing-agreement';
 </script>
 
 <nav class="container !mt-14 flex flex-wrap items-center gap-4 !pb-8">
@@ -57,4 +63,5 @@
   <p class="flex-grow">{m.footer_copyright({ year: new Date().getFullYear() })}</p>
   <Link href="https://docs.nine.ch/de/docs/legal-documents/general-terms-and-conditions">{m.footer_terms()}</Link>
   <Link href="https://www.nine.ch/de/privacy-policy">{m.footer_privacy()}</Link>
+  <Link href={dpaHref}>{m.footer_dpa()}</Link>
 </nav>
