@@ -113,6 +113,12 @@
       <p class="flex-grow">{{ copyright }}</p>
       {% include link.html href='https://docs.nine.ch/de/docs/legal-documents/general-terms-and-conditions' text_key='footer_terms' %}
       {% include link.html href='https://www.nine.ch/de/privacy-policy' text_key='footer_privacy' %}
+      {%- if page.lang == 'de' %}
+        {% assign dpa_href = 'https://docs.nine.ch/de/docs/legal-documents/data-processing-agreement' %}
+      {%- else %}
+        {% assign dpa_href = 'https://docs.nine.ch/docs/legal-documents/data-processing-agreement' %}
+      {%- endif %}
+      {% include link.html href=dpa_href text_key='footer_dpa' %}
     </nav>
   </footer>
 </div>

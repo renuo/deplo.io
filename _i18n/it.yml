@@ -11,7 +11,7 @@ it:
   navigation_login: ACCEDI
   navigation_start: INIZIA ORA
   navigation_team: TEAM
-  hero_title: IL TURBO PER IL TUO APP HOSTING
+  hero_title: TU CREI, NOI CI OCCUPIAMO DELL'HOSTING.
   hero_description: Deploio è una piattaforma per applicazioni completamente gestita che trasforma i repository Git in applicazioni.
   hero_start_now: INIZIA ORA
   hero_learn_more: LEGGI LA DOCUMENTAZIONE
@@ -93,6 +93,7 @@ it:
   footer_copyright: Copyright © {year} Nine Internet Solutions AG
   footer_terms: Termini di servizio
   footer_privacy: Informativa sulla privacy
+  footer_dpa: DPA
   customers_trust: 'Clienti che si fidano di Deploio:'
   complex_projects: Progetti più complessi?
   complex_projects_description: 'Se Deploio non è sufficiente, puoi sempre ottenere di più nel dashboard. Tutto da un unico fornitore: server gestiti, server root o persino un intero cluster K8.'

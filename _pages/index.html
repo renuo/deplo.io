@@ -25,7 +25,9 @@ show_news: true
     <section class="container relative flex h-full flex-col justify-end pb-16 text-deploio">
       <div class="relative flex h-full w-full flex-col justify-end text-white">
         <div class="mb-8">
-          <h1 class="text-h1 mb-4 max-w-[450px] md:max-w-[600px]" data-appear>{% t hero_title %}</h1>
+          <h1 class="text-h1 mb-4 max-w-[450px] whitespace-pre-line md:max-w-[600px]" data-appear>
+            {%- t hero_title -%}
+          </h1>
           <p class="mb-10 max-w-[550px] text-[20px]" data-appear data-delay="100">{% t hero_description %}</p>
           <div class="mb-3 flex flex-wrap gap-2 md:gap-6" data-appear data-delay="200">
             {% include button.html class='w-full md:w-auto' cockpit_path='/fast_onboardings/new?origin=deploio' text_key='hero_start_now' %}
