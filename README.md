@@ -19,24 +19,33 @@ bin/setup
 
 ## Development
 
-Start the development server:
+Start the Jekyll development server:
 
 ```sh
-bin/run dev
+bin/run
 ```
+
+The development server watches both the Jekyll templates and Tailwind CSS.
+Site-specific styles live in `_assets/css/app.css`; Tailwind scans the HTML
+templates and writes the ignored, generated stylesheet to `assets/css/app.css`.
+
+Translations live in `_i18n/{de,en,fr,it}.yml` and are rendered with
+`jekyll-i18n`. German pages use root URLs; the other locales use a language
+prefix. Define pages once in `_pages/`; the localized variants are generated
+during the build.
 
 ## Checking
 
-Run the linters and compile Paraglide (translations):
+Validate Ruby, translations, and the generated site:
 
 ```sh
 bin/check
 ```
 
-Automatically fix formatting and linting issues where possible:
+Check formatting for all supported source files:
 
 ```sh
-bin/check --fix
+bin/lint
 ```
 
 ## Building
@@ -44,13 +53,16 @@ bin/check --fix
 To create a production version of your app:
 
 ```sh
-npm run build
+bin/build
 ```
 
-Production preview:
+Deployment uses Deploio's static-site buildpack. The buildpack configuration in
+`project.toml` builds the site into `_site`, serves that directory, and defines
+the custom redirects and 404 page. Configure the Deploio application language
+as `static`:
 
 ```sh
-npm run preview
+nctl update application <app-name> --language=static
 ```
 
 ## Copyright
