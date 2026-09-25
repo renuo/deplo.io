@@ -1,0 +1,19 @@
+---
+route: /success_story/swissict/
+page_key: success_story_swissict
+client_name: swissICT
+title_key: meta_title_success_story
+description_key: success_story_swissict_description
+---
+<main class="relative z-0">
+  {% include success-story-hero.html image='swissict_success_story_background.webp' title_key='success_story_swissict_title' description_key='success_story_swissict_long_description' client='swissICT' website='swissict.ch' %}
+
+  {% capture story_aside %}
+    {% include testimonial.html text_key='success_story_swissict_quote_text' avatar='swissict_cornelia.webp' name_key='success_story_swissict_quote_name' role_key='success_story_swissict_quote_role' delay=300 %}
+  {% endcapture %}
+  {% include success-story-main.html aside=story_aside first_title_key='success_story_swissict_challenge_title' first_text_key='success_story_swissict_challenge_text' second_title_key='success_story_swissict_solution_title' second_text_key='success_story_swissict_solution_text' %}
+
+  {% include success-story-notes.html title_key='success_story_swissict_note_title' text_key='success_story_swissict_note_text' %}
+
+  {% include register.html %}
+</main>

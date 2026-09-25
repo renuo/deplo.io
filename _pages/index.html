@@ -125,6 +125,8 @@ show_news: true
       {%- include success-story-card.html title_key='success_story_title' subtitle_key='success_story_subtitle' description_key='success_story_description' image='success_story_background.webp' href=story_url %}
       {% assign demokratis_url = locale_prefix | append: '/success_story/demokratis/' -%}
       {%- include success-story-card.html title_key='success_story_demokratis_title' subtitle_key='success_story_demokratis_subtitle' description_key='success_story_demokratis_description' image='demokratis_success_story_background.webp' href=demokratis_url %}
+      {% assign swissict_url = locale_prefix | append: '/success_story/swissict/' -%}
+      {%- include success-story-card.html title_key='success_story_swissict_title' subtitle_key='success_story_swissict_subtitle' description_key='success_story_swissict_description' image='swissict_success_story_background.webp' href=swissict_url %}
     </div>
     <div class="group container relative z-10 mx-auto text-deploio max-md:mt-20 md:max-w-xl md:pl-40 md:pr-4 lg:max-w-3xl">
       <img
