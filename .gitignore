@@ -14,3 +14,13 @@ Thumbs.db
 .env.*
 !.env.example
 !.env.test
+
+# Editor
+.idea/
+
+# Leftovers from the SvelteKit setup
+.svelte-kit/
+build/
+project.inlang/
+test-results/
+src/lib/paraglide/
