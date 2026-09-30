@@ -62,7 +62,7 @@
     <h2 class="text-h2 mb-5 mt-8 md:mt-0" use:appear={{ delay: 50 }}>{m.feature_why_title()}</h2>
     <p class="mb-8 text-[20px]" use:appear={{ delay: 100 }}>{m.feature_why_description()}</p>
     <div class="flex" use:appear={{ delay: 150 }}>
-      <Button variant="secondary" href="https://docs.deplo.io" target="_blank">
+      <Button variant="secondary" href="https://guides.deplo.io" target="_blank">
         {m.feature_why_button()}
       </Button>
     </div>

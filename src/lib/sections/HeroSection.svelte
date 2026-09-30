@@ -31,7 +31,7 @@
           >
             {m.hero_start_now()}
           </Button>
-          <Button variant="outline" class="w-full md:w-auto" href="https://docs.deplo.io/" target="_blank">
+          <Button variant="outline" class="w-full md:w-auto" href="https://guides.deplo.io" target="_blank">
             {m.hero_learn_more()}
           </Button>
         </div>
