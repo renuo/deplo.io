@@ -1,0 +1,12 @@
+- key: deploio
+  image: deploio_logo.svg
+  name: Deploio
+- key: heroku
+  image: heroku_logo.svg
+  name: Heroku
+- key: divio
+  image: divio_logo.svg
+  name: Divio
+- key: render
+  image: render_logo.svg
+  name: Render

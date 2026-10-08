@@ -1,0 +1,20 @@
+<section class="relative overflow-x-clip bg-deploio pb-16 pt-20">
+  <img
+    src="/assets/images/deploio_wave.svg"
+    alt="abstract waves background"
+    class="pointer-events-none absolute left-0 right-0 top-0 z-0 w-full -rotate-6 scale-[3] opacity-5 sm:scale-[2] md:scale-[1.25]"
+  >
+  <div class="container relative z-10 grid grid-cols-12 grid-rows-[auto_1fr]">
+    <div class="col-span-12 flex flex-col gap-5 lg:col-span-6 lg:row-span-2 lg:mr-9 xl:col-span-5">
+      {{ include.aside }}
+    </div>
+    <div class="col-span-12 mt-12 text-white lg:col-span-6 lg:mt-0" data-appear data-delay="100">
+      <h3 class="text-h3 pb-4">{{ include.first_title_key | t }}</h3>
+      <p data-appear data-delay="200">{{ include.first_text_key | t }}</p>
+    </div>
+    <div class="col-span-12 text-white lg:col-span-6 xl:col-span-5 xl:col-start-8">
+      <h3 class="text-h3 mt-8 pb-4" data-appear data-delay="300">{{ include.second_title_key | t }}</h3>
+      <p data-appear data-delay="400">{{ include.second_text_key | t }}</p>
+    </div>
+  </div>
+</section>
