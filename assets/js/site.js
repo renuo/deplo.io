@@ -116,7 +116,7 @@ document.addEventListener('DOMContentLoaded', () => {
             span.dataset.terminalResultLine = '';
             span.className = '-translate-x-full opacity-0';
             span.style.setProperty('--terminal-delay', `${resultStartMs + lineIndex * characterMs}ms`);
-            span.textContent = line;
+            span.append(line, document.createElement('br'));
             return span;
           }),
         );
