@@ -40,6 +40,13 @@ document.addEventListener('DOMContentLoaded', () => {
   });
   document.addEventListener('click', () => setLanguageMenuOpen(false));
 
+  // Remember the chosen language so the server stops redirecting by Accept-Language.
+  document.querySelectorAll('[data-language-link]').forEach((link) => {
+    link.addEventListener('click', () => {
+      document.cookie = `deploio_language=${link.dataset.languageLink};Path=/;SameSite=Lax;Max-Age=31557600`;
+    });
+  });
+
   const banner = document.querySelector('[data-news-banner]');
   const bannerToggle = document.querySelector('[data-news-toggle]');
   if (banner && bannerToggle) {

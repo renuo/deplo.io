@@ -14,11 +14,11 @@
           "width": 790,
           "height": 760
         },
-        "description": "{{ 'structured_data_organization_description' | t | escape }}",
+        "description": {{ 'structured_data_organization_description' | t | jsonify }},
         "address": {
           "@type": "PostalAddress",
           "streetAddress": "Badenerstrasse 47",
-          "addressLocality": "{{ 'structured_data_address_locality' | t | escape }}",
+          "addressLocality": {{ 'structured_data_address_locality' | t | jsonify }},
           "postalCode": "8004",
           "addressCountry": "CH"
         },
@@ -47,8 +47,8 @@
         "@type": "WebSite",
         "@id": "https://deplo.io{{ canonical_prefix }}/#website",
         "url": "https://deplo.io{{ canonical_prefix }}/",
-        "name": "{{ 'meta_title_home' | t | escape }}",
-        "description": "{{ 'structured_data_website_description' | t | escape }}",
+        "name": {{ 'meta_title_home' | t | jsonify }},
+        "description": {{ 'structured_data_website_description' | t | jsonify }},
         "publisher": { "@id": "https://deplo.io{{ canonical_prefix }}/#organization" },
         "inLanguage": "{{ page.lang }}",
         "potentialAction": {
@@ -65,7 +65,7 @@
         "applicationSubCategory": "Platform as a Service (PaaS)",
         "operatingSystem": "Web",
         "url": "https://deplo.io{{ canonical_prefix }}/",
-        "description": "{{ 'structured_data_software_description' | t | escape }}",
+        "description": {{ 'structured_data_software_description' | t | jsonify }},
         "featureList": [
           "Git-based deployment",
           "Managed Databases",

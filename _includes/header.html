@@ -46,6 +46,7 @@
             <a
               class="block px-5 py-2 text-sm text-deploio hover:bg-gray-50 {% if page.lang == lang.code %}font-bold{% endif %}"
               href="{{ switch_prefix }}{{ page.route }}"
+              data-language-link="{{ lang.code }}"
               role="option"
               aria-selected="{% if page.lang == lang.code %}true{% else %}false{% endif %}"
             >
@@ -110,6 +111,7 @@
         <a
           class="py-2 text-2xl tracking-[0.02em] {% if page.lang == lang.code %}font-bold{% endif %}"
           href="{{ switch_prefix }}{{ page.route }}"
+          data-language-link="{{ lang.code }}"
         >
           {{- lang.label -}}
         </a>

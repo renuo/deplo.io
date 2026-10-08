@@ -4,6 +4,28 @@
 	auto_https off
 }
 
+# Mirrors the language negotiation of the former SvelteKit server.
+# A saved choice wins: deploio_language, or a legacy non-German paraglide_lang.
+(language_redirect) {
+	@saved_{args[0]} {
+		method GET HEAD
+		header Accept text/html*
+		not path /en /en/* /fr /fr/* /it /it/*
+		expression `{http.request.cookie.deploio_language} == "{args[0]}" || (!({http.request.cookie.deploio_language} in ["de", "en", "fr", "it"]) && {http.request.cookie.paraglide_lang} == "{args[0]}")`
+	}
+	redir @saved_{args[0]} /{args[0]}{uri} 302
+
+	# Skip unsupported languages, then match when this is the first supported one.
+	@browser_{args[0]} {
+		method GET HEAD
+		header Accept text/html*
+		not path /en /en/* /fr /fr/* /it /it/*
+		header_regexp Accept-Language `(?i)^(?:\s*(?:\*|[a-z]{3,8}|[abcghj-z][a-z]|d[a-df-z]|e[a-mo-z]|f[a-qs-z]|i[a-su-z])(?:-[a-z0-9]{1,8})*(?:\s*;\s*q=[0-9.]+)?\s*,)*\s*{args[0]}(?:-[a-z0-9]{1,8})*\s*(?:[;,]|$)`
+		expression `!({http.request.cookie.deploio_language} in ["de", "en", "fr", "it"]) && !({http.request.cookie.paraglide_lang} in ["en", "fr", "it"])`
+	}
+	redir @browser_{args[0]} /{args[0]}{uri} 302
+}
+
 :{$PORT:8080} {
 	root * /srv
 
@@ -14,31 +36,19 @@
 	redir /terms https://docs.nine.ch/docs/legal-documents/general-terms-and-conditions/ 301
 	redir /terms/ https://docs.nine.ch/docs/legal-documents/general-terms-and-conditions/ 301
 
-	@english {
+	# German lives at the root. Unprefixed pages redirect to /en, /fr or /it
+	# when the visitor picked that language (cookie set by the language switcher)
+	# or, without a saved choice, when it is their first supported browser language.
+	@unprefixed_page {
 		method GET HEAD
 		header Accept text/html*
-		header_regexp language Accept-Language (?i)^en(?:[-;,]|$)
 		not path /en /en/* /fr /fr/* /it /it/*
 	}
-	@french {
-		method GET HEAD
-		header Accept text/html*
-		header_regexp language Accept-Language (?i)^fr(?:[-;,]|$)
-		not path /en /en/* /fr /fr/* /it /it/*
-	}
-	@italian {
-		method GET HEAD
-		header Accept text/html*
-		header_regexp language Accept-Language (?i)^it(?:[-;,]|$)
-		not path /en /en/* /fr /fr/* /it /it/*
-	}
+	header @unprefixed_page Vary "Accept-Language, Cookie"
 
-	header @english Vary Accept-Language
-	header @french Vary Accept-Language
-	header @italian Vary Accept-Language
-	redir @english /en{uri} 302
-	redir @french /fr{uri} 302
-	redir @italian /it{uri} 302
+	import language_redirect en
+	import language_redirect fr
+	import language_redirect it
 
 	encode gzip zstd
 
@@ -47,7 +57,11 @@
 	handle_errors {
 		@404 expression {err.status_code} == 404
 		handle @404 {
-			rewrite * /404.html
+			# Serve the not-found page in the language of the requested path.
+			@localized path_regexp lang ^/(en|fr|it)(?:/|$)
+			@german not path_regexp ^/(en|fr|it)(?:/|$)
+			rewrite @localized /{re.lang.1}/404/index.html
+			rewrite @german /404/index.html
 			file_server
 		}
 	}
