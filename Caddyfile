@@ -9,6 +9,8 @@
 
 	redir /claude_skill https://github.com/ninech/deploio-skills 301
 	redir /claude_skill/ https://github.com/ninech/deploio-skills 301
+	redir /slack https://join.slack.com/t/deploiocommunity/shared_invite/zt-20tb3k93m-O4NEUs0RjZYGQNQoih8zkA 302
+	redir /slack/ https://join.slack.com/t/deploiocommunity/shared_invite/zt-20tb3k93m-O4NEUs0RjZYGQNQoih8zkA 302
 	redir /terms https://docs.nine.ch/docs/legal-documents/general-terms-and-conditions/ 301
 	redir /terms/ https://docs.nine.ch/docs/legal-documents/general-terms-and-conditions/ 301
 
