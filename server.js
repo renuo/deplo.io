@@ -5,7 +5,7 @@ import { availableLanguageTags, sourceLanguageTag } from './src/lib/paraglide/ru
 
 const host = process.env.HOST ?? '0.0.0.0';
 const port = Number.parseInt(process.env.PORT ?? '3000', 10);
-const excludedPaths = new Set(['/claude_skill', '/sitemap.xml', '/terms']);
+const excludedPaths = new Set(['/claude_skill', '/sitemap.xml', '/slack', '/terms']);
 
 const server = createServer((request, response) => {
   const url = new URL(request.url ?? '/', 'http://localhost');

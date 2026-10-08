@@ -6,7 +6,7 @@ import { createI18n } from '@inlang/paraglide-sveltekit';
 import { get } from 'svelte/store';
 export const i18n = createI18n(runtime, {
   prefixDefaultLanguage: 'never',
-  exclude: ['/sitemap.xml'],
+  exclude: ['/sitemap.xml', '/slack'],
 });
 
 export function switchToLanguage(newLanguage: AvailableLanguageTag) {

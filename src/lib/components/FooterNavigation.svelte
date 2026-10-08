@@ -23,7 +23,7 @@
           text: m.footer_documentation(),
         },
         {
-          href: 'https://join.slack.com/t/deploiocommunity/shared_invite/zt-20tb3k93m-O4NEUs0RjZYGQNQoih8zkA',
+          href: '/slack',
           text: m.footer_slack(),
         },
         {
