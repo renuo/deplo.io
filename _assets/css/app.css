@@ -87,10 +87,8 @@ body {
 }
 
 [data-terminal-result-line] {
-  display: block;
   animation: echo 0.3s linear var(--terminal-delay) forwards;
   opacity: 0;
-  transform: translateX(-100%);
 }
 
 [data-marquee-item] {
