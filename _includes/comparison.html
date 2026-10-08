@@ -13,7 +13,7 @@
               <th class="min-w-36 max-w-36 py-8 {% if forloop.first %}rounded-t-2xl bg-deploio/5{% endif %}">
                 <img
                   src="/assets/images/logos/{{ vendor.image }}"
-                  alt="{{ vendor.name }} logo"
+                  alt="{{ vendor.name | downcase }} logo"
                   class="mx-auto h-8 w-24 object-contain"
                 >
               </th>

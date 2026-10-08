@@ -29,3 +29,11 @@ exclude:
   - Gemfile.lock
   - scripts
   - vendor
+  - Caddyfile
+  - Dockerfile
+  - server.js
+  # Leftovers of a local SvelteKit checkout
+  - build
+  - src
+  - project.inlang
+  - test-results

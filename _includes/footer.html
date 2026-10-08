@@ -49,6 +49,7 @@
           <a
             class="py-2 text-2xl tracking-[0.02em] text-current {% if page.lang == lang.code %}font-bold{% else %}font-normal{% endif %}"
             href="{{ switch_prefix }}{{ page.route }}"
+            data-language-link="{{ lang.code }}"
           >
             {{- lang.label -}}
           </a>
@@ -62,7 +63,7 @@
         {% include link.html href='https://guides.deplo.io' target='_blank' text_key='footer_documentation' class='max-w-fit' %}
         {% include link.html href='/slack' target='_blank' text_key='footer_slack' class='max-w-fit' %}
         {% include link.html href='https://github.com/ninech/deploio-examples' target='_blank' text_key='footer_github' class='max-w-fit' %}
-        {% include link.html route='/pricing/' text_key='footer_pricing' class='max-w-fit' %}
+        {% include link.html route='/pricing/' target='_blank' text_key='footer_pricing' class='max-w-fit' %}
       </nav>
       <nav class="flex flex-col gap-4">
         <h3 class="text-base font-semibold uppercase">{% t footer_contact %}</h3>
@@ -75,8 +76,8 @@
           <br>
           {% t footer_country %}
         </address>
-        {% include link.html link=site.data.contact.email class='max-w-fit' %}
-        {% include link.html link=site.data.contact.phone class='max-w-fit' %}
+        {% include link.html link=site.data.contact.email target='_blank' class='max-w-fit' %}
+        {% include link.html link=site.data.contact.phone target='_blank' class='max-w-fit' %}
         <p class="max-w-fit text-sm opacity-70">{% t footer_support_note %}</p>
       </nav>
       <nav class="flex flex-col gap-4 text-sm md:ml-auto">

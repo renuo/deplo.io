@@ -15,7 +15,7 @@ description_key: meta_description_success_story
   {% include success-story-main.html aside=story_aside first_title_key='success_story_before_cloud_title' first_text_key='success_story_before_cloud_text' second_title_key='success_story_beauty_and_the_beast_title' second_text_key='success_story_beauty_and_the_beast_text' %}
 
   {% capture story_quote %}
-    {% include testimonial.html text_key='success_story_note_quote' avatar='josua.webp' name='Josua Schmid' role='CTO Renuo AG' delay=300 %}
+    {% include testimonial.html text_key='success_story_note_quote' avatar='josua.webp' name='Josua Schmid' role='CTO Renuo AG' padding='p-4 pb-10' %}
   {% endcapture %}
   {% include success-story-notes.html title_key='success_story_note_title' text_key='success_story_note_text' quote=story_quote %}
 
