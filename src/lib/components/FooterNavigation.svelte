@@ -19,7 +19,7 @@
           text: m.footer_status(),
         },
         {
-          href: 'https://docs.deplo.io/',
+          href: 'https://guides.deplo.io',
           text: m.footer_documentation(),
         },
         {
