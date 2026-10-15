@@ -1,6 +1,6 @@
 <script>
-  import iso9001Icon from '$lib/assets/icons/iso_9001:2015_certification.webp';
-  import iso27001Icon from '$lib/assets/icons/iso_27001:2022_certification.webp';
+  import iso9001Icon from '$lib/assets/icons/iso_9001:2025_certification.webp';
+  import iso27001Icon from '$lib/assets/icons/iso_27001:2024_certification.webp';
   import co2NeutralIcon from '$lib/assets/icons/co2_neutral_certification.webp';
 </script>
 
