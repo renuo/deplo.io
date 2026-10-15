@@ -1,0 +1,30 @@
+{% if include.name_key -%}
+  {%- assign quote_name = include.name_key | t -%}
+{%- else -%}
+  {%- assign quote_name = include.name -%}
+{%- endif %}
+{% if include.role_key -%}
+  {%- assign quote_role = include.role_key | t -%}
+{%- else -%}
+  {%- assign quote_role = include.role -%}
+{%- endif %}
+<div
+  class="relative h-max border-t-2 border-deploio bg-white {{ include.padding | default: 'p-6 pb-14' }} font-medium text-deploio shadow-card"
+  data-appear
+  data-delay="{{ include.delay | default: 300 }}"
+>
+  <span class="text-2xl">{{ include.text_key | t }}</span>
+  <div class="mt-6 flex items-center font-normal">
+    <div class="border-t-1 mr-4 flex-shrink-0 border-deploio">
+      <img
+        src="/assets/images/avatars/{{ include.avatar }}"
+        alt="{{ quote_name }}"
+        class="m-2 h-full w-11 rounded-full bg-gray-200 object-cover"
+      >
+    </div>
+    <div class="text-base">
+      <p data-appear data-delay="350">{{ quote_name }}</p>
+      <p class="opacity-70" data-appear data-delay="400">{{ quote_role }}</p>
+    </div>
+  </div>
+</div>
