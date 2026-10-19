@@ -1,0 +1,36 @@
+<button
+  type="button"
+  class="pricing-tile {{ include.class }}"
+  {% if include.slot %}
+    data-slot="{{ include.slot }}"
+  {% endif %}
+  {{ include.attributes }}
+  aria-pressed="false"
+>
+  <span class="flex w-full flex-col gap-1">
+    <span
+      class="font-semibold"
+      {% if include.slot %}
+        data-name="{{ include.slot }}"
+      {% endif %}
+    >
+      {{- include.label -}}
+    </span>
+    {% if include.hint %}
+      <span class="pricing-muted text-xs">{{ include.hint }}</span>
+    {% else %}
+      <span class="pricing-muted text-xs" data-specs="{{ include.slot }}"></span>
+    {% endif %}
+  </span>
+  {% if include.slot %}
+    <span class="mt-auto flex w-full flex-wrap items-center justify-between gap-x-2 gap-y-1">
+      <span class="whitespace-nowrap">
+        <span class="font-semibold" data-price="{{ include.slot }}">–</span>
+        <span class="pricing-muted text-xs">{% t pricing_calc_per_month %}</span>
+      </span>
+      {% if include.badge %}
+        <span class="pricing-badge md:hidden" data-app-badge="{{ include.badge }}" hidden></span>
+      {% endif %}
+    </span>
+  {% endif %}
+</button>

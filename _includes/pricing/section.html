@@ -1,0 +1,40 @@
+{% assign section_title_key = 'pricing_calc_' | append: include.key %}
+<section class="flex flex-col">
+  <div class="pricing-card flex flex-col gap-6">
+    <div class="flex items-center justify-between gap-4">
+      <h2 class="flex items-center gap-3">
+        <span class="flex size-7 shrink-0 items-center justify-center rounded-full bg-deploio text-xs text-white">
+          {{- include.number -}}
+        </span>
+        <span class="text-[20px] font-medium uppercase leading-[1.17] tracking-[0.02em]">
+          {{- section_title_key | t -}}
+        </span>
+        {% if include.optional %}
+          <span class="text-xs opacity-70">{% t pricing_calc_optional %}</span>
+        {% endif %}
+      </h2>
+      <p class="hidden items-baseline gap-1.5 whitespace-nowrap text-[20px] uppercase leading-[1.17] tracking-[0.02em] md:flex">
+        <span class="font-medium">
+          {%- if include.total_label %}{% t pricing_calc_total %} {% endif %}CHF</span
+        >
+        <span class="font-bold" data-total="{{ include.key }}">–</span>
+        <span class="text-base normal-case tracking-normal opacity-70">{% t pricing_calc_per_month %}</span>
+      </p>
+    </div>
+    <div class="flex flex-col gap-5">
+      {% include pricing/sections/{{ include.key }}.html %}
+    </div>
+  </div>
+  <div class="flex items-baseline justify-between gap-4 bg-deploio px-4 py-3 text-white md:hidden">
+    <p class="text-sm leading-[1.35]">
+      <span class="block font-semibold">{{ section_title_key | append: '_total' | t }}</span>
+      <span class="block text-white/70">{% t pricing_calc_excl_vat %}</span>
+    </p>
+    <p class="flex items-baseline gap-[5px] whitespace-nowrap">
+      <span class="text-[20px] font-semibold uppercase leading-[1.17] tracking-[0.02em]"
+        >CHF <span data-total="{{ include.key }}">–</span></span
+      >
+      <span class="text-sm text-white/70">{% t pricing_calc_per_month %}</span>
+    </p>
+  </div>
+</section>

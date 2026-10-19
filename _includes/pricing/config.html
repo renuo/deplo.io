@@ -1,0 +1,16 @@
+{%- assign string_names = 'app,single_database,dedicated,key_value_store,search,single_node,high_availability,object_storage_space,object_storage_traffic,gib_outgoing,static_egress,additional_ipv4,block_storage,grafana,one_instance,nodes,storage,connections,service_fee_included,item,items,link_copied,show_details,hide_details'
+  | split: ','
+-%}
+<script type="application/json" data-pricing-config>
+  {
+    "apiUrl": {{ site.pricing_api_url | jsonify }},
+    "language": {{ page.lang | jsonify }},
+    "config": {{ site.data.pricing | jsonify }},
+    "strings": {
+      {%- for name in string_names -%}
+        {%- assign key = 'pricing_calc_' | append: name -%}
+        {{ name | jsonify }}: {{ key | t | jsonify }}{% unless forloop.last %},{% endunless %}
+      {%- endfor -%}
+    }
+  }
+</script>

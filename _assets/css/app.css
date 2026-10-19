@@ -33,6 +33,79 @@
   .text-h5 {
     @apply text-[16px] font-medium uppercase leading-[117%] tracking-[0.02em] md:text-[20px];
   }
+
+  .pricing-card {
+    @apply bg-white px-4 py-5 shadow-card md:px-8 md:py-7;
+  }
+
+  .pricing-tile {
+    @apply flex min-w-0 flex-col items-start gap-3 border-2 border-transparent bg-deploio/[0.04] px-4 py-3.5 text-left leading-[1.35] text-deploio transition-colors hover:border-deploio/30 disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:border-transparent;
+  }
+
+  .pricing-tile[aria-pressed='true'] {
+    @apply border-deploio bg-deploio text-white;
+  }
+
+  .pricing-muted {
+    @apply text-deploio/70;
+  }
+
+  .pricing-tile[aria-pressed='true'] .pricing-muted {
+    @apply text-white/70;
+  }
+
+  .pricing-badge {
+    @apply shrink-0 bg-deploio px-1.5 text-xs font-semibold leading-[1.35] text-white;
+  }
+
+  .pricing-tile[aria-pressed='true'] .pricing-badge {
+    @apply bg-white text-deploio;
+  }
+
+  .pricing-segments {
+    @apply flex gap-[3px] border border-deploio/20 p-1;
+  }
+
+  .pricing-segment {
+    @apply flex min-h-[42px] flex-1 items-center justify-center px-4 py-1 text-center text-sm font-semibold leading-[1.35] text-deploio transition-colors hover:bg-deploio/[0.06] md:flex-none md:whitespace-nowrap;
+  }
+
+  .pricing-segment[aria-pressed='true'] {
+    @apply bg-deploio text-white;
+  }
+
+  .pricing-toggle {
+    @apply relative h-7 w-12 shrink-0 rounded-full bg-deploio/30 transition-colors;
+  }
+
+  .pricing-toggle[aria-checked='true'] {
+    @apply bg-deploio;
+  }
+
+  .pricing-toggle > span {
+    @apply absolute left-[3px] top-[3px] size-[22px] rounded-full bg-white transition-transform motion-reduce:transition-none;
+  }
+
+  .pricing-toggle[aria-checked='true'] > span {
+    @apply translate-x-5;
+  }
+
+  .pricing-step {
+    @apply shrink-0 bg-deploio p-2 transition-colors disabled:cursor-not-allowed disabled:bg-deploio/50;
+  }
+
+  .pricing-link {
+    @apply whitespace-nowrap underline decoration-1 underline-offset-4 transition-opacity hover:opacity-70;
+  }
+}
+
+/* The calculator toggles the hidden attribute on elements that also carry display utilities */
+[data-pricing] [hidden] {
+  display: none !important;
+}
+
+[data-pricing][data-state='loading'] [data-price] {
+  @apply animate-pulse;
 }
 
 html,

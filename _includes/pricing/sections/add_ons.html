@@ -1,0 +1,136 @@
+<div class="flex flex-col gap-2 md:flex-row md:items-center">
+  <div class="flex flex-col gap-px leading-[1.35] md:w-[277px] md:shrink-0">
+    <h3 class="font-semibold">{% t pricing_calc_search %}</h3>
+    <p class="pricing-muted text-xs">{% t pricing_calc_search_hint %}</p>
+  </div>
+  <div class="pricing-segments">
+    {% include pricing/segment.html set='search:none' label_key='pricing_calc_none' %}
+    {% include pricing/segment.html set='search:single' label_key='pricing_calc_single_node' %}
+    {% include pricing/segment.html set='search:multi' label_key='pricing_calc_high_availability' %}
+  </div>
+</div>
+<div class="flex flex-col gap-3" data-visible="search">
+  <p class="pricing-muted text-sm leading-[1.35]" data-visible="search-single">
+    {% t pricing_calc_search_single_hint %}
+  </p>
+  <p class="pricing-muted text-sm leading-[1.35]" data-visible="search-multi">
+    {% t pricing_calc_search_multi_hint %}
+  </p>
+  <div class="grid grid-cols-2 gap-2 md:grid-cols-5">
+    {% for size in site.data.pricing.search.sizes %}
+      {% capture tile_attributes -%}
+        data-set="searchSize:{{ size.key }}" {% unless size.multi %}data-single-node-only="true"{% endunless %}
+      {%- endcapture %}
+      {% assign slot = 'search.' | append: size.key %}
+      {% include pricing/tile.html slot=slot label=size.label attributes=tile_attributes %}
+    {% endfor %}
+  </div>
+</div>
+
+<hr class="border-deploio/20">
+{% capture hint %}
+  {%- t pricing_calc_object_storage_hint -%}
+  <br>
+  <span class="group relative inline-flex items-center gap-1">
+    {%- t pricing_calc_term_discounts %}
+    <button type="button" aria-describedby="pricing-term-discounts" aria-label="{% t pricing_calc_term_discounts %}">
+      <img class="size-4" src="/assets/images/icons/pricing/info.svg" alt="" width="16" height="16">
+    </button>
+    <span
+      id="pricing-term-discounts"
+      role="tooltip"
+      class="invisible absolute bottom-full left-0 z-10 mb-2 w-60 bg-deploio px-3 py-2 text-xs text-white opacity-0 transition-opacity group-focus-within:visible group-focus-within:opacity-100 group-hover:visible group-hover:opacity-100"
+    >
+      {%- t pricing_calc_term_discounts_tooltip -%}
+    </span>
+  </span>
+{% endcapture %}
+{% capture price %}
+  <span class="block whitespace-nowrap">
+    {% include pricing/price.html slot='add_ons.object_storage_space' unit_key='pricing_calc_per_gib_space' %}
+  </span>
+  <span class="block whitespace-nowrap">
+    {% include pricing/price.html slot='add_ons.object_storage_traffic' unit_key='pricing_calc_per_gib_traffic' %}
+  </span>
+{% endcapture %}
+{% capture details %}
+  <div class="col-span-2 flex gap-6 max-md:mt-2 md:col-start-2 md:row-start-2" data-visible="object-storage">
+    <label class="flex min-w-0 flex-1 flex-col gap-1">
+      <span class="text-xs text-deploio/50">{% t pricing_calc_storage_space %}</span>
+      <input
+        class="h-[42px] w-full bg-deploio/[0.04] pl-4 pr-3 font-medium text-deploio"
+        type="number"
+        min="0"
+        inputmode="numeric"
+        data-input="storageGiB"
+      >
+    </label>
+    <label class="flex min-w-0 flex-1 flex-col gap-1">
+      <span class="text-xs text-deploio/50">{% t pricing_calc_outgoing_traffic %}</span>
+      <input
+        class="h-[42px] w-full bg-deploio/[0.04] pl-4 pr-3 font-medium text-deploio"
+        type="number"
+        min="0"
+        inputmode="numeric"
+        data-input="trafficGiB"
+      >
+    </label>
+  </div>
+{% endcapture %}
+{%
+  include pricing/add-on-row.html
+  title_key='pricing_calc_object_storage'
+  hint=hint
+  toggle='objectStorage'
+  price=price
+  details=details
+%}
+
+<hr class="border-deploio/20">
+{%
+  include pricing/add-on-row.html
+  title_key='pricing_calc_static_egress'
+  hint_key='pricing_calc_static_egress_hint'
+  toggle='staticEgress'
+  price_slot='add_ons.static_egress'
+  unit_key='pricing_calc_per_month'
+%}
+
+<hr class="border-deploio/20">
+{% capture hint %}
+  <span data-visible="egress">{% t pricing_calc_ipv4_hint_on %}</span>
+  <span data-visible="no-egress">{% t pricing_calc_ipv4_hint_off %}</span>
+{% endcapture %}
+{%
+  include pricing/add-on-row.html
+  title_key='pricing_calc_additional_ipv4'
+  hint=hint
+  stepper='ipv4'
+  price_slot='add_ons.ipv4'
+  unit_key='pricing_calc_per_address'
+%}
+
+<hr class="border-deploio/20">
+{%
+  include pricing/add-on-row.html
+  title_key='pricing_calc_block_storage'
+  hint_key='pricing_calc_block_storage_hint'
+  stepper='blockStorage'
+  price_slot='add_ons.block_storage'
+  unit_key='pricing_calc_per_block'
+%}
+
+<hr class="border-deploio/20">
+{% capture price %}
+  <span class="block whitespace-nowrap">
+    {% include pricing/price.html slot='add_ons.grafana' unit_key='pricing_calc_per_instance' %}
+  </span>
+  <span class="pricing-muted block text-xs">{% t pricing_calc_grafana_extra %}</span>
+{% endcapture %}
+{%
+  include pricing/add-on-row.html
+  title_key='pricing_calc_grafana'
+  hint_key='pricing_calc_grafana_hint'
+  toggle='grafana'
+  price=price
+%}

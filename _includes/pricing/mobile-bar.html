@@ -1,0 +1,50 @@
+<div class="fixed inset-0 z-40 bg-black/40 lg:hidden" data-sheet-overlay hidden></div>
+<div
+  class="fixed inset-x-0 bottom-0 z-50 flex translate-y-full flex-col shadow-[0_0_20px_rgba(20,29,80,0.1)] transition-transform motion-reduce:transition-none lg:hidden"
+  data-bottom-bar
+>
+  <div
+    class="relative max-h-[65vh] overflow-y-auto border-t-2 border-deploio bg-white"
+    id="pricing-estimate-sheet"
+    data-sheet
+    hidden
+  >
+    <button type="button" class="absolute right-3 top-3" data-sheet-close aria-label="{% t pricing_calc_close %}">
+      <img class="size-8" src="/assets/images/icons/pricing/close.svg" alt="" width="32" height="32">
+    </button>
+    {% include pricing/estimate.html variant='sheet' %}
+  </div>
+  <button
+    type="button"
+    class="flex h-[42px] items-center gap-1 border-t border-deploio/10 bg-white px-3 text-sm"
+    data-sheet-toggle
+    aria-controls="pricing-estimate-sheet"
+    aria-expanded="false"
+  >
+    <img
+      class="size-5 transition-transform"
+      src="/assets/images/icons/pricing/keyboard_arrow_up.svg"
+      alt=""
+      width="20"
+      height="20"
+      data-sheet-chevron
+    >
+    <span data-item-count></span>
+    <span aria-hidden="true">·</span>
+    <span data-sheet-toggle-label>{% t pricing_calc_show_details %}</span>
+  </button>
+  <div class="flex items-center justify-between gap-4 bg-deploio px-4 py-3 text-white">
+    <p class="flex flex-col gap-[3px]">
+      <span class="text-sm leading-[1.17] tracking-[0.02em]">{% t pricing_calc_total_per_month %}</span>
+      <span class="whitespace-nowrap text-[20px] font-semibold uppercase leading-[1.17] tracking-[0.02em]"
+        >CHF <span data-grand-total>–</span></span
+      >
+    </p>
+    {%
+      include button.html
+      cockpit_path='/fast_onboardings/new?origin=deploio'
+      text_key='pricing_calc_get_started'
+      class='flex h-[42px] items-center !text-sm'
+    %}
+  </div>
+</div>

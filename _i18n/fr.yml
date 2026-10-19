@@ -47,7 +47,90 @@ fr:
   register_description: Prêt pour moins de stress et plus de succès ? Entrez simplement votre e-mail et détendez-vous – nous amènerons votre application dans le cloud sans que vous ayez à lever le petit doigt. C'est parti !
   register_button: S'INSCRIRE MAINTENANT
   pricing_title: Calculateur de prix
-  pricing_description: Calculez les coûts de votre application et choisissez le bon forfait pour vos besoins.
+  pricing_description: 'Choisissez ce dont votre application a besoin.<br>Tous les prix en CHF par mois, hors TVA.'
+  pricing_calc_preset_label: 'Charger un modèle :'
+  pricing_calc_preset_hobby: 'Hobby'
+  pricing_calc_preset_production: 'Production'
+  pricing_calc_preset_scale: 'Échelle'
+  pricing_calc_total: 'Total'
+  pricing_calc_per_month: '/ mois'
+  pricing_calc_excl_vat: 'hors TVA'
+  pricing_calc_none: 'Aucun'
+  pricing_calc_optional: 'facultatif'
+  pricing_calc_decrease: 'Diminuer'
+  pricing_calc_increase: 'Augmenter'
+  pricing_calc_app: 'App'
+  pricing_calc_app_choose: "Choisissez la quantité pour chaque taille d'instance"
+  pricing_calc_app_choose_mobile: "Choisissez une taille d'instance"
+  pricing_calc_instances: 'Instances'
+  pricing_calc_instances_hint: 'Réplicas de cette taille'
+  pricing_calc_app_total: 'Total app'
+  pricing_calc_database: 'Base de données'
+  pricing_calc_database_total: 'Total base de données'
+  pricing_calc_engine: 'Moteur'
+  pricing_calc_plan: 'Formule'
+  pricing_calc_single_database: 'Base de données unique'
+  pricing_calc_dedicated_instance: 'Instance dédiée'
+  pricing_calc_dedicated: 'Dédiée'
+  pricing_calc_single_hint: 'Une base de données sur un moteur partagé. Si le stockage est dépassé, vous passez à la taille suivante.'
+  pricing_calc_dedicated_hint: 'Votre propre moteur avec des ressources dédiées, 20 GB de stockage inclus.'
+  pricing_calc_connections: "jusqu'à 20 connexions"
+  pricing_calc_key_value_store: 'Key Value Store'
+  pricing_calc_kvs_hint: 'Compatible KeyDB / Redis'
+  pricing_calc_kvs_none_hint: 'Inclut les frais de service du Key Value Store.'
+  pricing_calc_service_fee_included: 'frais de service inclus'
+  pricing_calc_add_ons: 'Options'
+  pricing_calc_add_ons_total: 'Total options'
+  pricing_calc_search: 'Search'
+  pricing_calc_search_hint: 'OpenSearch géré'
+  pricing_calc_single_node: 'Nœud unique'
+  pricing_calc_high_availability: 'Haute disponibilité'
+  pricing_calc_search_single_hint: 'Un nœud. Passez à la haute disponibilité pour les charges critiques.'
+  pricing_calc_search_multi_hint: "Trois nœuds, résilients et maintenables sans interruption. XS n'est disponible qu'en nœud unique."
+  pricing_calc_object_storage: 'Object Storage'
+  pricing_calc_object_storage_hint: "Compatible S3, facturé à l'usage"
+  pricing_calc_term_discounts: 'Remises sur la durée disponibles'
+  pricing_calc_term_discounts_tooltip: "L'Object Storage devient moins cher avec un engagement plus long. Contactez-nous pour plus de détails."
+  pricing_calc_per_gib_space: "/ Gio d'espace"
+  pricing_calc_per_gib_traffic: '/ Gio de trafic'
+  pricing_calc_storage_space: 'Espace de stockage (Gio)'
+  pricing_calc_outgoing_traffic: 'Trafic sortant (Gio)'
+  pricing_calc_object_storage_space: 'Object Storage espace'
+  pricing_calc_object_storage_traffic: 'Object Storage trafic'
+  pricing_calc_gib_outgoing: '{gib} GiB sortants'
+  pricing_calc_static_egress: 'Static egress'
+  pricing_calc_static_egress_hint: 'IP sortante statique et prévisible, nécessite une adresse IPv4 (ajoutée automatiquement)'
+  pricing_calc_additional_ipv4: 'Adresse IPv4 supplémentaire'
+  pricing_calc_ipv4_hint_on: 'Au moins 1 requise tant que le static egress est activé'
+  pricing_calc_ipv4_hint_off: 'Facultatif'
+  pricing_calc_per_address: '/ mois par adresse'
+  pricing_calc_block_storage: 'Block storage supplémentaire'
+  pricing_calc_block_storage_hint: 'La taille du disque ne peut pas être réduite'
+  pricing_calc_per_block: '/ mois par bloc de 10 Gio'
+  pricing_calc_grafana: 'Grafana'
+  pricing_calc_grafana_hint: 'Monitoring et journalisation'
+  pricing_calc_per_instance: '/ mois par instance'
+  pricing_calc_grafana_extra: 'ressources associées facturées en sus'
+  pricing_calc_one_instance: '1 instance'
+  pricing_calc_nodes: 'nœuds'
+  pricing_calc_storage: 'de stockage'
+  pricing_calc_estimate: 'Votre estimation'
+  pricing_calc_item: '{count} élément'
+  pricing_calc_items: '{count} éléments'
+  pricing_calc_estimate_empty: "Rien de sélectionné pour l'instant."
+  pricing_calc_subtotal: 'Sous-total hors TVA'
+  pricing_calc_vat: 'TVA'
+  pricing_calc_total_per_month: 'Total par mois'
+  pricing_calc_get_started: 'Commencer'
+  pricing_calc_download_pdf: 'Télécharger en PDF'
+  pricing_calc_copy_link: 'Copier le lien'
+  pricing_calc_link_copied: 'Lien copié'
+  pricing_calc_usage_note: "Les éléments facturés à l'usage (Object Storage, trafic) sont des estimations."
+  pricing_calc_show_details: 'Afficher les détails'
+  pricing_calc_hide_details: 'Masquer les détails'
+  pricing_calc_close: 'Fermer'
+  pricing_calc_error: "Les prix n'ont pas pu être chargés."
+  pricing_calc_retry: 'Réessayer'
   team_title: Notre équipe
   team_description: Nous développons Deploio – une plateforme d'applications entièrement gérée depuis la Suisse. Notre équipe combine l'expertise en développement, opérations et sécurité pour transformer de manière transparente les dépôts Git en applications.
   success_story_subtitle: COMMENT TOUT A COMMENCÉ

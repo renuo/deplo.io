@@ -1,0 +1,38 @@
+{% comment %}
+  One add-on line. Pass `toggle` or `stepper` with the state field the control edits, and either `price_slot` with
+  `unit_key` or a ready-made `price`. `hint_key` or `hint` and `details` are optional.
+{% endcomment %}
+<div
+  class="grid grid-cols-[minmax(0,1fr)_auto] gap-x-4 gap-y-2 md:grid-cols-[minmax(0,1fr)_minmax(0,1fr)_minmax(0,0.5fr)] md:gap-y-4"
+>
+  {%
+    include pricing/label.html
+    class='md:col-start-1 md:row-start-1'
+    title_key=include.title_key
+    hint_key=include.hint_key
+    hint=include.hint
+  %}
+  <div class="justify-self-end md:col-start-3 md:row-start-1">
+    {% if include.toggle %}
+      {% assign toggle_label = include.title_key | t %}
+      {% include pricing/toggle.html field=include.toggle label=toggle_label %}
+    {% elsif include.stepper %}
+      {% capture step_attributes %}data-step="{{ include.stepper }}"{% endcapture %}
+      {% capture value_attribute %}data-value-of="{{ include.stepper }}"{% endcapture %}
+      {%
+        include pricing/stepper.html
+        class='w-[135px]'
+        attributes=step_attributes
+        value_attribute=value_attribute
+      %}
+    {% endif %}
+  </div>
+  <div class="col-span-2 leading-[1.35] md:col-span-1 md:col-start-2 md:row-start-1">
+    {% if include.price %}
+      {{ include.price }}
+    {% else %}
+      {% include pricing/price.html slot=include.price_slot unit_key=include.unit_key %}
+    {% endif %}
+  </div>
+  {{ include.details }}
+</div>
