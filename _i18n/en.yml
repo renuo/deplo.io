@@ -126,6 +126,7 @@ en:
   pricing_calc_copy_link: 'Copy link'
   pricing_calc_link_copied: 'Link copied'
   pricing_calc_usage_note: 'Usage based items (object storage, traffic) are estimates.'
+  pricing_calc_print_prices: 'All prices in CHF per month, excl. VAT.'
   pricing_calc_show_details: 'Show details'
   pricing_calc_hide_details: 'Hide details'
   pricing_calc_close: 'Close'

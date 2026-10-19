@@ -126,6 +126,7 @@ it:
   pricing_calc_copy_link: 'Copia link'
   pricing_calc_link_copied: 'Link copiato'
   pricing_calc_usage_note: "Le voci basate sull'uso (Object Storage, traffico) sono stime."
+  pricing_calc_print_prices: 'Tutti i prezzi in CHF al mese, IVA esclusa.'
   pricing_calc_show_details: 'Mostra dettagli'
   pricing_calc_hide_details: 'Nascondi dettagli'
   pricing_calc_close: 'Chiudi'

@@ -97,6 +97,24 @@
   .pricing-link {
     @apply whitespace-nowrap underline decoration-1 underline-offset-4 transition-opacity hover:opacity-70;
   }
+
+  .pricing-print {
+    @apply text-deploio;
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+}
+
+/* The first page starts at the paper edge so the logo hangs from the top like on the site */
+@media print {
+  @page {
+    size: A4;
+    margin: 14mm 0;
+  }
+
+  @page :first {
+    margin: 0;
+  }
 }
 
 /* The calculator toggles the hidden attribute on elements that also carry display utilities */
@@ -110,7 +128,7 @@
 
 html,
 body {
-  @apply min-w-[320px] bg-deploio;
+  @apply min-w-[320px] bg-deploio print:bg-white;
 }
 
 .container {

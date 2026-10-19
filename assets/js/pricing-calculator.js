@@ -509,16 +509,20 @@ if (typeof document !== 'undefined') {
       );
 
       const template = root.querySelector('[data-estimate-item-template]').content.firstElementChild;
-      all('[data-estimate-items]').forEach((list) => {
-        list.replaceChildren(
-          ...estimate.items.map((item) => {
-            const row = template.cloneNode(true);
-            row.querySelector('[data-item-name]').textContent = item.name;
-            row.querySelector('[data-item-detail]').textContent = item.detail;
-            row.querySelector('[data-item-total]').textContent = formatAmount(item.total, 2);
-            return row;
-          }),
-        );
+      const toRow = (item) => {
+        const row = template.cloneNode(true);
+        row.querySelector('[data-item-name]').textContent = item.name;
+        row.querySelector('[data-item-detail]').textContent = item.detail;
+        row.querySelector('[data-item-total]').textContent = formatAmount(item.total, 2);
+        return row;
+      };
+      const itemsIn = (section) => estimate.items.filter((item) => !section || item.section === section);
+      // A list with a section name (print sheet) only shows that section's items
+      all('[data-estimate-items]').forEach((list) =>
+        list.replaceChildren(...itemsIn(list.dataset.estimateItems).map(toRow)),
+      );
+      all('[data-estimate-section]').forEach((element) => {
+        element.hidden = itemsIn(element.dataset.estimateSection).length === 0;
       });
       all('[data-estimate-empty]').forEach((element) => (element.hidden = estimate.items.length > 0));
     };
@@ -632,6 +636,7 @@ if (typeof document !== 'undefined') {
     }).observe(root.querySelector('[data-pricing-sections]'));
 
     desktop.addEventListener('change', render);
+    setText('[data-print-date]', new Intl.DateTimeFormat(`${language}-CH`, { dateStyle: 'long' }).format(new Date()));
     render();
     load();
   });

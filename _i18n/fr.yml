@@ -126,6 +126,7 @@ fr:
   pricing_calc_copy_link: 'Copier le lien'
   pricing_calc_link_copied: 'Lien copié'
   pricing_calc_usage_note: "Les éléments facturés à l'usage (Object Storage, trafic) sont des estimations."
+  pricing_calc_print_prices: 'Tous les prix en CHF par mois, hors TVA.'
   pricing_calc_show_details: 'Afficher les détails'
   pricing_calc_hide_details: 'Masquer les détails'
   pricing_calc_close: 'Fermer'

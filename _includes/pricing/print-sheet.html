@@ -1,0 +1,55 @@
+{% comment %} Print-only version of the estimate: what "Download as PDF" saves {% endcomment %}
+<article class="pricing-print hidden flex-col bg-white pb-[12mm] print:flex">
+  <header class="flex items-start justify-between px-[16mm]">
+    <div class="w-[28mm]" role="img" aria-label="deplo.io">{% include pricing/logo.svg %}</div>
+    <p class="pricing-muted pt-[7mm] text-right text-sm leading-[1.35]" data-print-date></p>
+  </header>
+
+  <div class="flex flex-col gap-[5mm] px-[16mm] pt-[4mm]">
+    <div class="flex flex-col gap-1">
+      <h1 class="text-[32px] font-medium uppercase leading-[1.17] tracking-[0.02em]">{% t pricing_calc_estimate %}</h1>
+      <p class="pricing-muted text-sm leading-[1.35]">{% t pricing_calc_print_prices %}</p>
+    </div>
+
+    <p class="pricing-muted text-sm" data-estimate-empty hidden>{% t pricing_calc_estimate_empty %}</p>
+    {% assign sections = 'app,database,add_ons' | split: ',' %}
+    {% for section in sections %}
+      {% assign title_key = 'pricing_calc_' | append: section %}
+      <section data-estimate-section="{{ section }}">
+        <div class="flex items-center justify-between gap-4 border-b-2 border-deploio pb-2">
+          <h2 class="flex items-center gap-3">
+            <span class="flex size-7 shrink-0 items-center justify-center rounded-full bg-deploio text-xs text-white">
+              {{- forloop.index -}}
+            </span>
+            <span class="font-medium uppercase leading-[1.17] tracking-[0.02em]">{{ title_key | t }}</span>
+          </h2>
+          <p class="whitespace-nowrap font-semibold">CHF <span data-total="{{ section }}">–</span></p>
+        </div>
+        <ul class="flex flex-col" data-estimate-items="{{ section }}"></ul>
+      </section>
+    {% endfor %}
+
+    <div class="flex break-inside-avoid flex-col gap-3">
+      <dl class="ml-auto flex w-1/2 flex-col gap-1.5 text-sm leading-[1.35]">
+        <div class="flex justify-between gap-4">
+          <dt class="pricing-muted">{% t pricing_calc_subtotal %}</dt>
+          <dd data-subtotal>–</dd>
+        </div>
+        <div class="flex justify-between gap-4">
+          <dt class="pricing-muted">
+            {% t pricing_calc_vat %}
+            {{ site.data.pricing.vat_rate }}%
+          </dt>
+          <dd data-vat>–</dd>
+        </div>
+      </dl>
+      <p class="flex items-baseline justify-between gap-4 bg-deploio px-6 py-4 text-white">
+        <span class="text-sm uppercase tracking-[0.02em]">{% t pricing_calc_total_per_month %}</span>
+        <span class="whitespace-nowrap text-[28px] font-semibold uppercase leading-[1.17] tracking-[0.02em]"
+          >CHF <span data-grand-total>–</span></span
+        >
+      </p>
+      <p class="pricing-muted text-xs leading-[1.35]">{% t pricing_calc_usage_note %}</p>
+    </div>
+  </div>
+</article>

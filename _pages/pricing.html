@@ -5,7 +5,7 @@ title_key: meta_title_pricing
 description_key: meta_description_pricing
 ---
 <main>
-  <div class="relative h-[600px]">
+  <div class="relative h-[600px] print:hidden">
     <div class="pointer-events-none absolute h-full w-full select-none">
       <video
         aria-hidden="true"
@@ -26,11 +26,11 @@ description_key: meta_description_pricing
       <p class="max-w-[500px] text-lg" data-appear data-delay="100">{% t pricing_description %}</p>
     </section>
   </div>
-  <div class="bg-background">
-    <div class="container !pb-32 !pt-0">
+  <div class="bg-background print:bg-white">
+    <div class="container !pb-32 !pt-0 print:!p-0">
       {% include pricing/calculator.html %}
     </div>
   </div>
-  {% include register.html %}
+  <div class="print:hidden">{% include register.html %}</div>
 </main>
 <script src="/assets/js/pricing-calculator.js" defer></script>

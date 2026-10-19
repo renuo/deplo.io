@@ -126,6 +126,7 @@ de:
   pricing_calc_copy_link: 'Link kopieren'
   pricing_calc_link_copied: 'Link kopiert'
   pricing_calc_usage_note: 'Verbrauchsabhängige Positionen (Object Storage, Traffic) sind Schätzungen.'
+  pricing_calc_print_prices: 'Alle Preise in CHF pro Monat, exkl. MWST.'
   pricing_calc_show_details: 'Details anzeigen'
   pricing_calc_hide_details: 'Details ausblenden'
   pricing_calc_close: 'Schliessen'
