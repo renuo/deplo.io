@@ -1,6 +1,6 @@
 {% assign locale_prefix = '' -%}
 {%- unless page.lang == 'de' %}{% assign locale_prefix = '/' | append: page.lang %}{% endunless %}
-<div class="relative -mt-px {% if page.page_key == 'team' %}bg-background{% else %}bg-mountain{% endif %} max-h-[950px] pt-16 md:max-h-none">
+<div class="relative -mt-px print:hidden {% if page.page_key == 'team' %}bg-background{% else %}bg-mountain{% endif %} max-h-[950px] pt-16 md:max-h-none">
   <div class="pointer-events-none absolute h-full w-full select-none">
     <img
       aria-hidden="true"

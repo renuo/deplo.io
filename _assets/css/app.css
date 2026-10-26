@@ -33,11 +33,124 @@
   .text-h5 {
     @apply text-[16px] font-medium uppercase leading-[117%] tracking-[0.02em] md:text-[20px];
   }
+
+  .pricing-card {
+    @apply bg-white shadow-card;
+  }
+
+  .pricing-tile {
+    @apply flex min-w-0 flex-col items-start gap-3 border-2 border-transparent bg-deploio/[0.04] px-4 py-3.5 text-left leading-[1.35] text-deploio transition-colors hover:border-deploio/30 disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:border-transparent;
+  }
+
+  .pricing-tile[aria-pressed='true'] {
+    @apply border-deploio bg-deploio text-white;
+  }
+
+  .pricing-muted {
+    @apply text-deploio/70;
+  }
+
+  .pricing-tile[aria-pressed='true'] .pricing-muted {
+    @apply text-white/70;
+  }
+
+  .pricing-badge {
+    @apply shrink-0 bg-deploio px-1.5 text-xs font-semibold leading-[1.35] text-white;
+  }
+
+  .pricing-tile[aria-pressed='true'] .pricing-badge {
+    @apply bg-white text-deploio;
+  }
+
+  .pricing-segments {
+    @apply flex gap-[3px] border border-deploio/20 p-1;
+  }
+
+  .pricing-segment {
+    @apply flex min-h-[42px] flex-1 items-center justify-center px-4 py-1 text-center text-sm font-semibold leading-[1.35] text-deploio transition-colors hover:bg-deploio/[0.06] md:flex-none md:whitespace-nowrap;
+  }
+
+  .pricing-segment[aria-pressed='true'] {
+    @apply bg-deploio text-white;
+  }
+
+  .pricing-toggle {
+    @apply relative h-7 w-12 shrink-0 rounded-full bg-deploio/30 transition-colors;
+  }
+
+  .pricing-toggle[aria-checked='true'] {
+    @apply bg-deploio;
+  }
+
+  .pricing-toggle > span {
+    @apply absolute left-[3px] top-[3px] size-[22px] rounded-full bg-white transition-transform motion-reduce:transition-none;
+  }
+
+  .pricing-toggle[aria-checked='true'] > span {
+    @apply translate-x-5;
+  }
+
+  .pricing-stepper {
+    @apply flex items-center gap-0.5 transition-opacity data-[disabled=true]:opacity-50;
+  }
+
+  .pricing-step {
+    @apply shrink-0 bg-deploio/[0.04] p-2 transition-colors disabled:cursor-not-allowed;
+  }
+
+  .pricing-stepper-value {
+    @apply flex h-10 min-w-0 flex-1 items-center justify-center bg-deploio/[0.04] px-3 font-semibold text-deploio transition-colors;
+  }
+
+  .pricing-stepper[data-active='true'] :is(.pricing-step, .pricing-stepper-value) {
+    @apply bg-deploio text-white;
+  }
+
+  /* The dark minus icon already comes faded, it only shows while the quantity is zero */
+  .pricing-stepper[data-active='true'] [data-stepper-icon='idle'],
+  .pricing-stepper:not([data-active='true']) [data-stepper-icon='active'] {
+    @apply hidden;
+  }
+
+  .pricing-step:disabled [data-stepper-icon='active'] {
+    @apply opacity-50;
+  }
+
+  .pricing-link {
+    @apply whitespace-nowrap underline decoration-1 underline-offset-4 transition-opacity hover:opacity-70;
+  }
+
+  .pricing-print {
+    @apply text-deploio;
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+}
+
+/* The first page starts at the paper edge so the logo hangs from the top like on the site */
+@media print {
+  @page {
+    size: A4;
+    margin: 14mm 0;
+  }
+
+  @page :first {
+    margin: 0;
+  }
+}
+
+/* The calculator toggles the hidden attribute on elements that also carry display utilities */
+[data-pricing] [hidden] {
+  display: none !important;
+}
+
+[data-pricing][data-state='loading'] [data-price] {
+  @apply animate-pulse;
 }
 
 html,
 body {
-  @apply min-w-[320px] bg-deploio;
+  @apply min-w-[320px] bg-deploio print:bg-white;
 }
 
 .container {

@@ -1,0 +1,42 @@
+<p class="font-semibold leading-[1.35]">
+  <span class="md:hidden">{% t pricing_calc_app_choose_mobile %}</span>
+  <span class="max-md:hidden">{% t pricing_calc_app_choose %}</span>
+</p>
+<div class="grid grid-cols-2 gap-2 md:grid-cols-5">
+  {% for entry in site.data.pricing.app %}
+    <div class="flex flex-col gap-0.5">
+      {% capture tile_attributes %}data-app-tile="{{ entry.key }}"{% endcapture %}
+      {% assign slot = 'app.' | append: entry.key %}
+      {%
+        include pricing/tile.html
+        class='flex-1'
+        slot=slot
+        label=entry.name
+        badge=entry.key
+        attributes=tile_attributes
+      %}
+      {% capture step_attributes %}data-app-step="{{ entry.key }}"{% endcapture %}
+      {% capture value_attribute %}data-app-qty="{{ entry.key }}"{% endcapture %}
+      {%
+        include pricing/stepper.html
+        class='max-md:hidden'
+        attributes=step_attributes
+        value_attribute=value_attribute
+      %}
+    </div>
+  {% endfor %}
+</div>
+<p class="bg-deploio/[0.08] px-4 py-3.5 text-sm leading-[1.35]" data-app-description-box hidden>
+  <span class="font-semibold" data-app-description-name></span>
+  <span data-app-description></span>
+</p>
+{% comment %} Mobile edits one size at a time: the focused tile's quantity {% endcomment %}
+<div class="flex items-center justify-between gap-4 md:hidden">
+  {% include pricing/label.html title_key='pricing_calc_instances' hint_key='pricing_calc_instances_hint' %}
+  {%
+    include pricing/stepper.html
+    class='w-[135px]'
+    attributes='data-app-step=""'
+    value_attribute='data-app-focus-qty'
+  %}
+</div>

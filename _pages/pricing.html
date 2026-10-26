@@ -5,7 +5,7 @@ title_key: meta_title_pricing
 description_key: meta_description_pricing
 ---
 <main>
-  <div class="relative h-[600px]">
+  <div class="relative h-[600px] print:hidden">
     <div class="pointer-events-none absolute h-full w-full select-none">
       <video
         aria-hidden="true"
@@ -26,18 +26,11 @@ description_key: meta_description_pricing
       <p class="max-w-[500px] text-lg" data-appear data-delay="100">{% t pricing_description %}</p>
     </section>
   </div>
-  <div class="bg-background">
-    <div class="container !pb-32 !pt-0">
-      <iframe
-        width="100%"
-        height="787"
-        title="pricing"
-        allow="clipboard-read; clipboard-write"
-        src="{{ site.pricing_calculator_url }}/?lang={{ page.lang }}&amp;linkbase={{ site.url | url_encode }}%2F{% unless page.lang == 'de' %}{{ page.lang }}%2F{% endunless %}pricing%2F&amp;embed=true"
-        data-appear
-        data-delay="200"
-      ></iframe>
+  <div class="bg-background print:bg-white">
+    <div class="container !pb-32 !pt-0 print:!p-0">
+      {% include pricing/calculator.html %}
     </div>
   </div>
-  {% include register.html %}
+  <div class="print:hidden">{% include register.html %}</div>
 </main>
+<script src="/assets/js/pricing-calculator.js" defer></script>

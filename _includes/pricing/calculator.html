@@ -1,0 +1,57 @@
+<div class="group/pricing text-deploio" data-pricing data-state="loading">
+  {% include pricing/config.html %}
+  <template data-estimate-item-template>
+    <li
+      class="flex break-inside-avoid items-start justify-between gap-4 border-b border-deploio/10 py-3 leading-[1.35] print:items-baseline print:py-2"
+    >
+      <span class="flex min-w-0 flex-col gap-0.5 print:grid print:flex-1 print:grid-cols-2 print:items-baseline print:gap-4">
+        <span class="text-sm font-semibold" data-item-name></span>
+        <span class="pricing-muted text-xs" data-item-detail></span>
+      </span>
+      <span class="whitespace-nowrap text-sm font-semibold print:min-w-[24mm] print:text-right" data-item-total></span>
+    </li>
+  </template>
+
+  <div class="mb-8 flex flex-col gap-3 print:hidden" data-appear data-delay="200">
+    <p class="pricing-muted text-sm">{% t pricing_calc_preset_label %}</p>
+    <div class="flex flex-wrap gap-3">
+      {% for preset in site.data.pricing.presets %}
+        {% assign preset_key = 'pricing_calc_preset_' | append: preset.key %}
+        <button
+          type="button"
+          class="bg-[#f6f6f8] px-[18px] py-2.5 font-medium uppercase leading-[1.35] opacity-70 transition-opacity hover:opacity-100 aria-pressed:bg-deploio aria-pressed:text-white aria-pressed:opacity-100 max-md:px-3 max-md:text-sm"
+          data-preset="{{ preset.key }}"
+          aria-pressed="false"
+        >
+          {{ preset_key | t }}
+        </button>
+      {% endfor %}
+    </div>
+  </div>
+
+  <div
+    class="mb-6 hidden items-center justify-between gap-4 border-l-4 border-deploio bg-white px-4 py-3 group-data-[state=error]/pricing:flex print:hidden"
+    role="alert"
+  >
+    <p>{% t pricing_calc_error %}</p>
+    <button type="button" class="pricing-link" data-retry>{% t pricing_calc_retry %}</button>
+  </div>
+
+  <div class="grid items-start gap-8 lg:grid-cols-[minmax(0,1fr)_320px] xl:grid-cols-[minmax(0,1fr)_352px]">
+    <div class="flex min-w-0 flex-col gap-6 print:hidden" data-pricing-sections>
+      {% include pricing/section.html number=1 key='app' %}
+      {% include pricing/section.html number=2 key='database' %}
+      {% include pricing/section.html number=3 key='add_ons' optional=true %}
+    </div>
+
+    <aside
+      class="sticky top-8 hidden max-h-[calc(100vh-4rem)] overflow-y-auto border-t-[3px] border-deploio bg-white shadow-card lg:block print:hidden"
+      aria-label="{% t pricing_calc_estimate %}"
+    >
+      {% include pricing/estimate.html variant='aside' %}
+    </aside>
+  </div>
+
+  {% include pricing/print-sheet.html %}
+  {% include pricing/mobile-bar.html %}
+</div>

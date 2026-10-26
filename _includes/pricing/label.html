@@ -1,0 +1,6 @@
+<div class="flex flex-col gap-0.5 leading-[1.35] {{ include.class }}">
+  <h3 class="font-semibold">{{ include.title_key | t }}</h3>
+  <p class="pricing-muted text-xs">
+    {%- if include.hint_key %}{{ include.hint_key | t }}{% else %}{{ include.hint }}{% endif -%}
+  </p>
+</div>
