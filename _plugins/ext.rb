@@ -56,7 +56,7 @@ end
 Jekyll::Hooks.register :site, :after_init do |site|
   site.config["pricing_api_url"] = ENV.fetch(
     "PRICING_API_URL",
-    "https://calculator-api-production.2deb129.deploio.app/product"
+    "https://calculator.nineapis.ch/products"
   )
   site.config["google_tag_id"] = ENV.fetch("GOOGLE_TAG_ID", ENV.fetch("VITE_GOOGLE_TAG_ID", ""))
 end

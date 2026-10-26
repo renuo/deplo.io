@@ -574,9 +574,11 @@ if (typeof document !== 'undefined') {
 
     const copyLink = (button) => {
       navigator.clipboard?.writeText(window.location.href).then(() => {
-        const label = button.textContent;
+        // Remember the original label once, so a second click while "copied" shows doesn't keep that text for good
+        button.dataset.label ??= button.textContent;
         button.textContent = strings.link_copied;
-        window.setTimeout(() => (button.textContent = label), 2000);
+        window.clearTimeout(button.resetTimer);
+        button.resetTimer = window.setTimeout(() => (button.textContent = button.dataset.label), 2000);
       });
     };
 
