@@ -35,7 +35,7 @@
   }
 
   .pricing-card {
-    @apply bg-white px-4 py-5 shadow-card md:px-8 md:py-7;
+    @apply bg-white shadow-card;
   }
 
   .pricing-tile {
@@ -90,8 +90,30 @@
     @apply translate-x-5;
   }
 
+  .pricing-stepper {
+    @apply flex items-center gap-0.5 transition-opacity data-[disabled=true]:opacity-50;
+  }
+
   .pricing-step {
-    @apply shrink-0 bg-deploio p-2 transition-colors disabled:cursor-not-allowed disabled:bg-deploio/50;
+    @apply shrink-0 bg-deploio/[0.04] p-2 transition-colors disabled:cursor-not-allowed;
+  }
+
+  .pricing-stepper-value {
+    @apply flex h-10 min-w-0 flex-1 items-center justify-center bg-deploio/[0.04] px-3 font-semibold text-deploio transition-colors;
+  }
+
+  .pricing-stepper[data-active='true'] :is(.pricing-step, .pricing-stepper-value) {
+    @apply bg-deploio text-white;
+  }
+
+  /* The dark minus icon already comes faded, it only shows while the quantity is zero */
+  .pricing-stepper[data-active='true'] [data-stepper-icon='idle'],
+  .pricing-stepper:not([data-active='true']) [data-stepper-icon='active'] {
+    @apply hidden;
+  }
+
+  .pricing-step:disabled [data-stepper-icon='active'] {
+    @apply opacity-50;
   }
 
   .pricing-link {

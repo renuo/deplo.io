@@ -104,7 +104,7 @@ test('add-ons are priced by usage and quantity', () => {
     staticEgress: true,
     ipv4: 2,
     blockStorage: 3,
-    grafana: true,
+    grafana: 2,
   });
   const estimate = calculator.computeEstimate(config, catalog, state, strings);
 
@@ -116,10 +116,10 @@ test('add-ons are priced by usage and quantity', () => {
       ['Static egress', 'deplo.io', 16],
       ['Additional IPv4 address', '2 × 5.00', 10],
       ['Extra block storage', '30 GiB', 4.8],
-      ['Grafana', '1 instance', 8],
+      ['Grafana', '2 × 8.00', 16],
     ],
   );
-  assert.equal(estimate.sections.add_ons, 42.45);
+  assert.equal(estimate.sections.add_ons, 50.45);
 });
 
 test('static egress needs at least one IPv4 address, which also works on its own', () => {
@@ -140,19 +140,45 @@ test('every app instance can be removed', () => {
   );
 });
 
-test('high availability search skips the single-node-only XS size', () => {
-  const state = calculator.normalizeState(config, {
-    ...calculator.defaultState(config),
-    search: 'multi',
-    searchSize: 'xs',
-  });
-  assert.equal(state.searchSize, 's');
+const withSearch = (search, sizes) => {
+  const base = calculator.defaultState(config);
+  return calculator.normalizeState(config, { ...base, search, searchSizes: { ...base.searchSizes, ...sizes } });
+};
+
+test('high availability search moves single-node-only XS nodes to the smallest size', () => {
+  const state = withSearch('multi', { xs: 2, s: 1, l: 1 });
+  assert.deepEqual(state.searchSizes, { xs: 0, s: 3, m: 0, l: 1, xl: 0 });
+});
+
+test('search is priced per node size', () => {
+  const state = withSearch('multi', { s: 2, m: 1 });
+  const estimate = calculator.computeEstimate(config, catalog, state, strings);
+  const s = catalog.search.multi.s.price;
+  const m = catalog.search.multi.m.price;
+
+  assert.deepEqual(
+    estimate.items.map(({ name, detail, total }) => [name, detail, total]),
+    [
+      ['Search · S', `2 × ${calculator.formatAmount(s)} · High availability`, 2 * s],
+      ['Search · M', `1 × ${calculator.formatAmount(m)} · High availability`, m],
+    ],
+  );
+});
+
+test('search keeps at least one node until it is switched off', () => {
+  assert.deepEqual(withSearch('single', {}).searchSizes, { xs: 0, s: 1, m: 0, l: 0, xl: 0 });
+  assert.deepEqual(withSearch('none', {}).searchSizes, { xs: 0, s: 0, m: 0, l: 0, xl: 0 });
+
+  const single = withSearch('single', { m: 1 });
+  assert.equal(calculator.minimumSearchQuantity(single, 'm'), 1);
+  const several = withSearch('single', { m: 1, l: 1 });
+  assert.equal(calculator.minimumSearchQuantity(several, 'm'), 0);
 });
 
 test('presets are recognised regardless of hidden selections', () => {
   const state = { ...calculator.presetState(config, 'production'), dbDedicatedSize: 'xl', appFocus: 'micro' };
   assert.equal(calculator.matchingPreset(config, state), 'production');
-  assert.equal(calculator.matchingPreset(config, { ...state, grafana: true }), null);
+  assert.equal(calculator.matchingPreset(config, { ...state, grafana: 1 }), null);
 });
 
 test('the configuration round-trips through the URL', () => {
@@ -160,16 +186,24 @@ test('the configuration round-trips through the URL', () => {
     ...calculator.presetState(config, 'scale'),
     app: { ...calculator.presetState(config, 'scale').app, micro: 3 },
     search: 'multi',
-    searchSize: 'l',
+    searchSizes: { ...calculator.defaultState(config).searchSizes, s: 2, l: 1 },
     ipv4: 3,
     blockStorage: 2,
-    grafana: true,
+    grafana: 3,
   });
   const params = calculator.stateToParams(state);
   const restored = calculator.stateFromParams(config, new URLSearchParams(params.toString()));
 
   assert.equal(calculator.stateToParams(restored).toString(), params.toString());
+  assert.deepEqual(restored.searchSizes, state.searchSizes);
+  assert.equal(restored.grafana, 3);
   assert.equal(calculator.stateFromParams(config, new URLSearchParams('lang=de')), null);
+});
+
+test('links from before search and Grafana quantities still work', () => {
+  const state = calculator.stateFromParams(config, new URLSearchParams('search=single&search_size=m&grafana=1'));
+  assert.deepEqual(state.searchSizes, { xs: 0, s: 0, m: 1, l: 0, xl: 0 });
+  assert.equal(state.grafana, 1);
 });
 
 test('invalid URL values fall back to defaults', () => {
@@ -182,7 +216,7 @@ test('invalid URL values fall back to defaults', () => {
   assert.equal('huge' in state.app, false);
   assert.equal(state.dbEngine, 'none');
   assert.equal(state.ipv4, 0);
-  assert.equal(state.searchSize, 's');
+  assert.deepEqual(state.searchSizes, { xs: 0, s: 1, m: 0, l: 0, xl: 0 });
 });
 
 test('amounts keep sub-cent precision', () => {

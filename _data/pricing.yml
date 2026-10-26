@@ -136,8 +136,8 @@ presets:
     db_size: m
     kvs: 1gb
     search: single
-    search_size: m
+    search_sizes: { m: 1 }
     object_storage: { space: 200, traffic: 500 }
     static_egress: true
     ipv4: 1
-    grafana: true
+    grafana: 1

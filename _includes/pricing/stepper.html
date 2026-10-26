@@ -1,4 +1,4 @@
-<div class="flex items-center {{ include.class }}">
+<div class="pricing-stepper {{ include.class }}" data-stepper data-active="false">
   <button
     type="button"
     class="pricing-step"
@@ -6,14 +6,24 @@
     data-delta="-1"
     aria-label="{% t pricing_calc_decrease %}"
   >
-    <img class="size-6" src="/assets/images/icons/pricing/remove.svg" alt="" width="24" height="24">
+    <img
+      class="size-6"
+      src="/assets/images/icons/pricing/remove-dark.svg"
+      alt=""
+      width="24"
+      height="24"
+      data-stepper-icon="idle"
+    >
+    <img
+      class="size-6"
+      src="/assets/images/icons/pricing/remove.svg"
+      alt=""
+      width="24"
+      height="24"
+      data-stepper-icon="active"
+    >
   </button>
-  <span
-    class="flex h-10 min-w-0 flex-1 items-center justify-center border-y border-deploio/30 bg-white px-3 font-semibold text-deploio"
-    {{ include.value_attribute }}
-    aria-live="polite"
-    >0</span
-  >
+  <span class="pricing-stepper-value" {{ include.value_attribute }} aria-live="polite">0</span>
   <button
     type="button"
     class="pricing-step"
@@ -21,6 +31,21 @@
     data-delta="1"
     aria-label="{% t pricing_calc_increase %}"
   >
-    <img class="size-6" src="/assets/images/icons/pricing/add.svg" alt="" width="24" height="24">
+    <img
+      class="size-6"
+      src="/assets/images/icons/pricing/add-dark.svg"
+      alt=""
+      width="24"
+      height="24"
+      data-stepper-icon="idle"
+    >
+    <img
+      class="size-6"
+      src="/assets/images/icons/pricing/add.svg"
+      alt=""
+      width="24"
+      height="24"
+      data-stepper-icon="active"
+    >
   </button>
 </div>

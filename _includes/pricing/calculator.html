@@ -19,7 +19,7 @@
         {% assign preset_key = 'pricing_calc_preset_' | append: preset.key %}
         <button
           type="button"
-          class="border-2 border-deploio px-4 py-2.5 font-medium uppercase leading-[1.35] opacity-70 transition-opacity hover:opacity-100 aria-pressed:bg-deploio aria-pressed:text-white aria-pressed:opacity-100 max-md:px-3 max-md:text-sm"
+          class="bg-[#f6f6f8] px-[18px] py-2.5 font-medium uppercase leading-[1.35] opacity-70 transition-opacity hover:opacity-100 aria-pressed:bg-deploio aria-pressed:text-white aria-pressed:opacity-100 max-md:px-3 max-md:text-sm"
           data-preset="{{ preset.key }}"
           aria-pressed="false"
         >
@@ -39,7 +39,7 @@
 
   <div class="grid items-start gap-8 lg:grid-cols-[minmax(0,1fr)_320px] xl:grid-cols-[minmax(0,1fr)_352px]">
     <div class="flex min-w-0 flex-col gap-6 print:hidden" data-pricing-sections>
-      {% include pricing/section.html number=1 key='app' total_label=true %}
+      {% include pricing/section.html number=1 key='app' %}
       {% include pricing/section.html number=2 key='database' %}
       {% include pricing/section.html number=3 key='add_ons' optional=true %}
     </div>

@@ -18,11 +18,16 @@
   </p>
   <div class="grid grid-cols-2 gap-2 md:grid-cols-5">
     {% for size in site.data.pricing.search.sizes %}
-      {% capture tile_attributes -%}
-        data-set="searchSize:{{ size.key }}" {% unless size.multi %}data-single-node-only="true"{% endunless %}
-      {%- endcapture %}
-      {% assign slot = 'search.' | append: size.key %}
-      {% include pricing/tile.html slot=slot label=size.label attributes=tile_attributes %}
+      <div class="flex flex-col gap-0.5" data-search-size="{{ size.key }}">
+        {% capture tile_attributes -%}
+          data-search-tile="{{ size.key }}" {% unless size.multi %}data-single-node-only="true"{% endunless %}
+        {%- endcapture %}
+        {% assign slot = 'search.' | append: size.key %}
+        {% include pricing/tile.html class='flex-1' slot=slot label=size.label attributes=tile_attributes %}
+        {% capture step_attributes %}data-search-step="{{ size.key }}"{% endcapture %}
+        {% capture value_attribute %}data-search-qty="{{ size.key }}"{% endcapture %}
+        {% include pricing/stepper.html attributes=step_attributes value_attribute=value_attribute %}
+      </div>
     {% endfor %}
   </div>
 </div>
@@ -131,6 +136,6 @@
   include pricing/add-on-row.html
   title_key='pricing_calc_grafana'
   hint_key='pricing_calc_grafana_hint'
-  toggle='grafana'
+  stepper='grafana'
   price=price
 %}
