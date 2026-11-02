@@ -47,7 +47,7 @@ en:
   register_description: Ready for less stress and more success? Just type in your email and lean back - we'll bring your app to the cloud without you breaking a sweat. Let's go!
   register_button: REGISTER NOW
   pricing_title: Price Calculator
-  pricing_description: Pick what your app needs.<br>All prices in CHF per month, excl. VAT.
+  pricing_description: Pick what your app needs.<br>All prices in CHF per month, excl. VAT. Monthly billing based on actual usage in minutes.
   pricing_calc_preset_label: 'Pre load a default:'
   pricing_calc_preset_hobby: Hobby
   pricing_calc_preset_production: Production
@@ -68,8 +68,8 @@ en:
   pricing_calc_database_total: Database total
   pricing_calc_engine: Engine
   pricing_calc_plan: Plan
-  pricing_calc_single_database: Single database
-  pricing_calc_dedicated_instance: Dedicated instance
+  pricing_calc_single_database: Economy
+  pricing_calc_dedicated_instance: Business
   pricing_calc_dedicated: Dedicated
   pricing_calc_single_hint: One database on a shared engine. Exceeding the storage moves you to the next size.
   pricing_calc_dedicated_hint: Your own engine with dedicated resources, 20 GB storage included.

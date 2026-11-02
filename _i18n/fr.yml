@@ -47,7 +47,7 @@ fr:
   register_description: Prêt pour moins de stress et plus de succès ? Entrez simplement votre e-mail et détendez-vous – nous amènerons votre application dans le cloud sans que vous ayez à lever le petit doigt. C'est parti !
   register_button: S'INSCRIRE MAINTENANT
   pricing_title: Calculateur de prix
-  pricing_description: Choisissez ce dont votre application a besoin.<br>Tous les prix en CHF par mois, hors TVA.
+  pricing_description: Choisissez ce dont votre application a besoin.<br>Tous les prix en CHF par mois, hors TVA. Facturation mensuelle en fonction de l'utilisation effective en minutes.
   pricing_calc_preset_label: 'Charger un modèle :'
   pricing_calc_preset_hobby: Hobby
   pricing_calc_preset_production: Production
@@ -67,9 +67,9 @@ fr:
   pricing_calc_database: Base de données
   pricing_calc_database_total: Total base de données
   pricing_calc_engine: Moteur
-  pricing_calc_plan: Formule
-  pricing_calc_single_database: Base de données unique
-  pricing_calc_dedicated_instance: Instance dédiée
+  pricing_calc_plan: Forfait
+  pricing_calc_single_database: Economy
+  pricing_calc_dedicated_instance: Business
   pricing_calc_dedicated: Dédiée
   pricing_calc_single_hint: Une base de données sur un moteur partagé. Si le stockage est dépassé, vous passez à la taille suivante.
   pricing_calc_dedicated_hint: Votre propre moteur avec des ressources dédiées, 20 GB de stockage inclus.
