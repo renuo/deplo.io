@@ -7,5 +7,7 @@ bin/lint
 npm run css:build
 bundle exec ruby -c _plugins/ext.rb
 node --check assets/js/site.js
+node --check assets/js/pricing-calculator.js
+node --test scripts/pricing-calculator.test.mjs
 bundle exec jekyll build --strict_front_matter
 bundle exec ruby scripts/verify_site.rb

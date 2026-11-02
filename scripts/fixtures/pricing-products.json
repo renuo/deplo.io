@@ -1,0 +1,2061 @@
+[
+  {
+    "product_id": "micro",
+    "id": 3412,
+    "name": "Micro",
+    "display_name": "Micro",
+    "name_de": "Micro",
+    "description_sale": "Micro Application Instance. A minimal resource allocation suitable for small-scale applications or development environments.",
+    "description_sale_de": "Micro Application Instance. Minimale Ressourcenzuweisung für kleine Anwendungen oder Entwicklungsumgebungen.",
+    "type": "service",
+    "currency_id": [1, "CHF"],
+    "list_price": 8.75,
+    "setup_fee": false,
+    "active": true,
+    "categ_id": [132, "All / Deploio / 1) Resources"],
+    "sh_is_bundle": true,
+    "sh_bundle_product_ids": [3412001, 3412002],
+    "tag_ids": [1],
+    "tag_data": [
+      {
+        "id": 1,
+        "name": "calculator"
+      }
+    ],
+    "categ_path": ["All", "Deploio", "1) Resources"],
+    "bundle_products": [
+      {
+        "id": 3412001,
+        "sh_product_id": [3356, "Application RAM (GB)"],
+        "sh_qty": 0.25,
+        "sh_uom": [1, "Units"],
+        "sh_price_unit": 0.0,
+        "sh_price_subtotal": 0.0
+      },
+      {
+        "id": 3412002,
+        "sh_product_id": [3355, "Application vCPU"],
+        "sh_qty": 0.125,
+        "sh_uom": [1, "Units"],
+        "sh_price_unit": 0.0,
+        "sh_price_subtotal": 0.0
+      }
+    ]
+  },
+  {
+    "product_id": "mini",
+    "id": 3413,
+    "name": "Mini",
+    "display_name": "Mini",
+    "name_de": "Mini",
+    "description_sale": "Mini-sized application instance. Ideal for smaller web applications or services with low resource requirements.",
+    "description_sale_de": "Mini Application Instance. Ideal für kleinere Webanwendungen oder Services mit geringem Ressourcenbedarf.",
+    "type": "service",
+    "currency_id": [1, "CHF"],
+    "list_price": 17.5,
+    "setup_fee": false,
+    "active": true,
+    "categ_id": [132, "All / Deploio / 1) Resources"],
+    "sh_is_bundle": true,
+    "sh_bundle_product_ids": [3413001, 3413002],
+    "tag_ids": [1],
+    "tag_data": [
+      {
+        "id": 1,
+        "name": "calculator"
+      }
+    ],
+    "categ_path": ["All", "Deploio", "1) Resources"],
+    "bundle_products": [
+      {
+        "id": 3413001,
+        "sh_product_id": [3356, "Application RAM (GB)"],
+        "sh_qty": 0.5,
+        "sh_uom": [1, "Units"],
+        "sh_price_unit": 0.0,
+        "sh_price_subtotal": 0.0
+      },
+      {
+        "id": 3413002,
+        "sh_product_id": [3355, "Application vCPU"],
+        "sh_qty": 0.25,
+        "sh_uom": [1, "Units"],
+        "sh_price_unit": 0.0,
+        "sh_price_subtotal": 0.0
+      }
+    ]
+  },
+  {
+    "product_id": "standard1",
+    "id": 3414,
+    "name": "Standard-1",
+    "display_name": "Standard-1",
+    "name_de": "Standard-1",
+    "description_sale": "Standard-sized application instance. A balanced resource allocation ideal for standard web applications and services.",
+    "description_sale_de": "Standard Instanz. Eine ausgewogene Ressourcenzuteilung für Standard-Webanwendungen und Services.",
+    "type": "service",
+    "currency_id": [1, "CHF"],
+    "list_price": 35.0,
+    "setup_fee": false,
+    "active": true,
+    "categ_id": [132, "All / Deploio / 1) Resources"],
+    "sh_is_bundle": true,
+    "sh_bundle_product_ids": [3414001, 3414002],
+    "tag_ids": [1],
+    "tag_data": [
+      {
+        "id": 1,
+        "name": "calculator"
+      }
+    ],
+    "categ_path": ["All", "Deploio", "1) Resources"],
+    "bundle_products": [
+      {
+        "id": 3414001,
+        "sh_product_id": [3356, "Application RAM (GB)"],
+        "sh_qty": 1,
+        "sh_uom": [1, "Units"],
+        "sh_price_unit": 0.0,
+        "sh_price_subtotal": 0.0
+      },
+      {
+        "id": 3414002,
+        "sh_product_id": [3355, "Application vCPU"],
+        "sh_qty": 0.5,
+        "sh_uom": [1, "Units"],
+        "sh_price_unit": 0.0,
+        "sh_price_subtotal": 0.0
+      }
+    ]
+  },
+  {
+    "product_id": "standard2",
+    "id": 3415,
+    "name": "Standard-2",
+    "display_name": "Standard-2",
+    "name_de": "Standard-2",
+    "description_sale": "Standard-sized application instance with additional RAM. For more memory-intensive applications requiring higher RAM capacity.",
+    "description_sale_de": "Standard Instanz mit zusätzlichem RAM. Für speicherintensive Anwendungen mit höherem RAM-Bedarf.",
+    "type": "service",
+    "currency_id": [1, "CHF"],
+    "list_price": 63.5,
+    "setup_fee": false,
+    "active": true,
+    "categ_id": [132, "All / Deploio / 1) Resources"],
+    "sh_is_bundle": true,
+    "sh_bundle_product_ids": [3415001, 3415002],
+    "tag_ids": [1],
+    "tag_data": [
+      {
+        "id": 1,
+        "name": "calculator"
+      }
+    ],
+    "categ_path": ["All", "Deploio", "1) Resources"],
+    "bundle_products": [
+      {
+        "id": 3415001,
+        "sh_product_id": [3356, "Application RAM (GB)"],
+        "sh_qty": 2,
+        "sh_uom": [1, "Units"],
+        "sh_price_unit": 0.0,
+        "sh_price_subtotal": 0.0
+      },
+      {
+        "id": 3415002,
+        "sh_product_id": [3355, "Application vCPU"],
+        "sh_qty": 0.75,
+        "sh_uom": [1, "Units"],
+        "sh_price_unit": 0.0,
+        "sh_price_subtotal": 0.0
+      }
+    ]
+  },
+  {
+    "product_id": "standard4",
+    "id": 3650,
+    "name": "Standard-4",
+    "display_name": "Standard-4",
+    "name_de": "Standard-4",
+    "description_sale": "High-performance instance with doubled resources. Suitable for resource-demanding workloads and larger applications.",
+    "description_sale_de": "High Performance Instanz mit verdoppelten Ressourcen. Geeignet für ressourcenintensive Workloads und grössere Anwendungen.",
+    "type": "service",
+    "currency_id": [1, "CHF"],
+    "list_price": 127.0,
+    "setup_fee": false,
+    "active": true,
+    "categ_id": [132, "All / Deploio / 1) Resources"],
+    "sh_is_bundle": true,
+    "sh_bundle_product_ids": [3650001, 3650002],
+    "tag_ids": [1],
+    "tag_data": [
+      {
+        "id": 1,
+        "name": "calculator"
+      }
+    ],
+    "categ_path": ["All", "Deploio", "1) Resources"],
+    "bundle_products": [
+      {
+        "id": 3650001,
+        "sh_product_id": [3356, "Application RAM (GB)"],
+        "sh_qty": 4,
+        "sh_uom": [1, "Units"],
+        "sh_price_unit": 0.0,
+        "sh_price_subtotal": 0.0
+      },
+      {
+        "id": 3650002,
+        "sh_product_id": [3355, "Application vCPU"],
+        "sh_qty": 1.5,
+        "sh_uom": [1, "Units"],
+        "sh_price_unit": 0.0,
+        "sh_price_subtotal": 0.0
+      }
+    ]
+  },
+  {
+    "product_id": "staticEgressDeploioBundle",
+    "id": 3649,
+    "name": "Static Egress (deplo.io) Bundle",
+    "display_name": "Static Egress (deplo.io) Bundle",
+    "name_de": "Static Egress (deplo.io) Bundle",
+    "description_sale": "Static egress with included IPv4 address. Allows your apps to have a static, predictable outgoing IP address.",
+    "description_sale_de": "Static Egress mit enthaltener IPv4-Adresse. Ermöglicht deinen Apps eine statische, vorhersehbare ausgehende IP-Adresse.",
+    "type": "service",
+    "currency_id": [1, "CHF"],
+    "list_price": 21.0,
+    "setup_fee": false,
+    "active": true,
+    "categ_id": [137, "All / Deploio / 2) Services"],
+    "sh_is_bundle": true,
+    "sh_bundle_product_ids": [3649001, 3649002],
+    "tag_ids": [1],
+    "tag_data": [
+      {
+        "id": 1,
+        "name": "calculator"
+      }
+    ],
+    "categ_path": ["All", "Deploio", "2) Services"],
+    "bundle_products": [
+      {
+        "id": 3649001,
+        "sh_product_id": [3451, "Static Egress (deplo.io)"],
+        "sh_qty": 1,
+        "sh_uom": [1, "Units"],
+        "sh_price_unit": 0.0,
+        "sh_price_subtotal": 0.0
+      },
+      {
+        "id": 3649002,
+        "sh_product_id": [3268, "Additional IPv4 address"],
+        "sh_qty": 1,
+        "sh_uom": [1, "Units"],
+        "sh_price_unit": 0.0,
+        "sh_price_subtotal": 0.0
+      }
+    ]
+  },
+  {
+    "product_id": "staticEgressDeploio",
+    "id": 3451,
+    "name": "Static Egress (deplo.io)",
+    "display_name": "Static Egress (deplo.io)",
+    "name_de": "Static Egress (deplo.io)",
+    "description_sale": "The static egress feature allows your apps to have a static, predictable outgoing IP address. IP address not included and will be billed separately.",
+    "description_sale_de": "Das Static Egress Feature ermöglicht es deinen Apps, eine statische, vorhersehbare ausgehende IP-Adresse zu haben. IP-Adresse nicht inklusive und wird separat verrechnet.",
+    "type": "service",
+    "currency_id": [1, "CHF"],
+    "list_price": 16.0,
+    "setup_fee": false,
+    "active": true,
+    "categ_id": [137, "All / Deploio / 2) Services"],
+    "sh_is_bundle": false,
+    "sh_bundle_product_ids": [],
+    "tag_ids": [1],
+    "tag_data": [
+      {
+        "id": 1,
+        "name": "calculator"
+      }
+    ],
+    "categ_path": ["All", "Deploio", "2) Services"]
+  },
+  {
+    "product_id": "additionalIpv4AddressDeploio",
+    "id": 3499,
+    "name": "Additional IPv4 address",
+    "display_name": "Additional IPv4 address",
+    "name_de": "Zusätzliche IPv4-Adresse",
+    "description_sale": false,
+    "description_sale_de": false,
+    "type": "service",
+    "currency_id": [1, "CHF"],
+    "list_price": 5.0,
+    "setup_fee": false,
+    "active": true,
+    "categ_id": [137, "All / Deploio / 2) Services"],
+    "sh_is_bundle": true,
+    "sh_bundle_product_ids": [3499001],
+    "tag_ids": [1],
+    "tag_data": [
+      {
+        "id": 1,
+        "name": "calculator"
+      }
+    ],
+    "categ_path": ["All", "Deploio", "2) Services"],
+    "bundle_products": [
+      {
+        "id": 3499001,
+        "sh_product_id": [3268, "Additional IPv4 address"],
+        "sh_qty": 1,
+        "sh_uom": [1, "Units"],
+        "sh_price_unit": 0.0,
+        "sh_price_subtotal": 0.0
+      }
+    ]
+  },
+  {
+    "product_id": "keyValueStore256Mb",
+    "id": 3551,
+    "name": "Key Value Store 256MB (nine-key-value-store-256mb)",
+    "display_name": "Key Value Store 256MB (nine-key-value-store-256mb)",
+    "name_de": "Key Value Store 256MB (nine-key-value-store-256mb)",
+    "description_sale": "A KeyDB/Redis-compatible resource including the Key Value Store service fee. Additional charges are based on the resources used.",
+    "description_sale_de": "Eine KeyDB/Redis-kompatible Ressource inklusive Key Value Store Service-Gebühr. Zusätzliche Gebühren basieren auf den verwendeten Ressourcen.",
+    "type": "service",
+    "currency_id": [1, "CHF"],
+    "list_price": 5.58,
+    "setup_fee": false,
+    "active": true,
+    "categ_id": [117, "All / On-Demand Services / 1) Key Value Store"],
+    "sh_is_bundle": true,
+    "sh_bundle_product_ids": [3551001, 3551002, 3551003],
+    "tag_ids": [1],
+    "tag_data": [
+      {
+        "id": 1,
+        "name": "calculator"
+      }
+    ],
+    "categ_path": ["All", "On-Demand Services", "1) Key Value Store"],
+    "bundle_products": [
+      {
+        "id": 3551001,
+        "sh_product_id": [3411, "Key Value Store"],
+        "sh_qty": 1,
+        "sh_uom": [1, "Units"],
+        "sh_price_unit": 0.0,
+        "sh_price_subtotal": 0.0
+      },
+      {
+        "id": 3551002,
+        "sh_product_id": [3478, "Key Value Store RAM (GiB)"],
+        "sh_qty": 0.25,
+        "sh_uom": [1, "Units"],
+        "sh_price_unit": 0.0,
+        "sh_price_subtotal": 0.0
+      },
+      {
+        "id": 3551003,
+        "sh_product_id": [3255, "Block Storage 1 GiB"],
+        "sh_qty": 0.5,
+        "sh_uom": [1, "Units"],
+        "sh_price_unit": 0.0,
+        "sh_price_subtotal": 0.0
+      }
+    ]
+  },
+  {
+    "product_id": "keyValueStore1Gb",
+    "id": 3465,
+    "name": "Key Value Store 1GB (nine-key-value-store-1gb)",
+    "display_name": "Key Value Store 1GB (nine-key-value-store-1gb)",
+    "name_de": "Key Value Store 1GB (nine-key-value-store-1gb)",
+    "description_sale": "A KeyDB/Redis-compatible resource including the Key Value Store service fee. Additional charges are based on the resources used.",
+    "description_sale_de": "Eine KeyDB/Redis-kompatible Ressource inklusive Key Value Store Service-Gebühr. Zusätzliche Gebühren basieren auf den verwendeten Ressourcen.",
+    "type": "service",
+    "currency_id": [1, "CHF"],
+    "list_price": 22.32,
+    "setup_fee": false,
+    "active": true,
+    "categ_id": [117, "All / On-Demand Services / 1) Key Value Store"],
+    "sh_is_bundle": true,
+    "sh_bundle_product_ids": [3465001, 3465002, 3465003],
+    "tag_ids": [1],
+    "tag_data": [
+      {
+        "id": 1,
+        "name": "calculator"
+      }
+    ],
+    "categ_path": ["All", "On-Demand Services", "1) Key Value Store"],
+    "bundle_products": [
+      {
+        "id": 3465001,
+        "sh_product_id": [3411, "Key Value Store"],
+        "sh_qty": 1,
+        "sh_uom": [1, "Units"],
+        "sh_price_unit": 0.0,
+        "sh_price_subtotal": 0.0
+      },
+      {
+        "id": 3465002,
+        "sh_product_id": [3478, "Key Value Store RAM (GiB)"],
+        "sh_qty": 1,
+        "sh_uom": [1, "Units"],
+        "sh_price_unit": 0.0,
+        "sh_price_subtotal": 0.0
+      },
+      {
+        "id": 3465003,
+        "sh_product_id": [3255, "Block Storage 1 GiB"],
+        "sh_qty": 2,
+        "sh_uom": [1, "Units"],
+        "sh_price_unit": 0.0,
+        "sh_price_subtotal": 0.0
+      }
+    ]
+  },
+  {
+    "product_id": "mysqlDbXs",
+    "id": 3466,
+    "name": "MySQL - nine-db-xs",
+    "display_name": "MySQL - nine-db-xs",
+    "name_de": "MySQL - nine-db-xs",
+    "description_sale": "Extra Small Machine Type. Cost-effective resource for minimal workloads, such as test databases or simple development environments.",
+    "description_sale_de": "Extra Small Machine Type. Kostengünstige Ressource für minimale Workloads wie Testdatenbanken oder einfache Entwicklungsumgebungen.",
+    "type": "service",
+    "currency_id": [1, "CHF"],
+    "list_price": 68.2,
+    "setup_fee": false,
+    "active": true,
+    "categ_id": [142, "All / On-Demand Services / 2) MySQL Engine"],
+    "sh_is_bundle": true,
+    "sh_bundle_product_ids": [3466001, 3466002, 3466003, 3466004],
+    "tag_ids": [1],
+    "tag_data": [
+      {
+        "id": 1,
+        "name": "calculator"
+      }
+    ],
+    "categ_path": ["All", "On-Demand Services", "2) MySQL Engine"],
+    "bundle_products": [
+      {
+        "id": 3466001,
+        "sh_product_id": [3256, "RAM (GiB)"],
+        "sh_qty": 4,
+        "sh_uom": [1, "Units"],
+        "sh_price_unit": 0.0,
+        "sh_price_subtotal": 0.0
+      },
+      {
+        "id": 3466002,
+        "sh_product_id": [3257, "vCPU"],
+        "sh_qty": 2,
+        "sh_uom": [1, "Units"],
+        "sh_price_unit": 0.0,
+        "sh_price_subtotal": 0.0
+      },
+      {
+        "id": 3466003,
+        "sh_product_id": [3255, "Block Storage 1 GiB"],
+        "sh_qty": 20,
+        "sh_uom": [1, "Units"],
+        "sh_price_unit": 0.0,
+        "sh_price_subtotal": 0.0
+      },
+      {
+        "id": 3466004,
+        "sh_product_id": [3345, "MySQL"],
+        "sh_qty": 1,
+        "sh_uom": [1, "Units"],
+        "sh_price_unit": 0.0,
+        "sh_price_subtotal": 0.0
+      }
+    ]
+  },
+  {
+    "product_id": "mysqlDbS",
+    "id": 3467,
+    "name": "MySQL - nine-db-s",
+    "display_name": "MySQL - nine-db-s",
+    "name_de": "MySQL - nine-db-s",
+    "description_sale": "Small Machine Type. Suitable for smaller production databases and applications with low resource requirements.",
+    "description_sale_de": "Small Machine Type. Geeignet für kleinere Produktionsdatenbanken und Anwendungen mit geringem Ressourcenbedarf.",
+    "type": "service",
+    "currency_id": [1, "CHF"],
+    "list_price": 103.2,
+    "setup_fee": false,
+    "active": true,
+    "categ_id": [142, "All / On-Demand Services / 2) MySQL Engine"],
+    "sh_is_bundle": true,
+    "sh_bundle_product_ids": [3467001, 3467002, 3467003, 3467004],
+    "tag_ids": [1],
+    "tag_data": [
+      {
+        "id": 1,
+        "name": "calculator"
+      }
+    ],
+    "categ_path": ["All", "On-Demand Services", "2) MySQL Engine"],
+    "bundle_products": [
+      {
+        "id": 3467001,
+        "sh_product_id": [3256, "RAM (GiB)"],
+        "sh_qty": 8,
+        "sh_uom": [1, "Units"],
+        "sh_price_unit": 0.0,
+        "sh_price_subtotal": 0.0
+      },
+      {
+        "id": 3467002,
+        "sh_product_id": [3257, "vCPU"],
+        "sh_qty": 4,
+        "sh_uom": [1, "Units"],
+        "sh_price_unit": 0.0,
+        "sh_price_subtotal": 0.0
+      },
+      {
+        "id": 3467003,
+        "sh_product_id": [3255, "Block Storage 1 GiB"],
+        "sh_qty": 20,
+        "sh_uom": [1, "Units"],
+        "sh_price_unit": 0.0,
+        "sh_price_subtotal": 0.0
+      },
+      {
+        "id": 3467004,
+        "sh_product_id": [3345, "MySQL"],
+        "sh_qty": 1,
+        "sh_uom": [1, "Units"],
+        "sh_price_unit": 0.0,
+        "sh_price_subtotal": 0.0
+      }
+    ]
+  },
+  {
+    "product_id": "mysqlDbM",
+    "id": 3468,
+    "name": "MySQL - nine-db-m",
+    "display_name": "MySQL - nine-db-m",
+    "name_de": "MySQL - nine-db-m",
+    "description_sale": "Medium Machine Type. An optimal choice for medium-sized databases and applications with growing traffic.",
+    "description_sale_de": "Medium Machine Type. Optimale Wahl für mittelgrosse Datenbanken und Anwendungen mit wachsendem Traffic.",
+    "type": "service",
+    "currency_id": [1, "CHF"],
+    "list_price": 125.2,
+    "setup_fee": false,
+    "active": true,
+    "categ_id": [142, "All / On-Demand Services / 2) MySQL Engine"],
+    "sh_is_bundle": true,
+    "sh_bundle_product_ids": [3468001, 3468002, 3468003, 3468004],
+    "tag_ids": [1],
+    "tag_data": [
+      {
+        "id": 1,
+        "name": "calculator"
+      }
+    ],
+    "categ_path": ["All", "On-Demand Services", "2) MySQL Engine"],
+    "bundle_products": [
+      {
+        "id": 3468001,
+        "sh_product_id": [3256, "RAM (GiB)"],
+        "sh_qty": 12,
+        "sh_uom": [1, "Units"],
+        "sh_price_unit": 0.0,
+        "sh_price_subtotal": 0.0
+      },
+      {
+        "id": 3468002,
+        "sh_product_id": [3257, "vCPU"],
+        "sh_qty": 4,
+        "sh_uom": [1, "Units"],
+        "sh_price_unit": 0.0,
+        "sh_price_subtotal": 0.0
+      },
+      {
+        "id": 3468003,
+        "sh_product_id": [3255, "Block Storage 1 GiB"],
+        "sh_qty": 20,
+        "sh_uom": [1, "Units"],
+        "sh_price_unit": 0.0,
+        "sh_price_subtotal": 0.0
+      },
+      {
+        "id": 3468004,
+        "sh_product_id": [3345, "MySQL"],
+        "sh_qty": 1,
+        "sh_uom": [1, "Units"],
+        "sh_price_unit": 0.0,
+        "sh_price_subtotal": 0.0
+      }
+    ]
+  },
+  {
+    "product_id": "mysqlDbL",
+    "id": 3469,
+    "name": "MySQL - nine-db-l",
+    "display_name": "MySQL - nine-db-l",
+    "name_de": "MySQL - nine-db-l",
+    "description_sale": "Large Machine Type. Designed for mission-critical workloads and data-intensive applications.",
+    "description_sale_de": "Large Machine Type. Ausgelegt für geschäftskritische Workloads und datenintensive Anwendungen.",
+    "type": "service",
+    "currency_id": [1, "CHF"],
+    "list_price": 160.2,
+    "setup_fee": false,
+    "active": true,
+    "categ_id": [142, "All / On-Demand Services / 2) MySQL Engine"],
+    "sh_is_bundle": true,
+    "sh_bundle_product_ids": [3469001, 3469002, 3469003, 3469004],
+    "tag_ids": [1],
+    "tag_data": [
+      {
+        "id": 1,
+        "name": "calculator"
+      }
+    ],
+    "categ_path": ["All", "On-Demand Services", "2) MySQL Engine"],
+    "bundle_products": [
+      {
+        "id": 3469001,
+        "sh_product_id": [3256, "RAM (GiB)"],
+        "sh_qty": 16,
+        "sh_uom": [1, "Units"],
+        "sh_price_unit": 0.0,
+        "sh_price_subtotal": 0.0
+      },
+      {
+        "id": 3469002,
+        "sh_product_id": [3257, "vCPU"],
+        "sh_qty": 6,
+        "sh_uom": [1, "Units"],
+        "sh_price_unit": 0.0,
+        "sh_price_subtotal": 0.0
+      },
+      {
+        "id": 3469003,
+        "sh_product_id": [3255, "Block Storage 1 GiB"],
+        "sh_qty": 20,
+        "sh_uom": [1, "Units"],
+        "sh_price_unit": 0.0,
+        "sh_price_subtotal": 0.0
+      },
+      {
+        "id": 3469004,
+        "sh_product_id": [3345, "MySQL"],
+        "sh_qty": 1,
+        "sh_uom": [1, "Units"],
+        "sh_price_unit": 0.0,
+        "sh_price_subtotal": 0.0
+      }
+    ]
+  },
+  {
+    "product_id": "mysqlDbXl",
+    "id": 3470,
+    "name": "MySQL - nine-db-xl",
+    "display_name": "MySQL - nine-db-xl",
+    "name_de": "MySQL - nine-db-xl",
+    "description_sale": "Extra Large Machine Type. Ideal for managing extensive workloads and very large databases with high resource needs.",
+    "description_sale_de": "Extra Large Machine Type. Ideal für umfangreiche Workloads und sehr grosse Datenbanken mit hohem Ressourcenbedarf.",
+    "type": "service",
+    "currency_id": [1, "CHF"],
+    "list_price": 217.2,
+    "setup_fee": false,
+    "active": true,
+    "categ_id": [142, "All / On-Demand Services / 2) MySQL Engine"],
+    "sh_is_bundle": true,
+    "sh_bundle_product_ids": [3470001, 3470002, 3470003, 3470004],
+    "tag_ids": [1],
+    "tag_data": [
+      {
+        "id": 1,
+        "name": "calculator"
+      }
+    ],
+    "categ_path": ["All", "On-Demand Services", "2) MySQL Engine"],
+    "bundle_products": [
+      {
+        "id": 3470001,
+        "sh_product_id": [3256, "RAM (GiB)"],
+        "sh_qty": 24,
+        "sh_uom": [1, "Units"],
+        "sh_price_unit": 0.0,
+        "sh_price_subtotal": 0.0
+      },
+      {
+        "id": 3470002,
+        "sh_product_id": [3257, "vCPU"],
+        "sh_qty": 8,
+        "sh_uom": [1, "Units"],
+        "sh_price_unit": 0.0,
+        "sh_price_subtotal": 0.0
+      },
+      {
+        "id": 3470003,
+        "sh_product_id": [3255, "Block Storage 1 GiB"],
+        "sh_qty": 20,
+        "sh_uom": [1, "Units"],
+        "sh_price_unit": 0.0,
+        "sh_price_subtotal": 0.0
+      },
+      {
+        "id": 3470004,
+        "sh_product_id": [3345, "MySQL"],
+        "sh_qty": 1,
+        "sh_uom": [1, "Units"],
+        "sh_price_unit": 0.0,
+        "sh_price_subtotal": 0.0
+      }
+    ]
+  },
+  {
+    "product_id": "mysqlDbXxl",
+    "id": 3471,
+    "name": "MySQL - nine-db-xxl",
+    "display_name": "MySQL - nine-db-xxl",
+    "name_de": "MySQL - nine-db-xxl",
+    "description_sale": "XXL Machine Type. Optimal for very large data volumes and applications with the highest resource requirements.",
+    "description_sale_de": "XXL Machine Type. Optimal für sehr grosse Datenmengen und Anwendungen mit höchsten Ressourcenanforderungen.",
+    "type": "service",
+    "currency_id": [1, "CHF"],
+    "list_price": 274.2,
+    "setup_fee": false,
+    "active": true,
+    "categ_id": [142, "All / On-Demand Services / 2) MySQL Engine"],
+    "sh_is_bundle": true,
+    "sh_bundle_product_ids": [3471001, 3471002, 3471003, 3471004],
+    "tag_ids": [1],
+    "tag_data": [
+      {
+        "id": 1,
+        "name": "calculator"
+      }
+    ],
+    "categ_path": ["All", "On-Demand Services", "2) MySQL Engine"],
+    "bundle_products": [
+      {
+        "id": 3471001,
+        "sh_product_id": [3256, "RAM (GiB)"],
+        "sh_qty": 32,
+        "sh_uom": [1, "Units"],
+        "sh_price_unit": 0.0,
+        "sh_price_subtotal": 0.0
+      },
+      {
+        "id": 3471002,
+        "sh_product_id": [3257, "vCPU"],
+        "sh_qty": 10,
+        "sh_uom": [1, "Units"],
+        "sh_price_unit": 0.0,
+        "sh_price_subtotal": 0.0
+      },
+      {
+        "id": 3471003,
+        "sh_product_id": [3255, "Block Storage 1 GiB"],
+        "sh_qty": 20,
+        "sh_uom": [1, "Units"],
+        "sh_price_unit": 0.0,
+        "sh_price_subtotal": 0.0
+      },
+      {
+        "id": 3471004,
+        "sh_product_id": [3345, "MySQL"],
+        "sh_qty": 1,
+        "sh_uom": [1, "Units"],
+        "sh_price_unit": 0.0,
+        "sh_price_subtotal": 0.0
+      }
+    ]
+  },
+  {
+    "product_id": "mysqlSingleDbS",
+    "id": 3589,
+    "name": "MySQL - nine-single-db-s - 1GB",
+    "display_name": "MySQL - nine-single-db-s - 1GB",
+    "name_de": "MySQL - nine-single-db-s - 1GB",
+    "description_sale": "Single Database with 1GB of storage and a connection limit of 20. Usage of >1GB leads to costs of a nine-single-db-m.",
+    "description_sale_de": "Single Database mit 1GB Storage und einem Verbindungslimit von 20. Nutzung >1GB führt zu den Kosten einer nine-single-db-m.",
+    "type": "service",
+    "currency_id": [1, "CHF"],
+    "list_price": 5.5,
+    "setup_fee": false,
+    "active": true,
+    "categ_id": [151, "All / On-Demand Services / 3) MySQL Single Database"],
+    "sh_is_bundle": true,
+    "sh_bundle_product_ids": [3589001, 3589002],
+    "tag_ids": [1],
+    "tag_data": [
+      {
+        "id": 1,
+        "name": "calculator"
+      }
+    ],
+    "categ_path": ["All", "On-Demand Services", "3) MySQL Single Database"],
+    "bundle_products": [
+      {
+        "id": 3589001,
+        "sh_product_id": [3574, "MySQL Single Database"],
+        "sh_qty": 1,
+        "sh_uom": [1, "Units"],
+        "sh_price_unit": 0.0,
+        "sh_price_subtotal": 0.0
+      },
+      {
+        "id": 3589002,
+        "sh_product_id": [3575, "nine-single-db-s"],
+        "sh_qty": 1,
+        "sh_uom": [1, "Units"],
+        "sh_price_unit": 0.0,
+        "sh_price_subtotal": 0.0
+      }
+    ]
+  },
+  {
+    "product_id": "mysqlSingleDbM",
+    "id": 3591,
+    "name": "MySQL - nine-single-db-m - 5GB",
+    "display_name": "MySQL - nine-single-db-m - 5GB",
+    "name_de": "MySQL - nine-single-db-m - 5GB",
+    "description_sale": "Single Database with 5GB of storage and a connection limit of 20. Usage of >5GB leads to costs of a nine-single-db-l.",
+    "description_sale_de": "Single Database mit 5GB Storage und einem Verbindungslimit von 20. Nutzung >5GB führt zu den Kosten einer nine-single-db-l.",
+    "type": "service",
+    "currency_id": [1, "CHF"],
+    "list_price": 9.9,
+    "setup_fee": false,
+    "active": true,
+    "categ_id": [151, "All / On-Demand Services / 3) MySQL Single Database"],
+    "sh_is_bundle": true,
+    "sh_bundle_product_ids": [3591001, 3591002],
+    "tag_ids": [1],
+    "tag_data": [
+      {
+        "id": 1,
+        "name": "calculator"
+      }
+    ],
+    "categ_path": ["All", "On-Demand Services", "3) MySQL Single Database"],
+    "bundle_products": [
+      {
+        "id": 3591001,
+        "sh_product_id": [3574, "MySQL Single Database"],
+        "sh_qty": 1,
+        "sh_uom": [1, "Units"],
+        "sh_price_unit": 0.0,
+        "sh_price_subtotal": 0.0
+      },
+      {
+        "id": 3591002,
+        "sh_product_id": [3576, "nine-single-db-m"],
+        "sh_qty": 1,
+        "sh_uom": [1, "Units"],
+        "sh_price_unit": 0.0,
+        "sh_price_subtotal": 0.0
+      }
+    ]
+  },
+  {
+    "product_id": "mysqlSingleDbL",
+    "id": 3593,
+    "name": "MySQL - nine-single-db-l - 10GB",
+    "display_name": "MySQL - nine-single-db-l - 10GB",
+    "name_de": "MySQL - nine-single-db-l - 10GB",
+    "description_sale": "Single Database with 10GB of storage and a connection limit of 20. Usage of >10GB leads to more costs.",
+    "description_sale_de": "Single Database mit 10GB Storage und einem Verbindungslimit von 20. Nutzung >10GB führt zu höheren Kosten.",
+    "type": "service",
+    "currency_id": [1, "CHF"],
+    "list_price": 22.0,
+    "setup_fee": false,
+    "active": true,
+    "categ_id": [151, "All / On-Demand Services / 3) MySQL Single Database"],
+    "sh_is_bundle": true,
+    "sh_bundle_product_ids": [3593001, 3593002],
+    "tag_ids": [1],
+    "tag_data": [
+      {
+        "id": 1,
+        "name": "calculator"
+      }
+    ],
+    "categ_path": ["All", "On-Demand Services", "3) MySQL Single Database"],
+    "bundle_products": [
+      {
+        "id": 3593001,
+        "sh_product_id": [3574, "MySQL Single Database"],
+        "sh_qty": 1,
+        "sh_uom": [1, "Units"],
+        "sh_price_unit": 0.0,
+        "sh_price_subtotal": 0.0
+      },
+      {
+        "id": 3593002,
+        "sh_product_id": [3577, "nine-single-db-l"],
+        "sh_qty": 1,
+        "sh_uom": [1, "Units"],
+        "sh_price_unit": 0.0,
+        "sh_price_subtotal": 0.0
+      }
+    ]
+  },
+  {
+    "product_id": "postgresqlDbXs",
+    "id": 3586,
+    "name": "PostgreSQL - nine-db-xs",
+    "display_name": "PostgreSQL - nine-db-xs",
+    "name_de": "PostgreSQL - nine-db-xs",
+    "description_sale": "Extra Small Machine Type. Cost-effective resource for minimal workloads, such as test databases or simple development environments.",
+    "description_sale_de": "Extra Small Machine Type. Kostengünstige Ressource für minimale Workloads wie Testdatenbanken oder einfache Entwicklungsumgebungen.",
+    "type": "service",
+    "currency_id": [1, "CHF"],
+    "list_price": 68.2,
+    "setup_fee": false,
+    "active": true,
+    "categ_id": [149, "All / On-Demand Services / 4) PostgreSQL Engine"],
+    "sh_is_bundle": true,
+    "sh_bundle_product_ids": [3586001, 3586002, 3586003, 3586004],
+    "tag_ids": [1],
+    "tag_data": [
+      {
+        "id": 1,
+        "name": "calculator"
+      }
+    ],
+    "categ_path": ["All", "On-Demand Services", "4) PostgreSQL Engine"],
+    "bundle_products": [
+      {
+        "id": 3586001,
+        "sh_product_id": [3256, "RAM (GiB)"],
+        "sh_qty": 4,
+        "sh_uom": [1, "Units"],
+        "sh_price_unit": 0.0,
+        "sh_price_subtotal": 0.0
+      },
+      {
+        "id": 3586002,
+        "sh_product_id": [3257, "vCPU"],
+        "sh_qty": 2,
+        "sh_uom": [1, "Units"],
+        "sh_price_unit": 0.0,
+        "sh_price_subtotal": 0.0
+      },
+      {
+        "id": 3586003,
+        "sh_product_id": [3255, "Block Storage 1 GiB"],
+        "sh_qty": 20,
+        "sh_uom": [1, "Units"],
+        "sh_price_unit": 0.0,
+        "sh_price_subtotal": 0.0
+      },
+      {
+        "id": 3586004,
+        "sh_product_id": [3315, "PostgreSQL"],
+        "sh_qty": 1,
+        "sh_uom": [1, "Units"],
+        "sh_price_unit": 0.0,
+        "sh_price_subtotal": 0.0
+      }
+    ]
+  },
+  {
+    "product_id": "postgresqlDbS",
+    "id": 3584,
+    "name": "PostgreSQL - nine-db-s",
+    "display_name": "PostgreSQL - nine-db-s",
+    "name_de": "PostgreSQL - nine-db-s",
+    "description_sale": "Small Machine Type. Suitable for smaller production databases and applications with low resource requirements.",
+    "description_sale_de": "Small Machine Type. Geeignet für kleinere Produktionsdatenbanken und Anwendungen mit geringem Ressourcenbedarf.",
+    "type": "service",
+    "currency_id": [1, "CHF"],
+    "list_price": 103.2,
+    "setup_fee": false,
+    "active": true,
+    "categ_id": [149, "All / On-Demand Services / 4) PostgreSQL Engine"],
+    "sh_is_bundle": true,
+    "sh_bundle_product_ids": [3584001, 3584002, 3584003, 3584004],
+    "tag_ids": [1],
+    "tag_data": [
+      {
+        "id": 1,
+        "name": "calculator"
+      }
+    ],
+    "categ_path": ["All", "On-Demand Services", "4) PostgreSQL Engine"],
+    "bundle_products": [
+      {
+        "id": 3584001,
+        "sh_product_id": [3256, "RAM (GiB)"],
+        "sh_qty": 8,
+        "sh_uom": [1, "Units"],
+        "sh_price_unit": 0.0,
+        "sh_price_subtotal": 0.0
+      },
+      {
+        "id": 3584002,
+        "sh_product_id": [3257, "vCPU"],
+        "sh_qty": 4,
+        "sh_uom": [1, "Units"],
+        "sh_price_unit": 0.0,
+        "sh_price_subtotal": 0.0
+      },
+      {
+        "id": 3584003,
+        "sh_product_id": [3255, "Block Storage 1 GiB"],
+        "sh_qty": 20,
+        "sh_uom": [1, "Units"],
+        "sh_price_unit": 0.0,
+        "sh_price_subtotal": 0.0
+      },
+      {
+        "id": 3584004,
+        "sh_product_id": [3315, "PostgreSQL"],
+        "sh_qty": 1,
+        "sh_uom": [1, "Units"],
+        "sh_price_unit": 0.0,
+        "sh_price_subtotal": 0.0
+      }
+    ]
+  },
+  {
+    "product_id": "postgresqlDbM",
+    "id": 3583,
+    "name": "PostgreSQL - nine-db-m",
+    "display_name": "PostgreSQL - nine-db-m",
+    "name_de": "PostgreSQL - nine-db-m",
+    "description_sale": "Medium Machine Type. An optimal choice for medium-sized databases and applications with growing traffic.",
+    "description_sale_de": "Medium Machine Type. Optimale Wahl für mittelgrosse Datenbanken und Anwendungen mit wachsendem Traffic.",
+    "type": "service",
+    "currency_id": [1, "CHF"],
+    "list_price": 125.2,
+    "setup_fee": false,
+    "active": true,
+    "categ_id": [149, "All / On-Demand Services / 4) PostgreSQL Engine"],
+    "sh_is_bundle": true,
+    "sh_bundle_product_ids": [3583001, 3583002, 3583003, 3583004],
+    "tag_ids": [1],
+    "tag_data": [
+      {
+        "id": 1,
+        "name": "calculator"
+      }
+    ],
+    "categ_path": ["All", "On-Demand Services", "4) PostgreSQL Engine"],
+    "bundle_products": [
+      {
+        "id": 3583001,
+        "sh_product_id": [3256, "RAM (GiB)"],
+        "sh_qty": 12,
+        "sh_uom": [1, "Units"],
+        "sh_price_unit": 0.0,
+        "sh_price_subtotal": 0.0
+      },
+      {
+        "id": 3583002,
+        "sh_product_id": [3257, "vCPU"],
+        "sh_qty": 4,
+        "sh_uom": [1, "Units"],
+        "sh_price_unit": 0.0,
+        "sh_price_subtotal": 0.0
+      },
+      {
+        "id": 3583003,
+        "sh_product_id": [3255, "Block Storage 1 GiB"],
+        "sh_qty": 20,
+        "sh_uom": [1, "Units"],
+        "sh_price_unit": 0.0,
+        "sh_price_subtotal": 0.0
+      },
+      {
+        "id": 3583004,
+        "sh_product_id": [3315, "PostgreSQL"],
+        "sh_qty": 1,
+        "sh_uom": [1, "Units"],
+        "sh_price_unit": 0.0,
+        "sh_price_subtotal": 0.0
+      }
+    ]
+  },
+  {
+    "product_id": "postgresqlDbL",
+    "id": 3582,
+    "name": "PostgreSQL - nine-db-l",
+    "display_name": "PostgreSQL - nine-db-l",
+    "name_de": "PostgreSQL - nine-db-l",
+    "description_sale": "Large Machine Type. Designed for mission-critical workloads and data-intensive applications.",
+    "description_sale_de": "Large Machine Type. Ausgelegt für geschäftskritische Workloads und datenintensive Anwendungen.",
+    "type": "service",
+    "currency_id": [1, "CHF"],
+    "list_price": 160.2,
+    "setup_fee": false,
+    "active": true,
+    "categ_id": [149, "All / On-Demand Services / 4) PostgreSQL Engine"],
+    "sh_is_bundle": true,
+    "sh_bundle_product_ids": [3582001, 3582002, 3582003, 3582004],
+    "tag_ids": [1],
+    "tag_data": [
+      {
+        "id": 1,
+        "name": "calculator"
+      }
+    ],
+    "categ_path": ["All", "On-Demand Services", "4) PostgreSQL Engine"],
+    "bundle_products": [
+      {
+        "id": 3582001,
+        "sh_product_id": [3256, "RAM (GiB)"],
+        "sh_qty": 16,
+        "sh_uom": [1, "Units"],
+        "sh_price_unit": 0.0,
+        "sh_price_subtotal": 0.0
+      },
+      {
+        "id": 3582002,
+        "sh_product_id": [3257, "vCPU"],
+        "sh_qty": 6,
+        "sh_uom": [1, "Units"],
+        "sh_price_unit": 0.0,
+        "sh_price_subtotal": 0.0
+      },
+      {
+        "id": 3582003,
+        "sh_product_id": [3255, "Block Storage 1 GiB"],
+        "sh_qty": 20,
+        "sh_uom": [1, "Units"],
+        "sh_price_unit": 0.0,
+        "sh_price_subtotal": 0.0
+      },
+      {
+        "id": 3582004,
+        "sh_product_id": [3315, "PostgreSQL"],
+        "sh_qty": 1,
+        "sh_uom": [1, "Units"],
+        "sh_price_unit": 0.0,
+        "sh_price_subtotal": 0.0
+      }
+    ]
+  },
+  {
+    "product_id": "postgresqlDbXl",
+    "id": 3585,
+    "name": "PostgreSQL - nine-db-xl",
+    "display_name": "PostgreSQL - nine-db-xl",
+    "name_de": "PostgreSQL - nine-db-xl",
+    "description_sale": "Extra Large Machine Type. Ideal for managing extensive workloads and very large databases with high resource needs.",
+    "description_sale_de": "Extra Large Machine Type. Ideal für umfangreiche Workloads und sehr grosse Datenbanken mit hohem Ressourcenbedarf.",
+    "type": "service",
+    "currency_id": [1, "CHF"],
+    "list_price": 217.2,
+    "setup_fee": false,
+    "active": true,
+    "categ_id": [149, "All / On-Demand Services / 4) PostgreSQL Engine"],
+    "sh_is_bundle": true,
+    "sh_bundle_product_ids": [3585001, 3585002, 3585003, 3585004],
+    "tag_ids": [1],
+    "tag_data": [
+      {
+        "id": 1,
+        "name": "calculator"
+      }
+    ],
+    "categ_path": ["All", "On-Demand Services", "4) PostgreSQL Engine"],
+    "bundle_products": [
+      {
+        "id": 3585001,
+        "sh_product_id": [3256, "RAM (GiB)"],
+        "sh_qty": 24,
+        "sh_uom": [1, "Units"],
+        "sh_price_unit": 0.0,
+        "sh_price_subtotal": 0.0
+      },
+      {
+        "id": 3585002,
+        "sh_product_id": [3257, "vCPU"],
+        "sh_qty": 8,
+        "sh_uom": [1, "Units"],
+        "sh_price_unit": 0.0,
+        "sh_price_subtotal": 0.0
+      },
+      {
+        "id": 3585003,
+        "sh_product_id": [3255, "Block Storage 1 GiB"],
+        "sh_qty": 20,
+        "sh_uom": [1, "Units"],
+        "sh_price_unit": 0.0,
+        "sh_price_subtotal": 0.0
+      },
+      {
+        "id": 3585004,
+        "sh_product_id": [3315, "PostgreSQL"],
+        "sh_qty": 1,
+        "sh_uom": [1, "Units"],
+        "sh_price_unit": 0.0,
+        "sh_price_subtotal": 0.0
+      }
+    ]
+  },
+  {
+    "product_id": "postgresqlDbXxl",
+    "id": 3587,
+    "name": "PostgreSQL - nine-db-xxl",
+    "display_name": "PostgreSQL - nine-db-xxl",
+    "name_de": "PostgreSQL - nine-db-xxl",
+    "description_sale": "XXL Machine Type. Optimal for very large data volumes and applications with the highest resource requirements.",
+    "description_sale_de": "XXL Machine Type. Optimal für sehr grosse Datenmengen und Anwendungen mit höchsten Ressourcenanforderungen.",
+    "type": "service",
+    "currency_id": [1, "CHF"],
+    "list_price": 274.2,
+    "setup_fee": false,
+    "active": true,
+    "categ_id": [149, "All / On-Demand Services / 4) PostgreSQL Engine"],
+    "sh_is_bundle": true,
+    "sh_bundle_product_ids": [3587001, 3587002, 3587003, 3587004],
+    "tag_ids": [1],
+    "tag_data": [
+      {
+        "id": 1,
+        "name": "calculator"
+      }
+    ],
+    "categ_path": ["All", "On-Demand Services", "4) PostgreSQL Engine"],
+    "bundle_products": [
+      {
+        "id": 3587001,
+        "sh_product_id": [3256, "RAM (GiB)"],
+        "sh_qty": 32,
+        "sh_uom": [1, "Units"],
+        "sh_price_unit": 0.0,
+        "sh_price_subtotal": 0.0
+      },
+      {
+        "id": 3587002,
+        "sh_product_id": [3257, "vCPU"],
+        "sh_qty": 10,
+        "sh_uom": [1, "Units"],
+        "sh_price_unit": 0.0,
+        "sh_price_subtotal": 0.0
+      },
+      {
+        "id": 3587003,
+        "sh_product_id": [3255, "Block Storage 1 GiB"],
+        "sh_qty": 20,
+        "sh_uom": [1, "Units"],
+        "sh_price_unit": 0.0,
+        "sh_price_subtotal": 0.0
+      },
+      {
+        "id": 3587004,
+        "sh_product_id": [3315, "PostgreSQL"],
+        "sh_qty": 1,
+        "sh_uom": [1, "Units"],
+        "sh_price_unit": 0.0,
+        "sh_price_subtotal": 0.0
+      }
+    ]
+  },
+  {
+    "product_id": "postgresqlSingleDbS",
+    "id": 3590,
+    "name": "PostgreSQL - nine-single-db-s - 1GB",
+    "display_name": "PostgreSQL - nine-single-db-s - 1GB",
+    "name_de": "PostgreSQL - nine-single-db-s - 1GB",
+    "description_sale": "Single Database with 1GB of storage and a connection limit of 20. Usage of >1GB leads to costs of a nine-single-db-m.",
+    "description_sale_de": "Single Database mit 1GB Storage und einem Verbindungslimit von 20. Nutzung >1GB führt zu den Kosten einer nine-single-db-m.",
+    "type": "service",
+    "currency_id": [1, "CHF"],
+    "list_price": 5.5,
+    "setup_fee": false,
+    "active": true,
+    "categ_id": [152, "All / On-Demand Services / 5) PostgreSQL Single Database"],
+    "sh_is_bundle": true,
+    "sh_bundle_product_ids": [3590001, 3590002],
+    "tag_ids": [1],
+    "tag_data": [
+      {
+        "id": 1,
+        "name": "calculator"
+      }
+    ],
+    "categ_path": ["All", "On-Demand Services", "5) PostgreSQL Single Database"],
+    "bundle_products": [
+      {
+        "id": 3590001,
+        "sh_product_id": [3573, "PostgreSQL Single Database"],
+        "sh_qty": 1,
+        "sh_uom": [1, "Units"],
+        "sh_price_unit": 0.0,
+        "sh_price_subtotal": 0.0
+      },
+      {
+        "id": 3590002,
+        "sh_product_id": [3575, "nine-single-db-s"],
+        "sh_qty": 1,
+        "sh_uom": [1, "Units"],
+        "sh_price_unit": 0.0,
+        "sh_price_subtotal": 0.0
+      }
+    ]
+  },
+  {
+    "product_id": "postgresqlSingleDbM",
+    "id": 3592,
+    "name": "PostgreSQL - nine-single-db-m - 5GB",
+    "display_name": "PostgreSQL - nine-single-db-m - 5GB",
+    "name_de": "PostgreSQL - nine-single-db-m - 5GB",
+    "description_sale": "Single Database with 5GB of storage and a connection limit of 20. Usage of >5GB leads to costs of a nine-single-db-l.",
+    "description_sale_de": "Single Database mit 5GB Storage und einem Verbindungslimit von 20. Nutzung >5GB führt zu den Kosten einer nine-single-db-l.",
+    "type": "service",
+    "currency_id": [1, "CHF"],
+    "list_price": 9.9,
+    "setup_fee": false,
+    "active": true,
+    "categ_id": [152, "All / On-Demand Services / 5) PostgreSQL Single Database"],
+    "sh_is_bundle": true,
+    "sh_bundle_product_ids": [3592001, 3592002],
+    "tag_ids": [1],
+    "tag_data": [
+      {
+        "id": 1,
+        "name": "calculator"
+      }
+    ],
+    "categ_path": ["All", "On-Demand Services", "5) PostgreSQL Single Database"],
+    "bundle_products": [
+      {
+        "id": 3592001,
+        "sh_product_id": [3573, "PostgreSQL Single Database"],
+        "sh_qty": 1,
+        "sh_uom": [1, "Units"],
+        "sh_price_unit": 0.0,
+        "sh_price_subtotal": 0.0
+      },
+      {
+        "id": 3592002,
+        "sh_product_id": [3576, "nine-single-db-m"],
+        "sh_qty": 1,
+        "sh_uom": [1, "Units"],
+        "sh_price_unit": 0.0,
+        "sh_price_subtotal": 0.0
+      }
+    ]
+  },
+  {
+    "product_id": "postgresqlSingleDbL",
+    "id": 3594,
+    "name": "PostgreSQL - nine-single-db-l - 10GB",
+    "display_name": "PostgreSQL - nine-single-db-l - 10GB",
+    "name_de": "PostgreSQL - nine-single-db-l - 10GB",
+    "description_sale": "Single Database with 10GB of storage and a connection limit of 20. Usage of >10GB leads to more costs.",
+    "description_sale_de": "Single Database mit 10GB Storage und einem Verbindungslimit von 20. Nutzung >10GB führt zu höheren Kosten.",
+    "type": "service",
+    "currency_id": [1, "CHF"],
+    "list_price": 22.0,
+    "setup_fee": false,
+    "active": true,
+    "categ_id": [152, "All / On-Demand Services / 5) PostgreSQL Single Database"],
+    "sh_is_bundle": true,
+    "sh_bundle_product_ids": [3594001, 3594002],
+    "tag_ids": [1],
+    "tag_data": [
+      {
+        "id": 1,
+        "name": "calculator"
+      }
+    ],
+    "categ_path": ["All", "On-Demand Services", "5) PostgreSQL Single Database"],
+    "bundle_products": [
+      {
+        "id": 3594001,
+        "sh_product_id": [3573, "PostgreSQL Single Database"],
+        "sh_qty": 1,
+        "sh_uom": [1, "Units"],
+        "sh_price_unit": 0.0,
+        "sh_price_subtotal": 0.0
+      },
+      {
+        "id": 3594002,
+        "sh_product_id": [3577, "nine-single-db-l"],
+        "sh_qty": 1,
+        "sh_uom": [1, "Units"],
+        "sh_price_unit": 0.0,
+        "sh_price_subtotal": 0.0
+      }
+    ]
+  },
+  {
+    "product_id": "nineSearchXsSingle",
+    "id": 3640,
+    "name": "Search - nine-search-xs-single",
+    "display_name": "Search - nine-search-xs-single",
+    "name_de": "Search - nine-search-xs-single",
+    "description_sale": "Cost-effective for minimal search workloads, testing & dev.",
+    "description_sale_de": "Kostengünstig für minimale Such-Workloads, Testing & Dev.",
+    "type": "service",
+    "currency_id": [1, "CHF"],
+    "list_price": 55.6,
+    "setup_fee": false,
+    "active": true,
+    "categ_id": [158, "All / On-Demand Services / 6) Search"],
+    "sh_is_bundle": true,
+    "sh_bundle_product_ids": [3640001, 3640002, 3640003, 3640004],
+    "tag_ids": [1],
+    "tag_data": [
+      {
+        "id": 1,
+        "name": "calculator"
+      }
+    ],
+    "categ_path": ["All", "On-Demand Services", "6) Search"],
+    "bundle_products": [
+      {
+        "id": 3640001,
+        "sh_product_id": [3256, "RAM (GiB)"],
+        "sh_qty": 2,
+        "sh_uom": [1, "Units"],
+        "sh_price_unit": 0.0,
+        "sh_price_subtotal": 0.0
+      },
+      {
+        "id": 3640002,
+        "sh_product_id": [3257, "vCPU"],
+        "sh_qty": 2,
+        "sh_uom": [1, "Units"],
+        "sh_price_unit": 0.0,
+        "sh_price_subtotal": 0.0
+      },
+      {
+        "id": 3640003,
+        "sh_product_id": [3255, "Block Storage 1 GiB"],
+        "sh_qty": 10,
+        "sh_uom": [1, "Units"],
+        "sh_price_unit": 0.0,
+        "sh_price_subtotal": 0.0
+      },
+      {
+        "id": 3640004,
+        "sh_product_id": [3600, "OpenSearch"],
+        "sh_qty": 1,
+        "sh_uom": [1, "Units"],
+        "sh_price_unit": 0.0,
+        "sh_price_subtotal": 0.0
+      }
+    ]
+  },
+  {
+    "product_id": "nineSearchSSingle",
+    "id": 3641,
+    "name": "Search - nine-search-s-single",
+    "display_name": "Search - nine-search-s-single",
+    "name_de": "Search - nine-search-s-single",
+    "description_sale": "For smaller production workloads with low to moderate traffic.",
+    "description_sale_de": "Für kleinere Produktions-Workloads mit geringem bis mittlerem Traffic.",
+    "type": "service",
+    "currency_id": [1, "CHF"],
+    "list_price": 68.2,
+    "setup_fee": false,
+    "active": true,
+    "categ_id": [158, "All / On-Demand Services / 6) Search"],
+    "sh_is_bundle": true,
+    "sh_bundle_product_ids": [3641001, 3641002, 3641003, 3641004],
+    "tag_ids": [1],
+    "tag_data": [
+      {
+        "id": 1,
+        "name": "calculator"
+      }
+    ],
+    "categ_path": ["All", "On-Demand Services", "6) Search"],
+    "bundle_products": [
+      {
+        "id": 3641001,
+        "sh_product_id": [3256, "RAM (GiB)"],
+        "sh_qty": 4,
+        "sh_uom": [1, "Units"],
+        "sh_price_unit": 0.0,
+        "sh_price_subtotal": 0.0
+      },
+      {
+        "id": 3641002,
+        "sh_product_id": [3257, "vCPU"],
+        "sh_qty": 2,
+        "sh_uom": [1, "Units"],
+        "sh_price_unit": 0.0,
+        "sh_price_subtotal": 0.0
+      },
+      {
+        "id": 3641003,
+        "sh_product_id": [3255, "Block Storage 1 GiB"],
+        "sh_qty": 20,
+        "sh_uom": [1, "Units"],
+        "sh_price_unit": 0.0,
+        "sh_price_subtotal": 0.0
+      },
+      {
+        "id": 3641004,
+        "sh_product_id": [3600, "OpenSearch"],
+        "sh_qty": 1,
+        "sh_uom": [1, "Units"],
+        "sh_price_unit": 0.0,
+        "sh_price_subtotal": 0.0
+      }
+    ]
+  },
+  {
+    "product_id": "nineSearchSMulti",
+    "id": 3645,
+    "name": "Search - nine-search-s-multi",
+    "display_name": "Search - nine-search-s-multi",
+    "name_de": "Search - nine-search-s-multi",
+    "description_sale": "High-availability setup for smaller production workloads.",
+    "description_sale_de": "High-Availability-Setup für kleinere Produktions-Workloads.",
+    "type": "service",
+    "currency_id": [1, "CHF"],
+    "list_price": 204.6,
+    "setup_fee": false,
+    "active": true,
+    "categ_id": [158, "All / On-Demand Services / 6) Search"],
+    "sh_is_bundle": true,
+    "sh_bundle_product_ids": [3645001, 3645002, 3645003, 3645004],
+    "tag_ids": [1],
+    "tag_data": [
+      {
+        "id": 1,
+        "name": "calculator"
+      }
+    ],
+    "categ_path": ["All", "On-Demand Services", "6) Search"],
+    "bundle_products": [
+      {
+        "id": 3645001,
+        "sh_product_id": [3256, "RAM (GiB)"],
+        "sh_qty": 12,
+        "sh_uom": [1, "Units"],
+        "sh_price_unit": 0.0,
+        "sh_price_subtotal": 0.0
+      },
+      {
+        "id": 3645002,
+        "sh_product_id": [3257, "vCPU"],
+        "sh_qty": 6,
+        "sh_uom": [1, "Units"],
+        "sh_price_unit": 0.0,
+        "sh_price_subtotal": 0.0
+      },
+      {
+        "id": 3645003,
+        "sh_product_id": [3255, "Block Storage 1 GiB"],
+        "sh_qty": 60,
+        "sh_uom": [1, "Units"],
+        "sh_price_unit": 0.0,
+        "sh_price_subtotal": 0.0
+      },
+      {
+        "id": 3645004,
+        "sh_product_id": [3600, "OpenSearch"],
+        "sh_qty": 3,
+        "sh_uom": [1, "Units"],
+        "sh_price_unit": 0.0,
+        "sh_price_subtotal": 0.0
+      }
+    ]
+  },
+  {
+    "product_id": "nineSearchMSingle",
+    "id": 3642,
+    "name": "Search - nine-search-m-single",
+    "display_name": "Search - nine-search-m-single",
+    "name_de": "Search - nine-search-m-single",
+    "description_sale": "Optimal choice for medium workloads with growing data volume.",
+    "description_sale_de": "Optimale Wahl für mittlere Workloads mit wachsendem Datenvolumen.",
+    "type": "service",
+    "currency_id": [1, "CHF"],
+    "list_price": 109.6,
+    "setup_fee": false,
+    "active": true,
+    "categ_id": [158, "All / On-Demand Services / 6) Search"],
+    "sh_is_bundle": true,
+    "sh_bundle_product_ids": [3642001, 3642002, 3642003, 3642004],
+    "tag_ids": [1],
+    "tag_data": [
+      {
+        "id": 1,
+        "name": "calculator"
+      }
+    ],
+    "categ_path": ["All", "On-Demand Services", "6) Search"],
+    "bundle_products": [
+      {
+        "id": 3642001,
+        "sh_product_id": [3256, "RAM (GiB)"],
+        "sh_qty": 8,
+        "sh_uom": [1, "Units"],
+        "sh_price_unit": 0.0,
+        "sh_price_subtotal": 0.0
+      },
+      {
+        "id": 3642002,
+        "sh_product_id": [3257, "vCPU"],
+        "sh_qty": 4,
+        "sh_uom": [1, "Units"],
+        "sh_price_unit": 0.0,
+        "sh_price_subtotal": 0.0
+      },
+      {
+        "id": 3642003,
+        "sh_product_id": [3255, "Block Storage 1 GiB"],
+        "sh_qty": 60,
+        "sh_uom": [1, "Units"],
+        "sh_price_unit": 0.0,
+        "sh_price_subtotal": 0.0
+      },
+      {
+        "id": 3642004,
+        "sh_product_id": [3600, "OpenSearch"],
+        "sh_qty": 1,
+        "sh_uom": [1, "Units"],
+        "sh_price_unit": 0.0,
+        "sh_price_subtotal": 0.0
+      }
+    ]
+  },
+  {
+    "product_id": "nineSearchMMulti",
+    "id": 3646,
+    "name": "Search - nine-search-m-multi",
+    "display_name": "Search - nine-search-m-multi",
+    "name_de": "Search - nine-search-m-multi",
+    "description_sale": "Resilient and maintainable without downtime for growing workloads.",
+    "description_sale_de": "Resilient und wartbar ohne Downtime für wachsende Workloads.",
+    "type": "service",
+    "currency_id": [1, "CHF"],
+    "list_price": 328.8,
+    "setup_fee": false,
+    "active": true,
+    "categ_id": [158, "All / On-Demand Services / 6) Search"],
+    "sh_is_bundle": true,
+    "sh_bundle_product_ids": [3646001, 3646002, 3646003, 3646004],
+    "tag_ids": [1],
+    "tag_data": [
+      {
+        "id": 1,
+        "name": "calculator"
+      }
+    ],
+    "categ_path": ["All", "On-Demand Services", "6) Search"],
+    "bundle_products": [
+      {
+        "id": 3646001,
+        "sh_product_id": [3256, "RAM (GiB)"],
+        "sh_qty": 24,
+        "sh_uom": [1, "Units"],
+        "sh_price_unit": 0.0,
+        "sh_price_subtotal": 0.0
+      },
+      {
+        "id": 3646002,
+        "sh_product_id": [3257, "vCPU"],
+        "sh_qty": 12,
+        "sh_uom": [1, "Units"],
+        "sh_price_unit": 0.0,
+        "sh_price_subtotal": 0.0
+      },
+      {
+        "id": 3646003,
+        "sh_product_id": [3255, "Block Storage 1 GiB"],
+        "sh_qty": 180,
+        "sh_uom": [1, "Units"],
+        "sh_price_unit": 0.0,
+        "sh_price_subtotal": 0.0
+      },
+      {
+        "id": 3646004,
+        "sh_product_id": [3600, "OpenSearch"],
+        "sh_qty": 3,
+        "sh_uom": [1, "Units"],
+        "sh_price_unit": 0.0,
+        "sh_price_subtotal": 0.0
+      }
+    ]
+  },
+  {
+    "product_id": "nineSearchLSingle",
+    "id": 3643,
+    "name": "Search - nine-search-l-single",
+    "display_name": "Search - nine-search-l-single",
+    "name_de": "Search - nine-search-l-single",
+    "description_sale": "For demanding, data-intensive search workloads.",
+    "description_sale_de": "Für anspruchsvolle, datenintensive Such-Workloads.",
+    "type": "service",
+    "currency_id": [1, "CHF"],
+    "list_price": 163.2,
+    "setup_fee": false,
+    "active": true,
+    "categ_id": [158, "All / On-Demand Services / 6) Search"],
+    "sh_is_bundle": true,
+    "sh_bundle_product_ids": [3643001, 3643002, 3643003, 3643004],
+    "tag_ids": [1],
+    "tag_data": [
+      {
+        "id": 1,
+        "name": "calculator"
+      }
+    ],
+    "categ_path": ["All", "On-Demand Services", "6) Search"],
+    "bundle_products": [
+      {
+        "id": 3643001,
+        "sh_product_id": [3256, "RAM (GiB)"],
+        "sh_qty": 16,
+        "sh_uom": [1, "Units"],
+        "sh_price_unit": 0.0,
+        "sh_price_subtotal": 0.0
+      },
+      {
+        "id": 3643002,
+        "sh_product_id": [3257, "vCPU"],
+        "sh_qty": 4,
+        "sh_uom": [1, "Units"],
+        "sh_price_unit": 0.0,
+        "sh_price_subtotal": 0.0
+      },
+      {
+        "id": 3643003,
+        "sh_product_id": [3255, "Block Storage 1 GiB"],
+        "sh_qty": 120,
+        "sh_uom": [1, "Units"],
+        "sh_price_unit": 0.0,
+        "sh_price_subtotal": 0.0
+      },
+      {
+        "id": 3643004,
+        "sh_product_id": [3600, "OpenSearch"],
+        "sh_qty": 1,
+        "sh_uom": [1, "Units"],
+        "sh_price_unit": 0.0,
+        "sh_price_subtotal": 0.0
+      }
+    ]
+  },
+  {
+    "product_id": "nineSearchLMulti",
+    "id": 3647,
+    "name": "Search - nine-search-l-multi",
+    "display_name": "Search - nine-search-l-multi",
+    "name_de": "Search - nine-search-l-multi",
+    "description_sale": "High availability and consistent performance for critical workloads.",
+    "description_sale_de": "High Availability und konsistente Performance für kritische Workloads.",
+    "type": "service",
+    "currency_id": [1, "CHF"],
+    "list_price": 489.6,
+    "setup_fee": false,
+    "active": true,
+    "categ_id": [158, "All / On-Demand Services / 6) Search"],
+    "sh_is_bundle": true,
+    "sh_bundle_product_ids": [3647001, 3647002, 3647003, 3647004],
+    "tag_ids": [1],
+    "tag_data": [
+      {
+        "id": 1,
+        "name": "calculator"
+      }
+    ],
+    "categ_path": ["All", "On-Demand Services", "6) Search"],
+    "bundle_products": [
+      {
+        "id": 3647001,
+        "sh_product_id": [3256, "RAM (GiB)"],
+        "sh_qty": 48,
+        "sh_uom": [1, "Units"],
+        "sh_price_unit": 0.0,
+        "sh_price_subtotal": 0.0
+      },
+      {
+        "id": 3647002,
+        "sh_product_id": [3257, "vCPU"],
+        "sh_qty": 12,
+        "sh_uom": [1, "Units"],
+        "sh_price_unit": 0.0,
+        "sh_price_subtotal": 0.0
+      },
+      {
+        "id": 3647003,
+        "sh_product_id": [3255, "Block Storage 1 GiB"],
+        "sh_qty": 360,
+        "sh_uom": [1, "Units"],
+        "sh_price_unit": 0.0,
+        "sh_price_subtotal": 0.0
+      },
+      {
+        "id": 3647004,
+        "sh_product_id": [3600, "OpenSearch"],
+        "sh_qty": 3,
+        "sh_uom": [1, "Units"],
+        "sh_price_unit": 0.0,
+        "sh_price_subtotal": 0.0
+      }
+    ]
+  },
+  {
+    "product_id": "nineSearchXlSingle",
+    "id": 3644,
+    "name": "Search - nine-search-xl-single",
+    "display_name": "Search - nine-search-xl-single",
+    "name_de": "Search - nine-search-xl-single",
+    "description_sale": "Ideal for very large search indexes and high query volumes.",
+    "description_sale_de": "Ideal für sehr grosse Such-Indizes und hohe Query-Volumina.",
+    "type": "service",
+    "currency_id": [1, "CHF"],
+    "list_price": 290.0,
+    "setup_fee": false,
+    "active": true,
+    "categ_id": [158, "All / On-Demand Services / 6) Search"],
+    "sh_is_bundle": true,
+    "sh_bundle_product_ids": [3644001, 3644002, 3644003, 3644004],
+    "tag_ids": [1],
+    "tag_data": [
+      {
+        "id": 1,
+        "name": "calculator"
+      }
+    ],
+    "categ_path": ["All", "On-Demand Services", "6) Search"],
+    "bundle_products": [
+      {
+        "id": 3644001,
+        "sh_product_id": [3256, "RAM (GiB)"],
+        "sh_qty": 32,
+        "sh_uom": [1, "Units"],
+        "sh_price_unit": 0.0,
+        "sh_price_subtotal": 0.0
+      },
+      {
+        "id": 3644002,
+        "sh_product_id": [3257, "vCPU"],
+        "sh_qty": 8,
+        "sh_uom": [1, "Units"],
+        "sh_price_unit": 0.0,
+        "sh_price_subtotal": 0.0
+      },
+      {
+        "id": 3644003,
+        "sh_product_id": [3255, "Block Storage 1 GiB"],
+        "sh_qty": 200,
+        "sh_uom": [1, "Units"],
+        "sh_price_unit": 0.0,
+        "sh_price_subtotal": 0.0
+      },
+      {
+        "id": 3644004,
+        "sh_product_id": [3600, "OpenSearch"],
+        "sh_qty": 1,
+        "sh_uom": [1, "Units"],
+        "sh_price_unit": 0.0,
+        "sh_price_subtotal": 0.0
+      }
+    ]
+  },
+  {
+    "product_id": "nineSearchXlMulti",
+    "id": 3648,
+    "name": "Search - nine-search-xl-multi",
+    "display_name": "Search - nine-search-xl-multi",
+    "name_de": "Search - nine-search-xl-multi",
+    "description_sale": "Ideal for enterprise-grade search platforms with large datasets.",
+    "description_sale_de": "Ideal für Enterprise-Grade-Suchplattformen mit grossen Datasets.",
+    "type": "service",
+    "currency_id": [1, "CHF"],
+    "list_price": 870.0,
+    "setup_fee": false,
+    "active": true,
+    "categ_id": [158, "All / On-Demand Services / 6) Search"],
+    "sh_is_bundle": true,
+    "sh_bundle_product_ids": [3648001, 3648002, 3648003, 3648004],
+    "tag_ids": [1],
+    "tag_data": [
+      {
+        "id": 1,
+        "name": "calculator"
+      }
+    ],
+    "categ_path": ["All", "On-Demand Services", "6) Search"],
+    "bundle_products": [
+      {
+        "id": 3648001,
+        "sh_product_id": [3256, "RAM (GiB)"],
+        "sh_qty": 96,
+        "sh_uom": [1, "Units"],
+        "sh_price_unit": 0.0,
+        "sh_price_subtotal": 0.0
+      },
+      {
+        "id": 3648002,
+        "sh_product_id": [3257, "vCPU"],
+        "sh_qty": 24,
+        "sh_uom": [1, "Units"],
+        "sh_price_unit": 0.0,
+        "sh_price_subtotal": 0.0
+      },
+      {
+        "id": 3648003,
+        "sh_product_id": [3255, "Block Storage 1 GiB"],
+        "sh_qty": 600,
+        "sh_uom": [1, "Units"],
+        "sh_price_unit": 0.0,
+        "sh_price_subtotal": 0.0
+      },
+      {
+        "id": 3648004,
+        "sh_product_id": [3600, "OpenSearch"],
+        "sh_qty": 3,
+        "sh_uom": [1, "Units"],
+        "sh_price_unit": 0.0,
+        "sh_price_subtotal": 0.0
+      }
+    ]
+  },
+  {
+    "product_id": "blockStorage10gibOnDemand",
+    "id": 3464,
+    "name": "Block Storage (10GiB)",
+    "display_name": "Block Storage (10GiB)",
+    "name_de": "Block Storage (10GiB)",
+    "description_sale": "Add additional block storage to your service, priced per 10GiB block. Disk size cannot be decreased.",
+    "description_sale_de": "Füge deinem Service zusätzlichen Block Storage hinzu, pro 10GiB Block verrechnet. Die Disk-Grösse kann nicht verkleinert werden.",
+    "type": "service",
+    "currency_id": [1, "CHF"],
+    "list_price": 1.6,
+    "setup_fee": false,
+    "active": true,
+    "categ_id": [150, "All / On-Demand Services / 7) Additional Resources"],
+    "sh_is_bundle": true,
+    "sh_bundle_product_ids": [3464001],
+    "tag_ids": [1],
+    "tag_data": [
+      {
+        "id": 1,
+        "name": "calculator"
+      }
+    ],
+    "categ_path": ["All", "On-Demand Services", "7) Additional Resources"],
+    "bundle_products": [
+      {
+        "id": 3464001,
+        "sh_product_id": [3255, "Block Storage 1 GiB"],
+        "sh_qty": 10,
+        "sh_uom": [1, "Units"],
+        "sh_price_unit": 0.0,
+        "sh_price_subtotal": 0.0
+      }
+    ]
+  },
+  {
+    "product_id": "grafana",
+    "id": 3262,
+    "name": "Grafana",
+    "display_name": "Grafana",
+    "name_de": "Grafana",
+    "description_sale": "Real-time visualization of metrics and logs, offering powerful dashboards for system monitoring. Service fee per instance of Grafana; associated resources are billed additionally.",
+    "description_sale_de": "Echtzeit-Visualisierung von Metriken und Logs, bietet leistungsstarke Dashboards für das System-Monitoring. Service-Gebühr pro Instanz von Grafana; zugehörige Ressourcen werden zusätzlich verrechnet.",
+    "type": "service",
+    "currency_id": [1, "CHF"],
+    "list_price": 8.0,
+    "setup_fee": false,
+    "active": true,
+    "categ_id": [178, "All / On-Demand Services / 8) Monitoring & Logging"],
+    "sh_is_bundle": false,
+    "sh_bundle_product_ids": [],
+    "tag_ids": [1],
+    "tag_data": [
+      {
+        "id": 1,
+        "name": "calculator"
+      }
+    ],
+    "categ_path": ["All", "On-Demand Services", "8) Monitoring & Logging"]
+  },
+  {
+    "product_id": "objectStorageTrafficOut",
+    "id": 3389,
+    "name": "Object Storage Outgoing Traffic (GiB)",
+    "display_name": "Object Storage Outgoing Traffic (GiB)",
+    "name_de": "Object Storage ausgehender Traffic (GiB)",
+    "description_sale": "Traffic is charged on a usage basis. Enter your assumed traffic here to generate an approximate cost.",
+    "description_sale_de": "Traffic wird nach Nutzung verrechnet, trage deinen erwarteten Traffic hier ein, um die ungefähren Kosten zu berechnen",
+    "type": "service",
+    "currency_id": [1, "CHF"],
+    "list_price": 0.02,
+    "setup_fee": false,
+    "active": true,
+    "categ_id": [128, "All / Object Storage / v2"],
+    "sh_is_bundle": false,
+    "sh_bundle_product_ids": [],
+    "tag_ids": [1],
+    "tag_data": [
+      {
+        "id": 1,
+        "name": "calculator"
+      }
+    ],
+    "categ_path": ["All", "Object Storage", "v2"],
+    "commitment": [
+      {
+        "type": "1Y",
+        "billing_period": "1Y",
+        "discount": 0.002,
+        "discount_percent": 10.0,
+        "setup_fee": false
+      },
+      {
+        "type": "3Y",
+        "billing_period": "3Y",
+        "discount": 0.007,
+        "discount_percent": 33.0,
+        "setup_fee": false
+      }
+    ]
+  },
+  {
+    "product_id": "objectStorage",
+    "id": 3388,
+    "name": "Object Storage Space (GiB)",
+    "display_name": "Object Storage Space (GiB)",
+    "name_de": "Object Storage Speicher (GiB)",
+    "description_sale": "Object storage is charged on a per gigabyte basis. Enter your assumed requirements here to generate an approximate cost.",
+    "description_sale_de": "Object Storage wird pro Gigabyte verrechnet, trage deine erwarteten Anforderungen hier ein, um die ungefähren Kosten zu berechnen",
+    "type": "service",
+    "currency_id": [1, "CHF"],
+    "list_price": 0.033,
+    "setup_fee": false,
+    "active": true,
+    "categ_id": [128, "All / Object Storage / v2"],
+    "sh_is_bundle": false,
+    "sh_bundle_product_ids": [],
+    "tag_ids": [1],
+    "tag_data": [
+      {
+        "id": 1,
+        "name": "calculator"
+      }
+    ],
+    "categ_path": ["All", "Object Storage", "v2"],
+    "commitment": [
+      {
+        "type": "1Y",
+        "billing_period": "1Y",
+        "discount": 0.003,
+        "discount_percent": 10.0,
+        "setup_fee": false
+      },
+      {
+        "type": "3Y",
+        "billing_period": "3Y",
+        "discount": 0.011,
+        "discount_percent": 33.0,
+        "setup_fee": false
+      }
+    ]
+  }
+]

@@ -1,0 +1,54 @@
+{% assign database = site.data.pricing.database %}
+<div class="flex flex-col gap-4 md:flex-row md:flex-wrap md:gap-x-10">
+  <div class="flex flex-col gap-2">
+    <h3 class="font-semibold leading-[1.35]">{% t pricing_calc_engine %}</h3>
+    <div class="pricing-segments">
+      {% for engine in database.engines %}
+        {% assign set = 'dbEngine:' | append: engine.key %}
+        {% include pricing/segment.html set=set label=engine.label %}
+      {% endfor %}
+      {% include pricing/segment.html set='dbEngine:none' label_key='pricing_calc_none' %}
+    </div>
+  </div>
+  <div class="flex flex-col gap-2" data-visible="database">
+    <h3 class="font-semibold leading-[1.35]">{% t pricing_calc_plan %}</h3>
+    <div class="pricing-segments">
+      {% include pricing/segment.html set='dbPlan:single' label_key='pricing_calc_single_database' %}
+      {% include pricing/segment.html set='dbPlan:dedicated' label_key='pricing_calc_dedicated_instance' %}
+    </div>
+  </div>
+</div>
+<div class="flex flex-col gap-3" data-visible="database single">
+  <p class="pricing-muted text-sm leading-[1.35]">{% t pricing_calc_single_hint %}</p>
+  <div class="grid grid-cols-2 gap-2 md:grid-cols-3">
+    {% for size in database.single %}
+      {% capture tile_attributes %}data-set="dbSingleSize:{{ size.key }}"{% endcapture %}
+      {% assign slot = 'single.' | append: size.key %}
+      {% include pricing/tile.html slot=slot label=size.label attributes=tile_attributes %}
+    {% endfor %}
+  </div>
+</div>
+<div class="flex flex-col gap-3" data-visible="database dedicated">
+  <p class="pricing-muted text-sm leading-[1.35]">{% t pricing_calc_dedicated_hint %}</p>
+  <div class="grid grid-cols-2 gap-2 md:grid-cols-3 xl:grid-cols-6">
+    {% for size in database.dedicated %}
+      {% capture tile_attributes %}data-set="dbDedicatedSize:{{ size.key }}"{% endcapture %}
+      {% assign slot = 'dedicated.' | append: size.key %}
+      {% include pricing/tile.html slot=slot label=size.label attributes=tile_attributes %}
+    {% endfor %}
+  </div>
+</div>
+<hr class="border-deploio/20">
+<div class="flex flex-col gap-3">
+  {% include pricing/label.html title_key='pricing_calc_key_value_store' hint_key='pricing_calc_kvs_hint' %}
+  <div class="grid grid-cols-2 gap-2 md:grid-cols-3">
+    {% assign none_label = 'pricing_calc_none' | t %}
+    {% assign none_hint = 'pricing_calc_kvs_none_hint' | t %}
+    {% include pricing/tile.html label=none_label hint=none_hint attributes='data-set="kvs:none"' %}
+    {% for entry in site.data.pricing.key_value_store %}
+      {% capture tile_attributes %}data-set="kvs:{{ entry.key }}"{% endcapture %}
+      {% assign slot = 'kvs.' | append: entry.key %}
+      {% include pricing/tile.html slot=slot label=entry.label attributes=tile_attributes %}
+    {% endfor %}
+  </div>
+</div>

@@ -1,0 +1,143 @@
+# Prices are fetched live from the calculator API. Every slot below is matched
+# against the product list by `category` (a substring of the product's category
+# path) and `name` (a case-insensitive substring of the product name). If the
+# product data gets renamed, adjust the matcher here
+
+vat_rate: 8.1
+
+app:
+  - key: micro
+    category: Deploio / 1) Resources
+    name: Micro
+  - key: mini
+    category: Deploio / 1) Resources
+    name: Mini
+  - key: standard_1
+    category: Deploio / 1) Resources
+    name: Standard-1
+  - key: standard_2
+    category: Deploio / 1) Resources
+    name: Standard-2
+  - key: standard_4
+    category: Deploio / 1) Resources
+    name: Standard-4
+
+database:
+  engines:
+    - key: postgresql
+      label: PostgreSQL
+      single_category: PostgreSQL Single Database
+      dedicated_category: PostgreSQL Engine
+    - key: mysql
+      label: MySQL
+      single_category: MySQL Single Database
+      dedicated_category: MySQL Engine
+  single:
+    - key: s
+      label: 1 GB
+      name: nine-single-db-s
+    - key: m
+      label: 5 GB
+      name: nine-single-db-m
+    - key: l
+      label: 10 GB
+      name: nine-single-db-l
+  dedicated:
+    - key: xs
+      label: XS
+      name: nine-db-xs
+    - key: s
+      label: S
+      name: nine-db-s
+    - key: m
+      label: M
+      name: nine-db-m
+    - key: l
+      label: L
+      name: nine-db-l
+    - key: xl
+      label: XL
+      name: nine-db-xl
+    - key: xxl
+      label: XXL
+      name: nine-db-xxl
+
+key_value_store:
+  - key: 256mb
+    label: 256 MB
+    category: On-Demand Services / 1) Key Value Store
+    name: 256mb
+  - key: 1gb
+    label: 1 GB
+    category: On-Demand Services / 1) Key Value Store
+    name: 1gb
+
+search:
+  category: On-Demand Services / 6) Search
+  sizes:
+    - key: xs
+      label: XS
+      single: nine-search-xs-single
+    - key: s
+      label: S
+      single: nine-search-s-single
+      multi: nine-search-s-multi
+    - key: m
+      label: M
+      single: nine-search-m-single
+      multi: nine-search-m-multi
+    - key: l
+      label: L
+      single: nine-search-l-single
+      multi: nine-search-l-multi
+    - key: xl
+      label: XL
+      single: nine-search-xl-single
+      multi: nine-search-xl-multi
+
+add_ons:
+  object_storage_space:
+    category: Object Storage
+    name: Space
+  object_storage_traffic:
+    category: Object Storage
+    name: Outgoing Traffic
+  static_egress:
+    category: Deploio / 2) Services
+    name: Static Egress (deplo.io)
+  ipv4:
+    category: Deploio / 2) Services
+    name: Additional IPv4 address
+  block_storage:
+    category: On-Demand Services / 7) Additional Resources
+    name: Block Storage (10GiB)
+  grafana:
+    category: On-Demand Services / 8) Monitoring & Logging
+    name: Grafana
+
+default_preset: hobby
+
+presets:
+  - key: hobby
+    app: { micro: 1 }
+    db_engine: postgresql
+    db_plan: single
+    db_size: s
+  - key: production
+    app: { standard_1: 2 }
+    db_engine: postgresql
+    db_plan: single
+    db_size: m
+    kvs: 256mb
+  - key: scale
+    app: { standard_2: 3 }
+    db_engine: postgresql
+    db_plan: dedicated
+    db_size: m
+    kvs: 1gb
+    search: single
+    search_sizes: { m: 1 }
+    object_storage: { space: 200, traffic: 500 }
+    static_egress: true
+    ipv4: 1
+    grafana: 1
