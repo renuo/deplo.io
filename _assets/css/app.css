@@ -106,7 +106,6 @@
     @apply bg-deploio text-white;
   }
 
-  /* The dark minus icon already comes faded, it only shows while the quantity is zero */
   .pricing-stepper[data-active='true'] [data-stepper-icon='idle'],
   .pricing-stepper:not([data-active='true']) [data-stepper-icon='active'] {
     @apply hidden;
@@ -127,7 +126,6 @@
   }
 }
 
-/* The first page starts at the paper edge so the logo hangs from the top like on the site */
 @media print {
   @page {
     size: A4;
@@ -139,7 +137,6 @@
   }
 }
 
-/* The calculator toggles the hidden attribute on elements that also carry display utilities */
 [data-pricing] [hidden] {
   display: none !important;
 }

@@ -1,7 +1,9 @@
 const DEFAULT_VAT_RATE = 8.1;
 const MAX_QUANTITY = 99;
 const MAX_USAGE_GIB = 1000000;
-const SEARCH_LEVELS = ['none', 'single', 'multi'];
+const BLOCK_STORAGE_GIB = 10;
+const NONE = 'none';
+const SEARCH_LEVELS = ['single', 'multi'];
 const DB_PLANS = ['single', 'dedicated'];
 
 const roundCurrency = (amount) => Math.round((amount + Math.sign(amount) * Number.EPSILON) * 100) / 100;
@@ -14,7 +16,6 @@ const calculateVat = (exclVat, vatRate = DEFAULT_VAT_RATE) => {
 
 const formatNumber = (value, options) => new Intl.NumberFormat('de-CH', options).format(value);
 
-// Keeps sub-cent prices such as 0.033 intact, everything else gets two decimals
 const formatAmount = (amount, fixedFractionDigits) => {
   const value = Number.parseFloat(Number(amount).toPrecision(10));
   const decimals = fixedFractionDigits ?? Math.max(2, (value.toString().split('.')[1] || '').length);
@@ -64,7 +65,7 @@ const toSlot = (product, language) => {
 
 const buildCatalog = (products, config, language = 'de') => {
   const slot = (matcher) => toSlot(findProduct(products, matcher), language);
-  const catalog = { app: {}, single: {}, dedicated: {}, kvs: {}, search: { single: {}, multi: {} }, addOns: {} };
+  const catalog = { app: {}, single: {}, dedicated: {}, kvs: {}, search: {}, addOns: {} };
 
   config.app.forEach((entry) => {
     catalog.app[entry.key] = slot(entry);
@@ -82,8 +83,9 @@ const buildCatalog = (products, config, language = 'de') => {
   config.key_value_store.forEach((entry) => {
     catalog.kvs[entry.key] = slot(entry);
   });
-  config.search.sizes.forEach((size) => {
-    ['single', 'multi'].forEach((level) => {
+  SEARCH_LEVELS.forEach((level) => {
+    catalog.search[level] = {};
+    config.search.sizes.forEach((size) => {
       catalog.search[level][size.key] = size[level]
         ? slot({ category: config.search.category, name: size[level] })
         : null;
@@ -105,7 +107,6 @@ const missingSlots = (catalog) => {
     });
   };
   walk(catalog, '');
-  // XS search only exists as a single node, so its missing multi variant is expected
   return missing.filter((path) => path !== 'search.multi.xs');
 };
 
@@ -116,12 +117,12 @@ const defaultSearchSize = (config) => config.search.sizes[1]?.key ?? config.sear
 const defaultState = (config) => ({
   app: noQuantities(config.app),
   appFocus: config.app[0].key,
-  dbEngine: 'none',
+  dbEngine: NONE,
   dbPlan: 'single',
   dbSingleSize: config.database.single[0].key,
   dbDedicatedSize: config.database.dedicated[0].key,
-  kvs: 'none',
-  search: 'none',
+  kvs: NONE,
+  search: NONE,
   searchSizes: noQuantities(config.search.sizes),
   objectStorage: false,
   storageGiB: 50,
@@ -138,15 +139,13 @@ const clampInteger = (value, min, max) => {
   return Math.min(max, Math.max(min, number));
 };
 
-// Static egress needs an IPv4 address, so it can't go below one while egress is on
 const minimumOf = (state, field) => (field === 'ipv4' && state.staticEgress ? 1 : 0);
 
 const totalOf = (quantities) => Object.values(quantities).reduce((total, quantity) => total + quantity, 0);
 
-// While search is on, the last remaining node can't be removed; "None" turns search off
 const minimumSearchQuantity = (state, key) => {
   const quantity = state.searchSizes[key];
-  return state.search !== 'none' && quantity > 0 && quantity === totalOf(state.searchSizes) ? 1 : 0;
+  return state.search !== NONE && quantity > 0 && quantity === totalOf(state.searchSizes) ? 1 : 0;
 };
 
 const clampQuantities = (quantities) =>
@@ -158,7 +157,6 @@ const normalizeState = (config, state) => {
   const next = { ...state, app: clampQuantities(state.app), searchSizes: clampQuantities(state.searchSizes) };
   if (!(next.appFocus in next.app)) next.appFocus = config.app[0].key;
   if (next.search === 'multi') {
-    // XS only exists as a single node, so its nodes move to the smallest high-availability size
     const fallback = config.search.sizes.find((entry) => entry.multi).key;
     config.search.sizes
       .filter((entry) => !entry.multi)
@@ -167,7 +165,7 @@ const normalizeState = (config, state) => {
         next.searchSizes[key] = 0;
       });
   }
-  if (next.search !== 'none' && totalOf(next.searchSizes) === 0) next.searchSizes[defaultSearchSize(config)] = 1;
+  if (next.search !== NONE && totalOf(next.searchSizes) === 0) next.searchSizes[defaultSearchSize(config)] = 1;
   next.ipv4 = clampInteger(next.ipv4, minimumOf(next, 'ipv4'), MAX_QUANTITY);
   next.blockStorage = clampInteger(next.blockStorage, minimumOf(next, 'blockStorage'), MAX_QUANTITY);
   next.grafana = clampInteger(next.grafana, 0, MAX_QUANTITY);
@@ -187,11 +185,11 @@ const presetState = (config, presetKey) => {
     if (key in state.app) state.app[key] = quantity;
   });
   state.appFocus = firstAppWithQuantity(state.app, state.appFocus);
-  state.dbEngine = preset.db_engine || 'none';
+  state.dbEngine = preset.db_engine || NONE;
   state.dbPlan = preset.db_plan || 'single';
   if (preset.db_size) state[state.dbPlan === 'single' ? 'dbSingleSize' : 'dbDedicatedSize'] = preset.db_size;
-  state.kvs = preset.kvs || 'none';
-  state.search = preset.search || 'none';
+  state.kvs = preset.kvs || NONE;
+  state.search = preset.search || NONE;
   Object.entries(preset.search_sizes || {}).forEach(([key, quantity]) => {
     if (key in state.searchSizes) state.searchSizes[key] = quantity;
   });
@@ -206,12 +204,12 @@ const presetState = (config, presetKey) => {
 };
 
 const comparableState = ({ appFocus, ...state }) => {
-  if (state.dbEngine === 'none') {
+  if (state.dbEngine === NONE) {
     delete state.dbPlan;
     delete state.dbSingleSize;
     delete state.dbDedicatedSize;
   } else delete state[state.dbPlan === 'single' ? 'dbDedicatedSize' : 'dbSingleSize'];
-  if (state.search === 'none') delete state.searchSizes;
+  if (state.search === NONE) delete state.searchSizes;
   if (!state.objectStorage) {
     delete state.storageGiB;
     delete state.trafficGiB;
@@ -224,7 +222,7 @@ const matchingPreset = (config, state) =>
   null;
 
 const dbSlot = (catalog, state) => {
-  if (state.dbEngine === 'none') return null;
+  if (state.dbEngine === NONE) return null;
   return state.dbPlan === 'single'
     ? catalog.single[state.dbEngine]?.[state.dbSingleSize]
     : catalog.dedicated[state.dbEngine]?.[state.dbDedicatedSize];
@@ -255,7 +253,7 @@ const computeEstimate = (config, catalog, state, strings) => {
   const kvs = catalog.kvs[state.kvs];
   if (kvs) add('database', strings.key_value_store, labelOf(config.key_value_store, state.kvs), kvs.price);
 
-  if (state.search !== 'none') {
+  if (state.search !== NONE) {
     const level = state.search === 'single' ? strings.single_node : strings.high_availability;
     config.search.sizes.forEach((size) => {
       const quantity = state.searchSizes[size.key];
@@ -279,18 +277,18 @@ const computeEstimate = (config, catalog, state, strings) => {
   if (state.staticEgress && addOns.static_egress) {
     add('add_ons', strings.static_egress, 'deplo.io', addOns.static_egress.price);
   }
-  if (state.ipv4 > 0 && addOns.ipv4) {
-    const { price } = addOns.ipv4;
-    add('add_ons', strings.additional_ipv4, `${state.ipv4} × ${formatAmount(price)}`, state.ipv4 * price);
-  }
-  if (state.blockStorage > 0 && addOns.block_storage) {
-    const { price } = addOns.block_storage;
-    add('add_ons', strings.block_storage, `${state.blockStorage * 10} GiB`, state.blockStorage * price);
-  }
-  if (state.grafana > 0 && addOns.grafana) {
-    const { price } = addOns.grafana;
-    add('add_ons', strings.grafana, `${state.grafana} × ${formatAmount(price)}`, state.grafana * price);
-  }
+  [
+    { field: 'ipv4', addOn: 'ipv4', label: strings.additional_ipv4 },
+    { field: 'blockStorage', addOn: 'block_storage', label: strings.block_storage, unitGiB: BLOCK_STORAGE_GIB },
+    { field: 'grafana', addOn: 'grafana', label: strings.grafana },
+  ].forEach(({ field, addOn, label, unitGiB }) => {
+    const quantity = state[field];
+    const slot = addOns[addOn];
+    if (quantity > 0 && slot) {
+      const detail = unitGiB ? `${quantity * unitGiB} GiB` : `${quantity} × ${formatAmount(slot.price)}`;
+      add('add_ons', label, detail, quantity * slot.price);
+    }
+  });
 
   const sum = (entries) => roundCurrency(entries.reduce((total, item) => total + item.total, 0));
   const sections = Object.fromEntries(
@@ -320,7 +318,6 @@ const quantitiesToParam = (quantities) =>
     .map(([key, quantity]) => `${key}:${quantity}`)
     .join(',');
 
-// A key without a quantity counts as one, which keeps older links such as search_size=m working
 const quantitiesFromParam = (value, quantities) => {
   (value || '').split(',').forEach((pair) => {
     const [key, quantity = 1] = pair.split(':');
@@ -333,12 +330,12 @@ const stateToParams = (state) => {
   const app = quantitiesToParam(state.app);
   if (app) params.set('app', app);
   params.set('db', state.dbEngine);
-  if (state.dbEngine !== 'none') {
+  if (state.dbEngine !== NONE) {
     params.set('plan', state.dbPlan);
     params.set('size', state.dbPlan === 'single' ? state.dbSingleSize : state.dbDedicatedSize);
   }
-  if (state.kvs !== 'none') params.set('kvs', state.kvs);
-  if (state.search !== 'none') {
+  if (state.kvs !== NONE) params.set('kvs', state.kvs);
+  if (state.search !== NONE) {
     params.set('search', state.search);
     params.set('search_size', quantitiesToParam(state.searchSizes));
   }
@@ -359,13 +356,13 @@ const stateFromParams = (config, params) => {
 
   quantitiesFromParam(params.get('app'), state.app);
   state.appFocus = firstAppWithQuantity(state.app, state.appFocus);
-  state.dbEngine = oneOf(params.get('db'), ['none', ...keys(config.database.engines)], 'none');
+  state.dbEngine = oneOf(params.get('db'), [NONE, ...keys(config.database.engines)], NONE);
   state.dbPlan = oneOf(params.get('plan'), DB_PLANS, 'single');
   const size = params.get('size');
   if (state.dbPlan === 'single') state.dbSingleSize = oneOf(size, keys(config.database.single), state.dbSingleSize);
   else state.dbDedicatedSize = oneOf(size, keys(config.database.dedicated), state.dbDedicatedSize);
-  state.kvs = oneOf(params.get('kvs'), keys(config.key_value_store), 'none');
-  state.search = oneOf(params.get('search'), SEARCH_LEVELS, 'none');
+  state.kvs = oneOf(params.get('kvs'), keys(config.key_value_store), NONE);
+  state.search = oneOf(params.get('search'), [NONE, ...SEARCH_LEVELS], NONE);
   quantitiesFromParam(params.get('search_size'), state.searchSizes);
   if (params.has('storage')) {
     const [storage, traffic] = params.get('storage').split(',');
@@ -425,7 +422,6 @@ if (typeof document !== 'undefined') {
     const setText = (selector, text) => all(selector).forEach((element) => (element.textContent = text));
     const setPressed = (element, pressed) => element.setAttribute('aria-pressed', String(pressed));
     const parseSet = (button) => button.dataset.set.split(':');
-    // A stepper turns dark while its quantity is in use, like a selected tile
     const showQuantity = (element, quantity, shown = quantity) => {
       element.textContent = shown;
       const stepper = element.closest('[data-stepper]');
@@ -453,7 +449,7 @@ if (typeof document !== 'undefined') {
         fillSlot(`app.${entry.key}`, slot);
         if (slot) setText(`[data-name="app.${entry.key}"]`, slot.name);
       });
-      const engine = state.dbEngine === 'none' ? config.database.engines[0].key : state.dbEngine;
+      const engine = state.dbEngine === NONE ? config.database.engines[0].key : state.dbEngine;
       config.database.single.forEach((size) =>
         fillSlot(`single.${size.key}`, catalog.single[engine][size.key], [strings.connections]),
       );
@@ -463,7 +459,6 @@ if (typeof document !== 'undefined') {
       config.key_value_store.forEach((entry) =>
         fillSlot(`kvs.${entry.key}`, catalog.kvs[entry.key], [strings.service_fee_included]),
       );
-      // XS has no high-availability variant; it stays visible (disabled) with its single-node price
       const level = state.search === 'multi' ? 'multi' : 'single';
       config.search.sizes.forEach((size) =>
         fillSlot(`search.${size.key}`, catalog.search[level][size.key] ?? catalog.search.single[size.key]),
@@ -471,7 +466,6 @@ if (typeof document !== 'undefined') {
       Object.keys(config.add_ons).forEach((key) => fillSlot(`add_ons.${key}`, catalog.addOns[key]));
     };
 
-    // Desktop highlights every size in use; mobile the size the single stepper edits, with badges for sizes in use
     const renderAppControls = () => {
       all('[data-app-tile]').forEach((tile) => {
         const key = tile.dataset.appTile;
@@ -497,7 +491,6 @@ if (typeof document !== 'undefined') {
       setText('[data-app-description]', described?.description ?? '');
     };
 
-    // Runs after the tiles got their disabled state: a size's stepper follows its tile
     const renderSearchControls = () => {
       all('[data-search-size]').forEach((column) => {
         const key = column.dataset.searchSize;
@@ -537,18 +530,17 @@ if (typeof document !== 'undefined') {
       renderSearchControls();
       all('[data-value-of]').forEach((element) => {
         const field = element.dataset.valueOf;
-        // Block storage is bought in 10 GiB blocks but shown in GiB
-        showQuantity(element, state[field], field === 'blockStorage' ? state[field] * 10 : state[field]);
+        showQuantity(element, state[field], field === 'blockStorage' ? state[field] * BLOCK_STORAGE_GIB : state[field]);
       });
       all('[data-input]').forEach((input) => {
         if (document.activeElement !== input) input.value = state[input.dataset.input];
       });
 
       const visible = {
-        database: state.dbEngine !== 'none',
+        database: state.dbEngine !== NONE,
         single: state.dbPlan === 'single',
         dedicated: state.dbPlan === 'dedicated',
-        search: state.search !== 'none',
+        search: state.search !== NONE,
         'search-multi': state.search === 'multi',
         'search-single': state.search === 'single',
         'object-storage': state.objectStorage,
@@ -582,7 +574,6 @@ if (typeof document !== 'undefined') {
         return row;
       };
       const itemsIn = (section) => estimate.items.filter((item) => !section || item.section === section);
-      // A list with a section name (print sheet) only shows that section's items
       all('[data-estimate-items]').forEach((list) =>
         list.replaceChildren(...itemsIn(list.dataset.estimateItems).map(toRow)),
       );
@@ -601,7 +592,6 @@ if (typeof document !== 'undefined') {
       state = normalizeState(config, { ...state, ...changes });
       const query = stateToParams(state).toString();
       window.history.replaceState(null, '', `${window.location.pathname}?${query}${window.location.hash}`);
-      // Database and search tiles show the prices of the selected engine or availability level
       if (catalog && ('dbEngine' in changes || 'search' in changes)) renderPrices();
       render();
     };
@@ -639,7 +629,6 @@ if (typeof document !== 'undefined') {
 
     const copyLink = (button) => {
       navigator.clipboard?.writeText(window.location.href).then(() => {
-        // Remember the original label once, so a second click while "copied" shows doesn't keep that text for good
         button.dataset.label ??= button.textContent;
         button.textContent = strings.link_copied;
         window.clearTimeout(button.resetTimer);
@@ -647,12 +636,10 @@ if (typeof document !== 'undefined') {
       });
     };
 
-    // Buttons pick their action through a data attribute; the first attribute listed here wins
     const actions = {
       preset: (button) => update(presetState(config, button.dataset.preset)),
       appTile: (button) => {
         const key = button.dataset.appTile;
-        // On desktop the tile switches the size on and off, on mobile it only picks the size the stepper edits
         const app = desktop.matches ? { ...state.app, [key]: state.app[key] > 0 ? 0 : 1 } : state.app;
         update({ appFocus: key, app });
       },
@@ -662,7 +649,6 @@ if (typeof document !== 'undefined') {
       },
       searchTile: (button) => {
         const key = button.dataset.searchTile;
-        // Like app sizes the tile switches a size on and off, except for the last size in use
         const quantity = state.searchSizes[key] > 0 ? minimumSearchQuantity(state, key) : 1;
         update({ searchSizes: { ...state.searchSizes, [key]: quantity } });
       },
@@ -672,7 +658,6 @@ if (typeof document !== 'undefined') {
       },
       set: (button) => {
         const [field, value] = parseSet(button);
-        // Switching the plan starts over at the smallest size of the new plan
         const sizes =
           field === 'dbPlan' && value !== state.dbPlan
             ? { dbSingleSize: config.database.single[0].key, dbDedicatedSize: config.database.dedicated[0].key }
@@ -705,7 +690,6 @@ if (typeof document !== 'undefined') {
       if (event.key === 'Escape') setSheetOpen(false);
     });
 
-    // The mobile total bar only shows while the calculator is on screen, so it never covers the footer
     const bottomBar = root.querySelector('[data-bottom-bar]');
     new IntersectionObserver(([entry]) => {
       bottomBar.classList.toggle('translate-y-full', !entry.isIntersecting);
