@@ -2,6 +2,8 @@
 
 set -eu
 
+npm run css:build
+
 npm run css:watch &
 tailwind_pid=$!
 trap 'kill "$tailwind_pid" 2>/dev/null || true' EXIT INT TERM
