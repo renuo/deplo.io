@@ -57,7 +57,7 @@ test('the page starts with the default preset', () => {
     estimate.items.map(({ name, detail }) => [name, detail]),
     [
       ['App · Micro', '1 × 8.75'],
-      ['PostgreSQL', 'Single database · 1 GB'],
+      ['PostgreSQL', 'Economy · 1 GB'],
     ],
   );
 });
@@ -74,7 +74,7 @@ test('one app with a small database matches the design estimate', () => {
     estimate.items.map(({ name, detail, total }) => [name, detail, total]),
     [
       ['App · Standard-1', '1 × 35.00', 35],
-      ['PostgreSQL', 'Single database · 1 GB', 5.5],
+      ['PostgreSQL', 'Economy · 1 GB', 5.5],
     ],
   );
   assert.deepEqual(estimate.sections, { app: 35, database: 5.5, add_ons: 0 });
