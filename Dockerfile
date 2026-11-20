@@ -4,10 +4,13 @@ FROM ruby:3.4-slim AS build
 ARG PUBLIC_RECAPTCHA_KEY_ID
 ARG RECAPTCHA_SECRET_KEY
 ARG VITE_GOOGLE_TAG_ID
+# Product API of the pricing calculator; set it to use another backend (e.g. staging).
+ARG PRICING_API_URL=https://calculator.nineapis.ch/products
 
 ENV PUBLIC_RECAPTCHA_KEY_ID=$PUBLIC_RECAPTCHA_KEY_ID \
     RECAPTCHA_SECRET_KEY=$RECAPTCHA_SECRET_KEY \
-    VITE_GOOGLE_TAG_ID=$VITE_GOOGLE_TAG_ID
+    VITE_GOOGLE_TAG_ID=$VITE_GOOGLE_TAG_ID \
+    PRICING_API_URL=$PRICING_API_URL
 
 RUN apt-get update \
   && apt-get install -y --no-install-recommends build-essential curl ca-certificates \

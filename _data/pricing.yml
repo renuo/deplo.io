@@ -1,37 +1,56 @@
 # Prices are fetched live from the calculator API. Every slot below is matched
-# against the product list by `category` (a substring of the product's category
-# path) and `name` (a case-insensitive substring of the product name). If the
-# product data gets renamed, adjust the matcher here
+# against the product list by `category` (a slug from `categories`) and `name`
+# (a case-insensitive substring of the product name).
 
 vat_rate: 8.1
 
+# Category slugs used by the slots below, each mapped to the id of the category
+# it stands for (the product's `category_id`, a typeid like `cat_…`). A product
+# belongs to a slug when its `category_id` equals that id.
+#
+# Category ids do not change when a category is renamed, so renames in the
+# product data need no change here. The comments name each category as of
+# writing, for readability only.
+categories:
+  deploio_resources: cat_01ktvj4enne28aj6xes673v4f2 # Deploio (PaaS) / Resources
+  deploio_services: cat_01ktvj4enne28v4efs5qefdkx5 # Deploio (PaaS) / Services
+  key_value_store: cat_01ktvj4enne30seq2pzc6vx4f4 # On-Demand Services / Key Value Store
+  mysql_engine: cat_01ktvj4enne318rwrbh7121mrm # On-Demand Services / MySQL Engine
+  mysql_single_database: cat_01ktvj4enne31rwv6bg79qxmqk # On-Demand Services / MySQL Single Database
+  postgresql_engine: cat_01ktvj4enne3284j2temj6695c # On-Demand Services / PostgreSQL Engine
+  postgresql_single_database: cat_01ktvj4enne32tch43wdr2dnrw # On-Demand Services / PostgreSQL Single Database
+  search: cat_01ktvj4enne33a7qk92e52vab8 # On-Demand Services / Search
+  additional_resources: cat_01ktvj4enne33v5hvs5hbd14t7 # On-Demand Services / Additional Resources
+  monitoring_logging: cat_01m0d95txk9vnpjnfgknejyct0 # On-Demand Services / Monitoring & Logging
+  object_storage: cat_01ktvj4enne2zt6h5q69fxnafv # Object Storage / Object Storage
+
 app:
   - key: micro
-    category: Deploio / 1) Resources
+    category: deploio_resources
     name: Micro
   - key: mini
-    category: Deploio / 1) Resources
+    category: deploio_resources
     name: Mini
   - key: standard_1
-    category: Deploio / 1) Resources
+    category: deploio_resources
     name: Standard-1
   - key: standard_2
-    category: Deploio / 1) Resources
+    category: deploio_resources
     name: Standard-2
   - key: standard_4
-    category: Deploio / 1) Resources
+    category: deploio_resources
     name: Standard-4
 
 database:
   engines:
     - key: postgresql
       label: PostgreSQL
-      single_category: PostgreSQL Single Database
-      dedicated_category: PostgreSQL Engine
+      single_category: postgresql_single_database
+      dedicated_category: postgresql_engine
     - key: mysql
       label: MySQL
-      single_category: MySQL Single Database
-      dedicated_category: MySQL Engine
+      single_category: mysql_single_database
+      dedicated_category: mysql_engine
   single:
     - key: s
       label: 1 GB
@@ -65,15 +84,15 @@ database:
 key_value_store:
   - key: 256mb
     label: 256 MB
-    category: On-Demand Services / 1) Key Value Store
+    category: key_value_store
     name: 256mb
   - key: 1gb
     label: 1 GB
-    category: On-Demand Services / 1) Key Value Store
+    category: key_value_store
     name: 1gb
 
 search:
-  category: On-Demand Services / 6) Search
+  category: search
   sizes:
     - key: xs
       label: XS
@@ -97,22 +116,22 @@ search:
 
 add_ons:
   object_storage_space:
-    category: Object Storage
+    category: object_storage
     name: Space
   object_storage_traffic:
-    category: Object Storage
+    category: object_storage
     name: Outgoing Traffic
   static_egress:
-    category: Deploio / 2) Services
+    category: deploio_services
     name: Static Egress (deplo.io)
   ipv4:
-    category: Deploio / 2) Services
+    category: deploio_services
     name: Additional IPv4 address
   block_storage:
-    category: On-Demand Services / 7) Additional Resources
+    category: additional_resources
     name: Block Storage (10GiB)
   grafana:
-    category: On-Demand Services / 8) Monitoring & Logging
+    category: monitoring_logging
     name: Grafana
 
 default_preset: hobby

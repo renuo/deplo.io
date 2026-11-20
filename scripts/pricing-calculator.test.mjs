@@ -26,6 +26,67 @@ test('every configured slot resolves to a product', () => {
   assert.deepEqual(calculator.missingSlots(catalog), []);
 });
 
+test('every category slug used by a slot is defined', () => {
+  const used = [
+    ...config.app.map((entry) => entry.category),
+    ...config.database.engines.flatMap((engine) => [engine.single_category, engine.dedicated_category]),
+    ...config.key_value_store.map((entry) => entry.category),
+    config.search.category,
+    ...Object.values(config.add_ons).map((matcher) => matcher.category),
+  ];
+  assert.deepEqual(
+    [...new Set(used)].filter((slug) => !config.categories[slug]),
+    [],
+  );
+});
+
+test('every category slug maps to one category id', () => {
+  Object.entries(config.categories).forEach(([slug, id]) => {
+    assert.match(id, /^cat_[0-9a-z]{26}$/, slug);
+  });
+});
+
+// Slots are matched by category id, so renaming categories in the product data
+// (odoo-connector#162: no "N) " prefixes, "Deploio (PaaS)", "Object Storage")
+// changes nothing.
+test('category names do not matter, only category ids', () => {
+  const renamed = products.map((product) => ({
+    ...product,
+    categ_id: [product.categ_id[0], `All / Renamed ${product.categ_id[1]}`],
+    categ_path: ['All', 'Renamed'],
+  }));
+  const renamedCatalog = calculator.buildCatalog(renamed, config, 'en');
+  assert.deepEqual(calculator.missingSlots(renamedCatalog), []);
+  assert.deepEqual(renamedCatalog, catalog);
+});
+
+test('a product whose category id is not mapped matches nothing', () => {
+  const deploioResources = config.categories.deploio_resources;
+  const unmapped = products.map((product) =>
+    product.category_id === deploioResources ? { ...product, category_id: 'cat_00000000000000000000000000' } : product,
+  );
+  const missing = calculator.missingSlots(calculator.buildCatalog(unmapped, config, 'en'));
+  assert.ok(missing.includes('app.micro'));
+  assert.ok(!missing.includes('addOns.static_egress'));
+});
+
+// The API also lists the products other products include (e.g. `databaseS`,
+// named "nine-single-db-s"), in their real category but without the
+// calculator tag. Only calculator products are offered.
+test('only products tagged calculator are offered', () => {
+  const offered = products.find((product) => product.product_id === 'mysqlSingleDbS');
+  const included = products.find((product) => product.product_id === 'databaseS');
+  assert.equal(included.category_id, offered.category_id);
+  assert.equal(catalog.single.mysql.s.name, offered.name);
+});
+
+test('a product without a category id matches nothing', () => {
+  const withoutIds = products.map(({ category_id, ...product }) => product);
+  const missing = calculator.missingSlots(calculator.buildCatalog(withoutIds, config, 'en'));
+  assert.ok(missing.includes('app.micro'));
+  assert.ok(missing.includes('addOns.object_storage_space'));
+});
+
 test('slots pick the expected products', () => {
   assert.equal(catalog.app.mini.price, 17.5);
   assert.equal(catalog.single.mysql.m.price, 9.9);
@@ -38,7 +99,7 @@ test('slots pick the expected products', () => {
   assert.equal(catalog.addOns.object_storage_space.price, 0.033);
 });
 
-test('specs come from bundle contents', () => {
+test('specs come from the included products', () => {
   assert.deepEqual(calculator.specLines(catalog.app.standard_1, strings), ['1 GB RAM', '0.5 vCPU']);
   assert.deepEqual(calculator.specLines(catalog.search.multi.m, strings), [
     '3 nodes',
@@ -46,6 +107,16 @@ test('specs come from bundle contents', () => {
     '12 vCPU',
     '180 GiB storage',
   ]);
+  assert.deepEqual(calculator.specLines(catalog.kvs[config.key_value_store[0].key], strings), [
+    '0.25 GiB RAM',
+    '0.5 GiB storage',
+  ]);
+});
+
+test('an included product missing from the API adds no spec', () => {
+  const withoutCpu = products.filter((product) => product.product_id !== 'applicationCPU');
+  const partial = calculator.buildCatalog(withoutCpu, config, 'en');
+  assert.deepEqual(calculator.specLines(partial.app.standard_1, strings), ['1 GB RAM']);
 });
 
 test('the page starts with the default preset', () => {
