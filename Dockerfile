@@ -1,5 +1,5 @@
 # Build stage: Ruby for Jekyll, Node for Tailwind.
-FROM ruby:3.4-slim AS build
+FROM ruby:4.0.10-slim AS build
 
 ARG PUBLIC_RECAPTCHA_KEY_ID
 ARG RECAPTCHA_SECRET_KEY
