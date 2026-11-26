@@ -47,7 +47,7 @@ test('every category slug maps to one category id', () => {
 });
 
 // Slots are matched by category id, so renaming categories in the product data
-// (odoo-connector#162: no "N) " prefixes, "Deploio (PaaS)", "Object Storage")
+// (e.g. dropping the "N) " prefixes, or "Deploio" becoming "Deploio (PaaS)")
 // changes nothing.
 test('category names do not matter, only category ids', () => {
   const renamed = products.map((product) => ({

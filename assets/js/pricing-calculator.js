@@ -25,14 +25,13 @@ const formatAmount = (amount, fixedFractionDigits) => {
 const formatQuantity = (value) => formatNumber(value, { maximumFractionDigits: 3 });
 
 // The category id (`cat_…`) a slug from `categories` in _data/pricing.yml
-// stands for. An unknown slug matches nothing, so its slot shows up in
-// missingSlots.
-const categoryId = (config, slug) => config.categories?.[slug] ?? null;
+// stands for.
+const categoryId = (config, slug) => config.categories[slug];
 
 // Only products tagged "calculator" are offered. The API also lists the
 // products they include (e.g. "nine-single-db-s"), in the same categories.
 const isOffered = (product) =>
-  product.active !== false && (product.tag_data || []).some((tag) => tag.name === 'calculator');
+  product.active == true && (product.tag_data || []).some((tag) => tag.name === 'calculator');
 
 // Products are matched by category id, not by category name, so renaming a
 // category in the product data does not affect the calculator.
@@ -78,8 +77,10 @@ const toSlot = (product, language, namesBySlug) => {
 
 const buildCatalog = (products, config, language = 'de') => {
   const namesBySlug = new Map(products.map((product) => [product.product_id, product.name]));
-  const slot = ({ category, name }) =>
-    toSlot(findProduct(products, categoryId(config, category), name), language, namesBySlug);
+  const slot = ({ category, name }) => {
+    const product = findProduct(products, categoryId(config, category), name);
+    return toSlot(product, language, namesBySlug);
+  };
   const catalog = { app: {}, single: {}, dedicated: {}, kvs: {}, search: {}, addOns: {} };
 
   config.app.forEach((entry) => {
