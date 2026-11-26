@@ -24,11 +24,20 @@ const formatAmount = (amount, fixedFractionDigits) => {
 
 const formatQuantity = (value) => formatNumber(value, { maximumFractionDigits: 3 });
 
-const findProduct = (products, { category, name }) => {
-  const inCategory = products.filter((product) => {
-    const path = Array.isArray(product.categ_id) ? product.categ_id[1] : '';
-    return product.active !== false && path.includes(category);
-  });
+// The category id (`cat_…`) a slug from `categories` in _data/pricing.yml
+// stands for.
+const categoryId = (config, slug) => config.categories[slug];
+
+// Only products tagged "calculator" are offered. The API also lists the
+// products they include (e.g. "nine-single-db-s"), in the same categories.
+const isOffered = (product) =>
+  product.active == true && (product.tag_data || []).some((tag) => tag.name === 'calculator');
+
+// Products are matched by category id, not by category name, so renaming a
+// category in the product data does not affect the calculator.
+const findProduct = (products, id, name) => {
+  if (!id) return null;
+  const inCategory = products.filter((product) => isOffered(product) && product.category_id === id);
   const needle = name.toLowerCase();
   return (
     inCategory.find((product) => product.name.toLowerCase() === needle) ||
@@ -37,11 +46,14 @@ const findProduct = (products, { category, name }) => {
   );
 };
 
-const productSpecs = (product) => {
+// Specs come from the products a product includes (`includes`, by slug). The
+// API lists the included products too, so their names ("Application RAM (GB)",
+// "vCPU", ...) are looked up in `namesBySlug`.
+const productSpecs = (product, namesBySlug) => {
   const specs = {};
-  (product.bundle_products || []).forEach((item) => {
-    const component = Array.isArray(item.sh_product_id) ? item.sh_product_id[1] : '';
-    const quantity = Number(item.sh_qty);
+  (product.includes || []).forEach((item) => {
+    const component = namesBySlug.get(item.product_id) ?? '';
+    const quantity = Number(item.quantity);
     if (/RAM/.test(component)) {
       specs.ram = quantity;
       specs.ramUnit = /\(GB\)/.test(component) ? 'GB' : 'GiB';
@@ -52,19 +64,23 @@ const productSpecs = (product) => {
   return specs;
 };
 
-const toSlot = (product, language) => {
+const toSlot = (product, language, namesBySlug) => {
   if (!product) return null;
   const german = language === 'de';
   return {
-    name: (german && product.name_de) || product.display_name || product.name,
+    name: (german && product.name_de) || product.name,
     description: (german && product.description_sale_de) || product.description_sale || '',
     price: Number(product.list_price),
-    specs: productSpecs(product),
+    specs: productSpecs(product, namesBySlug),
   };
 };
 
 const buildCatalog = (products, config, language = 'de') => {
-  const slot = (matcher) => toSlot(findProduct(products, matcher), language);
+  const namesBySlug = new Map(products.map((product) => [product.product_id, product.name]));
+  const slot = ({ category, name }) => {
+    const product = findProduct(products, categoryId(config, category), name);
+    return toSlot(product, language, namesBySlug);
+  };
   const catalog = { app: {}, single: {}, dedicated: {}, kvs: {}, search: {}, addOns: {} };
 
   config.app.forEach((entry) => {
